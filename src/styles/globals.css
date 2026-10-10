@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==================================================
+   ADINEUE FONT FAMILY SYSTEM DEFINITIONS
+   adineue Bold (Headings & Bold UI) & adineue Regular (Body Text)
+   ================================================== */
+@font-face {
+  font-family: 'adineue Regular';
+  src: local('adineue Regular'), local('adineue-Regular'), local('adineue');
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'adineue Bold';
+  src: local('adineue Bold'), local('adineue-Bold'), local('adineue');
+  font-weight: 700 800 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-adineue-regular: 'adineue Regular', 'adineue', 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-adineue-bold: 'adineue Bold', 'adineue', 'Outfit', -apple-system, sans-serif;
+}
+
+@layer base {
+
+  *,
+  html,
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    font-family: var(--font-adineue-regular) !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-heading,
+  .font-editorial,
+  .font-bold,
+  .font-extrabold,
+  .font-black,
+  b,
+  strong {
+    font-family: var(--font-adineue-bold) !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C8FF00;
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: default;
+  }
+
+  #custom-cursor {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+      height 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+}
+
+@media (pointer: coarse) {
+  #custom-cursor {
+    display: none !important;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* TICKET 3D STYLES */
+.ticket-3d-wrapper {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.ticket-card {
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.ticket-shine {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 60%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.ticket-notch-top {
+  position: absolute;
+  top: -14px;
+  right: 28%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #050505;
+  z-index: 10;
+}
+
+.ticket-notch-bottom {
+  position: absolute;
+  bottom: -14px;
+  right: 28%;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #050505;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .ticket-notch-top {
+    right: auto;
+    left: -14px;
+  }
+
+  .ticket-notch-bottom {
+    right: auto;
+    left: -14px;
+  }
+}

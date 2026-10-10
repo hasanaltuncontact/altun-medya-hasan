@@ -1,0 +1,140 @@
+'use client';
+
+import { useState } from 'react';
+import { X, Send, CheckCircle2 } from 'lucide-react';
+import { servicesDatabase } from '@/data/services-database';
+
+interface BriefModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  selectedCategorySlug?: string;
+}
+
+export default function BriefModal({ isOpen, onClose, selectedCategorySlug }: BriefModalProps) {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    service: selectedCategorySlug || servicesDatabase[0].slug,
+    message: '',
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  if (!isOpen) return null;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    setTimeout(() => {
+      setIsSubmitted(false);
+      onClose();
+    }, 2500);
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 xs:p-4 sm:p-6 bg-black/90 backdrop-blur-2xl animate-fadeIn">
+      <div className="bg-[#111111] border border-white/15 rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl">
+        <button
+          onClick={onClose}
+          className="absolute top-5 right-5 text-white/60 hover:text-white p-1 rounded-full bg-white/5 hover:bg-white/10 transition-all"
+          aria-label="Kapat"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        <div className="mb-6">
+          <span className="text-[10px] font-mono uppercase tracking-widest text-[#C8FF00] font-bold block mb-1">
+            ALTUN MEDYA • PROJE BAŞLAT
+          </span>
+          <h3 className="text-2xl font-extrabold text-white tracking-tight font-heading">
+            Projenizi Birlikte Hayata Geçirelim
+          </h3>
+          <p className="text-xs text-white/70 mt-1">
+            Aşağıdaki bilgileri doldurun, 24 saat içinde stüdyo ekibimiz sizinle iletişime geçsin.
+          </p>
+        </div>
+
+        {isSubmitted ? (
+          <div className="py-8 text-center space-y-3">
+            <CheckCircle2 className="w-12 h-12 text-[#C8FF00] mx-auto animate-bounce" />
+            <h4 className="text-lg font-bold text-white">Talebiniz Alındı!</h4>
+            <p className="text-xs text-white/70">Proje detaylarınız kaydedildi. Ekibimiz sizinle kısa süre içinde iletişime geçecektir.</p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="block text-xs font-mono uppercase text-white/80 mb-1">Adınız / Firma Adı *</label>
+              <input
+                type="text"
+                required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                placeholder="Örn: Mehmet Yılmaz / Vay Vay Restaurant"
+                className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C8FF00] transition-colors"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-mono uppercase text-white/80 mb-1">Telefon *</label>
+                <input
+                  type="tel"
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  placeholder="0544 000 0000"
+                  className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C8FF00] transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-mono uppercase text-white/80 mb-1">E-Posta</label>
+                <input
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="info@firmadomain.com"
+                  className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C8FF00] transition-colors"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-mono uppercase text-white/80 mb-1">Hizmet Kategorisi *</label>
+              <select
+                value={formData.service}
+                onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C8FF00] transition-colors"
+              >
+                {servicesDatabase.map((cat) => (
+                  <option key={cat.id} value={cat.slug} className="bg-neutral-900 text-white">
+                    {cat.number} — {cat.title}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-xs font-mono uppercase text-white/80 mb-1">Proje Notu & Beklentiniz</label>
+              <textarea
+                rows={3}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                placeholder="Projeniz hakkında kısa bilgi verebilirsiniz..."
+                className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C8FF00] transition-colors resize-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-4 text-xs font-extrabold uppercase tracking-wider bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28] transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(200,255,0,0.3)] active:scale-95"
+            >
+              <Send className="w-4 h-4" />
+              <span>BİLETİ KES &amp; GÖNDER</span>
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,27 @@
+import React from 'react';
+
+interface SectionDividerProps {
+  topBgColor?: string; // Color of the section above
+  bottomBgColor?: string; // Color of the section below
+}
+
+export default function SectionDivider({
+  topBgColor = '#050505',
+  bottomBgColor = '#F7F6F2',
+}: SectionDividerProps) {
+  return (
+    <div
+      className="relative w-full overflow-hidden leading-none z-20 pointer-events-none -mt-px -mb-px"
+      style={{ backgroundColor: bottomBgColor }}
+    >
+      <svg
+        className="w-full h-10 sm:h-16 block fill-current"
+        style={{ color: topBgColor }}
+        viewBox="0 0 1200 70"
+        preserveAspectRatio="none"
+      >
+        <path d="M 0,0 L 1200,0 C 960,6 750,22 600,66 C 450,22 240,6 0,0 Z" />
+      </svg>
+    </div>
+  );
+}
