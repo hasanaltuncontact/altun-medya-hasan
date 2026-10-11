@@ -64,7 +64,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" className={`scroll-smooth ${plusJakarta.variable} ${manrope.variable}`}>
-      <body className="bg-[#050505] text-[#F7F6F2] font-sans antialiased selection:bg-[#C8FF00] selection:text-black min-h-screen flex flex-col justify-between">
+      <body className="bg-[#050505] text-[#F7F6F2] font-sans antialiased selection:bg-[#B33A06] selection:text-white min-h-screen flex flex-col justify-between">
         <SEOEngineProviderWrapper>
           <CustomCursor />
           {children}

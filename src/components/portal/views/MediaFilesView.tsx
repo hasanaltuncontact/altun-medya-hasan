@@ -28,7 +28,7 @@ export default function MediaFilesView() {
   });
 
   const handleShare = (asset: MediaAsset) => {
-    navigator.clipboard?.writeTextWindow?.(window.location.href);
+    navigator.clipboard?.writeText(window.location.href);
     addToast(`🔗 "${asset.title}" indirme bağlantısı kopyalandı!`, 'info');
   };
 
@@ -51,7 +51,7 @@ export default function MediaFilesView() {
           <button
             onClick={() => setViewMode('grid')}
             className={`p-2 rounded-lg transition-colors flex items-center gap-1.5 ${
-              viewMode === 'grid' ? 'bg-[#C8FF00] text-black font-bold' : 'text-white/60 hover:text-white'
+              viewMode === 'grid' ? 'bg-[#B33A06] text-white font-bold' : 'text-white/60 hover:text-white'
             }`}
           >
             <Grid className="w-3.5 h-3.5" />
@@ -60,7 +60,7 @@ export default function MediaFilesView() {
           <button
             onClick={() => setViewMode('list')}
             className={`p-2 rounded-lg transition-colors flex items-center gap-1.5 ${
-              viewMode === 'list' ? 'bg-[#C8FF00] text-black font-bold' : 'text-white/60 hover:text-white'
+              viewMode === 'list' ? 'bg-[#B33A06] text-white font-bold' : 'text-white/60 hover:text-white'
             }`}
           >
             <List className="w-3.5 h-3.5" />
@@ -77,7 +77,7 @@ export default function MediaFilesView() {
             onClick={() => setSelectedCategory(cat)}
             className={`px-4 py-2 rounded-xl transition-all whitespace-nowrap ${
               selectedCategory === cat
-                ? 'bg-[#C8FF00] text-black font-extrabold shadow-[0_0_15px_rgba(200,255,0,0.3)]'
+                ? 'bg-[#B33A06] text-white font-extrabold shadow-[0_0_15px_rgba(179, 58, 6,0.3)]'
                 : 'bg-white/5 text-white/70 hover:text-white hover:bg-white/10 border border-white/10'
             }`}
           >
@@ -92,16 +92,16 @@ export default function MediaFilesView() {
           {filteredAssets.map((asset) => (
             <div
               key={asset.id}
-              className="rounded-3xl bg-[#0D0D0D] border border-white/10 overflow-hidden hover:border-[#C8FF00]/40 transition-all group flex flex-col justify-between"
+              className="rounded-3xl bg-[#0D0D0D] border border-white/10 overflow-hidden hover:border-[#B33A06]/40 transition-all group flex flex-col justify-between"
             >
               <div className="relative h-48 bg-black">
                 <img src={asset.previewUrl} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" />
                 
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-mono text-[#C8FF00] font-bold border border-white/10">
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-mono text-[#B33A06] font-bold border border-white/10">
                   {asset.category}
                 </div>
 
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-[#C8FF00] text-black text-[10px] font-mono font-bold">
+                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-[#B33A06] text-white text-[10px] font-mono font-bold">
                   {asset.currentVersion}
                 </div>
 
@@ -132,7 +132,7 @@ export default function MediaFilesView() {
                           key={i}
                           className={`px-2 py-0.5 rounded font-bold ${
                             v.isFinal
-                              ? 'bg-[#C8FF00] text-black'
+                              ? 'bg-[#B33A06] text-white'
                               : 'bg-white/10 text-white/70'
                           }`}
                         >
@@ -151,7 +151,7 @@ export default function MediaFilesView() {
                       className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors"
                       title="Önizle"
                     >
-                      <Eye className="w-4 h-4 text-[#C8FF00]" />
+                      <Eye className="w-4 h-4 text-[#B33A06]" />
                     </button>
                   )}
 
@@ -160,7 +160,7 @@ export default function MediaFilesView() {
                     download
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-2.5 rounded-xl bg-[#C8FF00] text-black hover:bg-[#D4FF28] text-xs font-extrabold transition-colors flex items-center justify-center gap-2"
+                    className="flex-1 py-2.5 rounded-xl bg-[#B33A06] text-white hover:bg-[#C84408] text-xs font-extrabold transition-colors flex items-center justify-center gap-2"
                   >
                     <Download className="w-4 h-4" />
                     <span>[ İndir ]</span>
@@ -200,14 +200,14 @@ export default function MediaFilesView() {
                     <span>{asset.title}</span>
                   </td>
                   <td className="p-4 text-white/60">{asset.category}</td>
-                  <td className="p-4"><span className="px-2 py-0.5 rounded bg-[#C8FF00]/10 text-[#C8FF00] font-bold text-[10px]">{asset.currentVersion}</span></td>
+                  <td className="p-4"><span className="px-2 py-0.5 rounded bg-[#B33A06]/10 text-[#B33A06] font-bold text-[10px]">{asset.currentVersion}</span></td>
                   <td className="p-4 text-white/60">{asset.fileSize}</td>
                   <td className="p-4 text-white/40">{asset.uploadDate}</td>
                   <td className="p-4 text-right">
                     <a
                       href={asset.downloadUrl}
                       download
-                      className="px-3 py-1.5 rounded-lg bg-[#C8FF00] text-black font-extrabold text-[11px] inline-flex items-center gap-1.5"
+                      className="px-3 py-1.5 rounded-lg bg-[#B33A06] text-white font-extrabold text-[11px] inline-flex items-center gap-1.5"
                     >
                       <Download className="w-3.5 h-3.5" />
                       <span>İndir</span>

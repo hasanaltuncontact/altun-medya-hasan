@@ -26,6 +26,7 @@ export interface LocationEntity {
   slug: string;
   shortDesc: string;
   regionalHighlight: string;
+  regionalDescription?: string;
   latitude: number;
   longitude: number;
 }
@@ -36,6 +37,7 @@ export interface SectorEntity {
   slug: string;
   description: string;
   commonProblems: string[];
+  painPoints?: string[];
   recommendedServices: string[];
   faq: { question: string; answer: string }[];
 }
@@ -92,6 +94,7 @@ export interface SEOPageModel {
   sectorId?: string;
   serviceId?: string;
   clusterId?: string;
+  schemaType?: string;
   content: {
     introAnswer: string; // Direct snippet answer to search intent
     mainContentHtml: string;

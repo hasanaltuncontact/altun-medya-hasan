@@ -10,10 +10,10 @@ export default function SeoDrawer() {
   if (!seoDrawerOpen) return null;
 
   return (
-    <aside className="fixed top-16 right-0 bottom-0 w-96 bg-[#090909]/95 backdrop-blur-2xl border-l border-white/10 flex flex-col z-50 text-white selection:bg-[#C8FF00] selection:text-black shadow-2xl animate-in slide-in-from-right duration-200">
+    <aside className="fixed top-16 right-0 bottom-0 w-96 bg-[#090909]/95 backdrop-blur-2xl border-l border-white/10 flex flex-col z-50 text-white selection:bg-[#B33A06] selection:text-white shadow-2xl animate-in slide-in-from-right duration-200">
       <div className="p-4 border-b border-white/10 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Globe className="w-5 h-5 text-[#C8FF00]" />
+          <Globe className="w-5 h-5 text-[#B33A06]" />
           <h3 className="text-sm font-bold text-white font-heading">Sayfa SEO & Meta Ayarları</h3>
         </div>
 
@@ -29,7 +29,7 @@ export default function SeoDrawer() {
             type="text"
             value={pageSchema.seoTitle}
             onChange={(e) => updateSeo({ seoTitle: e.target.value })}
-            className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+            className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
           />
         </div>
 
@@ -39,7 +39,7 @@ export default function SeoDrawer() {
             rows={4}
             value={pageSchema.seoDescription}
             onChange={(e) => updateSeo({ seoDescription: e.target.value })}
-            className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+            className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
           />
         </div>
 
@@ -49,7 +49,7 @@ export default function SeoDrawer() {
             type="text"
             value={pageSchema.ogImage}
             onChange={(e) => updateSeo({ ogImage: e.target.value })}
-            className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+            className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
           />
         </div>
 
@@ -59,7 +59,7 @@ export default function SeoDrawer() {
             type="text"
             value={pageSchema.slug}
             onChange={(e) => updateSeo({ slug: e.target.value })}
-            className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00] font-mono"
+            className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06] font-mono"
           />
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function SeoDrawer() {
       <div className="p-4 border-t border-white/10">
         <button
           onClick={() => setSeoDrawerOpen(false)}
-          className="w-full py-3 rounded-xl bg-[#C8FF00] text-black font-extrabold text-xs uppercase tracking-wider hover:bg-[#D4FF28] transition-all"
+          className="w-full py-3 rounded-xl bg-[#B33A06] text-white font-extrabold text-xs uppercase tracking-wider hover:bg-[#C84408] transition-all"
         >
           Kaydet & Kapat
         </button>

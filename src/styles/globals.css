@@ -23,8 +23,8 @@
 }
 
 :root {
-  --font-adineue-regular: 'adineue Regular', 'adineue', 'Plus Jakarta Sans', -apple-system, sans-serif;
-  --font-adineue-bold: 'adineue Bold', 'adineue', 'Outfit', -apple-system, sans-serif;
+  --font-adineue-regular: 'adineue Regular', 'adineue', var(--font-jakarta), 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-adineue-bold: 'adineue Bold', 'adineue', var(--font-jakarta), 'Outfit', -apple-system, sans-serif;
 }
 
 @layer base {
@@ -53,6 +53,61 @@
   b,
   strong {
     font-family: var(--font-adineue-bold) !important;
+    font-weight: 800;
+  }
+
+  /* ==================================================
+     LOGO-INSPIRED KALIN-İNCE (BOLD-THIN) DUAL TYPOGRAPHY SYSTEM
+     Matches 'altun' (heavy bold) + 'medya' (optical light/thin)
+     ================================================== */
+  .brand-thin,
+  .font-light,
+  .font-extralight,
+  .font-thin,
+  h1 .brand-thin,
+  h1 .font-light,
+  h1 .font-extralight,
+  h1 .font-thin,
+  h2 .brand-thin,
+  h2 .font-light,
+  h2 .font-extralight,
+  h2 .font-thin,
+  h3 .brand-thin,
+  h3 .font-light,
+  h3 .font-extralight,
+  h3 .font-thin,
+  h4 .brand-thin,
+  h4 .font-light,
+  h4 .font-extralight,
+  h4 .font-thin {
+    font-family: var(--font-adineue-regular) !important;
+    font-weight: 300 !important;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-bold,
+  h1 .brand-bold,
+  h2 .brand-bold,
+  h3 .brand-bold,
+  h4 .brand-bold {
+    font-family: var(--font-adineue-bold) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.04em;
+  }
+
+  /* Editorial & Blog Content Kalın-İnce Headers */
+  .prose h2,
+  .blog-content h2 {
+    font-family: var(--font-adineue-bold) !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.03em;
+  }
+
+  .prose h3,
+  .blog-content h3 {
+    font-family: var(--font-adineue-regular) !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -71,7 +126,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C8FF00;
+  background: #B33A06;
 }
 
 @media (pointer: fine) {

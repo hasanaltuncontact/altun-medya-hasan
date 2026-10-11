@@ -44,12 +44,12 @@ export default function ContentCalendarView() {
           <div
             key={item.id}
             onClick={() => setSelectedItem(item)}
-            className="p-6 rounded-3xl bg-[#0D0D0D] border border-white/10 hover:border-[#C8FF00]/40 transition-all cursor-pointer group space-y-4 font-mono text-xs flex flex-col justify-between"
+            className="p-6 rounded-3xl bg-[#0D0D0D] border border-white/10 hover:border-[#B33A06]/40 transition-all cursor-pointer group space-y-4 font-mono text-xs flex flex-col justify-between"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 {getPlatformBadge(item.platform)}
-                <span className="px-2.5 py-0.5 rounded-full bg-[#C8FF00]/10 text-[#C8FF00] font-bold border border-[#C8FF00]/30 text-[10px]">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#B33A06]/10 text-[#B33A06] font-bold border border-[#B33A06]/30 text-[10px]">
                   {item.status}
                 </span>
               </div>
@@ -67,7 +67,7 @@ export default function ContentCalendarView() {
 
             <div className="pt-3 border-t border-white/10 flex items-center justify-between text-white/50 text-[11px]">
               <span>📅 {item.scheduledDate} • {item.scheduledTime}</span>
-              <span className="text-[#C8FF00] font-bold group-hover:underline flex items-center gap-1">
+              <span className="text-[#B33A06] font-bold group-hover:underline flex items-center gap-1">
                 <Eye className="w-3.5 h-3.5" />
                 <span>[ Detay ]</span>
               </span>
@@ -89,7 +89,7 @@ export default function ContentCalendarView() {
 
             <div className="flex items-center gap-2">
               {getPlatformBadge(selectedItem.platform)}
-              <span className="text-[#C8FF00] font-bold">• {selectedItem.contentType}</span>
+              <span className="text-[#B33A06] font-bold">• {selectedItem.contentType}</span>
             </div>
 
             <h2 className="text-xl font-bold text-white font-heading">{selectedItem.title}</h2>
@@ -103,14 +103,14 @@ export default function ContentCalendarView() {
               <p className="text-white/80 font-sans text-xs leading-relaxed">{selectedItem.caption}</p>
               <div className="flex flex-wrap gap-1.5 pt-1">
                 {selectedItem.hashtags.map((h, i) => (
-                  <span key={i} className="text-[10px] text-[#C8FF00]">#{h}</span>
+                  <span key={i} className="text-[10px] text-[#B33A06]">#{h}</span>
                 ))}
               </div>
             </div>
 
             <div className="flex items-center justify-between pt-2 border-t border-white/10 text-white/60">
               <span>Yayın Tarihi: <strong className="text-white">{selectedItem.scheduledDate} {selectedItem.scheduledTime}</strong></span>
-              <span className="text-[#C8FF00] font-bold">Durum: {selectedItem.status}</span>
+              <span className="text-[#B33A06] font-bold">Durum: {selectedItem.status}</span>
             </div>
           </div>
         </div>

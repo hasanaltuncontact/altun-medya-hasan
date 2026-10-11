@@ -23,7 +23,7 @@ export default function CaseStudyModal({ workItem, onClose, onOpenBrief }: CaseS
           <X className="w-5 h-5" />
         </button>
 
-        <span className="text-xs font-mono text-[#C8FF00] uppercase tracking-widest font-bold block mb-1">
+        <span className="text-xs font-mono text-[#B33A06] uppercase tracking-widest font-bold block mb-1">
           {workItem.category}
         </span>
         <h3 className="text-2xl font-extrabold text-white tracking-tight mb-2 font-heading">
@@ -33,7 +33,7 @@ export default function CaseStudyModal({ workItem, onClose, onOpenBrief }: CaseS
 
         <div className="relative aspect-video rounded-xl overflow-hidden mb-5 border border-white/10">
           <img src={workItem.image} alt={workItem.title} className="w-full h-full object-cover" />
-          <div className="absolute bottom-3 right-3 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-xs font-mono text-[#C8FF00] font-bold">
+          <div className="absolute bottom-3 right-3 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-xs font-mono text-[#B33A06] font-bold">
             {workItem.resultMetric} {workItem.resultLabel}
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function CaseStudyModal({ workItem, onClose, onOpenBrief }: CaseS
               onClose();
               onOpenBrief();
             }}
-            className="px-5 py-2.5 rounded-xl bg-[#C8FF00] text-black text-xs font-bold font-mono uppercase tracking-wider hover:bg-[#D4FF28] transition-all flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-xl bg-[#B33A06] text-white text-xs font-bold font-mono uppercase tracking-wider hover:bg-[#C84408] transition-all flex items-center gap-1.5"
           >
             <span>Benzer Proje Başlat</span>
             <ArrowUpRight className="w-4 h-4" />

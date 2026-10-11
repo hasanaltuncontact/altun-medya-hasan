@@ -23,8 +23,8 @@ const config: Config = {
         warmBeige: '#D9D0C1',
         softBeige: '#E6DED1',
         darkBeige: '#A89D8D',
-        limeAccent: '#C8FF00',
-        limeGlow: '#D4FF28',
+        limeAccent: '#B33A06',
+        limeGlow: '#C84408',
       },
       screens: {
         'xs': '420px',

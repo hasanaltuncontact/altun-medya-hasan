@@ -61,9 +61,9 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
 
     const elClasses = `relative transition-all cursor-pointer ${
       isSelected 
-        ? 'ring-2 ring-[#C8FF00] shadow-[0_0_25px_rgba(200,255,0,0.35)] z-30' 
+        ? 'ring-2 ring-[#B33A06] shadow-[0_0_25px_rgba(179, 58, 6,0.35)] z-30' 
         : isHovered 
-        ? 'outline outline-2 outline-[#C8FF00] outline-offset-2 z-20' 
+        ? 'outline outline-2 outline-[#B33A06] outline-offset-2 z-20' 
         : ''
     }`;
 
@@ -88,7 +88,7 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
             style={styleObj}
           >
             {(isHovered || isSelected) && (
-              <span className="absolute -top-6 left-0 px-2 py-0.5 rounded bg-[#C8FF00] text-black font-mono font-extrabold text-[9px] uppercase tracking-wider z-30 shadow-md">
+              <span className="absolute -top-6 left-0 px-2 py-0.5 rounded bg-[#B33A06] text-white font-mono font-extrabold text-[9px] uppercase tracking-wider z-30 shadow-md">
                 BAŞLIK: {el.label}
               </span>
             )}
@@ -117,7 +117,7 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
             style={styleObj}
           >
             {(isHovered || isSelected) && (
-              <span className="absolute -top-6 left-0 px-2 py-0.5 rounded bg-[#C8FF00] text-black font-mono font-extrabold text-[9px] uppercase tracking-wider z-30 shadow-md">
+              <span className="absolute -top-6 left-0 px-2 py-0.5 rounded bg-[#B33A06] text-white font-mono font-extrabold text-[9px] uppercase tracking-wider z-30 shadow-md">
                 METİN: {el.label}
               </span>
             )}
@@ -145,7 +145,7 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
             className={`inline-block ${elClasses}`}
           >
             {(isHovered || isSelected) && (
-              <span className="absolute -top-6 left-0 px-2 py-0.5 rounded bg-[#C8FF00] text-black font-mono font-extrabold text-[9px] uppercase tracking-wider z-30 shadow-md">
+              <span className="absolute -top-6 left-0 px-2 py-0.5 rounded bg-[#B33A06] text-white font-mono font-extrabold text-[9px] uppercase tracking-wider z-30 shadow-md">
                 BUTON: {el.label}
               </span>
             )}
@@ -173,7 +173,7 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
             style={styleObj}
           >
             {(isHovered || isSelected) && (
-              <span className="absolute top-3 left-3 px-2 py-1 rounded bg-[#C8FF00] text-black font-mono font-extrabold text-[10px] uppercase tracking-wider z-30 shadow-xl">
+              <span className="absolute top-3 left-3 px-2 py-1 rounded bg-[#B33A06] text-white font-mono font-extrabold text-[10px] uppercase tracking-wider z-30 shadow-xl">
                 GÖRSEL: {el.label}
               </span>
             )}
@@ -191,7 +191,7 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
                     e.stopPropagation();
                     openMediaLibraryForTarget(el.id, 'src');
                   }}
-                  className="px-5 py-2.5 rounded-xl bg-[#C8FF00] text-black font-extrabold text-xs uppercase tracking-wider shadow-2xl hover:bg-[#D4FF28] transition-all flex items-center gap-2"
+                  className="px-5 py-2.5 rounded-xl bg-[#B33A06] text-white font-extrabold text-xs uppercase tracking-wider shadow-2xl hover:bg-[#C84408] transition-all flex items-center gap-2"
                 >
                   <ImageIcon className="w-4 h-4" />
                   <span>[ Görseli Değiştir ]</span>
@@ -214,7 +214,7 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
             style={styleObj}
           >
             {(isHovered || isSelected) && (
-              <span className="absolute top-3 left-3 px-2 py-1 rounded bg-[#C8FF00] text-black font-mono font-extrabold text-[10px] uppercase tracking-wider z-30 shadow-xl">
+              <span className="absolute top-3 left-3 px-2 py-1 rounded bg-[#B33A06] text-white font-mono font-extrabold text-[10px] uppercase tracking-wider z-30 shadow-xl">
                 VIDEO: {el.label}
               </span>
             )}
@@ -235,7 +235,7 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
                     e.stopPropagation();
                     openMediaLibraryForTarget(el.id, 'videoUrl');
                   }}
-                  className="px-5 py-2.5 rounded-xl bg-[#C8FF00] text-black font-extrabold text-xs uppercase tracking-wider shadow-2xl hover:bg-[#D4FF28] transition-all flex items-center gap-2"
+                  className="px-5 py-2.5 rounded-xl bg-[#B33A06] text-white font-extrabold text-xs uppercase tracking-wider shadow-2xl hover:bg-[#C84408] transition-all flex items-center gap-2"
                 >
                   <VideoIcon className="w-4 h-4" />
                   <span>[ Videoyu Değiştir ]</span>
@@ -287,16 +287,16 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
                 }}
                 className={`relative transition-all ${
                   isSecSelected 
-                    ? 'ring-2 ring-[#C8FF00] ring-inset' 
+                    ? 'ring-2 ring-[#B33A06] ring-inset' 
                     : isSecHovered 
-                    ? 'outline outline-2 outline-[#C8FF00] outline-offset-[-2px]' 
+                    ? 'outline outline-2 outline-[#B33A06] outline-offset-[-2px]' 
                     : ''
                 }`}
               >
                 {/* SECTION CONTROL BAR ON HOVER / SELECTED */}
                 {!isPreviewMode && (isSecHovered || isSecSelected) && (
-                  <div className="absolute top-4 left-6 z-40 bg-[#080808]/95 backdrop-blur-md border border-[#C8FF00] text-white rounded-xl px-3.5 py-2 flex items-center gap-3 text-xs font-mono shadow-2xl animate-in fade-in duration-150">
-                    <span className="font-extrabold text-[#C8FF00] uppercase tracking-wider">
+                  <div className="absolute top-4 left-6 z-40 bg-[#080808]/95 backdrop-blur-md border border-[#B33A06] text-white rounded-xl px-3.5 py-2 flex items-center gap-3 text-xs font-mono shadow-2xl animate-in fade-in duration-150">
+                    <span className="font-extrabold text-[#B33A06] uppercase tracking-wider">
                       SECTION: {sec.title}
                     </span>
 
@@ -305,7 +305,7 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
                         e.stopPropagation();
                         onOpenSettings();
                       }}
-                      className="p-1 hover:text-[#C8FF00] transition-colors"
+                      className="p-1 hover:text-[#B33A06] transition-colors"
                       title="Bölüm Ayarlarını Aç"
                     >
                       <Pencil className="w-3.5 h-3.5" />

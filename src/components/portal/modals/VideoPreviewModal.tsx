@@ -47,7 +47,7 @@ export default function VideoPreviewModal() {
             className="w-full h-full object-contain"
           />
 
-          <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] text-[#C8FF00] font-bold border border-white/10">
+          <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] text-[#B33A06] font-bold border border-white/10">
             4K ULTRA HD PREVIEW
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function VideoPreviewModal() {
         <div className="w-full lg:w-80 p-6 bg-[#0E0E0E] border-t lg:border-t-0 lg:border-l border-white/10 flex flex-col justify-between space-y-6">
           <div className="space-y-4">
             <div>
-              <div className="text-[10px] text-[#C8FF00] font-bold uppercase tracking-wider">MEDYA ONAY PORTALI</div>
+              <div className="text-[10px] text-[#B33A06] font-bold uppercase tracking-wider">MEDYA ONAY PORTALI</div>
               <h2 className="text-base font-bold text-white font-heading mt-1 leading-snug">{title}</h2>
             </div>
 
@@ -81,7 +81,7 @@ export default function VideoPreviewModal() {
 
             <button
               onClick={handleApprove}
-              className="w-full py-3 rounded-xl bg-[#C8FF00] text-black font-extrabold flex items-center justify-center gap-2 hover:bg-[#D4FF28]"
+              className="w-full py-3 rounded-xl bg-[#B33A06] text-white font-extrabold flex items-center justify-center gap-2 hover:bg-[#C84408]"
             >
               <Check className="w-4 h-4" />
               <span>[ ✓ Videoyu Onayla ]</span>

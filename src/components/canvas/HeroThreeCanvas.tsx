@@ -41,7 +41,7 @@ export default function HeroThreeCanvas() {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
 
-    const limeLight = new THREE.PointLight(0xc8ff00, 3, 50);
+    const limeLight = new THREE.PointLight(0xb33a06, 3, 50);
     limeLight.position.set(4, 4, 4);
     scene.add(limeLight);
 

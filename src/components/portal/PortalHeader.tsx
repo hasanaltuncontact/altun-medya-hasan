@@ -45,7 +45,7 @@ export default function PortalHeader() {
           <div className="flex items-center gap-2 text-[11px] font-mono text-white/50">
             <span className="text-white/80">{client.companyName}</span>
             <span>/</span>
-            <span className="text-[#C8FF00] font-bold">{selectedProjectId ? 'Proje Detayı' : activeSection}</span>
+            <span className="text-[#B33A06] font-bold">{selectedProjectId ? 'Proje Detayı' : activeSection}</span>
           </div>
           <h1 className="text-lg font-extrabold text-white font-heading leading-none mt-0.5">
             {selectedProjectId ? 'Çalışma Alanı & Detay' : activeSection.substring(3)}
@@ -64,7 +64,7 @@ export default function PortalHeader() {
             onFocus={() => setIsSearchFocused(true)}
             onBlur={() => setTimeout(() => setIsSearchFocused(false), 200)}
             placeholder="Arama yapın (Dosyalar, Projeler, Faturalar, Belgeler...)"
-            className="w-full pl-10 pr-10 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#C8FF00] transition-colors font-mono"
+            className="w-full pl-10 pr-10 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#B33A06] transition-colors font-mono"
           />
           {searchQuery && (
             <button
@@ -86,7 +86,7 @@ export default function PortalHeader() {
             {/* PROJECTS */}
             {searchResults.projects.length > 0 && (
               <div className="space-y-1">
-                <div className="text-[10px] font-mono text-[#C8FF00] font-bold">Projeler</div>
+                <div className="text-[10px] font-mono text-[#B33A06] font-bold">Projeler</div>
                 {searchResults.projects.map((p) => (
                   <div
                     key={p.id}
@@ -97,7 +97,7 @@ export default function PortalHeader() {
                     className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-mono text-white cursor-pointer flex items-center justify-between"
                   >
                     <div className="flex items-center gap-2">
-                      <FolderKanban className="w-3.5 h-3.5 text-[#C8FF00]" />
+                      <FolderKanban className="w-3.5 h-3.5 text-[#B33A06]" />
                       <span>{p.title}</span>
                     </div>
                     <span className="text-[10px] text-white/50">{p.status}</span>
@@ -109,7 +109,7 @@ export default function PortalHeader() {
             {/* MEDIA */}
             {searchResults.media.length > 0 && (
               <div className="space-y-1">
-                <div className="text-[10px] font-mono text-[#C8FF00] font-bold">Medya &amp; Dosyalar</div>
+                <div className="text-[10px] font-mono text-[#B33A06] font-bold">Medya &amp; Dosyalar</div>
                 {searchResults.media.map((m) => (
                   <div
                     key={m.id}
@@ -117,7 +117,7 @@ export default function PortalHeader() {
                     className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-mono text-white cursor-pointer flex items-center justify-between"
                   >
                     <div className="flex items-center gap-2">
-                      <Film className="w-3.5 h-3.5 text-[#C8FF00]" />
+                      <Film className="w-3.5 h-3.5 text-[#B33A06]" />
                       <span>{m.title}</span>
                     </div>
                     <span className="text-[10px] text-white/50">{m.fileSize}</span>
@@ -129,7 +129,7 @@ export default function PortalHeader() {
             {/* INVOICES */}
             {searchResults.invoices.length > 0 && (
               <div className="space-y-1">
-                <div className="text-[10px] font-mono text-[#C8FF00] font-bold">Faturalar</div>
+                <div className="text-[10px] font-mono text-[#B33A06] font-bold">Faturalar</div>
                 {searchResults.invoices.map((i) => (
                   <div
                     key={i.id}
@@ -137,7 +137,7 @@ export default function PortalHeader() {
                     className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-mono text-white cursor-pointer flex items-center justify-between"
                   >
                     <div className="flex items-center gap-2">
-                      <FileText className="w-3.5 h-3.5 text-[#C8FF00]" />
+                      <FileText className="w-3.5 h-3.5 text-[#B33A06]" />
                       <span>{i.invoiceNo} — {i.description}</span>
                     </div>
                     <span className="text-[10px] text-white/50">₺{i.totalAmount.toLocaleString('tr-TR')}</span>
@@ -161,7 +161,7 @@ export default function PortalHeader() {
         {/* NEW PROJECT BUTTON */}
         <button
           onClick={() => setIsNewProjectModalOpen(true)}
-          className="px-4 py-2 text-xs font-extrabold uppercase tracking-wider bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28] hover:shadow-[0_0_20px_rgba(200,255,0,0.35)] transition-all flex items-center gap-1.5 active:scale-95"
+          className="px-4 py-2 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] hover:shadow-[0_0_20px_rgba(179, 58, 6,0.35)] transition-all flex items-center gap-1.5 active:scale-95"
         >
           <Plus className="w-4 h-4" />
           <span>+ Yeni Proje Başlat</span>
@@ -174,7 +174,7 @@ export default function PortalHeader() {
           title="Mesajlar"
         >
           <MessageSquare className="w-4 h-4 text-white/80" />
-          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#C8FF00]" />
+          <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#B33A06]" />
         </button>
 
         {/* NOTIFICATION BELL */}
@@ -186,7 +186,7 @@ export default function PortalHeader() {
           >
             <Bell className="w-4 h-4 text-white/80" />
             {unreadNotifs.length > 0 && (
-              <span className="absolute -top-1 -right-1 px-1.5 py-0.2 rounded-full bg-[#C8FF00] text-black text-[9px] font-mono font-bold">
+              <span className="absolute -top-1 -right-1 px-1.5 py-0.2 rounded-full bg-[#B33A06] text-white text-[9px] font-mono font-bold">
                 {unreadNotifs.length}
               </span>
             )}
@@ -215,10 +215,10 @@ export default function PortalHeader() {
                       setIsNotifOpen(false);
                     }}
                     className={`p-3 rounded-xl border text-xs font-mono transition-colors cursor-pointer ${
-                      n.read ? 'bg-white/5 border-white/5 opacity-60' : 'bg-white/10 border-[#C8FF00]/30'
+                      n.read ? 'bg-white/5 border-white/5 opacity-60' : 'bg-white/10 border-[#B33A06]/30'
                     }`}
                   >
-                    <div className="flex items-center justify-between text-[#C8FF00] font-bold text-[11px]">
+                    <div className="flex items-center justify-between text-[#B33A06] font-bold text-[11px]">
                       <span>{n.title}</span>
                       <span className="text-[9px] text-white/40">{n.time}</span>
                     </div>
@@ -237,7 +237,7 @@ export default function PortalHeader() {
             className="flex items-center gap-2 p-1.5 pl-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
           >
             <span className="text-xs font-mono font-bold text-white hidden sm:inline">{client.companyName}</span>
-            <img src={client.avatar} className="w-7 h-7 rounded-lg object-cover border border-[#C8FF00]" />
+            <img src={client.avatar} className="w-7 h-7 rounded-lg object-cover border border-[#B33A06]" />
             <ChevronDown className="w-3.5 h-3.5 text-white/60" />
           </button>
 
@@ -255,7 +255,7 @@ export default function PortalHeader() {
                 }}
                 className="w-full p-2.5 rounded-xl hover:bg-white/10 text-left text-xs font-mono text-white/80 hover:text-white transition-colors flex items-center gap-2.5"
               >
-                <User className="w-4 h-4 text-[#C8FF00]" />
+                <User className="w-4 h-4 text-[#B33A06]" />
                 <span>Müşteri Profili</span>
               </button>
 
@@ -266,7 +266,7 @@ export default function PortalHeader() {
                 }}
                 className="w-full p-2.5 rounded-xl hover:bg-white/10 text-left text-xs font-mono text-white/80 hover:text-white transition-colors flex items-center gap-2.5"
               >
-                <Building2 className="w-4 h-4 text-[#C8FF00]" />
+                <Building2 className="w-4 h-4 text-[#B33A06]" />
                 <span>Firma Bilgileri</span>
               </button>
 
@@ -277,7 +277,7 @@ export default function PortalHeader() {
                 }}
                 className="w-full p-2.5 rounded-xl hover:bg-white/10 text-left text-xs font-mono text-white/80 hover:text-white transition-colors flex items-center gap-2.5"
               >
-                <Settings className="w-4 h-4 text-[#C8FF00]" />
+                <Settings className="w-4 h-4 text-[#B33A06]" />
                 <span>Bildirim Ayarları</span>
               </button>
 

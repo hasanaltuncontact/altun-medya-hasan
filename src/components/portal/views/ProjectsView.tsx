@@ -29,7 +29,7 @@ export default function ProjectsView() {
           onClick={() => setSelectedProjectId(null)}
           className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-mono font-bold text-white transition-colors flex items-center gap-2"
         >
-          <ArrowLeft className="w-4 h-4 text-[#C8FF00]" />
+          <ArrowLeft className="w-4 h-4 text-[#B33A06]" />
           <span>← Tüm Projelere Dön</span>
         </button>
 
@@ -37,7 +37,7 @@ export default function ProjectsView() {
         <div className="p-8 rounded-3xl bg-[#0D0D0D] border border-white/10 space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C8FF00]/10 border border-[#C8FF00]/30 text-xs font-mono text-[#C8FF00] font-bold mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#B33A06]/10 border border-[#B33A06]/30 text-xs font-mono text-[#B33A06] font-bold mb-2">
                 <span>{selectedProject.category}</span>
               </div>
               <h1 className="text-3xl font-extrabold text-white font-heading">{selectedProject.title}</h1>
@@ -46,7 +46,7 @@ export default function ProjectsView() {
 
             <div className="px-4 py-2 rounded-2xl bg-white/5 border border-white/10 text-xs font-mono text-right shrink-0">
               <div className="text-white/40">Durum:</div>
-              <div className="text-[#C8FF00] font-bold text-sm">● {selectedProject.status}</div>
+              <div className="text-[#B33A06] font-bold text-sm">● {selectedProject.status}</div>
               <div className="text-[10px] text-white/50 mt-1">Son Tarih: {selectedProject.dueDate}</div>
             </div>
           </div>
@@ -68,12 +68,12 @@ export default function ProjectsView() {
                   key={tab.id}
                   onClick={() => setDetailTab(tab.id as any)}
                   className={`pb-3 flex items-center gap-2 transition-colors relative ${
-                    isActive ? 'text-[#C8FF00] font-bold' : 'text-white/60 hover:text-white'
+                    isActive ? 'text-[#B33A06] font-bold' : 'text-white/60 hover:text-white'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
                   <span>{tab.label}</span>
-                  {isActive && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C8FF00]" />}
+                  {isActive && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B33A06]" />}
                 </button>
               );
             })}
@@ -92,7 +92,7 @@ export default function ProjectsView() {
                     {step.status === 'completed' ? (
                       <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                     ) : step.status === 'active' ? (
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#C8FF00] animate-ping" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-[#B33A06] animate-ping" />
                     ) : (
                       <span className="w-2 h-2 rounded-full bg-white/20" />
                     )}
@@ -108,7 +108,7 @@ export default function ProjectsView() {
                       step.status === 'completed'
                         ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
                         : step.status === 'active'
-                        ? 'bg-[#C8FF00]/20 text-[#C8FF00] border border-[#C8FF00]/40'
+                        ? 'bg-[#B33A06]/20 text-[#B33A06] border border-[#B33A06]/40'
                         : 'bg-white/5 text-white/40'
                     }`}
                   >
@@ -129,7 +129,7 @@ export default function ProjectsView() {
               
               <div className="pt-4 border-t border-white/10 space-y-2 text-xs font-mono text-white/60">
                 <div>Aşama: <span className="text-white font-bold">{selectedProject.status}</span></div>
-                <div>Sonraki Adım: <span className="text-[#C8FF00] font-bold">{selectedProject.nextStep}</span></div>
+                <div>Sonraki Adım: <span className="text-[#B33A06] font-bold">{selectedProject.nextStep}</span></div>
                 <div>Hedef Teslim: <span className="text-white font-bold">{selectedProject.dueDate}</span></div>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function ProjectsView() {
                     <img src={m.avatar} className="w-10 h-10 rounded-xl object-cover" />
                     <div>
                       <div className="text-xs font-bold text-white font-heading">{m.name}</div>
-                      <div className="text-[10px] font-mono text-[#C8FF00]">{m.role}</div>
+                      <div className="text-[10px] font-mono text-[#B33A06]">{m.role}</div>
                     </div>
                   </div>
                 ))}
@@ -162,7 +162,7 @@ export default function ProjectsView() {
                   <div className="flex-1">
                     <div className="text-xs font-bold text-white font-heading">{f.title}</div>
                     <div className="text-[10px] font-mono text-white/50">{f.category} • {f.fileSize}</div>
-                    <a href={f.downloadUrl} download className="text-[10px] font-mono font-bold text-[#C8FF00] underline mt-1 block">İndir ({f.currentVersion})</a>
+                    <a href={f.downloadUrl} download className="text-[10px] font-mono font-bold text-[#B33A06] underline mt-1 block">İndir ({f.currentVersion})</a>
                   </div>
                 </div>
               ))}
@@ -185,7 +185,7 @@ export default function ProjectsView() {
 
         <button
           onClick={() => setIsNewProjectModalOpen(true)}
-          className="px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28] transition-colors flex items-center gap-2"
+          className="px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-colors flex items-center gap-2"
         >
           <Plus className="w-4 h-4" />
           <span>+ Yeni Proje Talebi</span>
@@ -196,14 +196,14 @@ export default function ProjectsView() {
         {projects.map((proj) => (
           <div
             key={proj.id}
-            className="rounded-3xl bg-[#0D0D0D] border border-white/10 overflow-hidden hover:border-[#C8FF00]/40 transition-all flex flex-col justify-between group"
+            className="rounded-3xl bg-[#0D0D0D] border border-white/10 overflow-hidden hover:border-[#B33A06]/40 transition-all flex flex-col justify-between group"
           >
             <div className="relative h-44 bg-black">
               <img src={proj.coverImage} className="w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-mono text-[#C8FF00] font-bold border border-white/10">
+              <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-mono text-[#B33A06] font-bold border border-white/10">
                 {proj.category}
               </div>
-              <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-[#C8FF00] text-black text-[10px] font-mono font-bold">
+              <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-[#B33A06] text-white text-[10px] font-mono font-bold">
                 ● {proj.status}
               </div>
             </div>
@@ -218,10 +218,10 @@ export default function ProjectsView() {
               <div className="space-y-1.5">
                 <div className="flex justify-between text-xs font-mono text-white/60">
                   <span>İlerleme Oranı</span>
-                  <span className="text-[#C8FF00] font-bold">%{proj.progress}</span>
+                  <span className="text-[#B33A06] font-bold">%{proj.progress}</span>
                 </div>
                 <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden">
-                  <div className="h-full bg-[#C8FF00] rounded-full transition-all duration-500" style={{ width: `${proj.progress}%` }} />
+                  <div className="h-full bg-[#B33A06] rounded-full transition-all duration-500" style={{ width: `${proj.progress}%` }} />
                 </div>
               </div>
 
@@ -229,7 +229,7 @@ export default function ProjectsView() {
                 <span>Son Tarih: {proj.dueDate}</span>
                 <button
                   onClick={() => setSelectedProjectId(proj.id)}
-                  className="text-[#C8FF00] hover:underline font-bold flex items-center gap-1"
+                  className="text-[#B33A06] hover:underline font-bold flex items-center gap-1"
                 >
                   <span>[ Projeyi Aç ]</span>
                   <ArrowRight className="w-3.5 h-3.5" />

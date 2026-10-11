@@ -14,10 +14,10 @@ export default function ToastContainer() {
       {toasts.map((t) => (
         <div
           key={t.id}
-          className="pointer-events-auto p-4 rounded-2xl bg-[#0F0F0F]/95 backdrop-blur-2xl border border-[#C8FF00]/40 text-white font-mono text-xs shadow-2xl flex items-center justify-between gap-4 max-w-md animate-fadeIn"
+          className="pointer-events-auto p-4 rounded-2xl bg-[#0F0F0F]/95 backdrop-blur-2xl border border-[#B33A06]/40 text-white font-mono text-xs shadow-2xl flex items-center justify-between gap-4 max-w-md animate-fadeIn"
         >
           <div className="flex items-center gap-2.5">
-            <CheckCircle2 className="w-4 h-4 text-[#C8FF00] shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-[#B33A06] shrink-0" />
             <span className="leading-snug">{t.message}</span>
           </div>
 

@@ -45,7 +45,7 @@ export default function NewProjectModal() {
         </button>
 
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-[#C8FF00]/10 border border-[#C8FF00]/30 text-[10px] text-[#C8FF00] font-bold">
+          <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-[#B33A06]/10 border border-[#B33A06]/30 text-[10px] text-[#B33A06] font-bold">
             <Sparkles className="w-3 h-3" />
             <span>YENİ PROJE TALEBİ</span>
           </div>
@@ -66,7 +66,7 @@ export default function NewProjectModal() {
                   onClick={() => setServiceCategory(cat)}
                   className={`p-2.5 rounded-xl border text-left font-mono text-[11px] transition-all ${
                     serviceCategory === cat
-                      ? 'bg-[#C8FF00] text-black font-extrabold border-[#C8FF00]'
+                      ? 'bg-[#B33A06] text-white font-extrabold border-[#B33A06]'
                       : 'bg-white/5 text-white/70 border-white/10 hover:border-white/30'
                   }`}
                 >
@@ -84,7 +84,7 @@ export default function NewProjectModal() {
               value={projectTitle}
               onChange={(e) => setProjectTitle(e.target.value)}
               placeholder="Örn: 2027 Kış Sezonu Dikey Reels Lansmanı"
-              className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#C8FF00] focus:outline-none"
+              className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#B33A06] focus:outline-none"
             />
           </div>
 
@@ -95,7 +95,7 @@ export default function NewProjectModal() {
               value={projectDesc}
               onChange={(e) => setProjectDesc(e.target.value)}
               placeholder="İstediğiniz detayları, kurgu tarzını veya beklentilerinizi yazın..."
-              className="w-full p-4 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#C8FF00] focus:outline-none font-sans"
+              className="w-full p-4 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#B33A06] focus:outline-none font-sans"
             />
           </div>
 
@@ -105,13 +105,13 @@ export default function NewProjectModal() {
               type="date"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
-              className="w-full px-4 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white focus:border-[#C8FF00] focus:outline-none"
+              className="w-full px-4 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white focus:border-[#B33A06] focus:outline-none"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-4 text-xs font-extrabold uppercase tracking-wider bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28] transition-all flex items-center justify-center gap-2 shadow-xl active:scale-95"
+            className="w-full py-4 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-all flex items-center justify-center gap-2 shadow-xl active:scale-95"
           >
             <span>PROJE TALEBİ OLUŞTUR</span>
             <ArrowRight className="w-4 h-4" />

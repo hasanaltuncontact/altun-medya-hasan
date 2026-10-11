@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useSEOEngine } from '@/data/seo-engine-context';
 import { 
-  SEOPageModel, SearchIntentType, SEOPageType, SchemaType 
+  SEOPageModel, SearchIntent, PageType 
 } from '@/data/seo-engine-store';
+
+export type SchemaType = 'Service' | 'LocalBusiness' | 'Article' | 'FAQPage' | 'Organization';
 
 export default function SEOEnginePage() {
   const {
@@ -180,17 +182,17 @@ export default function SEOEnginePage() {
       {/* Header Bar */}
       <header className="border-b border-[#222222] bg-[#0A0A0A] sticky top-0 z-40 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <Link href="/admin" className="text-xs text-[#888888] hover:text-[#C8FF00] transition-colors">
+          <Link href="/admin" className="text-xs text-[#888888] hover:text-[#B33A06] transition-colors">
             ← Admin Paneli
           </Link>
           <span className="text-[#333333]">/</span>
           <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-[#C8FF00] animate-pulse"></span>
+            <span className="w-3 h-3 rounded-full bg-[#B33A06] animate-pulse"></span>
             <h1 className="text-xl font-bold tracking-tight text-white font-heading">
-              ALTUN <span className="text-[#C8FF00]">SEO ENGINE</span>
+              ALTUN <span className="text-[#B33A06]">SEO ENGINE</span>
             </h1>
           </div>
-          <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#C8FF00]/10 text-[#C8FF00] border border-[#C8FF00]/20 font-mono">
+          <span className="text-xs px-2.5 py-0.5 rounded-full bg-[#B33A06]/10 text-[#B33A06] border border-[#B33A06]/20 font-mono">
             v3.5 Enterprise Engine
           </span>
         </div>
@@ -198,7 +200,7 @@ export default function SEOEnginePage() {
         <div className="flex items-center gap-3">
           <button
             onClick={handleNewPageClick}
-            className="px-4 py-2 bg-[#C8FF00] text-black font-semibold rounded-lg text-sm hover:bg-[#b5e600] transition-colors flex items-center gap-2 shadow-lg shadow-[#C8FF00]/10"
+            className="px-4 py-2 bg-[#B33A06] text-white font-semibold rounded-lg text-sm hover:bg-[#b5e600] transition-colors flex items-center gap-2 shadow-lg shadow-[#B33A06]/10"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -235,7 +237,7 @@ export default function SEOEnginePage() {
               onClick={() => setActiveTab(tab.id as any)}
               className={`px-4 py-3.5 text-xs font-medium border-b-2 transition-colors flex items-center gap-2 ${
                 activeTab === tab.id
-                  ? 'border-[#C8FF00] text-[#C8FF00] bg-[#C8FF00]/5'
+                  ? 'border-[#B33A06] text-[#B33A06] bg-[#B33A06]/5'
                   : 'border-transparent text-[#888888] hover:text-white hover:border-[#444444]'
               }`}
             >
@@ -262,7 +264,7 @@ export default function SEOEnginePage() {
               </div>
               <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-4 rounded-xl space-y-1">
                 <span className="text-xs text-[#888888] font-medium uppercase tracking-wider">YAYINDA</span>
-                <div className="text-2xl font-bold text-[#C8FF00] font-mono">{publishedCount}</div>
+                <div className="text-2xl font-bold text-[#B33A06] font-mono">{publishedCount}</div>
                 <div className="text-[10px] text-[#48bb78]">Google Tarafından Taranabilir</div>
               </div>
               <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-4 rounded-xl space-y-1">
@@ -318,10 +320,10 @@ export default function SEOEnginePage() {
                   </div>
                   <div className="p-3 bg-[#141414] border border-[#222222] rounded-lg flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <span className="text-[#C8FF00]">🔗</span>
+                      <span className="text-[#B33A06]">🔗</span>
                       <span>Bekleyen Internal Link Önerisi</span>
                     </div>
-                    <span className="font-mono text-[#C8FF00] font-bold">
+                    <span className="font-mono text-[#B33A06] font-bold">
                       {internalLinks.filter((l) => l.status === 'suggested').length} Adet
                     </span>
                   </div>
@@ -346,7 +348,7 @@ export default function SEOEnginePage() {
                   </div>
                   <div className="p-2.5 bg-[#141414] rounded-lg border border-[#222222]">
                     <div className="text-[10px] text-[#888888]">TIKLAMA</div>
-                    <div className="text-lg font-bold text-[#C8FF00] font-mono">3.82K</div>
+                    <div className="text-lg font-bold text-[#B33A06] font-mono">3.82K</div>
                     <div className="text-[9px] text-[#48bb78]">+18.6%</div>
                   </div>
                   <div className="p-2.5 bg-[#141414] rounded-lg border border-[#222222]">
@@ -375,7 +377,7 @@ export default function SEOEnginePage() {
             {/* Content Roadmap & Opportunities */}
             <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-4">
               <h3 className="text-sm font-semibold text-white flex items-center gap-2">
-                <span className="text-[#C8FF00]">🎯</span>
+                <span className="text-[#B33A06]">🎯</span>
                 SEO İçerik Fırsatları & Yol Haritası (Content Gap Analysis)
               </h3>
 
@@ -383,7 +385,7 @@ export default function SEOEnginePage() {
                 <div className="p-4 bg-[#121212] border border-[#222222] rounded-lg space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-white">Didim Restoran Sosyal Medya</span>
-                    <span className="px-2 py-0.5 bg-[#C8FF00]/10 text-[#C8FF00] rounded text-[10px]">YÜKSEK POTANSİYEL</span>
+                    <span className="px-2 py-0.5 bg-[#B33A06]/10 text-[#B33A06] rounded text-[10px]">YÜKSEK POTANSİYEL</span>
                   </div>
                   <p className="text-[#999999]">Arama Hacmi: ~1,400/ay | Mevcut Sıra: #4</p>
                   <button 
@@ -400,7 +402,7 @@ export default function SEOEnginePage() {
                       });
                       setActiveTab('builder');
                     }}
-                    className="w-full py-1.5 bg-[#1F1F1F] hover:bg-[#C8FF00] hover:text-black transition-colors rounded text-center font-medium"
+                    className="w-full py-1.5 bg-[#1F1F1F] hover:bg-[#B33A06] hover:text-white transition-colors rounded text-center font-medium"
                   >
                     + Bu Sayfayı Oluştur
                   </button>
@@ -426,7 +428,7 @@ export default function SEOEnginePage() {
                       });
                       setActiveTab('builder');
                     }}
-                    className="w-full py-1.5 bg-[#1F1F1F] hover:bg-[#C8FF00] hover:text-black transition-colors rounded text-center font-medium"
+                    className="w-full py-1.5 bg-[#1F1F1F] hover:bg-[#B33A06] hover:text-white transition-colors rounded text-center font-medium"
                   >
                     + Bu Sayfayı Oluştur
                   </button>
@@ -443,7 +445,7 @@ export default function SEOEnginePage() {
                       const page = seoPages.find((p) => p.slug.includes('soke'));
                       if (page) handleEditClick(page);
                     }}
-                    className="w-full py-1.5 bg-[#1F1F1F] hover:bg-[#C8FF00] hover:text-black transition-colors rounded text-center font-medium"
+                    className="w-full py-1.5 bg-[#1F1F1F] hover:bg-[#B33A06] hover:text-white transition-colors rounded text-center font-medium"
                   >
                     ⚡ Sayfayı Optimize Et
                   </button>
@@ -466,12 +468,12 @@ export default function SEOEnginePage() {
                   placeholder="Başlık, slug veya keyword ile ara..."
                   value={filterSearch}
                   onChange={(e) => setFilterSearch(e.target.value)}
-                  className="bg-[#141414] border border-[#2A2A2A] text-white px-3.5 py-2 rounded-lg text-xs w-full focus:outline-none focus:border-[#C8FF00]"
+                  className="bg-[#141414] border border-[#2A2A2A] text-white px-3.5 py-2 rounded-lg text-xs w-full focus:outline-none focus:border-[#B33A06]"
                 />
                 <select
                   value={filterIntent}
                   onChange={(e) => setFilterIntent(e.target.value)}
-                  className="bg-[#141414] border border-[#2A2A2A] text-white px-3 py-2 rounded-lg text-xs focus:outline-none focus:border-[#C8FF00]"
+                  className="bg-[#141414] border border-[#2A2A2A] text-white px-3 py-2 rounded-lg text-xs focus:outline-none focus:border-[#B33A06]"
                 >
                   <option value="all">Tüm Intentler</option>
                   <option value="commercial">Commercial</option>
@@ -486,7 +488,7 @@ export default function SEOEnginePage() {
                   <span className="text-[#888888] font-mono px-2">{selectedPageIds.length} Seçildi</span>
                   <button
                     onClick={() => bulkUpdateStatus(selectedPageIds, true)}
-                    className="px-2.5 py-1 bg-[#C8FF00]/10 text-[#C8FF00] hover:bg-[#C8FF00] hover:text-black rounded transition-colors"
+                    className="px-2.5 py-1 bg-[#B33A06]/10 text-[#B33A06] hover:bg-[#B33A06] hover:text-white rounded transition-colors"
                   >
                     Yayına Al
                   </button>
@@ -545,7 +547,7 @@ export default function SEOEnginePage() {
                           />
                         </td>
                         <td className="p-3 space-y-0.5">
-                          <div className="font-semibold text-white hover:text-[#C8FF00] cursor-pointer" onClick={() => handleEditClick(page)}>
+                          <div className="font-semibold text-white hover:text-[#B33A06] cursor-pointer" onClick={() => handleEditClick(page)}>
                             {page.title}
                           </div>
                           <div className="text-[10px] text-[#777777] font-mono flex items-center gap-1">
@@ -566,7 +568,7 @@ export default function SEOEnginePage() {
                             <div className="w-12 bg-[#1A1A1A] h-2 rounded-full overflow-hidden">
                               <div
                                 className={`h-full ${
-                                  page.seoScore >= 85 ? 'bg-[#C8FF00]' : page.seoScore >= 70 ? 'bg-[#ecc94b]' : 'bg-[#f56565]'
+                                  page.seoScore >= 85 ? 'bg-[#B33A06]' : page.seoScore >= 70 ? 'bg-[#ecc94b]' : 'bg-[#f56565]'
                                 }`}
                                 style={{ width: `${page.seoScore}%` }}
                               ></div>
@@ -589,7 +591,7 @@ export default function SEOEnginePage() {
                           <div className="flex flex-col gap-1 text-[10px]">
                             <span
                               className={`px-2 py-0.5 rounded w-max ${
-                                page.isPublished ? 'bg-[#C8FF00]/10 text-[#C8FF00]' : 'bg-[#ecc94b]/10 text-[#ecc94b]'
+                                page.isPublished ? 'bg-[#B33A06]/10 text-[#B33A06]' : 'bg-[#ecc94b]/10 text-[#ecc94b]'
                               }`}
                             >
                               {page.isPublished ? 'Yayında' : 'Taslak'}
@@ -600,7 +602,7 @@ export default function SEOEnginePage() {
                         <td className="p-3 text-right space-x-1.5">
                           <button
                             onClick={() => handleOpenInVisualEditor(page)}
-                            className="px-2.5 py-1 bg-[#1A1A1A] text-[#C8FF00] border border-[#C8FF00]/30 hover:bg-[#C8FF00] hover:text-black rounded text-[10px] font-semibold transition-colors"
+                            className="px-2.5 py-1 bg-[#1A1A1A] text-[#B33A06] border border-[#B33A06]/30 hover:bg-[#B33A06] hover:text-white rounded text-[10px] font-semibold transition-colors"
                             title="Görsel Editörde Aç (Elementor Modu)"
                           >
                             [ Görsel Editörde Aç ]
@@ -645,7 +647,7 @@ export default function SEOEnginePage() {
             <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-4 rounded-xl flex flex-wrap items-center justify-between gap-4">
               <div>
                 <h2 className="text-base font-bold text-white flex items-center gap-2">
-                  <span className="text-[#C8FF00]">⚡</span>
+                  <span className="text-[#B33A06]">⚡</span>
                   {editingPageId ? `Düzenle: ${builderForm.title}` : 'Yeni SEO Landing Page Oluştur'}
                 </h2>
                 <p className="text-xs text-[#888888]">
@@ -662,7 +664,7 @@ export default function SEOEnginePage() {
                 </button>
                 <button
                   onClick={() => handleSavePage(true)}
-                  className="px-4 py-2 bg-[#C8FF00] text-black font-semibold rounded-lg text-xs hover:bg-[#b5e600] shadow-lg shadow-[#C8FF00]/10"
+                  className="px-4 py-2 bg-[#B33A06] text-white font-semibold rounded-lg text-xs hover:bg-[#b5e600] shadow-lg shadow-[#B33A06]/10"
                 >
                   [ Yayınla ]
                 </button>
@@ -675,7 +677,7 @@ export default function SEOEnginePage() {
                 
                 {/* 1. SAYFA TÜRÜ & SEARCH INTENT */}
                 <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-4">
-                  <h3 className="text-xs font-mono uppercase tracking-wider text-[#C8FF00]">
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-[#B33A06]">
                     1. Sayfa Türü & Arama Niyeti (Search Intent)
                   </h3>
 
@@ -693,10 +695,10 @@ export default function SEOEnginePage() {
                       <button
                         key={item.id}
                         type="button"
-                        onClick={() => setBuilderForm({ ...builderForm, pageType: item.id as SEOPageType })}
+                        onClick={() => setBuilderForm({ ...builderForm, pageType: item.id as PageType })}
                         className={`p-2.5 rounded-lg border text-left font-medium transition-all ${
                           builderForm.pageType === item.id
-                            ? 'border-[#C8FF00] bg-[#C8FF00]/10 text-white'
+                            ? 'border-[#B33A06] bg-[#B33A06]/10 text-white'
                             : 'border-[#222222] bg-[#121212] text-[#888888] hover:border-[#444444]'
                         }`}
                       >
@@ -708,7 +710,7 @@ export default function SEOEnginePage() {
                   <div className="space-y-2 pt-2">
                     <label className="text-xs text-[#888888]">Search Intent (Arama Amacı):</label>
                     <div className="grid grid-cols-4 gap-2 text-xs">
-                      {(['commercial', 'transactional', 'informational', 'navigational'] as SearchIntentType[]).map(
+                      {(['commercial', 'transactional', 'informational', 'navigational'] as SearchIntent[]).map(
                         (intent) => (
                           <button
                             key={intent}
@@ -730,7 +732,7 @@ export default function SEOEnginePage() {
 
                 {/* 2. TEMEL SEO ALANLARI */}
                 <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-4">
-                  <h3 className="text-xs font-mono uppercase tracking-wider text-[#C8FF00]">
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-[#B33A06]">
                     2. Temel SEO Alanları & Metadata
                   </h3>
 
@@ -742,7 +744,7 @@ export default function SEOEnginePage() {
                         value={builderForm.title || ''}
                         onChange={(e) => setBuilderForm({ ...builderForm, title: e.target.value })}
                         placeholder="Örn: Didim Sosyal Medya Ajansı"
-                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white focus:outline-none focus:border-[#C8FF00]"
+                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white focus:outline-none focus:border-[#B33A06]"
                       />
                     </div>
                     <div className="space-y-1">
@@ -752,7 +754,7 @@ export default function SEOEnginePage() {
                         value={builderForm.slug || ''}
                         onChange={(e) => setBuilderForm({ ...builderForm, slug: e.target.value })}
                         placeholder="didim-sosyal-medya-ajansi"
-                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-mono focus:outline-none focus:border-[#C8FF00]"
+                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-mono focus:outline-none focus:border-[#B33A06]"
                       />
                     </div>
                   </div>
@@ -765,7 +767,7 @@ export default function SEOEnginePage() {
                         value={builderForm.primaryKeyword || ''}
                         onChange={(e) => setBuilderForm({ ...builderForm, primaryKeyword: e.target.value })}
                         placeholder="didim sosyal medya ajansı"
-                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-medium focus:outline-none focus:border-[#C8FF00]"
+                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-medium focus:outline-none focus:border-[#B33A06]"
                       />
                     </div>
                     <div className="space-y-1">
@@ -781,7 +783,7 @@ export default function SEOEnginePage() {
                           });
                         }}
                         placeholder="didim instagram yönetimi, didim dijital ajans"
-                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white focus:outline-none focus:border-[#C8FF00]"
+                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white focus:outline-none focus:border-[#B33A06]"
                       />
                     </div>
                   </div>
@@ -793,7 +795,7 @@ export default function SEOEnginePage() {
                       value={builderForm.h1 || ''}
                       onChange={(e) => setBuilderForm({ ...builderForm, h1: e.target.value })}
                       placeholder="Didim Sosyal Medya Ajansı & Profesyonel Prodüksiyon"
-                      className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-bold text-sm focus:outline-none focus:border-[#C8FF00]"
+                      className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-bold text-sm focus:outline-none focus:border-[#B33A06]"
                     />
                   </div>
 
@@ -810,7 +812,7 @@ export default function SEOEnginePage() {
                         value={builderForm.seoTitle || ''}
                         onChange={(e) => setBuilderForm({ ...builderForm, seoTitle: e.target.value })}
                         placeholder="Didim Sosyal Medya Ajansı | Altun Medya"
-                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white focus:outline-none focus:border-[#C8FF00]"
+                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white focus:outline-none focus:border-[#B33A06]"
                       />
                     </div>
 
@@ -821,7 +823,7 @@ export default function SEOEnginePage() {
                         value={builderForm.canonicalUrl || ''}
                         onChange={(e) => setBuilderForm({ ...builderForm, canonicalUrl: e.target.value })}
                         placeholder="https://altunmedya.com/hizmetler/didim-sosyal-medya-ajansi"
-                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-mono focus:outline-none focus:border-[#C8FF00]"
+                        className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-mono focus:outline-none focus:border-[#B33A06]"
                       />
                     </div>
                   </div>
@@ -838,7 +840,7 @@ export default function SEOEnginePage() {
                       value={builderForm.seoDescription || ''}
                       onChange={(e) => setBuilderForm({ ...builderForm, seoDescription: e.target.value })}
                       placeholder="Didim ve Ege bölgesinde markanızı öne çıkaracak sosyal medya yönetimi, 4K Reels çekimleri ve Instagram reklam stratejileri..."
-                      className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white focus:outline-none focus:border-[#C8FF00]"
+                      className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white focus:outline-none focus:border-[#B33A06]"
                     />
                   </div>
                 </div>
@@ -846,7 +848,7 @@ export default function SEOEnginePage() {
                 {/* 3. İÇERİK EDITÖRÜ (RICH CONTENT ENGINE) */}
                 <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xs font-mono uppercase tracking-wider text-[#C8FF00]">
+                    <h3 className="text-xs font-mono uppercase tracking-wider text-[#B33A06]">
                       3. Benzersiz İçerik & FAQ Yapılandırıcı
                     </h3>
 
@@ -857,7 +859,7 @@ export default function SEOEnginePage() {
                           const page = seoPages.find((p) => p.id === editingPageId);
                           if (page) handleOpenInVisualEditor(page);
                         }}
-                        className="text-xs text-[#C8FF00] hover:underline flex items-center gap-1"
+                        className="text-xs text-[#B33A06] hover:underline flex items-center gap-1"
                       >
                         ⚡ Visual Builder Modunda Aç ↗
                       </button>
@@ -876,7 +878,7 @@ export default function SEOEnginePage() {
                         })
                       }
                       placeholder="Didim'de restoran ve oteller için 4K video prodüksiyonu, düzenli gönderi akışı..."
-                      className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white focus:outline-none focus:border-[#C8FF00]"
+                      className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white focus:outline-none focus:border-[#B33A06]"
                     />
                   </div>
 
@@ -892,7 +894,7 @@ export default function SEOEnginePage() {
                         })
                       }
                       placeholder="<h2>Neden Altun Medya?</h2><p>İçerik buraya yazılır...</p>"
-                      className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-mono focus:outline-none focus:border-[#C8FF00]"
+                      className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-mono focus:outline-none focus:border-[#B33A06]"
                     />
                   </div>
 
@@ -912,7 +914,7 @@ export default function SEOEnginePage() {
                             }
                           });
                         }}
-                        className="text-[10px] px-2 py-1 bg-[#1F1F1F] text-[#C8FF00] rounded hover:bg-[#333333]"
+                        className="text-[10px] px-2 py-1 bg-[#1F1F1F] text-[#B33A06] rounded hover:bg-[#333333]"
                       >
                         + Soru Ekle
                       </button>
@@ -977,7 +979,7 @@ export default function SEOEnginePage() {
                 {/* LIVE GOOGLE PREVIEW */}
                 <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-3">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xs font-mono uppercase tracking-wider text-[#C8FF00]">
+                    <h3 className="text-xs font-mono uppercase tracking-wider text-[#B33A06]">
                       Google Arama Önizlemesi
                     </h3>
                     <div className="flex items-center bg-[#141414] p-0.5 rounded border border-[#222222] text-[10px]">
@@ -999,7 +1001,7 @@ export default function SEOEnginePage() {
                   {/* Google Snippet Card */}
                   <div className="bg-[#181818] p-4 rounded-xl border border-[#262626] font-sans space-y-1">
                     <div className="flex items-center gap-2 text-xs text-[#DADCE0]">
-                      <span className="w-4 h-4 rounded-full bg-[#C8FF00] text-black flex items-center justify-center font-bold text-[9px]">
+                      <span className="w-4 h-4 rounded-full bg-[#B33A06] text-white flex items-center justify-center font-bold text-[9px]">
                         A
                       </span>
                       <div className="truncate text-[11px] text-[#bdc1c6]">
@@ -1017,14 +1019,14 @@ export default function SEOEnginePage() {
 
                 {/* REALTIME SEO HEALTH & DUPLICATE CHECKER */}
                 <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-4">
-                  <h3 className="text-xs font-mono uppercase tracking-wider text-[#C8FF00]">
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-[#B33A06]">
                     SEO Skoru & Kopya Risk Analizi
                   </h3>
 
                   <div className="flex items-center justify-between p-3 bg-[#141414] rounded-lg border border-[#222222]">
                     <div>
                       <div className="text-[10px] text-[#888888]">CANLI SEO SKORU</div>
-                      <div className="text-2xl font-bold font-mono text-[#C8FF00]">{currentFormScore}/100</div>
+                      <div className="text-2xl font-bold font-mono text-[#B33A06]">{currentFormScore}/100</div>
                     </div>
                     <div>
                       <div className="text-[10px] text-[#888888]">DUPLICATE RISK</div>
@@ -1060,13 +1062,13 @@ export default function SEOEnginePage() {
 
                 {/* SCHEMA SELECTION */}
                 <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-3">
-                  <h3 className="text-xs font-mono uppercase tracking-wider text-[#C8FF00]">
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-[#B33A06]">
                     Otomatik Schema Tipi
                   </h3>
                   <select
                     value={builderForm.schemaType || 'Service'}
                     onChange={(e) => setBuilderForm({ ...builderForm, schemaType: e.target.value as SchemaType })}
-                    className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-[#C8FF00]"
+                    className="w-full bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-[#B33A06]"
                   >
                     <option value="Service">Service Schema (Hizmet)</option>
                     <option value="LocalBusiness">LocalBusiness Schema (Yerel İşletme)</option>
@@ -1093,14 +1095,14 @@ export default function SEOEnginePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {locations.map((loc) => (
-                <div key={loc.id} className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-3 hover:border-[#C8FF00]/50 transition-colors">
+                <div key={loc.id} className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-3 hover:border-[#B33A06]/50 transition-colors">
                   <div className="flex items-center justify-between">
                     <h3 className="font-bold text-white text-sm">{loc.name}</h3>
-                    <span className="px-2 py-0.5 bg-[#1F1F1F] text-[#C8FF00] rounded text-[10px] font-mono">
+                    <span className="px-2 py-0.5 bg-[#1F1F1F] text-[#B33A06] rounded text-[10px] font-mono">
                       {loc.city}
                     </span>
                   </div>
-                  <p className="text-xs text-[#999999] leading-relaxed">{loc.regionalDescription}</p>
+                  <p className="text-xs text-[#999999] leading-relaxed">{loc.regionalDescription || loc.shortDesc}</p>
                   <div className="pt-2 border-t border-[#1C1C1C] flex items-center justify-between text-[10px] text-[#777777] font-mono">
                     <span>Slug: /{loc.slug}</span>
                     <span>Lat: {loc.latitude}</span>
@@ -1130,7 +1132,7 @@ export default function SEOEnginePage() {
                   </h3>
                   <div className="p-2.5 bg-[#141414] rounded-lg text-xs space-y-1">
                     <span className="text-[#888888] font-semibold">Sektörel Problem:</span>
-                    <p className="text-[#CCCCCC]">{sec.painPoints[0] || 'Genel dijital görünürlük ihtiyacı.'}</p>
+                    <p className="text-[#CCCCCC]">{sec.painPoints?.[0] || sec.commonProblems?.[0] || 'Genel dijital görünürlük ihtiyacı.'}</p>
                   </div>
                 </div>
               ))}
@@ -1153,7 +1155,7 @@ export default function SEOEnginePage() {
                 <div key={srv.id} className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-3">
                   <h3 className="font-bold text-white text-sm">{srv.name}</h3>
                   <p className="text-xs text-[#999999]">{srv.description}</p>
-                  <div className="text-[10px] text-[#C8FF00] font-mono">/{srv.slug}</div>
+                  <div className="text-[10px] text-[#B33A06] font-mono">/{srv.slug}</div>
                 </div>
               ))}
             </div>
@@ -1188,12 +1190,12 @@ export default function SEOEnginePage() {
                     <tr key={link.id} className="hover:bg-[#121212]">
                       <td className="p-3 font-semibold text-white">"{link.anchorText}"</td>
                       <td className="p-3 font-mono text-[#38bdf8]">/{link.targetSlug}</td>
-                      <td className="p-3 font-mono font-bold text-[#C8FF00]">%{link.relevanceScore}</td>
+                      <td className="p-3 font-mono font-bold text-[#B33A06]">%{link.relevanceScore}</td>
                       <td className="p-3">
                         <span
                           className={`px-2 py-0.5 rounded text-[10px] uppercase font-mono ${
                             link.status === 'accepted'
-                              ? 'bg-[#C8FF00]/10 text-[#C8FF00]'
+                              ? 'bg-[#B33A06]/10 text-[#B33A06]'
                               : link.status === 'rejected'
                               ? 'bg-[#f56565]/10 text-[#f56565]'
                               : 'bg-[#ecc94b]/10 text-[#ecc94b]'
@@ -1207,7 +1209,7 @@ export default function SEOEnginePage() {
                           <>
                             <button
                               onClick={() => acceptInternalLink(link.id)}
-                              className="px-3 py-1 bg-[#C8FF00] text-black font-semibold rounded text-[10px]"
+                              className="px-3 py-1 bg-[#B33A06] text-white font-semibold rounded text-[10px]"
                             >
                               Kabul Et
                             </button>
@@ -1234,7 +1236,7 @@ export default function SEOEnginePage() {
         {activeTab === 'redirects' && (
           <div className="space-y-6 animate-fadeIn">
             <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-4">
-              <h3 className="text-xs font-mono uppercase tracking-wider text-[#C8FF00]">
+              <h3 className="text-xs font-mono uppercase tracking-wider text-[#B33A06]">
                 Yeni 301 Yönlendirme Ekle
               </h3>
               <div className="flex flex-wrap items-center gap-3 text-xs">
@@ -1243,7 +1245,7 @@ export default function SEOEnginePage() {
                   placeholder="Eski URL (örn: /eski-didim-sayfasi)"
                   value={newRedirectFrom}
                   onChange={(e) => setNewRedirectFrom(e.target.value)}
-                  className="bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-mono flex-1 focus:outline-none focus:border-[#C8FF00]"
+                  className="bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-mono flex-1 focus:outline-none focus:border-[#B33A06]"
                 />
                 <span className="text-[#888888]">→</span>
                 <input
@@ -1251,7 +1253,7 @@ export default function SEOEnginePage() {
                   placeholder="Yeni URL (örn: /hizmetler/didim-sosyal-medya-ajansi)"
                   value={newRedirectTo}
                   onChange={(e) => setNewRedirectTo(e.target.value)}
-                  className="bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-mono flex-1 focus:outline-none focus:border-[#C8FF00]"
+                  className="bg-[#141414] border border-[#2A2A2A] rounded-lg p-2.5 text-white font-mono flex-1 focus:outline-none focus:border-[#B33A06]"
                 />
                 <button
                   onClick={() => {
@@ -1261,7 +1263,7 @@ export default function SEOEnginePage() {
                       setNewRedirectTo('');
                     }
                   }}
-                  className="px-4 py-2.5 bg-[#C8FF00] text-black font-semibold rounded-lg hover:bg-[#b5e600]"
+                  className="px-4 py-2.5 bg-[#B33A06] text-white font-semibold rounded-lg hover:bg-[#b5e600]"
                 >
                   + Yönlendirme Oluştur
                 </button>
@@ -1282,7 +1284,7 @@ export default function SEOEnginePage() {
                   {redirects.map((red) => (
                     <tr key={red.id} className="hover:bg-[#121212]">
                       <td className="p-3 font-mono text-[#f56565]">{red.fromUrl}</td>
-                      <td className="p-3 font-mono text-[#C8FF00]">{red.toUrl}</td>
+                      <td className="p-3 font-mono text-[#B33A06]">{red.toUrl}</td>
                       <td className="p-3 font-mono">
                         <span className="px-2 py-0.5 bg-[#38bdf8]/10 text-[#38bdf8] rounded">{red.statusCode}</span>
                       </td>
@@ -1309,7 +1311,7 @@ export default function SEOEnginePage() {
           <div className="space-y-6 animate-fadeIn">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-4">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-[#C8FF00]">
+                <h3 className="text-xs font-mono uppercase tracking-wider text-[#B33A06]">
                   XML Sitemap Yapılandırması
                 </h3>
                 <p className="text-xs text-[#999999]">
@@ -1318,7 +1320,7 @@ export default function SEOEnginePage() {
                 <div className="space-y-2 text-xs font-mono">
                   <div className="p-2.5 bg-[#141414] border border-[#222222] rounded flex justify-between">
                     <span className="text-[#38bdf8]">/sitemap.xml</span>
-                    <span className="text-[#C8FF00]">Aktif (Ana Sitemap Index)</span>
+                    <span className="text-[#B33A06]">Aktif (Ana Sitemap Index)</span>
                   </div>
                   <div className="p-2.5 bg-[#141414] border border-[#222222] rounded flex justify-between">
                     <span className="text-[#CCCCCC]">/service-sitemap.xml</span>
@@ -1332,10 +1334,10 @@ export default function SEOEnginePage() {
               </div>
 
               <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-5 rounded-xl space-y-4">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-[#C8FF00]">
+                <h3 className="text-xs font-mono uppercase tracking-wider text-[#B33A06]">
                   Structured Data (JSON-LD) Canlı Önizleme
                 </h3>
-                <pre className="p-3 bg-[#080808] border border-[#222222] rounded text-[11px] text-[#C8FF00] font-mono overflow-x-auto max-h-64">
+                <pre className="p-3 bg-[#080808] border border-[#222222] rounded text-[11px] text-[#B33A06] font-mono overflow-x-auto max-h-64">
 {`{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -1360,7 +1362,7 @@ export default function SEOEnginePage() {
         {/* ========================================================= */}
         {activeTab === 'settings' && (
           <div className="bg-[#0D0D0D] border border-[#1E1E1E] p-6 rounded-xl space-y-4 animate-fadeIn">
-            <h3 className="text-xs font-mono uppercase tracking-wider text-[#C8FF00]">
+            <h3 className="text-xs font-mono uppercase tracking-wider text-[#B33A06]">
               SEO Content Engine Genel Ayarlar
             </h3>
             <div className="space-y-4 text-xs max-w-xl">

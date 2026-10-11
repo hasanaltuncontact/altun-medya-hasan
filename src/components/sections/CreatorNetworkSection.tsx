@@ -15,15 +15,17 @@ export default function CreatorNetworkSection() {
   };
 
   return (
-    <section id="influencer-network" className="py-20 sm:py-24 px-5 sm:px-10 lg:px-14 bg-[#0E0E0E] text-white overflow-hidden">
+    <section id="influencer-network" className="py-20 sm:py-24 px-5 sm:px-10 lg:px-14 bg-[#070707] text-white overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         
         {/* HEADER SECTION */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight font-heading">
-              DOĞRU İÇERİK ÜRETİCİSİ,<br />
-              <span className="text-[#C8FF00]">ÖLÇÜLEBİLİR DÖNÜŞÜM.</span>
+            <h2 className="text-3xl sm:text-5xl tracking-tight text-white leading-tight font-heading">
+              <span className="font-black">DOĞRU İÇERİK</span>{' '}
+              <span className="font-light text-white/80">ÜRETİCİSİ,</span><br />
+              <span className="font-light text-white/80">ÖLÇÜLEBİLİR</span>{' '}
+              <span className="font-black text-[#FF6B35]">DÖNÜŞÜM.</span>
             </h2>
             <p className="text-xs sm:text-sm text-[#8E8E93] mt-2 max-w-xl font-normal leading-relaxed font-mono">
               Ege ve ulusal ölçekte yüksek erişime sahip kreatif içerik üreticilerimiz ve influencer network&apos;ümüzle, markanızı doğru hedef kitleyle buluşturuyor ve yüksek dönüşümlü organik kampanya süreçleri yönetiyoruz.
@@ -33,14 +35,14 @@ export default function CreatorNetworkSection() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => scrollCreators('left')}
-              className="w-11 h-11 rounded-full bg-white/5 border border-white/15 flex items-center justify-center hover:bg-[#C8FF00] hover:text-black transition-all active:scale-90"
+              className="w-11 h-11 rounded-full bg-white/5 border border-white/15 flex items-center justify-center hover:bg-[#B33A06] hover:text-white transition-all active:scale-90"
               aria-label="Önceki Influencer"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={() => scrollCreators('right')}
-              className="w-11 h-11 rounded-full bg-white/5 border border-white/15 flex items-center justify-center hover:bg-[#C8FF00] hover:text-black transition-all active:scale-90"
+              className="w-11 h-11 rounded-full bg-white/5 border border-white/15 flex items-center justify-center hover:bg-[#B33A06] hover:text-white transition-all active:scale-90"
               aria-label="Sonraki Influencer"
             >
               <ChevronRight className="w-5 h-5" />
@@ -51,7 +53,7 @@ export default function CreatorNetworkSection() {
         {/* CREATOR TALENT ROSTER SLIDER */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-6 border-b border-white/10 pb-3">
-            <span className="text-xs font-mono uppercase tracking-widest text-[#C8FF00] font-bold">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#B33A06] font-bold">
               CREATOR TALENT ROSTER
             </span>
             <span className="text-xs font-mono text-[#8E8E93]">Ege &amp; Global Temsilcilikler</span>
@@ -71,7 +73,7 @@ export default function CreatorNetworkSection() {
                   
                   {/* NEON LIME 4-POINT STAR BACKGROUND */}
                   <svg
-                    className={`absolute inset-0 w-full h-full text-[#C8FF00] drop-shadow-[0_0_35px_rgba(200,255,0,0.35)] transform group-hover:scale-105 ${
+                    className={`absolute inset-0 w-full h-full text-[#B33A06] drop-shadow-[0_0_35px_rgba(179, 58, 6,0.35)] transform group-hover:scale-105 ${
                       index % 2 === 0 ? 'group-hover:rotate-6' : 'group-hover:-rotate-6'
                     } transition-all duration-500 ease-out`}
                     viewBox="0 0 300 300"
@@ -101,13 +103,13 @@ export default function CreatorNetworkSection() {
 
                 {/* INFLUENCER META */}
                 <div className="mt-4 space-y-1">
-                  <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight group-hover:text-[#C8FF00] transition-colors font-heading">
+                  <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight group-hover:text-[#FF6B35] transition-colors font-heading">
                     {creator.name}
                   </h3>
-                  <p className="text-xs sm:text-sm font-mono text-[#C8FF00] font-bold">
+                  <p className="text-xs sm:text-sm font-mono text-[#FF8A50] font-bold">
                     {creator.handle}
                   </p>
-                  <div className="inline-block px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-[#8E8E93] uppercase">
+                  <div className="inline-block px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-white/70 uppercase">
                     {creator.niche} • {creator.followers}
                   </div>
                 </div>
@@ -117,16 +119,19 @@ export default function CreatorNetworkSection() {
         </div>
 
         {/* BOTTOM CTA BAR */}
-        <div className="p-6 rounded-2xl bg-black/60 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
+        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#14121A] to-[#0A090D] border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono shadow-2xl">
           <div className="flex items-center gap-3">
-            <Users className="w-5 h-5 text-[#C8FF00]" />
-            <span className="text-white/80">Creator kadromuza katılmak veya iş birliği yapmak mı istiyorsunuz?</span>
+            <Users className="w-6 h-6 text-[#FF6B35]" />
+            <span className="text-white/90 text-sm font-sans font-medium">
+              Ege creator kadromuzla markanızı buluşturmak veya ağımıza katılmak mı istiyorsunuz?
+            </span>
           </div>
           <a
-            href="mailto:info@altunmedya.com"
-            className="px-4 py-2 rounded-xl bg-[#C8FF00] text-black font-bold uppercase tracking-wider hover:bg-[#D4FF28] transition-all"
+            href="/influencer"
+            className="px-6 py-3.5 rounded-xl bg-[#B33A06] text-white text-xs font-bold font-mono uppercase tracking-wider hover:bg-[#C84408] transition-all whitespace-nowrap shadow-xl flex items-center gap-2 active:scale-95"
           >
-            Network&apos;e Başvur
+            <span>Tüm İnfluencer Ağını İncele</span>
+            <span>→</span>
           </a>
         </div>
       </div>

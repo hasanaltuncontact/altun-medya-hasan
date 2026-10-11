@@ -10,11 +10,11 @@ export default function GlobalStylesModal() {
   if (!globalStylesOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4 text-white selection:bg-[#C8FF00] selection:text-black">
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4 text-white selection:bg-[#B33A06] selection:text-white">
       <div className="w-full max-w-md bg-[#090909] border border-white/15 rounded-3xl p-6 shadow-2xl space-y-5">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <div className="flex items-center gap-2">
-            <Palette className="w-5 h-5 text-[#C8FF00]" />
+            <Palette className="w-5 h-5 text-[#B33A06]" />
             <h3 className="text-lg font-bold font-heading text-white">Global Marka Stilleri</h3>
           </div>
           <button onClick={() => setGlobalStylesOpen(false)} className="p-1.5 text-white/50 hover:text-white">
@@ -64,7 +64,7 @@ export default function GlobalStylesModal() {
             <select
               value={globalStyles.headingFont}
               onChange={(e) => setGlobalStyles({ ...globalStyles, headingFont: e.target.value })}
-              className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+              className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
             >
               <option value="Outfit, sans-serif" className="bg-[#0A0A0A]">Outfit (Agency Bold)</option>
               <option value="Inter, sans-serif" className="bg-[#0A0A0A]">Inter</option>
@@ -75,7 +75,7 @@ export default function GlobalStylesModal() {
 
         <button
           onClick={() => setGlobalStylesOpen(false)}
-          className="w-full py-3 rounded-xl bg-[#C8FF00] text-black font-extrabold text-xs uppercase tracking-wider hover:bg-[#D4FF28] transition-all"
+          className="w-full py-3 rounded-xl bg-[#B33A06] text-white font-extrabold text-xs uppercase tracking-wider hover:bg-[#C84408] transition-all"
         >
           Değişiklikleri Uygula
         </button>

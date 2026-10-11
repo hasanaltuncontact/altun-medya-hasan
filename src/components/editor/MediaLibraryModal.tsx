@@ -37,7 +37,7 @@ export default function MediaLibraryModal() {
   });
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 text-white selection:bg-[#C8FF00] selection:text-black">
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 text-white selection:bg-[#B33A06] selection:text-white">
       <div className="w-full max-w-4xl bg-[#090909] border border-white/15 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh] animate-in fade-in zoom-in-95 duration-200">
         {/* HEADER */}
         <div className="p-6 border-b border-white/10 flex items-center justify-between">
@@ -59,19 +59,19 @@ export default function MediaLibraryModal() {
           <div className="flex items-center gap-1.5 p-1 bg-white/5 border border-white/10 rounded-xl w-full sm:w-auto font-mono text-xs">
             <button
               onClick={() => setFilterTab('all')}
-              className={`px-3 py-1.5 rounded-lg transition-all ${filterTab === 'all' ? 'bg-[#C8FF00] text-black font-bold' : 'text-white/60 hover:text-white'}`}
+              className={`px-3 py-1.5 rounded-lg transition-all ${filterTab === 'all' ? 'bg-[#B33A06] text-white font-bold' : 'text-white/60 hover:text-white'}`}
             >
               Tümü
             </button>
             <button
               onClick={() => setFilterTab('image')}
-              className={`px-3 py-1.5 rounded-lg transition-all ${filterTab === 'image' ? 'bg-[#C8FF00] text-black font-bold' : 'text-white/60 hover:text-white'}`}
+              className={`px-3 py-1.5 rounded-lg transition-all ${filterTab === 'image' ? 'bg-[#B33A06] text-white font-bold' : 'text-white/60 hover:text-white'}`}
             >
               Görseller
             </button>
             <button
               onClick={() => setFilterTab('video')}
-              className={`px-3 py-1.5 rounded-lg transition-all ${filterTab === 'video' ? 'bg-[#C8FF00] text-black font-bold' : 'text-white/60 hover:text-white'}`}
+              className={`px-3 py-1.5 rounded-lg transition-all ${filterTab === 'video' ? 'bg-[#B33A06] text-white font-bold' : 'text-white/60 hover:text-white'}`}
             >
               Videolar
             </button>
@@ -84,7 +84,7 @@ export default function MediaLibraryModal() {
               placeholder="Dosya Ara..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-[#C8FF00]"
+              className="w-full pl-9 pr-4 py-2 bg-white/5 border border-white/10 rounded-xl text-xs text-white focus:outline-none focus:border-[#B33A06]"
             />
           </div>
         </div>
@@ -98,13 +98,13 @@ export default function MediaLibraryModal() {
                 key={media.id}
                 onClick={() => setSelectedUrl(media.url)}
                 className={`relative rounded-2xl border overflow-hidden cursor-pointer group transition-all h-36 bg-black flex items-center justify-center ${
-                  isSelected ? 'border-[#C8FF00] ring-2 ring-[#C8FF00] shadow-[0_0_20px_rgba(200,255,0,0.3)]' : 'border-white/10 hover:border-white/40'
+                  isSelected ? 'border-[#B33A06] ring-2 ring-[#B33A06] shadow-[0_0_20px_rgba(179, 58, 6,0.3)]' : 'border-white/10 hover:border-white/40'
                 }`}
               >
                 {media.type === 'image' ? (
                   <img src={media.url} alt={media.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-zinc-900 text-[#C8FF00]">
+                  <div className="w-full h-full flex items-center justify-center bg-zinc-900 text-[#B33A06]">
                     <VideoIcon className="w-8 h-8" />
                   </div>
                 )}
@@ -114,7 +114,7 @@ export default function MediaLibraryModal() {
                 </div>
 
                 {isSelected && (
-                  <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#C8FF00] text-black flex items-center justify-center font-bold">
+                  <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-[#B33A06] text-white flex items-center justify-center font-bold">
                     <Check className="w-4 h-4" />
                   </div>
                 )}
@@ -139,7 +139,7 @@ export default function MediaLibraryModal() {
             <button
               onClick={handleApplySelection}
               disabled={!selectedUrl}
-              className="px-5 py-2 rounded-xl bg-[#C8FF00] text-black font-extrabold text-xs uppercase tracking-wider disabled:opacity-40 hover:bg-[#D4FF28] transition-all"
+              className="px-5 py-2 rounded-xl bg-[#B33A06] text-white font-extrabold text-xs uppercase tracking-wider disabled:opacity-40 hover:bg-[#C84408] transition-all"
             >
               Seçimi Kullan
             </button>

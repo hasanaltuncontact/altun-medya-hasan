@@ -8,14 +8,15 @@ interface BriefModalProps {
   isOpen: boolean;
   onClose: () => void;
   selectedCategorySlug?: string;
+  initialServiceSlug?: string;
 }
 
-export default function BriefModal({ isOpen, onClose, selectedCategorySlug }: BriefModalProps) {
+export default function BriefModal({ isOpen, onClose, selectedCategorySlug, initialServiceSlug }: BriefModalProps) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    service: selectedCategorySlug || servicesDatabase[0].slug,
+    service: selectedCategorySlug || initialServiceSlug || servicesDatabase[0].slug,
     message: '',
   });
 
@@ -44,7 +45,7 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug }: Br
         </button>
 
         <div className="mb-6">
-          <span className="text-[10px] font-mono uppercase tracking-widest text-[#C8FF00] font-bold block mb-1">
+          <span className="text-[10px] font-mono uppercase tracking-widest text-[#B33A06] font-bold block mb-1">
             ALTUN MEDYA • PROJE BAŞLAT
           </span>
           <h3 className="text-2xl font-extrabold text-white tracking-tight font-heading">
@@ -57,7 +58,7 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug }: Br
 
         {isSubmitted ? (
           <div className="py-8 text-center space-y-3">
-            <CheckCircle2 className="w-12 h-12 text-[#C8FF00] mx-auto animate-bounce" />
+            <CheckCircle2 className="w-12 h-12 text-[#B33A06] mx-auto animate-bounce" />
             <h4 className="text-lg font-bold text-white">Talebiniz Alındı!</h4>
             <p className="text-xs text-white/70">Proje detaylarınız kaydedildi. Ekibimiz sizinle kısa süre içinde iletişime geçecektir.</p>
           </div>
@@ -71,7 +72,7 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug }: Br
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder="Örn: Mehmet Yılmaz / Vay Vay Restaurant"
-                className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C8FF00] transition-colors"
+                className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#B33A06] transition-colors"
               />
             </div>
 
@@ -84,7 +85,7 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug }: Br
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="0544 000 0000"
-                  className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C8FF00] transition-colors"
+                  className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#B33A06] transition-colors"
                 />
               </div>
               <div>
@@ -94,7 +95,7 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug }: Br
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="info@firmadomain.com"
-                  className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C8FF00] transition-colors"
+                  className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#B33A06] transition-colors"
                 />
               </div>
             </div>
@@ -104,7 +105,7 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug }: Br
               <select
                 value={formData.service}
                 onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C8FF00] transition-colors"
+                className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#B33A06] transition-colors"
               >
                 {servicesDatabase.map((cat) => (
                   <option key={cat.id} value={cat.slug} className="bg-neutral-900 text-white">
@@ -121,13 +122,13 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug }: Br
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder="Projeniz hakkında kısa bilgi verebilirsiniz..."
-                className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#C8FF00] transition-colors resize-none"
+                className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#B33A06] transition-colors resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-4 text-xs font-extrabold uppercase tracking-wider bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28] transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(200,255,0,0.3)] active:scale-95"
+              className="w-full py-4 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(179, 58, 6,0.3)] active:scale-95"
             >
               <Send className="w-4 h-4" />
               <span>BİLETİ KES &amp; GÖNDER</span>

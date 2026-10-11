@@ -34,7 +34,7 @@ export default function MessagesView() {
         <select
           value={selectedProjectId}
           onChange={(e) => setSelectedProjectId(e.target.value)}
-          className="px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-white text-xs font-mono focus:border-[#C8FF00] focus:outline-none"
+          className="px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-white text-xs font-mono focus:border-[#B33A06] focus:outline-none"
         >
           <option value="all" className="bg-[#0D0D0D]">Tüm Projeler İçin</option>
           {projects.map((p) => (
@@ -54,17 +54,17 @@ export default function MessagesView() {
               className={`flex items-start gap-3 ${msg.isAgency ? 'justify-start' : 'justify-end'}`}
             >
               {msg.isAgency && (
-                <img src={msg.senderAvatar} className="w-9 h-9 rounded-xl object-cover border border-[#C8FF00] shrink-0" />
+                <img src={msg.senderAvatar} className="w-9 h-9 rounded-xl object-cover border border-[#B33A06] shrink-0" />
               )}
 
               <div
                 className={`max-w-md p-4 rounded-2xl space-y-1 ${
                   msg.isAgency
                     ? 'bg-white/10 text-white border border-white/10 rounded-tl-none'
-                    : 'bg-[#C8FF00] text-black font-semibold rounded-tr-none shadow-[0_0_15px_rgba(200,255,0,0.25)] font-sans'
+                    : 'bg-[#B33A06] text-white font-semibold rounded-tr-none shadow-[0_0_15px_rgba(179, 58, 6,0.25)] font-sans'
                 }`}
               >
-                <div className={`flex items-center justify-between text-[10px] font-mono mb-1 ${msg.isAgency ? 'text-[#C8FF00]' : 'text-black/60 font-bold'}`}>
+                <div className={`flex items-center justify-between text-[10px] font-mono mb-1 ${msg.isAgency ? 'text-[#B33A06]' : 'text-black/60 font-bold'}`}>
                   <span>{msg.senderName}</span>
                   <span>{msg.timestamp}</span>
                 </div>
@@ -86,12 +86,12 @@ export default function MessagesView() {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             placeholder="Mesajınızı veya revizyon notunuzu buraya yazın..."
-            className="flex-1 px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:border-[#C8FF00] focus:outline-none font-sans"
+            className="flex-1 px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:border-[#B33A06] focus:outline-none font-sans"
           />
 
           <button
             type="submit"
-            className="px-6 py-3 rounded-xl bg-[#C8FF00] text-black font-extrabold font-mono text-xs hover:bg-[#D4FF28] transition-colors flex items-center gap-2"
+            className="px-6 py-3 rounded-xl bg-[#B33A06] text-white font-extrabold font-mono text-xs hover:bg-[#C84408] transition-colors flex items-center gap-2"
           >
             <Send className="w-4 h-4" />
             <span>[ Gönder ]</span>

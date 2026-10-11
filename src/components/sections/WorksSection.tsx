@@ -11,9 +11,10 @@ export default function WorksSection({ onSelectWork }: WorksSectionProps) {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-black/15 pb-6">
           <div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#050505] leading-tight font-heading">
-              VERİ DESTEKLİ<br />
-              <span className="underline decoration-[#C8FF00] decoration-4">BAŞARI HİKAYELERİ.</span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl tracking-tight text-[#050505] leading-tight font-heading">
+              <span className="font-black">VERİ DESTEKLİ</span><br />
+              <span className="font-light text-[#050505]/75">BAŞARI</span>{' '}
+              <span className="font-black underline decoration-[#B33A06] decoration-4">HİKAYELERİ.</span>
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-[#050505]/80 max-w-md font-medium leading-relaxed">
@@ -35,10 +36,10 @@ export default function WorksSection({ onSelectWork }: WorksSectionProps) {
                   alt={work.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono text-[#C8FF00] font-bold">
+                <div className="absolute top-3 left-3 bg-black/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-mono text-white border border-white/20 font-bold">
                   {work.category}
                 </div>
-                <div className="absolute bottom-3 right-3 bg-[#C8FF00] text-black px-3 py-1 rounded-lg text-xs font-mono font-extrabold shadow-lg">
+                <div className="absolute bottom-3 right-3 bg-[#B33A06] text-white px-3 py-1 rounded-lg text-xs font-mono font-extrabold shadow-lg">
                   {work.resultMetric} {work.resultLabel}
                 </div>
               </div>
@@ -48,8 +49,9 @@ export default function WorksSection({ onSelectWork }: WorksSectionProps) {
                   <span className="text-[10px] font-mono text-black/50 uppercase tracking-wider block">
                     Müşteri: {work.client}
                   </span>
-                  <h3 className="text-lg font-extrabold text-[#050505] mt-1 group-hover:text-black transition-colors leading-snug font-heading">
-                    {work.title}
+                  <h3 className="text-lg text-[#050505] mt-1 group-hover:text-black transition-colors leading-snug font-heading">
+                    <span className="font-black">{work.title.split(' ')[0]}</span>{' '}
+                    <span className="font-light text-[#050505]/80">{work.title.split(' ').slice(1).join(' ')}</span>
                   </h3>
                   <p className="text-xs text-black/70 mt-2 line-clamp-2 leading-relaxed">
                     {work.description}
@@ -64,7 +66,7 @@ export default function WorksSection({ onSelectWork }: WorksSectionProps) {
                       </span>
                     ))}
                   </div>
-                  <span className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center group-hover:bg-[#C8FF00] group-hover:text-black transition-colors">
+                  <span className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center group-hover:bg-[#B33A06] group-hover:text-black transition-colors">
                     <ArrowUpRight className="w-4 h-4" />
                   </span>
                 </div>

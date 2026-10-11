@@ -28,11 +28,11 @@ export default function RightContextMenu({
       {/* Menu Box */}
       <div
         style={{ top: position.y, left: position.x }}
-        className="fixed z-50 w-48 bg-[#090909]/95 backdrop-blur-2xl border border-white/15 shadow-2xl rounded-2xl p-1.5 text-xs text-white selection:bg-[#C8FF00] selection:text-black font-sans animate-in fade-in zoom-in-95 duration-150"
+        className="fixed z-50 w-48 bg-[#090909]/95 backdrop-blur-2xl border border-white/15 shadow-2xl rounded-2xl p-1.5 text-xs text-white selection:bg-[#B33A06] selection:text-white font-sans animate-in fade-in zoom-in-95 duration-150"
       >
         <button
           onClick={() => { onOpenSettings(); onClose(); }}
-          className="w-full px-3 py-2 rounded-xl hover:bg-[#C8FF00] hover:text-black transition-all flex items-center gap-2 font-bold"
+          className="w-full px-3 py-2 rounded-xl hover:bg-[#B33A06] hover:text-white transition-all flex items-center gap-2 font-bold"
         >
           <Pencil className="w-3.5 h-3.5" />
           <span>Elementi Düzenle</span>

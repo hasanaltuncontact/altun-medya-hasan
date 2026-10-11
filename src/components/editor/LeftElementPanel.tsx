@@ -95,7 +95,7 @@ export default function LeftElementPanel({ isOpen, onClose }: { isOpen: boolean;
           content: { text: 'PROJEYİ BAŞLAT', url: '/musteri-paneli' },
           styles: {
             desktop: { 
-              fontSize: '14px', color: '#000000', backgroundColor: '#C8FF00', 
+              fontSize: '14px', color: '#000000', backgroundColor: '#B33A06', 
               fontWeight: '800', paddingTop: '14px', paddingBottom: '14px', 
               paddingLeft: '28px', paddingRight: '28px', borderRadius: '9999px' 
             },
@@ -154,14 +154,14 @@ export default function LeftElementPanel({ isOpen, onClose }: { isOpen: boolean;
   if (!isOpen) return null;
 
   return (
-    <aside className="w-80 bg-[#0A0A0A] border-r border-white/10 flex flex-col z-40 text-white selection:bg-[#C8FF00] selection:text-black">
+    <aside className="w-80 bg-[#0A0A0A] border-r border-white/10 flex flex-col z-40 text-white selection:bg-[#B33A06] selection:text-white">
       {/* HEADER TABS */}
       <div className="p-4 border-b border-white/10 flex items-center justify-between">
         <div className="flex items-center gap-1 p-1 bg-white/5 rounded-xl border border-white/10 flex-1">
           <button
             onClick={() => setActiveTab('widgets')}
             className={`flex-1 py-1.5 text-xs font-mono font-bold rounded-lg transition-all ${
-              activeTab === 'widgets' ? 'bg-[#C8FF00] text-black shadow-md' : 'text-white/60 hover:text-white'
+              activeTab === 'widgets' ? 'bg-[#B33A06] text-white shadow-md' : 'text-white/60 hover:text-white'
             }`}
           >
             + Elementler
@@ -169,7 +169,7 @@ export default function LeftElementPanel({ isOpen, onClose }: { isOpen: boolean;
           <button
             onClick={() => setActiveTab('navigator')}
             className={`flex-1 py-1.5 text-xs font-mono font-bold rounded-lg transition-all ${
-              activeTab === 'navigator' ? 'bg-[#C8FF00] text-black shadow-md' : 'text-white/60 hover:text-white'
+              activeTab === 'navigator' ? 'bg-[#B33A06] text-white shadow-md' : 'text-white/60 hover:text-white'
             }`}
           >
             📑 Yapı Tree
@@ -194,49 +194,49 @@ export default function LeftElementPanel({ isOpen, onClose }: { isOpen: boolean;
             <div className="grid grid-cols-2 gap-2.5">
               <button
                 onClick={() => handleAddWidget('heading')}
-                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#C8FF00] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#B33A06] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
               >
-                <HeadingIcon className="w-5 h-5 text-[#C8FF00] group-hover:scale-110 transition-transform" />
+                <HeadingIcon className="w-5 h-5 text-[#B33A06] group-hover:scale-110 transition-transform" />
                 <span className="text-xs font-semibold">Başlık</span>
               </button>
 
               <button
                 onClick={() => handleAddWidget('text')}
-                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#C8FF00] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#B33A06] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
               >
-                <Type className="w-5 h-5 text-[#C8FF00] group-hover:scale-110 transition-transform" />
+                <Type className="w-5 h-5 text-[#B33A06] group-hover:scale-110 transition-transform" />
                 <span className="text-xs font-semibold">Metin Paragraf</span>
               </button>
 
               <button
                 onClick={() => handleAddWidget('image')}
-                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#C8FF00] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#B33A06] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
               >
-                <ImageIcon className="w-5 h-5 text-[#C8FF00] group-hover:scale-110 transition-transform" />
+                <ImageIcon className="w-5 h-5 text-[#B33A06] group-hover:scale-110 transition-transform" />
                 <span className="text-xs font-semibold">Görsel</span>
               </button>
 
               <button
                 onClick={() => handleAddWidget('video')}
-                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#C8FF00] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#B33A06] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
               >
-                <VideoIcon className="w-5 h-5 text-[#C8FF00] group-hover:scale-110 transition-transform" />
+                <VideoIcon className="w-5 h-5 text-[#B33A06] group-hover:scale-110 transition-transform" />
                 <span className="text-xs font-semibold">Video</span>
               </button>
 
               <button
                 onClick={() => handleAddWidget('button')}
-                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#C8FF00] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#B33A06] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
               >
-                <Square className="w-5 h-5 text-[#C8FF00] group-hover:scale-110 transition-transform" />
+                <Square className="w-5 h-5 text-[#B33A06] group-hover:scale-110 transition-transform" />
                 <span className="text-xs font-semibold">CTA Buton</span>
               </button>
 
               <button
                 onClick={() => handleAddWidget('divider')}
-                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#C8FF00] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#B33A06] hover:bg-white/10 transition-all flex flex-col items-center justify-center gap-2 group text-center"
               >
-                <Minus className="w-5 h-5 text-[#C8FF00] group-hover:scale-110 transition-transform" />
+                <Minus className="w-5 h-5 text-[#B33A06] group-hover:scale-110 transition-transform" />
                 <span className="text-xs font-semibold">Ayırıcı Çizgi</span>
               </button>
             </div>
@@ -246,7 +246,7 @@ export default function LeftElementPanel({ isOpen, onClose }: { isOpen: boolean;
           <div className="pt-4 border-t border-white/10">
             <button
               onClick={handleAddNewSection}
-              className="w-full py-3 rounded-xl bg-[#C8FF00]/10 border border-[#C8FF00]/40 hover:bg-[#C8FF00] text-[#C8FF00] hover:text-black transition-all font-mono font-bold text-xs flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl bg-[#B33A06]/10 border border-[#B33A06]/40 hover:bg-[#B33A06] text-[#B33A06] hover:text-black transition-all font-mono font-bold text-xs flex items-center justify-center gap-2"
             >
               <Plus className="w-4 h-4" />
               <span>+ Yeni Section Ekle</span>
@@ -264,7 +264,7 @@ export default function LeftElementPanel({ isOpen, onClose }: { isOpen: boolean;
             </h4>
             <button
               onClick={handleAddNewSection}
-              className="text-[11px] text-[#C8FF00] hover:underline font-mono font-bold flex items-center gap-1"
+              className="text-[11px] text-[#B33A06] hover:underline font-mono font-bold flex items-center gap-1"
             >
               <Plus className="w-3 h-3" />
               <span>Bölüm Ekle</span>
@@ -278,7 +278,7 @@ export default function LeftElementPanel({ isOpen, onClose }: { isOpen: boolean;
                 <div
                   key={sec.id}
                   className={`rounded-2xl border transition-all ${
-                    isSecSelected ? 'border-[#C8FF00] bg-[#C8FF00]/5' : 'border-white/10 bg-white/5'
+                    isSecSelected ? 'border-[#B33A06] bg-[#B33A06]/5' : 'border-white/10 bg-white/5'
                   }`}
                 >
                   {/* Section Title Bar */}
@@ -290,7 +290,7 @@ export default function LeftElementPanel({ isOpen, onClose }: { isOpen: boolean;
                     className="p-3 flex items-center justify-between cursor-pointer hover:bg-white/5 rounded-t-2xl"
                   >
                     <div className="flex items-center gap-2 min-w-0">
-                      <Layers className="w-4 h-4 text-[#C8FF00] flex-shrink-0" />
+                      <Layers className="w-4 h-4 text-[#B33A06] flex-shrink-0" />
                       <span className="text-xs font-bold font-heading truncate text-white">{sec.title}</span>
                     </div>
 
@@ -333,7 +333,7 @@ export default function LeftElementPanel({ isOpen, onClose }: { isOpen: boolean;
                             setSelectedSectionId(sec.id);
                           }}
                           className={`p-2 rounded-xl text-xs flex items-center justify-between cursor-pointer transition-all ${
-                            isElSelected ? 'bg-[#C8FF00] text-black font-extrabold' : 'bg-white/5 text-white/80 hover:bg-white/10'
+                            isElSelected ? 'bg-[#B33A06] text-white font-extrabold' : 'bg-white/5 text-white/80 hover:bg-white/10'
                           }`}
                         >
                           <span className="truncate pr-2 font-mono text-[11px]">
@@ -368,7 +368,7 @@ export default function LeftElementPanel({ isOpen, onClose }: { isOpen: boolean;
 
                     <button
                       onClick={() => handleAddWidget('text')}
-                      className="w-full py-1.5 text-[10px] font-mono text-[#C8FF00] hover:underline flex items-center justify-center gap-1"
+                      className="w-full py-1.5 text-[10px] font-mono text-[#B33A06] hover:underline flex items-center justify-center gap-1"
                     >
                       <Plus className="w-3 h-3" />
                       <span>+ Bu Bölüme Element Ekle</span>

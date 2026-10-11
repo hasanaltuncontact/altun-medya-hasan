@@ -105,6 +105,19 @@ export default function AdminDashboardPage() {
       downloadUrl: mediaDownloadUrl || 'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-posing-in-neon-light-40114-large.mp4',
       previewUrl: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=600&auto=format&fit=crop',
       status: 'Onaylandı',
+      currentVersion: 'v1.0',
+      versions: [
+        {
+          version: 'v1.0',
+          uploadDate: new Date().toISOString().split('T')[0],
+          uploadedBy: 'Altun Medya Admin',
+          fileSize: mediaFileSize,
+          url: mediaDownloadUrl || 'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-posing-in-neon-light-40114-large.mp4',
+          note: 'İlk yükleme sürümü.',
+          isFinal: true,
+          isApproved: true,
+        },
+      ],
     };
 
     setMediaList([newMed, ...mediaList]);
@@ -121,11 +134,22 @@ export default function AdminDashboardPage() {
       id: `tsk-${Date.now()}`,
       clientId: taskClientId,
       title: taskTitle,
-      serviceCategory: taskCategory,
-      status: taskStatus,
+      category: taskCategory,
+      status: 'Planlama',
       progress: 30,
       dueDate: '2026-11-01',
-      assignee: 'Altun Medya Ekibi',
+      nextStep: 'Ön prodüksiyon hazırlıkları',
+      workflow: [
+        { name: 'Planlama', status: 'completed' },
+        { name: 'Üretim', status: 'active' },
+        { name: 'Kurgu', status: 'upcoming' },
+        { name: 'Onay', status: 'upcoming' },
+      ],
+      coverImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop',
+      description: `${taskCategory} hizmeti kapsamında yürütülen kurumsal proje.`,
+      assignedTeam: [
+        { name: 'Hasan Altun', role: 'Kreatif Direktör', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop' }
+      ],
     };
 
     setTaskList([newTask, ...taskList]);
@@ -143,13 +167,14 @@ export default function AdminDashboardPage() {
       id: `inv-${Date.now()}`,
       clientId: invoiceClientId,
       invoiceNo: `ALT-2026-00${invoiceList.length + 50}`,
-      serviceDescription: invoiceDescription,
-      amount: invoiceAmount,
+      description: invoiceDescription,
+      netAmount: invoiceAmount,
       taxAmount: invoiceAmount * 0.2,
       totalAmount: total,
       date: new Date().toISOString().split('T')[0],
       dueDate: '2026-10-30',
       status: 'Bekliyor',
+      downloadPdfUrl: '#',
     };
 
     setInvoiceList([newInv, ...invoiceList]);
@@ -160,7 +185,7 @@ export default function AdminDashboardPage() {
   if (!isAdmin) return null;
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-[#C8FF00] selection:text-black font-sans antialiased">
+    <div className="min-h-screen bg-[#050505] text-white selection:bg-[#B33A06] selection:text-white font-sans antialiased">
       <CustomCursor />
       
       <Header
@@ -173,15 +198,15 @@ export default function AdminDashboardPage() {
         <div className="max-w-7xl mx-auto space-y-8">
 
           {/* ADMIN BANNER */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0E0E0E] via-[#141414] to-[#0A0A0A] border border-[#C8FF00]/30 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[#C8FF00]/[0.08] rounded-full blur-[140px] pointer-events-none" />
+          <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0E0E0E] via-[#141414] to-[#0A0A0A] border border-[#B33A06]/30 shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#B33A06]/[0.08] rounded-full blur-[140px] pointer-events-none" />
 
             <div className="flex items-center gap-5 relative z-10">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#C8FF00] text-black font-black flex items-center justify-center shadow-xl flex-shrink-0">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-[#B33A06] text-white font-black flex items-center justify-center shadow-xl flex-shrink-0">
                 <Cpu className="w-8 h-8" />
               </div>
               <div>
-                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-[#C8FF00]/10 border border-[#C8FF00]/30 text-[10px] font-mono text-[#C8FF00] mb-1 font-bold">
+                <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-[#B33A06]/10 border border-[#B33A06]/30 text-[10px] font-mono text-[#B33A06] mb-1 font-bold">
                   <ShieldAlert className="w-3 h-3" />
                   <span>AJANS İÇ OPERASYON &amp; MUHASEBE PANELİ</span>
                 </div>
@@ -197,7 +222,7 @@ export default function AdminDashboardPage() {
             <div className="flex flex-wrap items-center gap-3 relative z-10">
               <Link
                 href="/admin/seo-engine"
-                className="px-5 py-3 text-xs font-mono font-extrabold tracking-wider uppercase bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28] transition-all flex items-center gap-2 shadow-[0_0_25px_rgba(200,255,0,0.4)] active:scale-95 border border-[#C8FF00]"
+                className="px-5 py-3 text-xs font-mono font-extrabold tracking-wider uppercase bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-all flex items-center gap-2 shadow-[0_0_25px_rgba(179, 58, 6,0.4)] active:scale-95 border border-[#B33A06]"
               >
                 <Cpu className="w-4 h-4" />
                 <span>🚀 SEO CONTENT ENGINE</span>
@@ -207,7 +232,7 @@ export default function AdminDashboardPage() {
                 href="/admin/editor"
                 className="px-4 py-3 text-xs font-mono font-bold tracking-wider uppercase bg-white/10 text-white rounded-xl hover:bg-white/20 transition-all flex items-center gap-2 border border-white/15"
               >
-                <Sparkles className="w-4 h-4 text-[#C8FF00]" />
+                <Sparkles className="w-4 h-4 text-[#B33A06]" />
                 <span>Görsel Editör (Elementor)</span>
               </Link>
 
@@ -226,7 +251,7 @@ export default function AdminDashboardPage() {
             <div className="p-5 rounded-2xl bg-[#0A0A0A] border border-white/10">
               <div className="flex items-center justify-between text-white/50 mb-2">
                 <span className="text-xs font-mono font-bold">KAYITLI MÜŞTERİLER</span>
-                <Users className="w-4 h-4 text-[#C8FF00]" />
+                <Users className="w-4 h-4 text-[#B33A06]" />
               </div>
               <div className="text-2xl sm:text-3xl font-black text-white font-heading">{clients.length} Firma</div>
               <div className="text-[10px] font-mono text-[#8E8E93] mt-1">Özel Müşteri Portalı</div>
@@ -235,7 +260,7 @@ export default function AdminDashboardPage() {
             <div className="p-5 rounded-2xl bg-[#0A0A0A] border border-white/10">
               <div className="flex items-center justify-between text-white/50 mb-2">
                 <span className="text-xs font-mono font-bold">YÜKLENEN MEDYALAR</span>
-                <Film className="w-4 h-4 text-[#C8FF00]" />
+                <Film className="w-4 h-4 text-[#B33A06]" />
               </div>
               <div className="text-2xl sm:text-3xl font-black text-white font-heading">{mediaList.length} Dosya</div>
               <div className="text-[10px] font-mono text-[#8E8E93] mt-1">4K Video & Tasarım</div>
@@ -244,7 +269,7 @@ export default function AdminDashboardPage() {
             <div className="p-5 rounded-2xl bg-[#0A0A0A] border border-white/10">
               <div className="flex items-center justify-between text-white/50 mb-2">
                 <span className="text-xs font-mono font-bold">AKTİF İŞ GÖREVLERİ</span>
-                <Clock className="w-4 h-4 text-[#C8FF00]" />
+                <Clock className="w-4 h-4 text-[#B33A06]" />
               </div>
               <div className="text-2xl sm:text-3xl font-black text-white font-heading">{taskList.length} Görev</div>
               <div className="text-[10px] font-mono text-[#8E8E93] mt-1">Canlı Takip Tahtası</div>
@@ -253,9 +278,9 @@ export default function AdminDashboardPage() {
             <div className="p-5 rounded-2xl bg-[#0A0A0A] border border-white/10">
               <div className="flex items-center justify-between text-white/50 mb-2">
                 <span className="text-xs font-mono font-bold">TOPLAM CİRO (FATURA)</span>
-                <TrendingUp className="w-4 h-4 text-[#C8FF00]" />
+                <TrendingUp className="w-4 h-4 text-[#B33A06]" />
               </div>
-              <div className="text-2xl sm:text-3xl font-black text-[#C8FF00] font-heading">
+              <div className="text-2xl sm:text-3xl font-black text-[#B33A06] font-heading">
                 ₺{invoiceList.reduce((a, b) => a + b.totalAmount, 0).toLocaleString('tr-TR')}
               </div>
               <div className="text-[10px] font-mono text-[#8E8E93] mt-1">Muhasebe Kayıtları</div>
@@ -267,45 +292,45 @@ export default function AdminDashboardPage() {
             <button
               onClick={() => setActiveTab('clients')}
               className={`pb-4 transition-colors relative flex items-center gap-2 font-mono ${
-                activeTab === 'clients' ? 'text-[#C8FF00] font-bold' : 'text-white/60 hover:text-white'
+                activeTab === 'clients' ? 'text-[#B33A06] font-bold' : 'text-white/60 hover:text-white'
               }`}
             >
               <Users className="w-4 h-4" />
               <span>Müşteri Yönetimi ({clients.length})</span>
-              {activeTab === 'clients' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C8FF00]" />}
+              {activeTab === 'clients' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B33A06]" />}
             </button>
 
             <button
               onClick={() => setActiveTab('upload')}
               className={`pb-4 transition-colors relative flex items-center gap-2 font-mono ${
-                activeTab === 'upload' ? 'text-[#C8FF00] font-bold' : 'text-white/60 hover:text-white'
+                activeTab === 'upload' ? 'text-[#B33A06] font-bold' : 'text-white/60 hover:text-white'
               }`}
             >
               <Upload className="w-4 h-4" />
               <span>Medya / Video Yükle</span>
-              {activeTab === 'upload' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C8FF00]" />}
+              {activeTab === 'upload' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B33A06]" />}
             </button>
 
             <button
               onClick={() => setActiveTab('tasks')}
               className={`pb-4 transition-colors relative flex items-center gap-2 font-mono ${
-                activeTab === 'tasks' ? 'text-[#C8FF00] font-bold' : 'text-white/60 hover:text-white'
+                activeTab === 'tasks' ? 'text-[#B33A06] font-bold' : 'text-white/60 hover:text-white'
               }`}
             >
               <Clock className="w-4 h-4" />
               <span>İş Takip Tahtası</span>
-              {activeTab === 'tasks' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C8FF00]" />}
+              {activeTab === 'tasks' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B33A06]" />}
             </button>
 
             <button
               onClick={() => setActiveTab('accounting')}
               className={`pb-4 transition-colors relative flex items-center gap-2 font-mono ${
-                activeTab === 'accounting' ? 'text-[#C8FF00] font-bold' : 'text-white/60 hover:text-white'
+                activeTab === 'accounting' ? 'text-[#B33A06] font-bold' : 'text-white/60 hover:text-white'
               }`}
             >
               <DollarSign className="w-4 h-4" />
               <span>Muhasebe & Fatura Kes</span>
-              {activeTab === 'accounting' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C8FF00]" />}
+              {activeTab === 'accounting' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#B33A06]" />}
             </button>
           </div>
 
@@ -314,7 +339,7 @@ export default function AdminDashboardPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
               {/* NEW CLIENT FORM */}
               <div className="lg:col-span-5 p-7 rounded-3xl bg-[#0D0D0D] border border-white/10 space-y-4">
-                <div className="flex items-center gap-2 text-[#C8FF00]">
+                <div className="flex items-center gap-2 text-[#B33A06]">
                   <Plus className="w-5 h-5" />
                   <h2 className="text-lg font-bold text-white font-heading">Yeni Müşteri Tanımla</h2>
                 </div>
@@ -328,7 +353,7 @@ export default function AdminDashboardPage() {
                       value={newClientCompany}
                       onChange={(e) => setNewClientCompany(e.target.value)}
                       placeholder="Örn: Didim Bay Otel & Beach"
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#C8FF00] focus:outline-none"
+                      className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#B33A06] focus:outline-none"
                     />
                   </div>
 
@@ -339,7 +364,7 @@ export default function AdminDashboardPage() {
                       value={newClientName}
                       onChange={(e) => setNewClientName(e.target.value)}
                       placeholder="Örn: Mehmet Can"
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#C8FF00] focus:outline-none"
+                      className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#B33A06] focus:outline-none"
                     />
                   </div>
 
@@ -351,7 +376,7 @@ export default function AdminDashboardPage() {
                       value={newClientEmail}
                       onChange={(e) => setNewClientEmail(e.target.value)}
                       placeholder="musteri@marka.com"
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#C8FF00] focus:outline-none"
+                      className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#B33A06] focus:outline-none"
                     />
                   </div>
 
@@ -361,13 +386,13 @@ export default function AdminDashboardPage() {
                       type="text"
                       value={newClientPassword}
                       onChange={(e) => setNewClientPassword(e.target.value)}
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#C8FF00] focus:outline-none"
+                      className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#B33A06] focus:outline-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3 text-xs font-bold uppercase tracking-wider bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28] transition-colors"
+                    className="w-full py-3 text-xs font-bold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-colors"
                   >
                     + Müşteri Hesabını Aç
                   </button>
@@ -386,7 +411,7 @@ export default function AdminDashboardPage() {
                         <div>
                           <div className="text-sm font-bold text-white font-heading">{cli.companyName}</div>
                           <div className="text-xs font-mono text-white/50">{cli.name} • {cli.email}</div>
-                          <div className="text-[10px] font-mono text-[#C8FF00] mt-0.5 font-bold">Şifre: {cli.password}</div>
+                          <div className="text-[10px] font-mono text-[#B33A06] mt-0.5 font-bold">Şifre: {cli.password}</div>
                         </div>
                       </div>
 
@@ -416,7 +441,7 @@ export default function AdminDashboardPage() {
                   <select
                     value={mediaClientId}
                     onChange={(e) => setMediaClientId(e.target.value)}
-                    className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white focus:border-[#C8FF00] focus:outline-none"
+                    className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white focus:border-[#B33A06] focus:outline-none"
                   >
                     {clients.map((c) => (
                       <option key={c.id} value={c.id} className="bg-[#0A0A0A] text-white">
@@ -434,7 +459,7 @@ export default function AdminDashboardPage() {
                     value={mediaTitle}
                     onChange={(e) => setMediaTitle(e.target.value)}
                     placeholder="Örn: 4K Restoran Lansman Filmi (Final Kurgu)"
-                    className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#C8FF00] focus:outline-none"
+                    className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#B33A06] focus:outline-none"
                   />
                 </div>
 
@@ -444,7 +469,7 @@ export default function AdminDashboardPage() {
                     <select
                       value={mediaCategory}
                       onChange={(e) => setMediaCategory(e.target.value)}
-                      className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white focus:border-[#C8FF00] focus:outline-none"
+                      className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white focus:border-[#B33A06] focus:outline-none"
                     >
                       <option value="Sinematik Video" className="bg-[#0A0A0A]">Sinematik Video (4K)</option>
                       <option value="Reels Prodüksiyon" className="bg-[#0A0A0A]">Reels Prodüksiyon</option>
@@ -460,7 +485,7 @@ export default function AdminDashboardPage() {
                       value={mediaFileSize}
                       onChange={(e) => setMediaFileSize(e.target.value)}
                       placeholder="Örn: 1.2 GB"
-                      className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#C8FF00] focus:outline-none"
+                      className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#B33A06] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -472,13 +497,13 @@ export default function AdminDashboardPage() {
                     value={mediaDownloadUrl}
                     onChange={(e) => setMediaDownloadUrl(e.target.value)}
                     placeholder="https://..."
-                    className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#C8FF00] focus:outline-none"
+                    className="w-full px-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-[#B33A06] focus:outline-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 text-xs font-extrabold uppercase tracking-wider bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28] transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-3.5 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-colors flex items-center justify-center gap-2"
                 >
                   <Upload className="w-4 h-4" />
                   <span>Medya Dosyasını Müşteriye Yayınla</span>
@@ -537,7 +562,7 @@ export default function AdminDashboardPage() {
 
                   <button
                     type="submit"
-                    className="w-full py-3 text-xs font-bold uppercase tracking-wider bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28]"
+                    className="w-full py-3 text-xs font-bold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408]"
                   >
                     + Görevi Atave Yayınla
                   </button>
@@ -552,12 +577,12 @@ export default function AdminDashboardPage() {
                   {taskList.map((tsk) => (
                     <div key={tsk.id} className="p-5 rounded-2xl bg-[#0D0D0D] border border-white/10 space-y-2">
                       <div className="flex justify-between items-center">
-                        <span className="text-xs font-mono font-bold text-[#C8FF00]">{tsk.serviceCategory}</span>
+                        <span className="text-xs font-mono font-bold text-[#B33A06]">{tsk.category}</span>
                         <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-[10px] font-mono font-bold">{tsk.status}</span>
                       </div>
                       <div className="text-sm font-bold text-white font-heading">{tsk.title}</div>
                       <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
-                        <div className="h-full bg-[#C8FF00]" style={{ width: `${tsk.progress}%` }} />
+                        <div className="h-full bg-[#B33A06]" style={{ width: `${tsk.progress}%` }} />
                       </div>
                     </div>
                   ))}
@@ -612,7 +637,7 @@ export default function AdminDashboardPage() {
 
                   <button
                     type="submit"
-                    className="w-full py-3 text-xs font-bold uppercase tracking-wider bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28]"
+                    className="w-full py-3 text-xs font-bold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408]"
                   >
                     + Faturayı Düzenle & İlet
                   </button>
@@ -627,8 +652,8 @@ export default function AdminDashboardPage() {
                   {invoiceList.map((inv) => (
                     <div key={inv.id} className="p-5 rounded-2xl bg-[#0D0D0D] border border-white/10 flex justify-between items-center">
                       <div>
-                        <div className="text-xs font-mono font-bold text-[#C8FF00]">{inv.invoiceNo}</div>
-                        <div className="text-xs font-bold text-white mt-0.5">{inv.serviceDescription}</div>
+                        <div className="text-xs font-mono font-bold text-[#B33A06]">{inv.invoiceNo}</div>
+                        <div className="text-xs font-bold text-white mt-0.5">{inv.description}</div>
                         <div className="text-[10px] font-mono text-white/50">{inv.date}</div>
                       </div>
                       <div className="text-right">

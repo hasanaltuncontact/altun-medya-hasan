@@ -1,5 +1,6 @@
 'use client';
 
+import AltunMedyaLogo from '@/components/layout/AltunMedyaLogo';
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -53,23 +54,14 @@ export default function PortalSidebar() {
         <div>
           <div className="p-6 border-b border-white/10">
             <Link href="/" className="group flex flex-col justify-center select-none" aria-label="ALTUN MEDYA">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl font-extrabold tracking-[-0.04em] text-white lowercase leading-none font-heading">
-                  altun
-                </span>
-                <svg
-                  className="w-4 h-4 text-[#C8FF00] drop-shadow-[0_0_8px_rgba(200,255,0,0.6)]"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 0 C12 6.627 17.373 12 24 12 C17.373 12 12 17.373 12 24 C12 17.373 6.627 12 0 12 C6.627 12 12 6.627 12 0 Z" />
-                </svg>
+              <div className="flex items-center text-white">
+                <AltunMedyaLogo className="h-6 w-auto text-white" showStar={true} />
               </div>
-              <div className="flex items-center gap-2 mt-1.5">
-                <span className="text-[9px] uppercase font-bold tracking-[0.24em] text-[#C4D66A]">
+              <div className="flex items-center gap-2 mt-2">
+                <span className="text-[9px] uppercase font-bold tracking-[0.24em] text-[#B33A06]">
                   CLIENT PORTAL
                 </span>
-                <span className="px-1.5 py-0.2 rounded bg-[#C8FF00]/10 border border-[#C8FF00]/30 text-[8px] font-mono text-[#C8FF00] font-bold">
+                <span className="px-1.5 py-0.2 rounded bg-[#B33A06]/10 border border-[#B33A06]/30 text-[8px] font-mono text-[#B33A06] font-bold">
                   v2.0 OS
                 </span>
               </div>
@@ -92,7 +84,7 @@ export default function PortalSidebar() {
                   onClick={() => handleSectionClick(item.id)}
                   className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold font-mono transition-all group ${
                     isActive
-                      ? 'bg-[#C8FF00] text-black font-extrabold shadow-[0_0_20px_rgba(200,255,0,0.25)]'
+                      ? 'bg-[#B33A06] text-white font-extrabold shadow-[0_0_20px_rgba(179, 58, 6,0.25)]'
                       : 'text-white/70 hover:text-white hover:bg-white/5'
                   }`}
                 >
@@ -100,7 +92,7 @@ export default function PortalSidebar() {
                     <span className={`text-[10px] font-mono ${isActive ? 'text-black/60 font-bold' : 'text-[#8E8E93]'}`}>
                       {item.id.substring(0, 2)}
                     </span>
-                    <Icon className={`w-4 h-4 ${isActive ? 'text-black' : 'text-white/60 group-hover:text-[#C8FF00]'} transition-colors`} />
+                    <Icon className={`w-4 h-4 ${isActive ? 'text-black' : 'text-white/60 group-hover:text-[#B33A06]'} transition-colors`} />
                     <span className="tracking-tight">{item.label}</span>
                   </div>
 
@@ -108,8 +100,8 @@ export default function PortalSidebar() {
                     <span
                       className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
                         isActive
-                          ? 'bg-black text-[#C8FF00]'
-                          : 'bg-[#C8FF00] text-black shadow-[0_0_10px_rgba(200,255,0,0.4)]'
+                          ? 'bg-black text-[#B33A06]'
+                          : 'bg-[#B33A06] text-white shadow-[0_0_10px_rgba(179, 58, 6,0.4)]'
                       }`}
                     >
                       {item.badge}
@@ -125,7 +117,7 @@ export default function PortalSidebar() {
         <div className="p-4 border-t border-white/10 space-y-2 bg-[#060606]">
           <div className="px-3 py-1 flex items-center justify-between text-[10px] font-mono text-white/50">
             <span>● GÜVENLİ MÜŞTERİ PORTALI</span>
-            <ShieldCheck className="w-3.5 h-3.5 text-[#C8FF00]" />
+            <ShieldCheck className="w-3.5 h-3.5 text-[#B33A06]" />
           </div>
 
           <div className="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-3">
@@ -133,7 +125,7 @@ export default function PortalSidebar() {
               <img
                 src={client.avatar}
                 alt={client.companyName}
-                className="w-9 h-9 rounded-xl object-cover border border-[#C8FF00]"
+                className="w-9 h-9 rounded-xl object-cover border border-[#B33A06]"
               />
               <div className="truncate">
                 <div className="text-xs font-bold text-white font-heading truncate">{client.companyName}</div>
@@ -163,13 +155,13 @@ export default function PortalSidebar() {
               key={item.id}
               onClick={() => handleSectionClick(item.id)}
               className={`flex flex-col items-center py-1 px-2.5 rounded-xl transition-all ${
-                isActive ? 'text-[#C8FF00]' : 'text-white/60 hover:text-white'
+                isActive ? 'text-[#B33A06]' : 'text-white/60 hover:text-white'
               }`}
             >
               <div className="relative">
                 <Icon className="w-5 h-5" />
                 {item.badge && item.badge > 0 ? (
-                  <span className="absolute -top-1 -right-2 w-4 h-4 rounded-full bg-[#C8FF00] text-black text-[9px] font-mono font-bold flex items-center justify-center">
+                  <span className="absolute -top-1 -right-2 w-4 h-4 rounded-full bg-[#B33A06] text-white text-[9px] font-mono font-bold flex items-center justify-center">
                     {item.badge}
                   </span>
                 ) : null}

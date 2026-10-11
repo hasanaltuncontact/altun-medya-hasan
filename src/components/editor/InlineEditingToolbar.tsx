@@ -54,14 +54,14 @@ export default function InlineEditingToolbar({
   return (
     <div 
       style={{ top: Math.max(10, position.top - 55), left: position.left }}
-      className="fixed z-50 transform -translate-x-1/2 bg-[#090909]/95 backdrop-blur-2xl border border-white/20 shadow-2xl rounded-2xl p-1.5 flex items-center gap-1.5 text-white selection:bg-[#C8FF00] selection:text-black animate-in fade-in zoom-in-95 duration-150"
+      className="fixed z-50 transform -translate-x-1/2 bg-[#090909]/95 backdrop-blur-2xl border border-white/20 shadow-2xl rounded-2xl p-1.5 flex items-center gap-1.5 text-white selection:bg-[#B33A06] selection:text-white animate-in fade-in zoom-in-95 duration-150"
     >
       {/* BOLD */}
       <button
         onClick={handleToggleFontWeight}
         className={`p-2 rounded-xl text-xs font-bold transition-all ${
           currentStyles.fontWeight === '800' || currentStyles.fontWeight === '900'
-            ? 'bg-[#C8FF00] text-black shadow-md'
+            ? 'bg-[#B33A06] text-white shadow-md'
             : 'hover:bg-white/10 text-white/80'
         }`}
         title="Kalın (Bold)"
@@ -74,7 +74,7 @@ export default function InlineEditingToolbar({
         <button
           onClick={() => handleAlign('left')}
           className={`p-1.5 rounded-lg transition-all ${
-            currentStyles.textAlign === 'left' || !currentStyles.textAlign ? 'bg-[#C8FF00] text-black' : 'text-white/60 hover:text-white'
+            currentStyles.textAlign === 'left' || !currentStyles.textAlign ? 'bg-[#B33A06] text-white' : 'text-white/60 hover:text-white'
           }`}
           title="Sola Hizala"
         >
@@ -83,7 +83,7 @@ export default function InlineEditingToolbar({
         <button
           onClick={() => handleAlign('center')}
           className={`p-1.5 rounded-lg transition-all ${
-            currentStyles.textAlign === 'center' ? 'bg-[#C8FF00] text-black' : 'text-white/60 hover:text-white'
+            currentStyles.textAlign === 'center' ? 'bg-[#B33A06] text-white' : 'text-white/60 hover:text-white'
           }`}
           title="Ortala"
         >
@@ -92,7 +92,7 @@ export default function InlineEditingToolbar({
         <button
           onClick={() => handleAlign('right')}
           className={`p-1.5 rounded-lg transition-all ${
-            currentStyles.textAlign === 'right' ? 'bg-[#C8FF00] text-black' : 'text-white/60 hover:text-white'
+            currentStyles.textAlign === 'right' ? 'bg-[#B33A06] text-white' : 'text-white/60 hover:text-white'
           }`}
           title="Sağa Hizala"
         >
@@ -110,7 +110,7 @@ export default function InlineEditingToolbar({
           -
         </button>
 
-        <span className="font-bold text-[#C8FF00] min-w-[28px] text-center">
+        <span className="font-bold text-[#B33A06] min-w-[28px] text-center">
           {currentStyles.fontSize || '16px'}
         </span>
 
@@ -125,13 +125,13 @@ export default function InlineEditingToolbar({
 
       {/* COLOR PRESETS */}
       <div className="flex items-center gap-1 border-l border-white/10 pl-1.5">
-        {['#FFFFFF', '#C8FF00', '#A1A1AA', '#000000', '#FF3B30'].map((color) => (
+        {['#FFFFFF', '#B33A06', '#A1A1AA', '#000000', '#FF3B30'].map((color) => (
           <button
             key={color}
             onClick={() => handleColorChange(color)}
             style={{ backgroundColor: color }}
             className={`w-5 h-5 rounded-full border transition-all ${
-              currentStyles.color === color ? 'border-white scale-125 ring-2 ring-[#C8FF00]' : 'border-white/20 hover:scale-110'
+              currentStyles.color === color ? 'border-white scale-125 ring-2 ring-[#B33A06]' : 'border-white/20 hover:scale-110'
             }`}
             title={`Renk: ${color}`}
           />

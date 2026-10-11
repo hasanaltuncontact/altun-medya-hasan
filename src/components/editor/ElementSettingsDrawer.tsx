@@ -34,11 +34,11 @@ export default function ElementSettingsDrawer({
   const currentStyles = selectedEl.styles[viewport] || selectedEl.styles.desktop || {};
 
   return (
-    <aside className="fixed top-16 right-0 bottom-0 w-88 bg-[#090909]/95 backdrop-blur-2xl border-l border-white/10 flex flex-col z-50 text-white selection:bg-[#C8FF00] selection:text-black shadow-2xl animate-in slide-in-from-right duration-200">
+    <aside className="fixed top-16 right-0 bottom-0 w-88 bg-[#090909]/95 backdrop-blur-2xl border-l border-white/10 flex flex-col z-50 text-white selection:bg-[#B33A06] selection:text-white shadow-2xl animate-in slide-in-from-right duration-200">
       {/* DRAWER HEADER */}
       <div className="p-4 border-b border-white/10 flex items-center justify-between">
         <div>
-          <div className="text-[10px] font-mono text-[#C8FF00] font-extrabold uppercase tracking-wider">
+          <div className="text-[10px] font-mono text-[#B33A06] font-extrabold uppercase tracking-wider">
             {selectedEl.type} ELEMENT
           </div>
           <h3 className="text-sm font-bold text-white font-heading truncate max-w-[200px]">
@@ -59,7 +59,7 @@ export default function ElementSettingsDrawer({
         <button
           onClick={() => setActiveTab('content')}
           className={`flex-1 py-1.5 text-xs font-mono font-bold rounded-lg transition-all ${
-            activeTab === 'content' ? 'bg-[#C8FF00] text-black shadow-md' : 'text-white/60 hover:text-white'
+            activeTab === 'content' ? 'bg-[#B33A06] text-white shadow-md' : 'text-white/60 hover:text-white'
           }`}
         >
           İçerik
@@ -67,7 +67,7 @@ export default function ElementSettingsDrawer({
         <button
           onClick={() => setActiveTab('style')}
           className={`flex-1 py-1.5 text-xs font-mono font-bold rounded-lg transition-all ${
-            activeTab === 'style' ? 'bg-[#C8FF00] text-black shadow-md' : 'text-white/60 hover:text-white'
+            activeTab === 'style' ? 'bg-[#B33A06] text-white shadow-md' : 'text-white/60 hover:text-white'
           }`}
         >
           Stil ({viewport.toUpperCase()})
@@ -75,7 +75,7 @@ export default function ElementSettingsDrawer({
         <button
           onClick={() => setActiveTab('advanced')}
           className={`flex-1 py-1.5 text-xs font-mono font-bold rounded-lg transition-all ${
-            activeTab === 'advanced' ? 'bg-[#C8FF00] text-black shadow-md' : 'text-white/60 hover:text-white'
+            activeTab === 'advanced' ? 'bg-[#B33A06] text-white shadow-md' : 'text-white/60 hover:text-white'
           }`}
         >
           Gelişmiş
@@ -98,7 +98,7 @@ export default function ElementSettingsDrawer({
                   rows={4}
                   value={selectedEl.content.text || ''}
                   onChange={(e) => updateElementContent(selectedEl.id, { text: e.target.value })}
-                  className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#C8FF00] transition-colors"
+                  className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#B33A06] transition-colors"
                 />
               </div>
             )}
@@ -114,7 +114,7 @@ export default function ElementSettingsDrawer({
                     type="text"
                     value={selectedEl.content.text || ''}
                     onChange={(e) => updateElementContent(selectedEl.id, { text: e.target.value })}
-                    className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+                    className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
                   />
                 </div>
 
@@ -127,7 +127,7 @@ export default function ElementSettingsDrawer({
                     value={selectedEl.content.url || ''}
                     onChange={(e) => updateElementContent(selectedEl.id, { url: e.target.value })}
                     placeholder="/musteri-paneli"
-                    className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+                    className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
                   />
                 </div>
               </>
@@ -145,11 +145,11 @@ export default function ElementSettingsDrawer({
                       type="text"
                       value={selectedEl.content.src || ''}
                       onChange={(e) => updateElementContent(selectedEl.id, { src: e.target.value })}
-                      className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+                      className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
                     />
                     <button
                       onClick={() => openMediaLibraryForTarget(selectedEl.id, 'src')}
-                      className="px-3 rounded-xl bg-[#C8FF00] text-black font-extrabold text-xs hover:bg-[#D4FF28] transition-all flex items-center gap-1 flex-shrink-0"
+                      className="px-3 rounded-xl bg-[#B33A06] text-white font-extrabold text-xs hover:bg-[#C84408] transition-all flex items-center gap-1 flex-shrink-0"
                     >
                       <ImageIcon className="w-4 h-4" />
                       <span>Seç</span>
@@ -165,7 +165,7 @@ export default function ElementSettingsDrawer({
                     type="text"
                     value={selectedEl.content.alt || ''}
                     onChange={(e) => updateElementContent(selectedEl.id, { alt: e.target.value })}
-                    className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+                    className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
                   />
                 </div>
               </>
@@ -183,11 +183,11 @@ export default function ElementSettingsDrawer({
                       type="text"
                       value={selectedEl.content.videoUrl || ''}
                       onChange={(e) => updateElementContent(selectedEl.id, { videoUrl: e.target.value })}
-                      className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+                      className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
                     />
                     <button
                       onClick={() => openMediaLibraryForTarget(selectedEl.id, 'videoUrl')}
-                      className="px-3 rounded-xl bg-[#C8FF00] text-black font-extrabold text-xs hover:bg-[#D4FF28] transition-all flex items-center gap-1 flex-shrink-0"
+                      className="px-3 rounded-xl bg-[#B33A06] text-white font-extrabold text-xs hover:bg-[#C84408] transition-all flex items-center gap-1 flex-shrink-0"
                     >
                       <VideoIcon className="w-4 h-4" />
                       <span>Seç</span>
@@ -201,7 +201,7 @@ export default function ElementSettingsDrawer({
                       type="checkbox"
                       checked={selectedEl.content.autoplay ?? true}
                       onChange={(e) => updateElementContent(selectedEl.id, { autoplay: e.target.checked })}
-                      className="w-4 h-4 accent-[#C8FF00]"
+                      className="w-4 h-4 accent-[#B33A06]"
                     />
                     <span>Otomatik Oynat (Autoplay)</span>
                   </label>
@@ -211,7 +211,7 @@ export default function ElementSettingsDrawer({
                       type="checkbox"
                       checked={selectedEl.content.muted ?? true}
                       onChange={(e) => updateElementContent(selectedEl.id, { muted: e.target.checked })}
-                      className="w-4 h-4 accent-[#C8FF00]"
+                      className="w-4 h-4 accent-[#B33A06]"
                     />
                     <span>Sessiz (Muted)</span>
                   </label>
@@ -221,7 +221,7 @@ export default function ElementSettingsDrawer({
                       type="checkbox"
                       checked={selectedEl.content.loop ?? true}
                       onChange={(e) => updateElementContent(selectedEl.id, { loop: e.target.checked })}
-                      className="w-4 h-4 accent-[#C8FF00]"
+                      className="w-4 h-4 accent-[#B33A06]"
                     />
                     <span>Sürekli Döngü (Loop)</span>
                   </label>
@@ -242,7 +242,7 @@ export default function ElementSettingsDrawer({
               <select
                 value={currentStyles.fontFamily || 'Outfit, sans-serif'}
                 onChange={(e) => updateElementStyle(selectedEl.id, { fontFamily: e.target.value })}
-                className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+                className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
               >
                 <option value="Outfit, sans-serif" className="bg-[#0A0A0A]">Outfit (Modern Agency)</option>
                 <option value="Inter, sans-serif" className="bg-[#0A0A0A]">Inter (Clean SaaS)</option>
@@ -262,7 +262,7 @@ export default function ElementSettingsDrawer({
                   value={currentStyles.fontSize || '16px'}
                   onChange={(e) => updateElementStyle(selectedEl.id, { fontSize: e.target.value })}
                   placeholder="24px"
-                  className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+                  className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
                 />
               </div>
 
@@ -273,7 +273,7 @@ export default function ElementSettingsDrawer({
                 <select
                   value={currentStyles.fontWeight || '400'}
                   onChange={(e) => updateElementStyle(selectedEl.id, { fontWeight: e.target.value })}
-                  className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+                  className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
                 >
                   <option value="400" className="bg-[#0A0A0A]">Normal (400)</option>
                   <option value="600" className="bg-[#0A0A0A]">Semi-Bold (600)</option>
@@ -314,13 +314,13 @@ export default function ElementSettingsDrawer({
                   <div className="flex gap-2 items-center">
                     <input
                       type="color"
-                      value={currentStyles.backgroundColor || '#C8FF00'}
+                      value={currentStyles.backgroundColor || '#B33A06'}
                       onChange={(e) => updateElementStyle(selectedEl.id, { backgroundColor: e.target.value })}
                       className="w-8 h-8 rounded-lg border border-white/20 bg-transparent cursor-pointer"
                     />
                     <input
                       type="text"
-                      value={currentStyles.backgroundColor || '#C8FF00'}
+                      value={currentStyles.backgroundColor || '#B33A06'}
                       onChange={(e) => updateElementStyle(selectedEl.id, { backgroundColor: e.target.value })}
                       className="w-full p-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-xs focus:outline-none font-mono"
                     />
@@ -338,7 +338,7 @@ export default function ElementSettingsDrawer({
                 <select
                   value={currentStyles.textAlign || 'left'}
                   onChange={(e) => updateElementStyle(selectedEl.id, { textAlign: e.target.value as any })}
-                  className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+                  className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
                 >
                   <option value="left" className="bg-[#0A0A0A]">Sola Hizala</option>
                   <option value="center" className="bg-[#0A0A0A]">Ortala</option>
@@ -355,7 +355,7 @@ export default function ElementSettingsDrawer({
                   value={currentStyles.borderRadius || '0px'}
                   onChange={(e) => updateElementStyle(selectedEl.id, { borderRadius: e.target.value })}
                   placeholder="16px"
-                  className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]"
+                  className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
                 />
               </div>
             </div>
@@ -381,7 +381,7 @@ export default function ElementSettingsDrawer({
               <label className="block text-[11px] text-white/70 mb-1.5 font-bold">
                 Aşama Animasyonu
               </label>
-              <select className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#C8FF00]">
+              <select className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]">
                 <option value="fade-in" className="bg-[#0A0A0A]">Yumuşak Belirme (Fade In)</option>
                 <option value="slide-up" className="bg-[#0A0A0A]">Aşağıdan Yukarı (Slide Up)</option>
                 <option value="zoom-in" className="bg-[#0A0A0A]">Büyüyerek Açılma (Zoom)</option>

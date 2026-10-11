@@ -37,7 +37,7 @@ export default function CustomCursor() {
       }}
       className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center text-[9px] font-extrabold uppercase tracking-wider transition-all duration-150 ${
         isHovered
-          ? 'w-10 h-10 bg-[#C8FF00] border-[#C8FF00] text-black scale-110 shadow-[0_0_20px_rgba(200,255,0,0.6)]'
+          ? 'w-10 h-10 bg-[#B33A06] border-[#B33A06] text-black scale-110 shadow-[0_0_20px_rgba(179, 58, 6,0.6)]'
           : 'bg-white/90 border-white/20 text-black'
       }`}
     >

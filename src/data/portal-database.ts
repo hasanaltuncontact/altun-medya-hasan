@@ -520,7 +520,7 @@ export const initialBrandAssets: BrandAsset[] = [
     previewUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=400&auto=format&fit=crop',
     fileSize: '1.1 MB',
     format: 'ASE, PAL',
-    metaInfo: '#050505, #C8FF00, #D9D0C1, #FFFFFF',
+    metaInfo: '#050505, #B33A06, #D9D0C1, #FFFFFF',
   },
   {
     id: 'ba-4',

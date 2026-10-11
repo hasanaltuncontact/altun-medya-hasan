@@ -8,68 +8,76 @@ export interface ReelItem {
   description: string;
 }
 
+/**
+ * REELS VİDEOLARI NASIL EKLENİR?
+ * 1) Dikey (9:16) .mp4 dosyalarını `public/videos/reels/` klasörüne kopyalayın.
+ * 2) Kapak görselini `public/videos/reels/posters/` klasörüne koyun.
+ * 3) Aşağıya yeni bir obje ekleyin (id benzersiz olmalı), `videoUrl` ve `posterImage` yollarını yazın.
+ * Video dosyası bulunamazsa kartta otomatik olarak `posterImage` gösterilir.
+ * Öneri: 720x1280, H.264 (Safari/iPhone uyumu için VP9 değil), +faststart, dosya başı < 8 MB.
+ */
 export const reelsList: ReelItem[] = [
   {
-    id: 'reel-1',
-    title: 'Lüks Villa Mimari Çekimi',
-    category: 'GAYRİMENKUL & MİMARİ',
-    views: '1.4M İZLENME',
-    posterImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=700&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-modern-architecture-of-a-luxurious-house-41556-large.mp4',
-    description: 'Didim & Bodrum hattında lüks gayrimenkul için hazırlanan yüksek tempolu 4K mimari kurgu.'
+    id: 'halil-usta',
+    title: 'Halil Usta Ford Özel Servisi',
+    category: 'OTOMOTİV & SERVİS',
+    views: '1.1M İZLENME',
+    posterImage: '/videos/reels/posters/halil-usta.jpg',
+    videoUrl: '/videos/reels/halil-usta.mp4',
+    description: 'Ford özel servisi için ustalığı ve güveni öne çıkaran, konuşmalı tanıtım kurgusu.'
   },
   {
-    id: 'reel-2',
-    title: 'Gastronomi & Kokteyl Lab',
-    category: 'FOOD & BEVERAGE',
-    views: '890K İZLENME',
-    posterImage: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=700&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-barman-preparing-a-cocktail-in-a-bar-42938-large.mp4',
-    description: 'Özel ışıklandırma ve macro lenslerle lezzet algısını artıran dinamik mekan kurgusu.'
+    id: 'dior-beach-club',
+    title: 'Dior Beach Club',
+    category: 'BEACH CLUB & TURİZM',
+    views: '1.3M İZLENME',
+    posterImage: '/videos/reels/posters/dior-beach-club.jpg',
+    videoUrl: '/videos/reels/dior-beach-club.mp4',
+    description: 'Didim sahilinde yaz enerjisini drone ve sinematik çekimlerle aktaran tanıtım filmi.'
   },
   {
-    id: 'reel-3',
-    title: 'Otomotiv & Ses Tasarımı',
-    category: 'AUTOMOTIVE & ACTION',
-    views: '2.1M İZLENME',
-    posterImage: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=700&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-luxury-sports-car-driving-on-a-highway-41560-large.mp4',
-    description: 'Hassas ses mühendisliği ve hızlı kesimlerle hazırlanan otomotiv lansman içeriği.'
+    id: 'nikas-altinkum',
+    title: "Nika's Altınkum",
+    category: 'RESTORAN & GASTRONOMİ',
+    views: '895B İZLENME',
+    posterImage: '/videos/reels/posters/nikas-altinkum.jpg',
+    videoUrl: '/videos/reels/nikas-altinkum.mp4',
+    description: 'Et, balık ve meze konseptli restoran için atmosfer odaklı sinematik mekan kurgusu.'
   },
   {
-    id: 'reel-4',
-    title: 'Moda & Doku Kurgusu',
-    category: 'FASHION & EDITORIAL',
-    views: '650K İZLENME',
-    posterImage: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=700&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-fashion-model-posing-in-neon-light-40114-large.mp4',
-    description: 'Editoryal moda markası için kurgulanmış ritmik renk geçişleri ve dikey estetik.'
+    id: 'reklam-deposu',
+    title: 'Didim Reklam Deposu',
+    category: 'ÜRETİM & TABELA',
+    views: '468B İZLENME',
+    posterImage: '/videos/reels/posters/reklam-deposu.jpg',
+    videoUrl: '/videos/reels/reklam-deposu.mp4',
+    description: 'Kutu harf üretim sürecini adım adım anlatan bilgilendirici, altyazılı içerik serisi.'
   },
   {
-    id: 'reel-5',
-    title: 'Otel & Sahil Deneyimi',
-    category: 'TURİZM & HOSPITALITY',
-    views: '1.8M İZLENME',
-    posterImage: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=700&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hotel-swimming-pool-surrounded-by-palm-trees-41555-large.mp4',
-    description: 'Ege kıyılarında büyüleyici tatil deneyimini aktaran drone ve 4K dikey çekim.'
+    id: 'aytepe-sofrasi',
+    title: 'Didim Aytepe Sofrası',
+    category: 'RESTORAN & LEZZET',
+    views: '420B İZLENME',
+    posterImage: '/videos/reels/posters/aytepe-sofrasi.jpg',
+    videoUrl: '/videos/reels/aytepe-sofrasi.mp4',
+    description: 'Drone açılışıyla başlayan, mekanı ve sofrayı tanıtan iştah açıcı restoran kurgusu.'
   },
   {
-    id: 'reel-6',
-    title: 'Gece Kulübü & Etkinlik',
-    category: 'NIGHTLIFE & EVENT',
-    views: '940K İZLENME',
-    posterImage: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=700&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-dj-mixing-music-at-a-party-41562-large.mp4',
-    description: 'Neon ışıklar ve bas odaklı müzik senkronizasyonu ile lansman gecesi atmosferi.'
+    id: 'mna-kuyumculuk',
+    title: 'MNA Kuyumculuk Yılbaşı Çekilişi',
+    category: 'KUYUMCULUK & KAMPANYA',
+    views: '4.3M İZLENME',
+    posterImage: '/videos/reels/posters/mna-kuyumculuk.jpg',
+    videoUrl: '/videos/reels/mna-kuyumculuk.mp4',
+    description: 'Yılbaşı çekilişi kampanyası için hazırlanan, 4.3 milyon izlenmeye ulaşan viral içerik.'
   },
   {
-    id: 'reel-7',
-    title: 'Mücevher & Detay Çekimi',
-    category: 'LUXURY & JEWELRY',
-    views: '1.2M İZLENME',
-    posterImage: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=700&auto=format&fit=crop',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-hands-adjusting-a-gold-watch-41561-large.mp4',
-    description: 'Işık kırılmaları ve makro lenslerle hazırlanan lüks takı ve altın koleksiyon filmi.'
+    id: 'kastyorem',
+    title: 'Kastyörem.com',
+    category: 'E-TİCARET & YÖRESEL ÜRÜN',
+    views: '9.3M İZLENME',
+    posterImage: '/videos/reels/posters/kastyorem.jpg',
+    videoUrl: '/videos/reels/kastyorem.mp4',
+    description: 'Yöresel ürünleri kapınıza getiren e-ticaret markası için 9.3 milyon izlenmeli viral reels.'
   }
 ];

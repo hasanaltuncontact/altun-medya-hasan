@@ -23,7 +23,7 @@ export default function ReelsPlayerModal({ reelItem, onClose }: ReelsPlayerModal
         </button>
 
         <div className="mb-3">
-          <span className="text-[10px] font-mono text-[#C8FF00] uppercase tracking-widest font-bold block">
+          <span className="text-[10px] font-mono text-[#B33A06] uppercase tracking-widest font-bold block">
             {reelItem.views}
           </span>
           <h3 className="text-base font-bold text-white tracking-tight leading-snug font-heading">
@@ -34,7 +34,7 @@ export default function ReelsPlayerModal({ reelItem, onClose }: ReelsPlayerModal
         <div className="relative aspect-[9/16] rounded-xl overflow-hidden mb-4 border border-white/10 bg-black group">
           <img src={reelItem.posterImage} alt={reelItem.title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 flex items-center justify-center">
-            <div className="w-14 h-14 rounded-full bg-[#C8FF00] text-black flex items-center justify-center shadow-[0_0_30px_rgba(200,255,0,0.7)] animate-pulse">
+            <div className="w-14 h-14 rounded-full bg-[#B33A06] text-white flex items-center justify-center shadow-[0_0_30px_rgba(179, 58, 6,0.7)] animate-pulse">
               <Play className="w-6 h-6 fill-current ml-1" />
             </div>
           </div>

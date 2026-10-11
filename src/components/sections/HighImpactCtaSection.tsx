@@ -7,14 +7,16 @@ interface HighImpactCtaSectionProps {
 
 export default function HighImpactCtaSection({ onOpenBrief }: HighImpactCtaSectionProps) {
   return (
-    <section className="py-20 sm:py-28 px-5 sm:px-10 lg:px-14 bg-[#C8FF00] text-black overflow-hidden relative border-t-2 border-black">
+    <section className="py-20 sm:py-28 px-5 sm:px-10 lg:px-14 bg-[#B33A06] text-white overflow-hidden relative">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-8 relative z-10">
         <div className="space-y-3">
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-black leading-[0.92] font-heading">
-            MARKANIZI DİJİTALDE<br />
-            BİRLİKTE YÜKSELTELİM.
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[0.92] font-heading">
+            <span className="font-black">MARKANIZI</span>{' '}
+            <span className="font-light text-white/85">DİJİTALDE</span><br />
+            <span className="font-light text-white/85">BİRLİKTE</span>{' '}
+            <span className="font-black">YÜKSELTELİM.</span>
           </h2>
-          <p className="text-xs sm:text-sm text-black/80 font-mono max-w-lg">
+          <p className="text-xs sm:text-sm text-white/80 font-mono max-w-lg">
             Didim, Aydın ve Ege bölgesindeki markanız için özel prodüksiyon ve büyüme planını hemen devreye sokalım.
           </p>
         </div>
@@ -22,9 +24,9 @@ export default function HighImpactCtaSection({ onOpenBrief }: HighImpactCtaSecti
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
           <button
             onClick={onOpenBrief}
-            className="px-8 py-5 text-sm font-extrabold uppercase tracking-wider bg-black text-[#C8FF00] rounded-2xl hover:bg-neutral-900 transition-all flex items-center justify-center gap-2 shadow-2xl active:scale-95"
+            className="px-8 py-5 text-sm font-extrabold uppercase tracking-wider bg-black text-white hover:bg-white hover:text-black border border-white/20 rounded-2xl transition-all flex items-center justify-center gap-2.5 shadow-2xl active:scale-95"
           >
-            <Ticket className="w-5 h-5" />
+            <Ticket className="w-5 h-5 text-[#FF6B35]" />
             <span>Hemen Proje Biletini Kes</span>
           </button>
 

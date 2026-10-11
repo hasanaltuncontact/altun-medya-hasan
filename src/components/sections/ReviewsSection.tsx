@@ -88,9 +88,11 @@ export default function ReviewsSection() {
           {/* Main Title & Stat Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-8 space-y-4 sm:space-y-5">
-              <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-[72px] font-black tracking-[-0.04em] text-black leading-[0.96] font-heading">
-                Birlikte ürettik,<br />
-                birlikte büyüttük.
+              <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-[72px] tracking-[-0.04em] text-black leading-[0.96] font-heading">
+                <span className="font-black">Birlikte</span>{' '}
+                <span className="font-light text-black/75">ürettik,</span><br />
+                <span className="font-light text-black/75">birlikte</span>{' '}
+                <span className="font-black">büyüttük.</span>
               </h2>
 
               <div className="text-2xl xs:text-3xl sm:text-4xl lg:text-[42px] font-normal text-neutral-800 leading-tight font-heading">
@@ -129,7 +131,7 @@ export default function ReviewsSection() {
                 <div className="w-[1px] h-8 bg-black/20 hidden xs:block" />
 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#E8E1D5] text-neutral-800 flex items-center justify-center font-bold text-lg hover:scale-105 hover:bg-black hover:text-[#C8FF00] transition-all cursor-pointer shadow-sm">
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#E8E1D5] text-neutral-800 flex items-center justify-center font-bold text-lg hover:scale-105 hover:bg-[#B33A06] hover:text-white transition-all cursor-pointer shadow-sm">
                     +
                   </div>
                   <div className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase leading-tight text-neutral-700 font-mono">
@@ -144,7 +146,7 @@ export default function ReviewsSection() {
               <div className="space-y-1">
                 <div className="text-6xl sm:text-7xl lg:text-[88px] font-bold text-black tracking-tight leading-none flex items-baseline font-heading">
                   <span>216</span>
-                  <span className="text-[#C8FF00] bg-black rounded-lg px-2 ml-1.5 font-sans font-light text-5xl sm:text-6xl">+</span>
+                  <span className="text-white bg-[#B33A06] rounded-lg px-2 ml-1.5 font-sans font-light text-5xl sm:text-6xl shadow-md">+</span>
                 </div>
                 <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-neutral-800 pt-2 font-mono">
                   MARKA DENEYİMİ

@@ -168,7 +168,7 @@ export const initialHomePageSchema: PageSchema = {
           styles: {
             desktop: {
               fontSize: '11px',
-              color: '#C8FF00',
+              color: '#B33A06',
               fontWeight: '700',
               letterSpacing: '0.2em',
               marginBottom: '16px',
@@ -233,7 +233,7 @@ export const initialHomePageSchema: PageSchema = {
             desktop: {
               fontSize: '13px',
               color: '#000000',
-              backgroundColor: '#C8FF00',
+              backgroundColor: '#B33A06',
               fontWeight: '800',
               paddingTop: '16px',
               paddingBottom: '16px',
@@ -710,7 +710,7 @@ export const initialHomePageSchema: PageSchema = {
             desktop: {
               fontSize: '14px',
               color: '#000000',
-              backgroundColor: '#C8FF00',
+              backgroundColor: '#B33A06',
               fontWeight: '900',
               paddingTop: '18px',
               paddingBottom: '18px',
@@ -729,7 +729,7 @@ export const initialHomePageSchema: PageSchema = {
 };
 
 export const initialGlobalStyles: GlobalStyleConfig = {
-  primaryColor: '#C8FF00',
+  primaryColor: '#B33A06',
   secondaryColor: '#0B0B0B',
   backgroundColor: '#050505',
   textColor: '#FFFFFF',

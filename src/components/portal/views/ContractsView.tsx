@@ -24,11 +24,11 @@ export default function ContractsView() {
         {contracts.map((item) => (
           <div
             key={item.id}
-            className="p-7 rounded-3xl bg-[#0D0D0D] border border-white/10 space-y-4 hover:border-[#C8FF00]/40 transition-all flex flex-col justify-between"
+            className="p-7 rounded-3xl bg-[#0D0D0D] border border-white/10 space-y-4 hover:border-[#B33A06]/40 transition-all flex flex-col justify-between"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="px-2.5 py-0.5 rounded-full bg-[#C8FF00]/10 text-[#C8FF00] font-bold border border-[#C8FF00]/30 text-[10px]">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#B33A06]/10 text-[#B33A06] font-bold border border-[#B33A06]/30 text-[10px]">
                   {item.type}
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30 text-[10px]">
@@ -51,7 +51,7 @@ export default function ContractsView() {
                 href={item.fileUrl}
                 download
                 onClick={() => addToast(`📄 "${item.title}" indirildi.`, 'info')}
-                className="px-4 py-2 rounded-xl bg-[#C8FF00] text-black font-extrabold text-xs inline-flex items-center gap-1.5 hover:bg-[#D4FF28]"
+                className="px-4 py-2 rounded-xl bg-[#B33A06] text-white font-extrabold text-xs inline-flex items-center gap-1.5 hover:bg-[#C84408]"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>İmzalı PDF İndir</span>

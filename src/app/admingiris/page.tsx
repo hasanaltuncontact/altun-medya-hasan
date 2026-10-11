@@ -37,7 +37,7 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-[#C8FF00] selection:text-black font-sans antialiased flex flex-col justify-between">
+    <div className="min-h-screen bg-[#050505] text-white selection:bg-[#B33A06] selection:text-white font-sans antialiased flex flex-col justify-between">
       <CustomCursor />
       
       <Header
@@ -47,12 +47,12 @@ export default function AdminLoginPage() {
       />
 
       <main className="pt-32 pb-20 px-5 sm:px-10 flex-grow flex items-center justify-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C8FF00]/[0.05] rounded-full blur-[160px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B33A06]/[0.05] rounded-full blur-[160px] pointer-events-none" />
 
         <div className="w-full max-w-md mx-auto relative z-10">
           <div className="p-8 sm:p-10 rounded-3xl bg-[#090909]/95 backdrop-blur-2xl border border-white/15 shadow-2xl space-y-6">
             <div className="text-center space-y-2">
-              <div className="w-12 h-12 rounded-2xl bg-[#C8FF00] text-black font-black flex items-center justify-center mx-auto mb-3 shadow-[0_0_20px_rgba(200,255,0,0.4)]">
+              <div className="w-12 h-12 rounded-2xl bg-[#B33A06] text-white font-black flex items-center justify-center mx-auto mb-3 shadow-[0_0_20px_rgba(179, 58, 6,0.4)]">
                 <Cpu className="w-6 h-6" />
               </div>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
@@ -82,7 +82,7 @@ export default function AdminLoginPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="admin@altunmedya.com"
-                    className="w-full pl-10 pr-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#C8FF00] transition-colors"
+                    className="w-full pl-10 pr-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#B33A06] transition-colors"
                   />
                 </div>
               </div>
@@ -99,7 +99,7 @@ export default function AdminLoginPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
-                    className="w-full pl-10 pr-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#C8FF00] transition-colors"
+                    className="w-full pl-10 pr-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#B33A06] transition-colors"
                   />
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function AdminLoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 text-xs font-extrabold uppercase tracking-wider bg-[#C8FF00] text-black rounded-xl hover:bg-[#D4FF28] transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50"
+                className="w-full py-3.5 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50"
               >
                 <span>{loading ? 'Yetki Doğrulanıyor...' : 'Yönetici Girişi Yap'}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -120,21 +120,21 @@ export default function AdminLoginPage() {
                 <button
                   onClick={fillDemoAdmin}
                   type="button"
-                  className="text-[#C8FF00] hover:underline font-bold flex items-center gap-1"
+                  className="text-[#B33A06] hover:underline font-bold flex items-center gap-1"
                 >
                   <Key className="w-3 h-3" />
                   <span>Otomatik Doldur</span>
                 </button>
               </div>
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-[11px] font-mono space-y-1 text-white/80">
-                <div>E-Posta: <span className="text-[#C8FF00]">admin@altunmedya.com</span></div>
-                <div>Şifre: <span className="text-[#C8FF00]">admin123</span></div>
+                <div>E-Posta: <span className="text-[#B33A06]">admin@altunmedya.com</span></div>
+                <div>Şifre: <span className="text-[#B33A06]">admin123</span></div>
               </div>
             </div>
 
             <div className="text-center pt-2 text-xs font-mono text-white/40">
               Müşteri misiniz?{' '}
-              <Link href="/musteri-giris" className="text-white hover:text-[#C8FF00] underline font-bold">
+              <Link href="/musteri-giris" className="text-white hover:text-[#B33A06] underline font-bold">
                 Müşteri Girişi Yapın
               </Link>
             </div>

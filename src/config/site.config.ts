@@ -12,7 +12,7 @@ export const siteConfig = {
     youtube: 'https://youtube.com/@altunmedya',
     whatsapp: 'https://wa.me/905445550909',
   },
-  // Primary Header Navigation (Strictly: Anasayfa | Kurumsal [Dropdown: Hakkımızda, Biz Kimiz, Hikayemiz] | İşlerimiz | İletişim)
+  // Primary Header Navigation
   navigation: [
     { name: 'Anasayfa', href: '/' },
     {
@@ -24,18 +24,21 @@ export const siteConfig = {
         { name: 'Hikayemiz', desc: "2018'den bugüne ilham veren yolculuğumuz", href: '/kurumsal/hikayemiz' },
       ],
     },
-    { name: 'İşlerimiz', href: '#works' },
-    { name: 'İletişim', href: '#contact' },
+    { name: 'İşlerimiz', href: '/#works' },
+    { name: 'İnfluencer ✦', href: '/influencer', isHighlight: true },
+    { name: 'Blog', href: '/blog' },
+    { name: 'İletişim', href: '/#contact' },
   ],
   // Mobile / Full Navigation Drawer
   mobileNavigation: [
-    { name: 'Anasayfa', href: '#' },
-    { name: 'Kurumsal', href: '#about' },
-    { name: 'İşlerimiz', href: '#works' },
-    { name: 'Hizmetlerimiz', href: '#services' },
-    { name: 'Creator Network ✦', href: '#influencer-network', isHighlight: true },
-    { name: 'Reels Lab', href: '#reels-section' },
-    { name: 'Referanslarımız', href: '#partners-reviews' },
-    { name: 'İletişim', href: '#contact' },
+    { name: 'Anasayfa', href: '/' },
+    { name: 'Kurumsal', href: '/kurumsal/hakkimizda' },
+    { name: 'İşlerimiz', href: '/#works' },
+    { name: 'Hizmetlerimiz', href: '/#services' },
+    { name: 'İnfluencer Network ✦', href: '/influencer', isHighlight: true },
+    { name: 'Didim SEO & Blog', href: '/blog' },
+    { name: 'Reels Lab', href: '/#reels-section' },
+    { name: 'Referanslarımız', href: '/#partners-reviews' },
+    { name: 'İletişim', href: '/#contact' },
   ],
 };

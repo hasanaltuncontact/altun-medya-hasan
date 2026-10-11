@@ -33,15 +33,15 @@ export default function FloatingElementToolbar({
   return (
     <div
       style={{ top: Math.max(10, position.top - 48), left: position.left }}
-      className="fixed z-50 transform -translate-x-1/2 bg-[#080808]/95 backdrop-blur-2xl border border-[#C8FF00]/40 shadow-[0_0_25px_rgba(200,255,0,0.25)] rounded-xl px-2 py-1 flex items-center gap-1.5 text-white selection:bg-[#C8FF00] selection:text-black animate-in fade-in zoom-in-95 duration-150"
+      className="fixed z-50 transform -translate-x-1/2 bg-[#080808]/95 backdrop-blur-2xl border border-[#B33A06]/40 shadow-[0_0_25px_rgba(179, 58, 6,0.25)] rounded-xl px-2 py-1 flex items-center gap-1.5 text-white selection:bg-[#B33A06] selection:text-white animate-in fade-in zoom-in-95 duration-150"
     >
-      <span className="text-[10px] font-mono font-extrabold uppercase tracking-wider text-[#C8FF00] px-1 border-r border-white/10">
+      <span className="text-[10px] font-mono font-extrabold uppercase tracking-wider text-[#B33A06] px-1 border-r border-white/10">
         {selectedEl.type}
       </span>
 
       <button
         onClick={onOpenSettings}
-        className="px-2 py-1 rounded-lg bg-[#C8FF00] text-black font-extrabold text-xs flex items-center gap-1 hover:bg-[#D4FF28] transition-all shadow-sm"
+        className="px-2 py-1 rounded-lg bg-[#B33A06] text-white font-extrabold text-xs flex items-center gap-1 hover:bg-[#C84408] transition-all shadow-sm"
         title="Element Ayarlarını Aç"
       >
         <Pencil className="w-3.5 h-3.5" />

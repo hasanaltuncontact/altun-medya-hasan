@@ -53,28 +53,29 @@ export default function HomePage() {
 
       {/* HERO SECTION */}
       <main>
+        {/* HERO SECTION */}
         <HeroSection onOpenBrief={() => handleOpenBrief()} />
 
-        {/* C-SWOOP DIVIDER: HERO (#050505) -> BRANDS (#F7F6F2) */}
-        <SectionDivider topBgColor="#050505" bottomBgColor="#F7F6F2" />
-
-        {/* BRANDS MARQUEE (15 REAL CLIENT SVGS) */}
+        {/* BRANDS MARQUEE (15 REAL CLIENT SVGS ON SEAMLESS DARK) */}
         <BrandsMarquee />
 
-        {/* C-SWOOP DIVIDER: BRANDS (#F7F6F2) -> SERVICES (#D9D0C1) */}
-        <SectionDivider topBgColor="#F7F6F2" bottomBgColor="#D9D0C1" />
+        {/* C-SWOOP DIVIDER: MARQUEE (#050505) -> SERVICES (#D9D0C1) */}
+        <SectionDivider topBgColor="#050505" bottomBgColor="#D9D0C1" />
 
-        {/* 6 MAIN CATEGORY SERVICES SECTION */}
+        {/* 6 MAIN CATEGORY SERVICES SECTION (ORDERED COMPACT BOXES) */}
         <ServicesSection onOpenBriefWithService={(slug) => handleOpenBrief(slug)} />
 
-        {/* C-SWOOP DIVIDER: SERVICES (#D9D0C1) -> REELS LAB (#070707) */}
+        {/* C-SWOOP DIVIDER: SERVICES (#D9D0C1) -> REELS LAB & CREATOR (#070707) */}
         <SectionDivider topBgColor="#D9D0C1" bottomBgColor="#070707" />
 
         {/* REELS LAB INLINE VIDEO SLIDER */}
         <ReelsLabSection />
 
-        {/* CREATOR NETWORK */}
+        {/* CREATOR NETWORK (INTEGRATED INTO UNIFIED VIRAL STUDIO ZONE) */}
         <CreatorNetworkSection />
+
+        {/* C-SWOOP DIVIDER: VIRAL CREATOR STUDIO (#070707) -> WORKS (#F1F0EA) */}
+        <SectionDivider topBgColor="#070707" bottomBgColor="#F1F0EA" />
 
         {/* WORKS & CASE STUDIES */}
         <WorksSection onSelectWork={(work) => setSelectedWork(work)} />
@@ -91,17 +92,32 @@ export default function HomePage() {
         {/* REVIEWS & 15 CLIENT LOGOS GRID */}
         <ReviewsSection />
 
-        {/* DIDIM & REGIONAL SEO CARDS */}
+        {/* C-SWOOP DIVIDER: REVIEWS (#F7F6F2) -> LOCAL SEO (#0B0A12) */}
+        <SectionDivider topBgColor="#F7F6F2" bottomBgColor="#0B0A12" />
+
+        {/* DIDIM & REGIONAL SEO CARDS (OBSIDIAN DARK STUDIO) */}
         <LocalSeoSection />
 
-        {/* ABOUT STUDIO */}
+        {/* C-SWOOP DIVIDER: LOCAL SEO (#0B0A12) -> ABOUT STUDIO (#EDE8DF) */}
+        <SectionDivider topBgColor="#0B0A12" bottomBgColor="#EDE8DF" />
+
+        {/* ABOUT STUDIO (WARM ARCHITECTURAL LINEN) */}
         <AboutSection />
+
+        {/* C-SWOOP DIVIDER: ABOUT STUDIO (#EDE8DF) -> CAREER (#131218) */}
+        <SectionDivider topBgColor="#EDE8DF" bottomBgColor="#131218" />
 
         {/* CORPORATE CAREER & POSITIONS */}
         <CareerSection onOpenBrief={() => handleOpenBrief()} />
 
-        {/* HIGH-IMPACT LIME CTA BAND */}
+        {/* C-SWOOP DIVIDER: CAREER (#131218) -> HIGH-IMPACT CTA (#B33A06) */}
+        <SectionDivider topBgColor="#131218" bottomBgColor="#B33A06" />
+
+        {/* HIGH-IMPACT TERRACOTTA CTA BAND */}
         <HighImpactCtaSection onOpenBrief={() => handleOpenBrief()} />
+
+        {/* C-SWOOP DIVIDER: HIGH-IMPACT CTA (#B33A06) -> FOOTER (#050505) */}
+        <SectionDivider topBgColor="#B33A06" bottomBgColor="#050505" />
       </main>
 
       {/* FOOTER */}
