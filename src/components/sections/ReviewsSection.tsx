@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { clientLogos } from '@/data/clients';
+import { clientLogos, logoScale } from '@/data/clients';
 
 export const topRowReviews = [
   {
@@ -221,13 +221,17 @@ export default function ReviewsSection() {
 
         {/* 15 REAL CLIENT SVG LOGOS GRID */}
         <div className="pt-12 border-t border-black/15">
-          <div className="text-center mb-8">
-            <span className="text-xs font-mono uppercase tracking-widest text-black/70 font-bold block">
+          <div className="text-center mb-10">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-black/55 font-bold block mb-3">
               PORTFÖYÜMÜZDE YER ALAN SEÇKİN MARKALAR
             </span>
+            <h3 className="text-3xl sm:text-5xl tracking-[-0.03em] text-black leading-none font-heading">
+              <span className="font-black">Referans</span>{' '}
+              <span className="font-light text-black/75">İşlerimiz</span>
+            </h3>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
             {clientLogos.map((client, idx) => (
               <div
                 key={`${client.name}-${idx}`}
@@ -241,12 +245,13 @@ export default function ReviewsSection() {
                   onDragStart={(e) => e.preventDefault()}
                 />
 
-                <div className="h-14 sm:h-16 w-full flex items-center justify-center px-2 relative z-10">
+                <div className="h-24 sm:h-28 w-full flex items-center justify-center px-1 relative z-10">
                   <img
                     src={client.svgPath}
                     alt={client.name}
                     draggable={false}
-                    className="max-h-12 sm:max-h-14 max-w-full object-contain filter brightness-0 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 select-none pointer-events-none"
+                    style={{ height: `calc(var(--logo-base) * ${logoScale(client.ratio)})` }}
+                    className="[--logo-base:56px] sm:[--logo-base:66px] w-auto max-w-full object-contain filter brightness-0 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 select-none pointer-events-none"
                   />
                 </div>
                 <span className="text-xs font-extrabold text-black/80 font-heading truncate w-full relative z-10">

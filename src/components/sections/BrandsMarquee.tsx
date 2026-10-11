@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { clientLogos } from '@/data/clients';
+import { clientLogos, logoScale } from '@/data/clients';
 
 export default function BrandsMarquee() {
   return (
@@ -12,7 +12,7 @@ export default function BrandsMarquee() {
             <div
               key={`${client.name}-${idx}`}
               onContextMenu={(e) => e.preventDefault()}
-              className="h-16 sm:h-20 w-44 sm:w-60 lg:w-64 flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform duration-300 px-3 relative select-none"
+              className="h-24 sm:h-28 w-52 sm:w-64 lg:w-72 flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform duration-300 px-3 relative select-none"
             >
               {/* PROTECTION OVERLAY TO PREVENT RIGHT CLICK / DRAG / DOWNLOAD */}
               <div className="absolute inset-0 z-20 bg-transparent select-none pointer-events-auto" onContextMenu={(e) => e.preventDefault()} />
@@ -21,7 +21,8 @@ export default function BrandsMarquee() {
                 src={client.svgPath}
                 alt={client.name}
                 draggable={false}
-                className="max-h-14 sm:max-h-16 lg:max-h-18 max-w-full object-contain filter brightness-0 invert opacity-75 hover:opacity-100 transition-all select-none pointer-events-none"
+                style={{ height: `calc(var(--logo-base) * ${logoScale(client.ratio)})` }}
+                className="[--logo-base:56px] sm:[--logo-base:68px] w-auto max-w-full object-contain filter brightness-0 invert opacity-75 hover:opacity-100 transition-all select-none pointer-events-none"
               />
             </div>
           ))}

@@ -1,0 +1,21 @@
+<svg preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" viewBox="21.20 40.85 947.52 428.27" role="img" aria-label="Palm Studio">
+  <title>Palm Studio</title>
+  <g fill="#A38A6E" fill-rule="evenodd">
+    <path d="M42 55H140C176 55 196 81 196 115C196 149 176 175 140 175H88V245H42ZM88 95H134C147 95 152 105 152 115C152 125 147 135 134 135H88Z"/>
+    <path d="M232 55H296L355 245H307L295 205H233L221 245H173ZM245 167H283L264 99Z"/>
+    <path d="M368 55H414V205H505V245H368Z"/>
+    <path d="M520 55H590L631 178L672 55H742V245H698V118L653 245H609L564 118V245H520Z"/>
+  </g>
+  <g fill="none" stroke="#A38A6E">
+    <circle cx="800" cy="95" r="35" stroke-width="7"/>
+    <path d="M788 116V75H803C812 75 816 81 816 87C816 94 812 99 803 99H788M803 99L816 116" stroke-width="7"/>
+    <g stroke-width="22">
+      <path d="M166 314C160 291 140 279 110 279C75 279 55 296 55 320C55 345 75 354 110 361C148 369 169 380 169 405C169 430 145 444 110 444C72 444 50 428 46 400"/>
+      <path d="M185 279H330M257.5 279V455"/>
+      <path d="M356 268V385C356 425 380 444 410 444C440 444 464 425 464 385V268"/>
+      <path d="M526 279V444H575C625 444 650 410 650 361.5C650 313 625 279 575 279Z"/>
+      <path d="M701 268V455"/>
+      <ellipse cx="855" cy="361.5" rx="89" ry="82.5"/>
+    </g>
+  </g>
+</svg>
