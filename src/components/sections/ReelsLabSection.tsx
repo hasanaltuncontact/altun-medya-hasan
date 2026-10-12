@@ -207,7 +207,7 @@ export default function ReelsLabSection() {
       {/* SONSUZ DÖNGÜLÜ, OTOMATİK OYNAYAN REELS ŞERİDİ */}
       <div
         ref={viewportRef}
-        className="relative overflow-hidden select-none cursor-grab active:cursor-grabbing touch-pan-y"
+        className="relative max-w-screen-2xl mx-auto overflow-hidden select-none cursor-grab active:cursor-grabbing touch-pan-y"
         onMouseEnter={() => (hoverRef.current = true)}
         onMouseLeave={() => {
           hoverRef.current = false;

@@ -2,6 +2,11 @@ import Link from 'next/link';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
 import { servicesDatabase } from '@/data/services-database';
 
+// Altun Medya marka gradient'i: #D9C3AB (bej ışıma) → #F16001 → #C10801 → #000000
+const BRAND_GRADIENT =
+  'radial-gradient(110% 80% at 0% 100%, rgba(217,195,171,0.55) 0%, rgba(217,195,171,0) 34%), ' +
+  'linear-gradient(105deg, #F16001 0%, #E03E01 24%, #C10801 55%, #4A0300 82%, #000000 100%)';
+
 interface ServicesSectionProps {
   onOpenBriefWithService: (slug: string) => void;
 }
@@ -67,30 +72,35 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
             return (
               <div
                 key={cat.id}
-                className="group relative bg-[#F4EFE6]/95 hover:bg-white rounded-2xl p-5 sm:p-6 border border-black/10 hover:border-[#B33A06]/50 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                style={{ backgroundImage: BRAND_GRADIENT }}
+                className="group relative overflow-hidden rounded-3xl p-6 sm:p-7 min-h-[300px] sm:min-h-[320px] text-white flex flex-col justify-between bg-[length:135%_100%] bg-[position:0%_50%] hover:bg-[position:100%_50%] shadow-[0_10px_30px_-12px_rgba(193,8,1,0.45)] hover:shadow-[0_24px_50px_-14px_rgba(193,8,1,0.6)] hover:-translate-y-1 transition-all duration-700 ease-out"
               >
-                <div>
-                  {/* TOP ROW: NUMBER BADGE & DETAIL ARROW */}
-                  <div className="flex items-center justify-between mb-3.5">
-                    <span className="px-2.5 py-0.5 rounded-md bg-black/5 font-mono text-xs font-black text-[#B33A06] border border-black/5">
+                {/* Soft top sheen for depth */}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.07] to-transparent" />
+
+                <div className="relative">
+                  {/* TOP ROW: NUMBER & DETAIL ARROW */}
+                  <div className="flex items-center justify-between mb-8 sm:mb-10">
+                    <span className="font-mono text-xs tracking-[0.2em] text-white/60">
                       {cat.number}
                     </span>
                     <Link
                       href={`/hizmetler/${cat.slug}`}
-                      className="w-8 h-8 rounded-full bg-black/5 group-hover:bg-[#B33A06] group-hover:text-white text-black/60 flex items-center justify-center transition-all shadow-sm"
+                      className="w-9 h-9 rounded-full border border-white/25 text-white/80 group-hover:bg-white group-hover:text-black group-hover:border-white flex items-center justify-center transition-all duration-300"
                       title="Hizmeti İncele"
+                      aria-label={`${cat.title} hizmetini incele`}
                     >
                       <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </Link>
                   </div>
 
-                  {/* TITLE: LOGO-STYLE BOLD-THIN PAIRING */}
-                  <h3 className="text-lg sm:text-xl text-[#050505] group-hover:text-[#B33A06] transition-colors font-heading leading-snug mb-2">
-                    <Link href={`/hizmetler/${cat.slug}`} className="hover:underline">
+                  {/* TITLE: LARGE BOLD-THIN PAIRING */}
+                  <h3 className="text-[26px] sm:text-[30px] lg:text-[32px] tracking-[-0.03em] font-heading leading-[1.02] mb-3">
+                    <Link href={`/hizmetler/${cat.slug}`}>
                       {cat.title.includes('&') ? (
                         <>
-                          <span className="font-black">{cat.title.split('&')[0].trim()}</span>{' '}
-                          <span className="font-light text-[#050505]/75">&amp; {cat.title.split('&')[1].trim()}</span>
+                          <span className="font-black block">{cat.title.split('&')[0].trim()}</span>
+                          <span className="font-light text-white/80">&amp; {cat.title.split('&')[1].trim()}</span>
                         </>
                       ) : (
                         <span className="font-black">{cat.title}</span>
@@ -98,41 +108,43 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
                     </Link>
                   </h3>
 
-                  {/* CONCISE DESCRIPTION (AZ VE ÖZ METİN) */}
-                  <p className="text-xs sm:text-[13px] text-[#050505]/75 leading-relaxed mb-4">
+                  {/* MINIMAL DESCRIPTION */}
+                  <p className="text-[12.5px] sm:text-[13px] text-white/65 leading-relaxed max-w-[38ch]">
                     {summary.shortDesc}
                   </p>
+                </div>
 
-                  {/* TOP 3 CLEAN BADGES */}
+                <div className="relative mt-6">
+                  {/* MINIMAL TAGS: THIN OUTLINE PILLS */}
                   <div className="flex flex-wrap gap-1.5 mb-5">
                     {summary.topBadges.map((badge) => (
                       <span
                         key={badge}
-                        className="text-[10px] sm:text-[11px] font-mono font-medium px-2 py-0.5 rounded bg-black/5 text-black/75 group-hover:bg-[#B33A06]/10 group-hover:text-[#B33A06] transition-colors"
+                        className="whitespace-nowrap px-2.5 py-1 rounded-full border border-white/20 text-[10px] font-mono uppercase tracking-[0.08em] text-white/75"
                       >
                         {badge}
                       </span>
                     ))}
                   </div>
-                </div>
 
-                {/* BOTTOM COMPACT ACTION ROW */}
-                <div className="pt-3 border-t border-black/10 flex items-center justify-between gap-2">
-                  <Link
-                    href={`/hizmetler/${cat.slug}`}
-                    className="text-xs font-mono font-bold text-black/80 hover:text-[#B33A06] flex items-center gap-1 transition-colors"
-                  >
-                    <span>Detaylar</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
+                  {/* BOTTOM ACTION ROW */}
+                  <div className="pt-4 border-t border-white/15 flex items-center justify-between gap-2">
+                    <Link
+                      href={`/hizmetler/${cat.slug}`}
+                      className="text-xs font-mono font-bold text-white/85 hover:text-white flex items-center gap-1 transition-colors"
+                    >
+                      <span>Detaylar</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
 
-                  <button
-                    onClick={() => onOpenBriefWithService(cat.slug)}
-                    className="px-3 py-1.5 rounded-lg bg-black text-white hover:bg-[#B33A06] text-[11px] font-mono font-bold uppercase tracking-wider flex items-center gap-1 transition-all active:scale-95 shadow-sm"
-                  >
-                    <span>Proje Başlat</span>
-                    <Sparkles className="w-3 h-3 text-[#FF6B35]" />
-                  </button>
+                    <button
+                      onClick={() => onOpenBriefWithService(cat.slug)}
+                      className="px-3.5 py-2 rounded-full bg-white text-black hover:bg-black hover:text-white text-[11px] font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all active:scale-95"
+                    >
+                      <span>Proje Başlat</span>
+                      <Sparkles className="w-3 h-3 text-[#F16001]" />
+                    </button>
+                  </div>
                 </div>
               </div>
             );

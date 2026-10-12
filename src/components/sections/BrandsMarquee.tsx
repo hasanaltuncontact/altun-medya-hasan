@@ -5,14 +5,16 @@ export default function BrandsMarquee() {
   return (
     <section className="py-12 bg-[#050505] text-white overflow-hidden border-t border-white/10">
       {/* 15 REAL CLIENT SVGS MARQUEE */}
-      <div className="relative w-full overflow-hidden flex pb-8 border-b border-white/10">
-        <div className="animate-marquee-left flex items-center gap-14 sm:gap-24 opacity-80 hover:opacity-100 transition-opacity py-3">
-          {/* Duplicate list to make infinite seamless marquee */}
-          {[...clientLogos, ...clientLogos, ...clientLogos].map((client, idx) => (
+      <div className="pb-8 border-b border-white/10">
+      {/* Geniş ekran / uzaklaştırılmış görünümde şerit içerikle hizalı kalsın diye genişlik sınırlandı, kenarlar yumuşakça kaybolur */}
+      <div className="relative max-w-screen-2xl mx-auto overflow-hidden flex" style={{ maskImage: 'linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%)' }}>
+        <div className="animate-marquee-left flex w-max items-center opacity-80 hover:opacity-100 transition-opacity py-3">
+          {/* Liste 2 kez basılır; animasyon tam -%50 kaydığı için döngü kesintisiz birleşir */}
+          {[...clientLogos, ...clientLogos].map((client, idx) => (
             <div
               key={`${client.name}-${idx}`}
               onContextMenu={(e) => e.preventDefault()}
-              className="h-24 sm:h-28 w-52 sm:w-64 lg:w-72 flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform duration-300 px-3 relative select-none"
+              className="h-24 sm:h-28 w-52 sm:w-64 lg:w-72 mr-14 sm:mr-24 flex items-center justify-center flex-shrink-0 hover:scale-105 transition-transform duration-300 px-3 relative select-none"
             >
               {/* PROTECTION OVERLAY TO PREVENT RIGHT CLICK / DRAG / DOWNLOAD */}
               <div className="absolute inset-0 z-20 bg-transparent select-none pointer-events-auto" onContextMenu={(e) => e.preventDefault()} />
@@ -27,6 +29,7 @@ export default function BrandsMarquee() {
             </div>
           ))}
         </div>
+      </div>
       </div>
 
       {/* 4 OFFICIAL PLATFORM PARTNER CARDS */}
