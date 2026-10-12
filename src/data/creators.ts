@@ -2,17 +2,17 @@ export interface CreatorItem {
   id: string;
   name: string;
   handle: string;
-  niche: string;
+  niche?: string;
   nicheCategory: 'lifestyle' | 'gastronomi' | 'turizm' | 'mimari' | 'moda';
   followers: string;
-  reach: string;
-  engagementRate: string;
+  reach?: string;
+  engagementRate?: string;
   avatarImage: string;
   verified: boolean;
   platforms: ('instagram' | 'tiktok' | 'youtube')[];
   tags: string[];
-  pastBrands: string[];
-  bio: string;
+  pastBrands?: string[];
+  bio?: string;
 }
 
 export const creatorCategories = [
@@ -26,6 +26,28 @@ export const creatorCategories = [
 
 export const creatorsList: CreatorItem[] = [
   {
+    id: 'zeynepbusrau',
+    name: 'Zeynep Büşra',
+    handle: '@zeynepbusrau',
+    nicheCategory: 'lifestyle',
+    followers: '220 Bin+',
+    avatarImage: '/assets/creators/zeynepbusrau.png',
+    verified: true,
+    platforms: ['instagram'],
+    tags: [],
+  },
+  {
+    id: 'anastasile',
+    name: 'Anastasile',
+    handle: '@anastasile',
+    nicheCategory: 'lifestyle',
+    followers: '5,2 Mn',
+    avatarImage: '/assets/creators/anastasile.png',
+    verified: true,
+    platforms: ['instagram'],
+    tags: [],
+  },
+  {
     id: 'creator-1',
     name: 'Ezgi Güçlü',
     handle: '@ezgigucllu',
@@ -34,7 +56,7 @@ export const creatorsList: CreatorItem[] = [
     followers: '420K',
     reach: '2.8M/Ay',
     engagementRate: '%6.8',
-    avatarImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
+    avatarImage: '/assets/creators/creator-1.png',
     verified: true,
     platforms: ['instagram', 'tiktok'],
     tags: ['Bodrum', 'Didim', 'Otel & Beach'],
@@ -50,7 +72,7 @@ export const creatorsList: CreatorItem[] = [
     followers: '340K',
     reach: '3.1M/Ay',
     engagementRate: '%8.2',
-    avatarImage: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop',
+    avatarImage: '/assets/creators/creator-2.png',
     verified: true,
     platforms: ['instagram', 'tiktok', 'youtube'],
     tags: ['Ege Mutfağı', 'Mezeler', 'Fine Dining'],
@@ -66,7 +88,7 @@ export const creatorsList: CreatorItem[] = [
     followers: '540K',
     reach: '3.6M/Ay',
     engagementRate: '%5.9',
-    avatarImage: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=600&auto=format&fit=crop',
+    avatarImage: '/assets/creators/creator-3.png',
     verified: true,
     platforms: ['instagram', 'youtube'],
     tags: ['Villa Turu', 'Akbük', 'Lüks Mimari'],
@@ -82,7 +104,7 @@ export const creatorsList: CreatorItem[] = [
     followers: '680K',
     reach: '4.2M/Ay',
     engagementRate: '%6.4',
-    avatarImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop',
+    avatarImage: '/assets/creators/creator-4.png',
     verified: true,
     platforms: ['instagram', 'youtube', 'tiktok'],
     tags: ['Teknoloji', 'Lüks Yaşam', 'Mekan'],
@@ -98,7 +120,7 @@ export const creatorsList: CreatorItem[] = [
     followers: '310K',
     reach: '2.1M/Ay',
     engagementRate: '%7.1',
-    avatarImage: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=600&auto=format&fit=crop',
+    avatarImage: '/assets/creators/creator-5.png',
     verified: true,
     platforms: ['instagram', 'tiktok'],
     tags: ['Mücevher', 'Yaz Modası', 'Lüks'],
@@ -114,7 +136,7 @@ export const creatorsList: CreatorItem[] = [
     followers: '280K',
     reach: '1.8M/Ay',
     engagementRate: '%6.1',
-    avatarImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop',
+    avatarImage: '/assets/creators/creator-6.png',
     verified: true,
     platforms: ['instagram', 'youtube'],
     tags: ['Yat Kiralama', 'Mavi Tur', 'Koylar'],
@@ -130,7 +152,7 @@ export const creatorsList: CreatorItem[] = [
     followers: '490K',
     reach: '3.8M/Ay',
     engagementRate: '%9.1',
-    avatarImage: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop',
+    avatarImage: '/assets/creators/creator-7.png',
     verified: true,
     platforms: ['instagram', 'tiktok'],
     tags: ['Kastyörem', 'Kahvaltı', 'Doğal Ürünler'],
@@ -146,7 +168,7 @@ export const creatorsList: CreatorItem[] = [
     followers: '820K',
     reach: '6.5M/Ay',
     engagementRate: '%10.4',
-    avatarImage: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop',
+    avatarImage: '/assets/creators/creator-8.png',
     verified: true,
     platforms: ['tiktok', 'instagram'],
     tags: ['Viral Reels', 'Mekan İnceleme', 'Eğlence'],

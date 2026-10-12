@@ -170,19 +170,22 @@ export default function InfluencerHubPage() {
               >
                 <div>
                   {/* AVATAR & BADGES */}
-                  <div className="relative h-60 w-full rounded-2xl overflow-hidden mb-4">
+                  <div className="relative h-72 w-full rounded-2xl overflow-hidden mb-4 bg-[radial-gradient(circle_at_50%_45%,rgba(179,58,6,0.45),transparent_65%)]">
                     <img
                       src={creator.avatarImage}
-                      alt={creator.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      alt={`${creator.name} (${creator.handle})`}
+                      loading="lazy"
+                      className="absolute inset-x-0 top-1 mx-auto h-[82%] w-auto object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.55)] group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/85 to-transparent" />
 
                     {/* TOP BADGE */}
-                    <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-xs font-mono text-white font-bold">
-                      <Star className="w-3 h-3 text-[#FF6B35] fill-current" />
-                      <span>ER: {creator.engagementRate}</span>
-                    </div>
+                    {creator.engagementRate && (
+                      <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-xs font-mono text-white font-bold">
+                        <Star className="w-3 h-3 text-[#FF6B35] fill-current" />
+                        <span>ER: {creator.engagementRate}</span>
+                      </div>
+                    )}
 
                     {/* BOTTOM INFO OVERLAY */}
                     <div className="absolute bottom-3 left-3 right-3">
@@ -197,33 +200,39 @@ export default function InfluencerHubPage() {
                   </div>
 
                   {/* STATS ROW */}
-                  <div className="grid grid-cols-2 gap-2 py-2 px-3 rounded-xl bg-white/5 border border-white/10 text-center mb-3">
+                  <div className={`grid ${creator.reach ? 'grid-cols-2' : 'grid-cols-1'} gap-2 py-2 px-3 rounded-xl bg-white/5 border border-white/10 text-center mb-3`}>
                     <div>
                       <div className="text-xs font-mono text-white/50">Takipçi</div>
                       <div className="text-sm font-bold text-white font-heading">{creator.followers}</div>
                     </div>
-                    <div>
-                      <div className="text-xs font-mono text-white/50">Aylık Erişim</div>
-                      <div className="text-sm font-bold text-[#FF6B35] font-heading">{creator.reach}</div>
-                    </div>
+                    {creator.reach && (
+                      <div>
+                        <div className="text-xs font-mono text-white/50">Aylık Erişim</div>
+                        <div className="text-sm font-bold text-[#FF6B35] font-heading">{creator.reach}</div>
+                      </div>
+                    )}
                   </div>
 
                   {/* BIO */}
-                  <p className="text-xs text-white/70 font-sans leading-relaxed line-clamp-2">
-                    {creator.bio}
-                  </p>
+                  {creator.bio && (
+                    <p className="text-xs text-white/70 font-sans leading-relaxed line-clamp-2">
+                      {creator.bio}
+                    </p>
+                  )}
 
                   {/* PAST BRANDS */}
-                  <div className="mt-3 pt-3 border-t border-white/10 space-y-1.5">
-                    <span className="text-[10px] font-mono text-white/50 uppercase block font-bold">Çalıştığı Markalar:</span>
-                    <div className="flex flex-wrap gap-1">
-                      {creator.pastBrands.map((b) => (
-                        <span key={b} className="text-[10px] px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/80 font-mono">
-                          {b}
-                        </span>
-                      ))}
+                  {creator.pastBrands && creator.pastBrands.length > 0 && (
+                    <div className="mt-3 pt-3 border-t border-white/10 space-y-1.5">
+                      <span className="text-[10px] font-mono text-white/50 uppercase block font-bold">Çalıştığı Markalar:</span>
+                      <div className="flex flex-wrap gap-1">
+                        {creator.pastBrands.map((b) => (
+                          <span key={b} className="text-[10px] px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-white/80 font-mono">
+                            {b}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 {/* ACTION BUTTON */}

@@ -7,6 +7,15 @@ const BRAND_GRADIENT =
   'radial-gradient(110% 80% at 0% 100%, rgba(217,195,171,0.55) 0%, rgba(217,195,171,0) 34%), ' +
   'linear-gradient(105deg, #F16001 0%, #E03E01 24%, #C10801 55%, #4A0300 82%, #000000 100%)';
 
+// Bölüm arka planı: kartlardaki marka gradient'inin bölüm geneline yayılmış hâli
+const SECTION_GRADIENT =
+  'radial-gradient(60% 55% at 0% 100%, rgba(217,195,171,0.50) 0%, rgba(217,195,171,0) 60%), ' +
+  'linear-gradient(120deg, #F16001 0%, #E03E01 22%, #C10801 52%, #4A0300 80%, #000000 100%)';
+
+// Buzlu cam kart yüzeyi: üstte parlak, altta hafif dumanlı
+const GLASS_SURFACE =
+  'linear-gradient(160deg, rgba(255,255,255,0.20) 0%, rgba(255,255,255,0.07) 45%, rgba(20,8,4,0.18) 100%)';
+
 interface ServicesSectionProps {
   onOpenBriefWithService: (slug: string) => void;
 }
@@ -41,23 +50,35 @@ const serviceSummaries: Record<string, { shortDesc: string; topBadges: string[] 
 
 export default function ServicesSection({ onOpenBriefWithService }: ServicesSectionProps) {
   return (
-    <section id="services" className="py-14 sm:py-20 px-5 sm:px-10 lg:px-14 bg-[#D9D0C1] text-[#050505]">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="services"
+      style={{ backgroundImage: SECTION_GRADIENT }}
+      className="relative overflow-hidden -mt-10 sm:-mt-16 -mb-10 sm:-mb-16 pt-24 sm:pt-36 pb-24 sm:pb-36 px-5 sm:px-10 lg:px-14 text-white"
+    >
+      {/* Işık lekeleri: cam kartların arkasında bulanıklaşarak derinlik verir */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-[8%] w-[420px] h-[420px] rounded-full bg-[#FF8A3D]/50 blur-[110px]" />
+        <div className="absolute top-[38%] right-[6%] w-[460px] h-[460px] rounded-full bg-[#7A0A02]/70 blur-[120px]" />
+        <div className="absolute bottom-[-10%] left-[30%] w-[380px] h-[380px] rounded-full bg-[#F4C9A0]/30 blur-[120px]" />
+        <div className="absolute top-[18%] left-[48%] w-[260px] h-[260px] rounded-full bg-[#FFB27A]/25 blur-[90px]" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto">
         
         {/* COMPACT SECTION HEADER */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8 sm:mb-12 border-b border-black/15 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8 sm:mb-12 border-b border-white/20 pb-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/10 text-xs font-mono font-bold uppercase tracking-wider text-black mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#B33A06]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-xs font-mono font-bold uppercase tracking-wider text-white mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-white" />
               <span>360° Stüdyo Çözümleri • 6 Disiplin</span>
             </div>
-            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl tracking-[-0.04em] text-[#050505] leading-[0.95] font-heading">
+            <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl tracking-[-0.04em] leading-[0.95] font-heading text-white">
               <span className="font-black">SADECE AJANS</span>{' '}
-              <span className="font-light text-[#050505]/70">DEĞİLİZ.</span>
+              <span className="font-light text-white/75">DEĞİLİZ.</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-[#050505]/80 max-w-md font-medium leading-relaxed">
-            Fikir, 4K dikey prodüksiyon, yeni nesil web ve performans pazarlamasını tek stüdyoda birleştiriyoruz. Markanızı dijitalde <strong className="text-black font-extrabold">harekete</strong> geçiriyoruz.
+          <p className="text-xs sm:text-sm text-white/80 max-w-md font-medium leading-relaxed">
+            Fikir, 4K dikey prodüksiyon, yeni nesil web ve performans pazarlamasını tek stüdyoda birleştiriyoruz. Markanızı dijitalde <strong className="text-white font-extrabold">harekete</strong> geçiriyoruz.
           </p>
         </div>
 
@@ -72,11 +93,12 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
             return (
               <div
                 key={cat.id}
-                style={{ backgroundImage: BRAND_GRADIENT }}
-                className="group relative overflow-hidden rounded-3xl p-6 sm:p-7 min-h-[300px] sm:min-h-[320px] text-white flex flex-col justify-between bg-[length:135%_100%] bg-[position:0%_50%] hover:bg-[position:100%_50%] shadow-[0_10px_30px_-12px_rgba(193,8,1,0.45)] hover:shadow-[0_24px_50px_-14px_rgba(193,8,1,0.6)] hover:-translate-y-1 transition-all duration-700 ease-out"
+                style={{ backgroundImage: GLASS_SURFACE }}
+                className="group relative overflow-hidden rounded-[28px] p-6 sm:p-7 min-h-[300px] sm:min-h-[320px] text-white flex flex-col justify-between border border-white/20 backdrop-blur-2xl backdrop-saturate-150 shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_20px_45px_-20px_rgba(40,4,0,0.55)] hover:border-white/35 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_28px_60px_-18px_rgba(40,4,0,0.7)] hover:-translate-y-1 transition-all duration-500 ease-out"
               >
-                {/* Soft top sheen for depth */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.07] to-transparent" />
+                {/* Cam parlaması: üst kenar ışığı + hover'da beliren yumuşak ışık */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/[0.12] to-transparent" />
+                <div className="pointer-events-none absolute -top-1/3 -right-1/4 w-2/3 h-2/3 rounded-full bg-white/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                 <div className="relative">
                   {/* TOP ROW: NUMBER & DETAIL ARROW */}
@@ -109,7 +131,7 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
                   </h3>
 
                   {/* MINIMAL DESCRIPTION */}
-                  <p className="text-[12.5px] sm:text-[13px] text-white/65 leading-relaxed max-w-[38ch]">
+                  <p className="text-[12.5px] sm:text-[13px] text-white/75 leading-relaxed max-w-[38ch]">
                     {summary.shortDesc}
                   </p>
                 </div>
@@ -120,7 +142,7 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
                     {summary.topBadges.map((badge) => (
                       <span
                         key={badge}
-                        className="whitespace-nowrap px-2.5 py-1 rounded-full border border-white/20 text-[10px] font-mono uppercase tracking-[0.08em] text-white/75"
+                        className="whitespace-nowrap px-2.5 py-1 rounded-full bg-white/10 border border-white/10 text-[10px] font-mono uppercase tracking-[0.08em] text-white/85"
                       >
                         {badge}
                       </span>

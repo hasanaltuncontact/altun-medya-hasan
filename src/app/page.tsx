@@ -60,13 +60,13 @@ export default function HomePage() {
         <BrandsMarquee />
 
         {/* C-SWOOP DIVIDER: MARQUEE (#050505) -> SERVICES (#D9D0C1) */}
-        <SectionDivider topBgColor="#050505" bottomBgColor="#D9D0C1" />
+        <SectionDivider topBgColor="#050505" gradientSection="below" />
 
         {/* 6 MAIN CATEGORY SERVICES SECTION (ORDERED COMPACT BOXES) */}
         <ServicesSection onOpenBriefWithService={(slug) => handleOpenBrief(slug)} />
 
         {/* C-SWOOP DIVIDER: SERVICES (#D9D0C1) -> REELS LAB & CREATOR (#070707) */}
-        <SectionDivider topBgColor="#D9D0C1" bottomBgColor="#070707" />
+        <SectionDivider bottomBgColor="#070707" gradientSection="above" />
 
         {/* REELS LAB INLINE VIDEO SLIDER */}
         <ReelsLabSection />

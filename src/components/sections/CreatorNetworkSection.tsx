@@ -71,25 +71,18 @@ export default function CreatorNetworkSection() {
                 {/* STAR CONTAINER WITH INFLUENCER AVATAR */}
                 <div className="relative w-[230px] h-[230px] sm:w-[260px] sm:h-[260px] flex items-center justify-center">
                   
-                  {/* NEON LIME 4-POINT STAR BACKGROUND */}
-                  <svg
-                    className={`absolute inset-0 w-full h-full text-[#B33A06] drop-shadow-[0_0_35px_rgba(179, 58, 6,0.35)] transform group-hover:scale-105 ${
-                      index % 2 === 0 ? 'group-hover:rotate-6' : 'group-hover:-rotate-6'
-                    } transition-all duration-500 ease-out`}
-                    viewBox="0 0 300 300"
-                    fill="currentColor"
-                  >
-                    <path d="M150 0 C150 82.84 217.16 150 300 150 C217.16 150 150 217.16 150 300 C150 217.16 82.84 150 0 150 C82.84 150 150 82.84 150 0 Z" />
-                  </svg>
+                  {/* SOFT ORANGE GLOW BEHIND THE STAR */}
+                  <div className="absolute inset-[22%] rounded-full bg-[#B33A06]/40 blur-3xl group-hover:bg-[#FF6B35]/50 transition-colors duration-500" />
 
-                  {/* CIRCULAR PORTRAIT INSIDE THE STAR */}
-                  <div className="relative z-10 w-[170px] h-[170px] sm:w-[195px] sm:h-[195px] rounded-full overflow-hidden border-2 border-black/40 shadow-2xl group-hover:scale-105 transition-transform duration-500">
-                    <img
-                      src={creator.avatarImage}
-                      alt={creator.name}
-                      className="w-full h-full object-cover object-top filter contrast-105"
-                    />
-                  </div>
+                  {/* STAR-WINDOW PORTRAIT (transparent PNG) */}
+                  <img
+                    src={creator.avatarImage}
+                    alt={`${creator.name} (${creator.handle})`}
+                    loading="lazy"
+                    className={`relative z-10 w-full h-full object-contain drop-shadow-[0_12px_30px_rgba(0,0,0,0.6)] transform group-hover:scale-105 ${
+                      index % 2 === 0 ? 'group-hover:rotate-3' : 'group-hover:-rotate-3'
+                    } transition-transform duration-500 ease-out`}
+                  />
 
                   {/* SMALL SPARKLE STAR ICON TOP-RIGHT */}
                   <svg
@@ -110,7 +103,7 @@ export default function CreatorNetworkSection() {
                     {creator.handle}
                   </p>
                   <div className="inline-block px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-white/70 uppercase">
-                    {creator.niche} • {creator.followers}
+                    {creator.niche ? `${creator.niche} • ${creator.followers}` : `${creator.followers} Takipçi`}
                   </div>
                 </div>
               </div>
