@@ -71,6 +71,42 @@ export default function HeroSection({ onOpenBrief }: HeroSectionProps) {
           </Link>
         </div>
 
+        {/* HERO QUICK DISCOVERY LINKS */}
+        <div className="flex flex-wrap items-center justify-center gap-2 pt-1 text-xs font-mono">
+          <Link
+            href="/kurumsal/hakkimizda"
+            className="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-white/80 hover:text-white transition-all flex items-center gap-1.5"
+          >
+            <span>Kurumsal</span>
+            <span className="text-[#B33A06]">→</span>
+          </Link>
+          <Link
+            href="/referanslar"
+            className="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-white/80 hover:text-white transition-all flex items-center gap-1.5"
+          >
+            <span>Referanslar</span>
+            <span className="text-[#B33A06]">→</span>
+          </Link>
+          <Link
+            href="/blog"
+            className="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-white/80 hover:text-white transition-all flex items-center gap-1.5"
+          >
+            <span>Blog</span>
+            <span className="text-[#B33A06]">→</span>
+          </Link>
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-white/80 hover:text-white transition-all flex items-center gap-1.5 cursor-pointer"
+          >
+            <span>İletişim</span>
+            <span className="text-[#B33A06]">↓</span>
+          </a>
+        </div>
+
         {/* CORPORATE STATS BAND (CENTERED) */}
         <div className="pt-10 grid grid-cols-3 gap-8 sm:gap-16 border-t border-white/15 max-w-xl mx-auto w-full text-center">
           <div>

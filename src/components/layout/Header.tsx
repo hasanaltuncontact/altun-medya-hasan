@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { Ticket, Menu, X, ChevronDown, UserCheck } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 import AltunMedyaLogo from './AltunMedyaLogo';
@@ -14,6 +15,10 @@ interface HeaderProps {
 
 export default function Header({ onOpenBrief, onToggleMobileMenu, isMobileMenuOpen }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,12 +33,46 @@ export default function Header({ onOpenBrief, onToggleMobileMenu, isMobileMenuOp
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Dropdown dışına tıklandığında kapat
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Sayfa değiştiğinde dropdown'ı kapat
+  useEffect(() => {
+    setIsDropdownOpen(false);
+  }, [pathname]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('/#')) {
+      const targetId = href.replace('/#', '');
+      if (pathname === '/') {
+        e.preventDefault();
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Alt sayfadaysa ana sayfadaki ilgili bölüme yönlendir
+        e.preventDefault();
+        router.push(href);
+      }
+    }
+  };
+
   return (
     <header
       id="site-header"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 py-4 px-5 sm:px-10 lg:px-14 border-b ${
         isScrolled
-          ? 'bg-[#050505]/90 backdrop-blur-xl border-white/10 shadow-2xl py-3'
+          ? 'bg-[#050505]/95 backdrop-blur-xl border-white/10 shadow-2xl py-3'
           : 'bg-transparent border-transparent'
       }`}
     >
@@ -48,22 +87,41 @@ export default function Header({ onOpenBrief, onToggleMobileMenu, isMobileMenuOp
           {siteConfig.navigation.map((item) => {
             if ('dropdown' in item && item.dropdown) {
               return (
-                <div key={item.name} className="relative group py-2">
-                  <a
-                    href={item.href}
-                    className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors py-1 cursor-pointer"
+                <div
+                  key={item.name}
+                  ref={dropdownRef}
+                  className="relative py-2 group"
+                  onMouseEnter={() => setIsDropdownOpen(true)}
+                  onMouseLeave={() => setIsDropdownOpen(false)}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className="flex items-center gap-1.5 text-white/80 hover:text-white transition-colors py-1 cursor-pointer focus:outline-none"
+                    aria-expanded={isDropdownOpen}
                   >
                     <span>{item.name}</span>
-                    <ChevronDown className="w-3.5 h-3.5 text-[#B33A06] group-hover:rotate-180 transition-transform duration-300" />
-                  </a>
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 text-[#B33A06] transition-transform duration-300 ${
+                        isDropdownOpen ? 'rotate-180' : 'group-hover:rotate-180'
+                      }`}
+                    />
+                  </button>
 
                   {/* DROPDOWN MENU */}
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50 min-w-[270px]">
-                    <div className="p-3 rounded-2xl bg-[#0B0B0B] border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.55)] space-y-1">
+                  <div
+                    className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-200 z-50 min-w-[270px] ${
+                      isDropdownOpen
+                        ? 'opacity-100 translate-y-0 pointer-events-auto'
+                        : 'opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto'
+                    }`}
+                  >
+                    <div className="p-3 rounded-2xl bg-[#0B0B0B] border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.7)] space-y-1">
                       {item.dropdown.map((sub) => (
                         <Link
                           key={sub.name}
                           href={sub.href}
+                          onClick={() => setIsDropdownOpen(false)}
                           className="block p-2.5 rounded-xl hover:bg-white/10 transition-colors group/sub"
                         >
                           <div className="text-xs font-bold text-white group-hover/sub:text-[#B33A06] transition-colors flex items-center justify-between">
@@ -85,6 +143,7 @@ export default function Header({ onOpenBrief, onToggleMobileMenu, isMobileMenuOp
               <Link
                 key={item.name}
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className={`transition-colors py-1 hover:text-white ${
                   'isHighlight' in item && item.isHighlight
                     ? 'text-[#FF6B35] font-extrabold hover:text-[#FFA07A]'

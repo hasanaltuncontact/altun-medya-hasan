@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Ticket } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { Ticket, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/config/site.config';
 
 interface MobileNavProps {
@@ -11,7 +12,27 @@ interface MobileNavProps {
 }
 
 export default function MobileNav({ isOpen, onClose, onOpenBrief }: MobileNavProps) {
+  const pathname = usePathname();
+  const router = useRouter();
+
   if (!isOpen) return null;
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    onClose();
+    if (href.startsWith('/#')) {
+      const targetId = href.replace('/#', '');
+      if (pathname === '/') {
+        e.preventDefault();
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        e.preventDefault();
+        router.push(href);
+      }
+    }
+  };
 
   return (
     <div
@@ -41,19 +62,52 @@ export default function MobileNav({ isOpen, onClose, onOpenBrief }: MobileNavPro
           </div>
         </div>
 
-        <Link href="/#works" onClick={onClose} className="block text-white/90 hover:text-white py-1">
+        <Link
+          href="/#works"
+          onClick={(e) => handleNavClick(e, '/#works')}
+          className="block text-white/90 hover:text-white py-1"
+        >
           İşlerimiz
         </Link>
-        <Link href="/#services" onClick={onClose} className="block text-white/90 hover:text-white py-1">
+
+        <Link
+          href="/referanslar"
+          onClick={onClose}
+          className="block text-white/90 hover:text-white py-1 flex items-center justify-between"
+        >
+          <span>Referanslar &amp; Vaka Çalışmaları</span>
+          <ArrowRight className="w-4 h-4 text-[#B33A06]" />
+        </Link>
+
+        <Link
+          href="/#services"
+          onClick={(e) => handleNavClick(e, '/#services')}
+          className="block text-white/90 hover:text-white py-1"
+        >
           Hizmetlerimiz
         </Link>
-        <Link href="/influencer" onClick={onClose} className="block text-[#FF6B35] font-extrabold py-1 flex items-center gap-1.5">
+
+        <Link
+          href="/influencer"
+          onClick={onClose}
+          className="block text-[#FF6B35] font-extrabold py-1 flex items-center gap-1.5"
+        >
           <span>✦ İnfluencer Network</span>
         </Link>
-        <Link href="/blog" onClick={onClose} className="block text-white/90 hover:text-white py-1">
+
+        <Link
+          href="/blog"
+          onClick={onClose}
+          className="block text-white/90 hover:text-white py-1"
+        >
           📖 Didim SEO &amp; Blog
         </Link>
-        <Link href="/#contact" onClick={onClose} className="block text-white/90 hover:text-white py-1">
+
+        <Link
+          href="/#contact"
+          onClick={(e) => handleNavClick(e, '/#contact')}
+          className="block text-white/90 hover:text-white py-1"
+        >
           İletişim
         </Link>
       </div>
@@ -64,7 +118,7 @@ export default function MobileNav({ isOpen, onClose, onOpenBrief }: MobileNavPro
             onClose();
             onOpenBrief();
           }}
-          className="w-full py-4 text-center text-sm font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl shadow-lg flex items-center justify-center gap-2"
+          className="w-full py-4 text-center text-sm font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl shadow-lg flex items-center justify-center gap-2 active:scale-95"
         >
           <Ticket className="w-4 h-4" />
           <span>Hemen Proje Başlat</span>
@@ -72,7 +126,7 @@ export default function MobileNav({ isOpen, onClose, onOpenBrief }: MobileNavPro
 
         <div className="flex justify-between items-center text-xs text-[#8E8E93] font-mono">
           <span>{siteConfig.email}</span>
-          <span>{siteConfig.address}</span>
+          <span>{siteConfig.phone}</span>
         </div>
       </div>
     </div>
