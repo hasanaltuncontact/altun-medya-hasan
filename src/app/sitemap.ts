@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { servicesDatabase } from '@/data/services-database';
 import { seoKeywordsDetailed } from '@/config/seo-keywords';
+import { clientProfiles } from '@/data/client-profiles';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://altunmedya.com';
@@ -33,6 +34,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1.0,
     },
+    {
+      url: `${baseUrl}/referanslar`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    ...clientProfiles.map((p) => ({
+      url: `${baseUrl}/${p.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
     ...corporateUrls,
     ...categoryUrls,
     ...keywordUrls,

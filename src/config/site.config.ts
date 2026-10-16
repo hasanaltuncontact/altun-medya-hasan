@@ -25,6 +25,7 @@ export const siteConfig = {
       ],
     },
     { name: 'İşlerimiz', href: '/#works' },
+    { name: 'Referanslar', href: '/referanslar' },
     { name: 'İnfluencer ✦', href: '/influencer', isHighlight: true },
     { name: 'Blog', href: '/blog' },
     { name: 'İletişim', href: '/#contact' },
@@ -38,7 +39,7 @@ export const siteConfig = {
     { name: 'İnfluencer Network ✦', href: '/influencer', isHighlight: true },
     { name: 'Didim SEO & Blog', href: '/blog' },
     { name: 'Reels Lab', href: '/#reels-section' },
-    { name: 'Referanslarımız', href: '/#partners-reviews' },
+    { name: 'Referanslarımız', href: '/referanslar' },
     { name: 'İletişim', href: '/#contact' },
   ],
 };

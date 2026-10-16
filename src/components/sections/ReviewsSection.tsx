@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { clientLogos, logoScale } from '@/data/clients';
+import { profileHrefByLogoName } from '@/data/client-profiles';
 
 export const topRowReviews = [
   {
@@ -232,18 +234,20 @@ export default function ReviewsSection() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
-            {clientLogos.map((client, idx) => (
-              <div
+            {clientLogos.map((client, idx) => {
+              const href = profileHrefByLogoName(client.name);
+              return (
+              <Link
                 key={`${client.name}-${idx}`}
+                href={href ?? '/referanslar'}
                 onContextMenu={(e) => e.preventDefault()}
-                className="bg-white p-5 sm:p-6 rounded-2xl border border-black/10 flex flex-col items-center justify-center text-center space-y-3 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group relative select-none cursor-default"
+                onDragStart={(e) => e.preventDefault()}
+                aria-label={`${client.name} referans sayfası`}
+                className="bg-white p-5 sm:p-6 rounded-2xl border border-black/10 flex flex-col items-center justify-center text-center space-y-3 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group relative select-none"
               >
-                {/* INVISIBLE OVERLAY SHIELD TO PREVENT DRAGGING / SAVING / DOWNLOADING */}
-                <div 
-                  className="absolute inset-0 z-20 bg-transparent select-none" 
-                  onContextMenu={(e) => e.preventDefault()} 
-                  onDragStart={(e) => e.preventDefault()}
-                />
+                <span className="absolute top-3 right-3 text-[10px] font-mono font-bold text-black/0 group-hover:text-black/50 transition-colors z-10">
+                  İNCELE ↗
+                </span>
 
                 <div className="h-24 sm:h-28 w-full flex items-center justify-center px-1 relative z-10">
                   <img
@@ -257,8 +261,17 @@ export default function ReviewsSection() {
                 <span className="text-xs font-extrabold text-black/80 font-heading truncate w-full relative z-10">
                   {client.name}
                 </span>
-              </div>
-            ))}
+              </Link>
+              );
+            })}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/referanslar"
+              className="px-7 py-3.5 rounded-full bg-black text-white text-xs font-extrabold uppercase tracking-wider hover:bg-black/85 transition-all active:scale-95"
+            >
+              Tüm Vaka Çalışmalarını Gör →
+            </Link>
           </div>
         </div>
 
