@@ -4,13 +4,13 @@ export const siteConfig = {
   description: 'Didim, Aydın ve Ege bölgesinde markaları dijitalde harekete geçiren 360° medya, web tasarım, fotoğraf & video prodüksiyon ve dijital pazarlama stüdyosu.',
   url: 'https://altunmedya.com',
   email: 'info@altunmedya.com',
-  phone: '+90 544 555 0909',
+  phone: '+90 544 313 5557',
   address: 'Didim • Aydın • Bodrum • Kuşadası',
   social: {
     instagram: 'https://instagram.com/altunmedya',
     linkedin: 'https://linkedin.com/company/altunmedya',
     youtube: 'https://youtube.com/@altunmedya',
-    whatsapp: 'https://wa.me/905445550909',
+    whatsapp: 'https://wa.me/905443135557',
   },
   // Primary Header Navigation
   navigation: [

@@ -57,6 +57,64 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': 'https://altunmedya.com/#organization',
+      name: 'ALTUN MEDYA',
+      legalName: siteConfig.legalName,
+      url: siteConfig.url,
+      description: siteConfig.description,
+      telephone: '+905443135557',
+      email: siteConfig.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Altınkum Mah. Yalı Cad.',
+        addressLocality: 'Didim',
+        addressRegion: 'Aydın',
+        postalCode: '09270',
+        addressCountry: 'TR',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 37.3736,
+        longitude: 27.2568,
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Didim' },
+        { '@type': 'City', name: 'Akbük' },
+        { '@type': 'City', name: 'Bodrum' },
+        { '@type': 'City', name: 'Kuşadası' },
+        { '@type': 'City', name: 'Söke' },
+        { '@type': 'AdministrativeArea', name: 'Aydın' },
+      ],
+      sameAs: [
+        siteConfig.social.instagram,
+        siteConfig.social.linkedin,
+        siteConfig.social.youtube,
+      ],
+      priceRange: '₺₺₺',
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+          opens: '09:00',
+          closes: '19:00',
+        },
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://altunmedya.com/#website',
+      url: siteConfig.url,
+      name: siteConfig.name,
+      publisher: { '@id': 'https://altunmedya.com/#organization' },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -65,6 +123,10 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`scroll-smooth ${plusJakarta.variable} ${manrope.variable}`}>
       <body className="bg-[#050505] text-[#F7F6F2] font-sans antialiased selection:bg-[#B33A06] selection:text-white min-h-screen flex flex-col justify-between">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <SEOEngineProviderWrapper>
           <CustomCursor />
           {children}

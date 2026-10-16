@@ -21,16 +21,43 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug, init
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [waLink, setWaLink] = useState('https://wa.me/905443135557');
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      onClose();
-    }, 2500);
+    setIsLoading(true);
+
+    try {
+      const selectedCategory = servicesDatabase.find((s) => s.slug === formData.service);
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          service: selectedCategory ? selectedCategory.title : formData.service,
+          message: formData.message,
+          source: 'Header / Proje Başlat Modal',
+        }),
+      });
+
+      const data = await res.json();
+      if (data.whatsappUrl) {
+        setWaLink(data.whatsappUrl);
+      }
+      setIsSubmitted(true);
+    } catch {
+      // Ağ hatası olsa bile WhatsApp bağlantısını oluştur ve kullanıcıyı mağdur etme
+      const msg = `Merhaba Altun Medya! Web sitenizden teklif formu doldurdum.\nİsim: ${formData.name}\nTelefon: ${formData.phone}\nHizmet: ${formData.service}`;
+      setWaLink(`https://wa.me/905443135557?text=${encodeURIComponent(msg)}`);
+      setIsSubmitted(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -57,10 +84,29 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug, init
         </div>
 
         {isSubmitted ? (
-          <div className="py-8 text-center space-y-3">
-            <CheckCircle2 className="w-12 h-12 text-[#B33A06] mx-auto animate-bounce" />
-            <h4 className="text-lg font-bold text-white">Talebiniz Alındı!</h4>
-            <p className="text-xs text-white/70">Proje detaylarınız kaydedildi. Ekibimiz sizinle kısa süre içinde iletişime geçecektir.</p>
+          <div className="py-6 text-center space-y-4">
+            <CheckCircle2 className="w-14 h-14 text-[#B33A06] mx-auto animate-bounce" />
+            <h4 className="text-xl font-bold text-white font-heading">Talebiniz Başarıyla Alındı!</h4>
+            <p className="text-xs text-white/70 max-w-sm mx-auto leading-relaxed">
+              Proje detaylarınız kaydedildi. Stüdyo ekibimiz en kısa sürede sizinle iletişime geçecektir.
+            </p>
+            <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href={waLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3.5 text-xs font-extrabold uppercase tracking-wider bg-[#25D366] text-black rounded-xl hover:bg-[#20ba5a] transition-all flex items-center justify-center gap-2 shadow-lg"
+              >
+                <span>WhatsApp ile Hemen Görüş</span>
+              </a>
+              <button
+                type="button"
+                onClick={onClose}
+                className="px-5 py-3.5 text-xs font-bold uppercase tracking-wider bg-white/10 hover:bg-white/15 text-white rounded-xl transition-all"
+              >
+                Kapat
+              </button>
+            </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -84,7 +130,7 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug, init
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="0544 000 0000"
+                  placeholder="0544 313 5557"
                   className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#B33A06] transition-colors"
                 />
               </div>
@@ -116,7 +162,7 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug, init
             </div>
 
             <div>
-              <label className="block text-xs font-mono uppercase text-white/80 mb-1">Proje Notu & Beklentiniz</label>
+              <label className="block text-xs font-mono uppercase text-white/80 mb-1">Proje Notu &amp; Beklentiniz</label>
               <textarea
                 rows={3}
                 value={formData.message}
@@ -128,10 +174,11 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug, init
 
             <button
               type="submit"
-              className="w-full py-4 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(179, 58, 6,0.3)] active:scale-95"
+              disabled={isLoading}
+              className="w-full py-4 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] disabled:opacity-50 transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(179, 58, 6,0.3)] active:scale-95"
             >
               <Send className="w-4 h-4" />
-              <span>BİLETİ KES &amp; GÖNDER</span>
+              <span>{isLoading ? 'GÖNDERİLİYOR...' : 'BİLETİ KES & GÖNDER'}</span>
             </button>
           </form>
         )}

@@ -17,10 +17,11 @@ export default function HeroSection({ onOpenBrief }: HeroSectionProps) {
           loop
           muted
           playsInline
+          preload="metadata"
           className="w-full h-full object-cover opacity-25 scale-105 filter blur-[2px]"
-          poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1400&auto=format&fit=crop"
+          poster="/videos/reels/posters/dior-beach-club.jpg"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-fashion-model-posing-in-neon-light-40114-large.mp4" type="video/mp4" />
+          <source src="/videos/reels/dior-beach-club.mp4" type="video/mp4" />
         </video>
         {/* GRADIENT OVERLAYS FOR MAXIMUM TEXT READABILITY */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/85 to-[#050505]" />
