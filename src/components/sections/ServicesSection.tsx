@@ -94,7 +94,7 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
               <div
                 key={cat.id}
                 style={{ backgroundImage: GLASS_SURFACE }}
-                className="group relative overflow-hidden rounded-[28px] p-6 sm:p-7 min-h-[300px] sm:min-h-[320px] text-white flex flex-col justify-between border border-white/20 backdrop-blur-2xl backdrop-saturate-150 shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_20px_45px_-20px_rgba(40,4,0,0.55)] hover:border-white/35 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_28px_60px_-18px_rgba(40,4,0,0.7)] hover:-translate-y-1 transition-all duration-500 ease-out"
+                className="group relative overflow-hidden rounded-[28px] p-6 sm:p-7 min-h-[300px] sm:min-h-[320px] text-white flex flex-col justify-between border border-white/20 [backface-visibility:hidden] shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_20px_45px_-20px_rgba(40,4,0,0.55)] hover:border-white/35 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_28px_60px_-18px_rgba(40,4,0,0.7)] hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-500 ease-out"
               >
                 {/* Cam parlaması: üst kenar ışığı + hover'da beliren yumuşak ışık */}
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/[0.12] to-transparent" />
@@ -108,7 +108,7 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
                     </span>
                     <Link
                       href={`/hizmetler/${cat.slug}`}
-                      className="w-9 h-9 rounded-full border border-white/25 text-white/80 group-hover:bg-white group-hover:text-black group-hover:border-white flex items-center justify-center transition-all duration-300"
+                      className="w-9 h-9 rounded-full border border-white/25 text-white/80 group-hover:bg-white group-hover:text-black group-hover:border-white flex items-center justify-center transition-colors duration-300"
                       title="Hizmeti İncele"
                       aria-label={`${cat.title} hizmetini incele`}
                     >
@@ -161,7 +161,7 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
 
                     <button
                       onClick={() => onOpenBriefWithService(cat.slug)}
-                      className="px-3.5 py-2 rounded-full bg-white text-black hover:bg-black hover:text-white text-[11px] font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all active:scale-95"
+                      className="px-3.5 py-2 rounded-full bg-white text-black hover:bg-black hover:text-white text-[11px] font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 transition-[background-color,color,transform] duration-200 active:scale-95"
                     >
                       <span>Proje Başlat</span>
                       <Sparkles className="w-3 h-3 text-[#F16001]" />

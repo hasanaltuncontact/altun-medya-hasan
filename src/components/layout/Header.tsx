@@ -168,7 +168,7 @@ export default function Header({ onOpenBrief, onToggleMobileMenu, isMobileMenuOp
 
           <button
             onClick={onOpenBrief}
-            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] hover:shadow-[0_0_24px_rgba(179, 58, 6,0.35)] transition-all transform active:scale-95"
+            className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] hover:shadow-[0_0_24px_rgba(179,58,6,0.35)] transition-all transform active:scale-95"
           >
             <span>Proje Biletini Kes</span>
             <Ticket className="w-4 h-4" />

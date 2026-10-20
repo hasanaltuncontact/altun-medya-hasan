@@ -129,27 +129,55 @@
   background: #B33A06;
 }
 
-@media (pointer: fine) {
-  body {
-    cursor: default;
-  }
+/* ==================================================
+   ÖZEL İMLEÇ — nokta + halka
+   Konum JS ile transform üzerinden verilir; burada sadece
+   boyut/renk geçişleri var (left/top ANİMASYONU YOK).
+   ================================================== */
+.am-cursor-dot,
+.am-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  border-radius: 9999px;
+  will-change: transform;
+}
 
-  #custom-cursor {
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: width 0.15s cubic-bezier(0.16, 1, 0.3, 1),
-      height 0.15s cubic-bezier(0.16, 1, 0.3, 1),
-      background-color 0.2s ease,
-      border-color 0.2s ease;
-  }
+.am-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #ffffff;
+  mix-blend-mode: difference;
+  transition: opacity 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.am-cursor-dot.is-hover {
+  width: 4px;
+  height: 4px;
+}
+
+.am-cursor-ring {
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  background: transparent;
+  transition: opacity 0.2s ease, width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+/* Hover: büyüyen, içi BOŞ turuncu halka — buton yazısını kapatmaz */
+.am-cursor-ring.is-hover {
+  width: 46px;
+  height: 46px;
+  border-color: #ff6b35;
 }
 
 @media (pointer: coarse) {
-  #custom-cursor {
+  .am-cursor-dot,
+  .am-cursor-ring {
     display: none !important;
   }
 }

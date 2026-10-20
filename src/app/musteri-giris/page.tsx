@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { Lock, Mail, ArrowRight, ShieldCheck, UserCheck, Key, Ticket } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import CustomCursor from '@/components/layout/CustomCursor';
 import { demoClients } from '@/data/portal-database';
 
 export default function ClientLoginPage() {
@@ -44,7 +43,6 @@ export default function ClientLoginPage() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-[#B33A06] selection:text-white font-sans antialiased flex flex-col justify-between">
-      <CustomCursor />
       
       <Header
         onOpenBrief={() => {}}

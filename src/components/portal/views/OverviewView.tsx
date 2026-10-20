@@ -41,7 +41,7 @@ export default function OverviewView() {
 
         <button
           onClick={() => setIsNewProjectModalOpen(true)}
-          className="px-6 py-3.5 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] hover:shadow-[0_0_24px_rgba(179, 58, 6,0.4)] transition-all flex items-center gap-2 relative z-10 active:scale-95 shadow-xl"
+          className="px-6 py-3.5 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] hover:shadow-[0_0_24px_rgba(179,58,6,0.4)] transition-all flex items-center gap-2 relative z-10 active:scale-95 shadow-xl"
         >
           <Plus className="w-4 h-4" />
           <span>+ Yeni Proje Başlat</span>

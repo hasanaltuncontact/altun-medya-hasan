@@ -134,7 +134,7 @@ export default function ApprovalCenterView() {
                   
                   <button
                     onClick={() => handleWatchMedia(item)}
-                    className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-[#B33A06] text-white flex items-center justify-center shadow-[0_0_30px_rgba(179, 58, 6,0.6)] group-hover:scale-110 transition-transform active:scale-95"
+                    className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-[#B33A06] text-white flex items-center justify-center shadow-[0_0_30px_rgba(179,58,6,0.6)] group-hover:scale-110 transition-transform active:scale-95"
                   >
                     <Play className="w-7 h-7 fill-current ml-1" />
                   </button>
@@ -194,7 +194,7 @@ export default function ApprovalCenterView() {
 
                   <button
                     onClick={() => approveMediaItem(item.id)}
-                    className="px-6 py-2.5 rounded-xl bg-[#B33A06] text-white hover:bg-[#C84408] font-mono text-xs font-extrabold transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(179, 58, 6,0.3)] active:scale-95"
+                    className="px-6 py-2.5 rounded-xl bg-[#B33A06] text-white hover:bg-[#C84408] font-mono text-xs font-extrabold transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(179,58,6,0.3)] active:scale-95"
                   >
                     <Check className="w-4 h-4" />
                     <span>[ ✓ ONAYLA &amp; YAYINLA ]</span>

@@ -61,7 +61,7 @@ export default function VisualEditorCanvas({ onOpenSettings }: { onOpenSettings:
 
     const elClasses = `relative transition-all cursor-pointer ${
       isSelected 
-        ? 'ring-2 ring-[#B33A06] shadow-[0_0_25px_rgba(179, 58, 6,0.35)] z-30' 
+        ? 'ring-2 ring-[#B33A06] shadow-[0_0_25px_rgba(179,58,6,0.35)] z-30' 
         : isHovered 
         ? 'outline outline-2 outline-[#B33A06] outline-offset-2 z-20' 
         : ''

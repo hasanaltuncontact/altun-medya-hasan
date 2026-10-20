@@ -84,7 +84,7 @@ export default function PortalSidebar() {
                   onClick={() => handleSectionClick(item.id)}
                   className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold font-mono transition-all group ${
                     isActive
-                      ? 'bg-[#B33A06] text-white font-extrabold shadow-[0_0_20px_rgba(179, 58, 6,0.25)]'
+                      ? 'bg-[#B33A06] text-white font-extrabold shadow-[0_0_20px_rgba(179,58,6,0.25)]'
                       : 'text-white/70 hover:text-white hover:bg-white/5'
                   }`}
                 >
@@ -101,7 +101,7 @@ export default function PortalSidebar() {
                       className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
                         isActive
                           ? 'bg-black text-[#B33A06]'
-                          : 'bg-[#B33A06] text-white shadow-[0_0_10px_rgba(179, 58, 6,0.4)]'
+                          : 'bg-[#B33A06] text-white shadow-[0_0_10px_rgba(179,58,6,0.4)]'
                       }`}
                     >
                       {item.badge}

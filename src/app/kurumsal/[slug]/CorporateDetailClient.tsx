@@ -6,7 +6,6 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import MobileNav from '@/components/layout/MobileNav';
 import BriefModal from '@/components/modals/BriefModal';
-import CustomCursor from '@/components/layout/CustomCursor';
 import { AboutPageData } from '@/data/about-database';
 import { 
   Target, Video, Code, MapPin, Camera, TrendingUp, 
@@ -40,7 +39,6 @@ export default function CorporateDetailClient({ pageData }: CorporateDetailClien
 
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-[#B33A06] selection:text-white font-sans antialiased">
-      <CustomCursor />
       
       <Header
         onOpenBrief={() => setIsBriefOpen(true)}

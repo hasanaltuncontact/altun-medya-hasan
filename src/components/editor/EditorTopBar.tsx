@@ -180,7 +180,7 @@ export default function EditorTopBar({ onToggleLeftPanel, leftPanelOpen }: { onT
 
         <button
           onClick={publishPage}
-          className="px-4 py-2 rounded-xl bg-[#B33A06] text-white hover:bg-[#C84408] text-xs font-extrabold tracking-wider uppercase flex items-center gap-2 shadow-[0_0_20px_rgba(179, 58, 6,0.3)] transition-all active:scale-95"
+          className="px-4 py-2 rounded-xl bg-[#B33A06] text-white hover:bg-[#C84408] text-xs font-extrabold tracking-wider uppercase flex items-center gap-2 shadow-[0_0_20px_rgba(179,58,6,0.3)] transition-all active:scale-95"
         >
           <Rocket className="w-4 h-4" />
           <span>Yayınla</span>

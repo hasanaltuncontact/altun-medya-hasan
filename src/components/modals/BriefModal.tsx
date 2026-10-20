@@ -175,7 +175,7 @@ export default function BriefModal({ isOpen, onClose, selectedCategorySlug, init
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-4 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] disabled:opacity-50 transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(179, 58, 6,0.3)] active:scale-95"
+              className="w-full py-4 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] disabled:opacity-50 transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(179,58,6,0.3)] active:scale-95"
             >
               <Send className="w-4 h-4" />
               <span>{isLoading ? 'GÖNDERİLİYOR...' : 'BİLETİ KES & GÖNDER'}</span>

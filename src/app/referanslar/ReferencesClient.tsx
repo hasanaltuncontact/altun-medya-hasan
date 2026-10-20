@@ -9,6 +9,7 @@ import Footer from '@/components/layout/Footer';
 import MobileNav from '@/components/layout/MobileNav';
 import BriefModal from '@/components/modals/BriefModal';
 import { clientProfiles, getProfileLogo } from '@/data/client-profiles';
+import BrandAvatar from '@/components/ui/BrandAvatar';
 
 export default function ReferencesClient() {
   const [isBriefOpen, setIsBriefOpen] = useState(false);
@@ -85,16 +86,12 @@ export default function ReferencesClient() {
                   >
                     <div aria-hidden className="absolute -top-20 -right-20 w-48 h-48 rounded-full blur-3xl opacity-15 group-hover:opacity-35 transition-opacity" style={{ background: p.accent }} />
                     <div className="relative flex items-center gap-4">
-                      <span
-                        className="w-16 h-16 shrink-0 rounded-full overflow-hidden ring-2 ring-white/10 group-hover:ring-white/40 transition-all"
-                        style={{ background: `radial-gradient(circle at 30% 25%, ${p.accent}, #0A0A0A 85%)` }}
-                      >
-                        {p.cover ? (
-                          <img src={p.cover} alt={p.displayName} loading="lazy" className="w-full h-full object-cover" />
-                        ) : logo ? (
-                          <img src={logo.svgPath} alt={p.displayName} loading="lazy" className="w-full h-full object-contain p-3.5 brightness-0 invert" />
-                        ) : null}
-                      </span>
+                      <BrandAvatar
+                        accent={p.accent}
+                        logoSrc={logo?.svgPath}
+                        name={p.displayName}
+                        className="w-16 h-16 ring-2 ring-white/10 group-hover:ring-white/40 transition-all"
+                      />
                       <div className="min-w-0">
                         <h2 className="text-lg font-bold font-heading truncate">{p.displayName}</h2>
                         <p className="text-[11px] font-mono text-white/50 truncate">{p.sector} · {p.location}</p>

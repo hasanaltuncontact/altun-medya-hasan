@@ -77,7 +77,7 @@ export default function MediaFilesView() {
             onClick={() => setSelectedCategory(cat)}
             className={`px-4 py-2 rounded-xl transition-all whitespace-nowrap ${
               selectedCategory === cat
-                ? 'bg-[#B33A06] text-white font-extrabold shadow-[0_0_15px_rgba(179, 58, 6,0.3)]'
+                ? 'bg-[#B33A06] text-white font-extrabold shadow-[0_0_15px_rgba(179,58,6,0.3)]'
                 : 'bg-white/5 text-white/70 hover:text-white hover:bg-white/10 border border-white/10'
             }`}
           >

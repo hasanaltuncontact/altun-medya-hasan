@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import CustomCursor from '@/components/layout/CustomCursor';
 import { EditorProvider, useEditor } from '@/components/editor/EditorContext';
 import EditorTopBar from '@/components/editor/EditorTopBar';
 import LeftElementPanel from '@/components/editor/LeftElementPanel';
@@ -18,7 +17,6 @@ function VisualBuilderContent() {
 
   return (
     <div className="h-screen w-screen bg-[#050505] text-white selection:bg-[#B33A06] selection:text-white flex flex-col overflow-hidden font-sans antialiased">
-      <CustomCursor />
 
       {/* TOPBAR */}
       <EditorTopBar 

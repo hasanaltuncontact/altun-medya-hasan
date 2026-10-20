@@ -33,7 +33,7 @@ export default function FloatingElementToolbar({
   return (
     <div
       style={{ top: Math.max(10, position.top - 48), left: position.left }}
-      className="fixed z-50 transform -translate-x-1/2 bg-[#080808]/95 backdrop-blur-2xl border border-[#B33A06]/40 shadow-[0_0_25px_rgba(179, 58, 6,0.25)] rounded-xl px-2 py-1 flex items-center gap-1.5 text-white selection:bg-[#B33A06] selection:text-white animate-in fade-in zoom-in-95 duration-150"
+      className="fixed z-50 transform -translate-x-1/2 bg-[#080808]/95 backdrop-blur-2xl border border-[#B33A06]/40 shadow-[0_0_25px_rgba(179,58,6,0.25)] rounded-xl px-2 py-1 flex items-center gap-1.5 text-white selection:bg-[#B33A06] selection:text-white animate-in fade-in zoom-in-95 duration-150"
     >
       <span className="text-[10px] font-mono font-extrabold uppercase tracking-wider text-[#B33A06] px-1 border-r border-white/10">
         {selectedEl.type}

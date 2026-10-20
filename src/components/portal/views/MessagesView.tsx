@@ -61,7 +61,7 @@ export default function MessagesView() {
                 className={`max-w-md p-4 rounded-2xl space-y-1 ${
                   msg.isAgency
                     ? 'bg-white/10 text-white border border-white/10 rounded-tl-none'
-                    : 'bg-[#B33A06] text-white font-semibold rounded-tr-none shadow-[0_0_15px_rgba(179, 58, 6,0.25)] font-sans'
+                    : 'bg-[#B33A06] text-white font-semibold rounded-tr-none shadow-[0_0_15px_rgba(179,58,6,0.25)] font-sans'
                 }`}
               >
                 <div className={`flex items-center justify-between text-[10px] font-mono mb-1 ${msg.isAgency ? 'text-[#B33A06]' : 'text-black/60 font-bold'}`}>

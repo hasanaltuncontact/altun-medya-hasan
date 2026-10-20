@@ -152,7 +152,7 @@ export default function InfluencerClient() {
                   formEl?.scrollIntoView({ behavior: 'smooth' });
                   setActiveFormTab('creator');
                 }}
-                className="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/20 text-xs sm:text-sm font-bold tracking-wide transition-all backdrop-blur-md flex items-center gap-2 active:scale-95"
+                className="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/20 text-xs sm:text-sm font-bold tracking-wide transition-[background-color,transform] backdrop-blur-md flex items-center gap-2 active:scale-95"
               >
                 <Users className="w-4 h-4 text-[#FF6B35]" />
                 <span>İçerik Üreticisi Olarak Katıl</span>

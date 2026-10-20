@@ -161,7 +161,7 @@ export default function PortalHeader() {
         {/* NEW PROJECT BUTTON */}
         <button
           onClick={() => setIsNewProjectModalOpen(true)}
-          className="px-4 py-2 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] hover:shadow-[0_0_20px_rgba(179, 58, 6,0.35)] transition-all flex items-center gap-1.5 active:scale-95"
+          className="px-4 py-2 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] hover:shadow-[0_0_20px_rgba(179,58,6,0.35)] transition-all flex items-center gap-1.5 active:scale-95"
         >
           <Plus className="w-4 h-4" />
           <span>+ Yeni Proje Başlat</span>

@@ -64,7 +64,7 @@ export default function HeroSection({ onOpenBrief }: HeroSectionProps) {
 
           <Link
             href="/influencer"
-            className="px-7 py-4 text-xs sm:text-sm font-bold tracking-wide bg-white/10 hover:bg-white/15 text-white border border-white/20 rounded-xl transition-all flex items-center gap-2 active:scale-95 backdrop-blur-md"
+            className="px-7 py-4 text-xs sm:text-sm font-bold tracking-wide bg-white/10 hover:bg-white/15 text-white border border-white/20 rounded-xl transition-[background-color,transform] flex items-center gap-2 active:scale-95 backdrop-blur-md"
           >
             <Users className="w-4 h-4 text-[#FF6B35]" />
             <span>İnfluencer Ağını Keşfet</span>

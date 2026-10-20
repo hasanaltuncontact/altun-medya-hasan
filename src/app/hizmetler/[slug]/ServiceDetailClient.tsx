@@ -323,7 +323,7 @@ export default function ServiceDetailClient({
               </Link>
 
               <Link
-                href="/blog/google-haritalar-didim-yerel-seo-rehberi"
+                href="/blog/google-haritalar-didim-yerel-seo-siralama-optimizasyonu"
                 className="p-7 rounded-2xl bg-white border border-black/10 hover:border-[#B33A06] hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
@@ -344,7 +344,7 @@ export default function ServiceDetailClient({
               </Link>
 
               <Link
-                href="/blog/didim-villa-ve-gayrimenkul-drone-video-cekimi"
+                href="/blog/didim-villa-ve-gayrimenkul-cekimi-drone-video-produksiyonu"
                 className="p-7 rounded-2xl bg-white border border-black/10 hover:border-[#B33A06] hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>

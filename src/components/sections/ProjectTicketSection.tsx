@@ -84,7 +84,7 @@ export default function ProjectTicketSection({ onOpenBriefWithService }: Project
             
             {/* LEFT TICKET CARD */}
             <div
-              className={`md:w-2/3 bg-[#B33A06] text-white rounded-[28px] sm:rounded-[36px] p-6 sm:p-9 flex flex-col justify-between space-y-6 shadow-[0_25px_60px_rgba(179, 58, 6,0.25)] border border-black/10 relative transition-all duration-1000 ease-out z-10 ${
+              className={`md:w-2/3 bg-[#B33A06] text-white rounded-[28px] sm:rounded-[36px] p-6 sm:p-9 flex flex-col justify-between space-y-6 shadow-[0_25px_60px_rgba(179,58,6,0.25)] border border-black/10 relative transition-all duration-1000 ease-out z-10 ${
                 isCutDone ? 'transform md:-translate-x-28 -translate-y-10 md:translate-y-0 md:-rotate-6 opacity-95' : ''
               }`}
             >
@@ -175,7 +175,7 @@ export default function ProjectTicketSection({ onOpenBriefWithService }: Project
 
             {/* RIGHT TICKET CARD */}
             <div
-              className={`md:w-1/3 bg-[#B33A06] text-white rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 flex flex-col justify-between items-center text-center shadow-[0_25px_60px_rgba(179, 58, 6,0.25)] border border-black/10 relative transition-all duration-1000 ease-out z-10 ${
+              className={`md:w-1/3 bg-[#B33A06] text-white rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 flex flex-col justify-between items-center text-center shadow-[0_25px_60px_rgba(179,58,6,0.25)] border border-black/10 relative transition-all duration-1000 ease-out z-10 ${
                 isCutDone ? 'transform md:translate-x-28 translate-y-10 md:translate-y-0 md:rotate-6 opacity-0 pointer-events-none' : ''
               }`}
             >

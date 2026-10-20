@@ -98,7 +98,7 @@ export default function MediaLibraryModal() {
                 key={media.id}
                 onClick={() => setSelectedUrl(media.url)}
                 className={`relative rounded-2xl border overflow-hidden cursor-pointer group transition-all h-36 bg-black flex items-center justify-center ${
-                  isSelected ? 'border-[#B33A06] ring-2 ring-[#B33A06] shadow-[0_0_20px_rgba(179, 58, 6,0.3)]' : 'border-white/10 hover:border-white/40'
+                  isSelected ? 'border-[#B33A06] ring-2 ring-[#B33A06] shadow-[0_0_20px_rgba(179,58,6,0.3)]' : 'border-white/10 hover:border-white/40'
                 }`}
               >
                 {media.type === 'image' ? (

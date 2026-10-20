@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import CustomCursor from '@/components/layout/CustomCursor';
 import { PortalProvider, usePortal } from '@/components/portal/PortalContext';
 import PortalSidebar from '@/components/portal/PortalSidebar';
 import PortalHeader from '@/components/portal/PortalHeader';
@@ -56,7 +55,6 @@ function PortalMainContent() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-[#B33A06] selection:text-white font-sans antialiased flex flex-col lg:flex-row">
-      <CustomCursor />
       
       {/* SIDEBAR NAVIGATION (01 - 10) */}
       <PortalSidebar />

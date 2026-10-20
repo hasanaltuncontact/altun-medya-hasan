@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { Lock, Mail, ArrowRight, ShieldCheck, Key, Cpu, Building2 } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import CustomCursor from '@/components/layout/CustomCursor';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -38,7 +37,6 @@ export default function AdminLoginPage() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-[#B33A06] selection:text-white font-sans antialiased flex flex-col justify-between">
-      <CustomCursor />
       
       <Header
         onOpenBrief={() => {}}
@@ -52,7 +50,7 @@ export default function AdminLoginPage() {
         <div className="w-full max-w-md mx-auto relative z-10">
           <div className="p-8 sm:p-10 rounded-3xl bg-[#090909]/95 backdrop-blur-2xl border border-white/15 shadow-2xl space-y-6">
             <div className="text-center space-y-2">
-              <div className="w-12 h-12 rounded-2xl bg-[#B33A06] text-white font-black flex items-center justify-center mx-auto mb-3 shadow-[0_0_20px_rgba(179, 58, 6,0.4)]">
+              <div className="w-12 h-12 rounded-2xl bg-[#B33A06] text-white font-black flex items-center justify-center mx-auto mb-3 shadow-[0_0_20px_rgba(179,58,6,0.4)]">
                 <Cpu className="w-6 h-6" />
               </div>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">

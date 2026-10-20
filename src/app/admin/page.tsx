@@ -9,7 +9,6 @@ import {
 } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import CustomCursor from '@/components/layout/CustomCursor';
 import { 
   demoClients, initialMediaAssets, initialProjectTasks, initialInvoices, 
   ClientUser, MediaAsset, ProjectTask, InvoiceRecord 
@@ -186,7 +185,6 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white selection:bg-[#B33A06] selection:text-white font-sans antialiased">
-      <CustomCursor />
       
       <Header
         onOpenBrief={() => {}}
@@ -222,7 +220,7 @@ export default function AdminDashboardPage() {
             <div className="flex flex-wrap items-center gap-3 relative z-10">
               <Link
                 href="/admin/seo-engine"
-                className="px-5 py-3 text-xs font-mono font-extrabold tracking-wider uppercase bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-all flex items-center gap-2 shadow-[0_0_25px_rgba(179, 58, 6,0.4)] active:scale-95 border border-[#B33A06]"
+                className="px-5 py-3 text-xs font-mono font-extrabold tracking-wider uppercase bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-all flex items-center gap-2 shadow-[0_0_25px_rgba(179,58,6,0.4)] active:scale-95 border border-[#B33A06]"
               >
                 <Cpu className="w-4 h-4" />
                 <span>🚀 SEO CONTENT ENGINE</span>
