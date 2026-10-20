@@ -47,8 +47,8 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#050505] text-white pt-16 pb-12 px-5 sm:px-10 lg:px-14 border-t border-white/10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+    <footer id="contact" className="bg-[#050505] text-white pt-10 sm:pt-16 pb-8 sm:pb-12 px-5 sm:px-10 lg:px-14 border-t border-white/10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-7 md:gap-10 pb-8 md:pb-12 border-b border-white/10">
         <div className="md:col-span-5 space-y-4">
           <Link href="/" className="group inline-flex items-center select-none" aria-label="Altun Medya">
             <AltunMedyaLogo className="h-8 sm:h-10 w-auto text-white group-hover:opacity-90 transition-opacity" showStar={true} />
@@ -60,7 +60,7 @@ export default function Footer() {
 
         <div className="md:col-span-3 space-y-3">
           <h4 className="text-xs font-mono uppercase tracking-widest text-[#FF6B35] font-bold">Hızlı Bağlantılar</h4>
-          <ul className="space-y-2.5 text-xs text-white/65">
+          <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2.5 text-xs text-white/65">
             {quickLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -100,7 +100,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 font-mono gap-3">
         <div>© {new Date().getFullYear()} ALTUN MEDYA. Tüm hakları saklıdır.</div>
-        <div>Didim Sosyal Medya • Didim Web Tasarım • Didim Video Prodüksiyon</div>
+        <div className="m-hide">Didim Sosyal Medya • Didim Web Tasarım • Didim Video Prodüksiyon</div>
       </div>
     </footer>
   );

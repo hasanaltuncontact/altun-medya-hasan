@@ -168,22 +168,22 @@ export default function ReelsLabSection() {
   };
 
   return (
-    <section id="reels-section" className="py-20 bg-[#070707] text-white overflow-hidden">
+    <section id="reels-section" className="py-14 md:py-20 bg-[#070707] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-14">
         {/* HEADER */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-6 sm:mb-10">
           <div>
             <h2 className="text-3xl sm:text-5xl tracking-tight text-white leading-tight font-heading">
               <span className="font-black">YÜKSEK ETKİLEŞİMLİ</span><br />
               <span className="font-light text-white/80">VİRAL</span>{' '}
               <span className="font-black text-[#FF6B35]">PRODÜKSİYONLAR.</span>
             </h2>
-            <p className="text-xs sm:text-sm text-[#8E8E93] mt-2.5 max-w-xl font-mono leading-relaxed">
+            <p className="m-hide text-xs sm:text-sm text-[#8E8E93] mt-2.5 max-w-xl font-mono leading-relaxed">
               Instagram Reels, TikTok ve YouTube Shorts mecralarında izleyiciyi ilk saniyede yakalayan, dönüşüm odaklı dikey video kurguları. Sesi açmak için videoya dokunun.
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="m-hide flex items-center gap-3">
             <button
               id="reels-prev-btn"
               onClick={() => scroll('left')}

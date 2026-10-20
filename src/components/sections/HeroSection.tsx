@@ -9,7 +9,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onOpenBrief }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[90vh] pt-36 sm:pt-44 pb-20 px-5 sm:px-10 lg:px-14 flex flex-col justify-center items-center bg-[#050505] overflow-hidden text-center">
+    <section className="relative min-h-[90vh] pt-28 sm:pt-44 pb-14 sm:pb-20 px-5 sm:px-10 lg:px-14 flex flex-col justify-center items-center bg-[#050505] overflow-hidden text-center">
       {/* ATMOSPHERIC BACKGROUND VIDEO OVERLAY */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <video
@@ -72,7 +72,7 @@ export default function HeroSection({ onOpenBrief }: HeroSectionProps) {
         </div>
 
         {/* HERO QUICK DISCOVERY LINKS */}
-        <div className="flex flex-wrap items-center justify-center gap-2 pt-1 text-xs font-mono">
+        <div className="m-hide flex flex-wrap items-center justify-center gap-2 pt-1 text-xs font-mono">
           <Link
             href="/kurumsal/hakkimizda"
             className="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 text-white/80 hover:text-white transition-all flex items-center gap-1.5"

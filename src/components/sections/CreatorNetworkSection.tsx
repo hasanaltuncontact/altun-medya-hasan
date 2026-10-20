@@ -15,11 +15,11 @@ export default function CreatorNetworkSection() {
   };
 
   return (
-    <section id="influencer-network" className="py-20 sm:py-24 px-5 sm:px-10 lg:px-14 bg-[#070707] text-white overflow-hidden border-t border-white/10">
+    <section id="influencer-network" className="py-14 sm:py-24 px-5 sm:px-10 lg:px-14 bg-[#070707] text-white overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto">
         
         {/* HEADER SECTION */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-6 sm:mb-12">
           <div>
             <h2 className="text-3xl sm:text-5xl tracking-tight text-white leading-tight font-heading">
               <span className="font-black">DOĞRU İÇERİK</span>{' '}
@@ -27,12 +27,12 @@ export default function CreatorNetworkSection() {
               <span className="font-light text-white/80">ÖLÇÜLEBİLİR</span>{' '}
               <span className="font-black text-[#FF6B35]">DÖNÜŞÜM.</span>
             </h2>
-            <p className="text-xs sm:text-sm text-[#8E8E93] mt-2 max-w-xl font-normal leading-relaxed font-mono">
+            <p className="m-hide text-xs sm:text-sm text-[#8E8E93] mt-2 max-w-xl font-normal leading-relaxed font-mono">
               Ege ve ulusal ölçekte yüksek erişime sahip kreatif içerik üreticilerimiz ve influencer network&apos;ümüzle, markanızı doğru hedef kitleyle buluşturuyor ve yüksek dönüşümlü organik kampanya süreçleri yönetiyoruz.
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="m-hide flex items-center gap-3">
             <button
               onClick={() => scrollCreators('left')}
               className="w-11 h-11 rounded-full bg-white/5 border border-white/15 flex items-center justify-center hover:bg-[#B33A06] hover:text-white transition-all active:scale-90"
@@ -51,8 +51,8 @@ export default function CreatorNetworkSection() {
         </div>
 
         {/* CREATOR TALENT ROSTER SLIDER */}
-        <div className="mb-16">
-          <div className="flex items-center justify-between mb-6 border-b border-white/10 pb-3">
+        <div className="mb-8 sm:mb-16">
+          <div className="m-hide flex items-center justify-between mb-6 border-b border-white/10 pb-3">
             <span className="text-xs font-mono uppercase tracking-widest text-[#B33A06] font-bold">
               CREATOR TALENT ROSTER
             </span>
@@ -61,15 +61,15 @@ export default function CreatorNetworkSection() {
 
           <div
             ref={sliderRef}
-            className="flex gap-6 sm:gap-8 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-4 -mx-5 px-5 sm:-mx-10 sm:px-10"
+            className="flex gap-4 sm:gap-8 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-2 sm:py-4 -mx-5 px-5 sm:-mx-10 sm:px-10"
           >
             {creatorsList.map((creator, index) => (
               <div
                 key={creator.id}
-                className="snap-start flex-shrink-0 w-[240px] sm:w-[280px] flex flex-col items-center text-center group cursor-pointer"
+                className="snap-start flex-shrink-0 w-[160px] sm:w-[280px] flex flex-col items-center text-center group cursor-pointer"
               >
                 {/* STAR CONTAINER WITH INFLUENCER AVATAR */}
-                <div className="relative w-[230px] h-[230px] sm:w-[260px] sm:h-[260px] flex items-center justify-center">
+                <div className="relative w-[160px] h-[160px] sm:w-[260px] sm:h-[260px] flex items-center justify-center">
                   
                   {/* SOFT ORANGE GLOW BEHIND THE STAR */}
                   <div className="absolute inset-[22%] rounded-full bg-[#B33A06]/40 blur-3xl group-hover:bg-[#FF6B35]/50 transition-colors duration-500" />
@@ -95,8 +95,8 @@ export default function CreatorNetworkSection() {
                 </div>
 
                 {/* INFLUENCER META */}
-                <div className="mt-4 space-y-1">
-                  <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight group-hover:text-[#FF6B35] transition-colors font-heading">
+                <div className="mt-2 sm:mt-4 space-y-1">
+                  <h3 className="text-base sm:text-xl font-extrabold text-white tracking-tight group-hover:text-[#FF6B35] transition-colors font-heading">
                     {creator.name}
                   </h3>
                   <p className="text-xs sm:text-sm font-mono text-[#FF8A50] font-bold">
@@ -112,8 +112,8 @@ export default function CreatorNetworkSection() {
         </div>
 
         {/* BOTTOM CTA BAR */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#14121A] to-[#0A090D] border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono shadow-2xl">
-          <div className="flex items-center gap-3">
+        <div className="p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#14121A] to-[#0A090D] border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono shadow-2xl">
+          <div className="m-hide flex items-center gap-3">
             <Users className="w-6 h-6 text-[#FF6B35]" />
             <span className="text-white/90 text-sm font-sans font-medium">
               Ege creator kadromuzla markanızı buluşturmak veya ağımıza katılmak mı istiyorsunuz?
@@ -121,7 +121,7 @@ export default function CreatorNetworkSection() {
           </div>
           <a
             href="/influencer"
-            className="px-6 py-3.5 rounded-xl bg-[#B33A06] text-white text-xs font-bold font-mono uppercase tracking-wider hover:bg-[#C84408] transition-all whitespace-nowrap shadow-xl flex items-center gap-2 active:scale-95"
+            className="w-full sm:w-auto justify-center px-6 py-3.5 rounded-xl bg-[#B33A06] text-white text-xs font-bold font-mono uppercase tracking-wider hover:bg-[#C84408] transition-all whitespace-nowrap shadow-xl flex items-center gap-2 active:scale-95"
           >
             <span>Tüm İnfluencer Ağını İncele</span>
             <span>→</span>

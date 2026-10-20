@@ -191,6 +191,40 @@
   scrollbar-width: none;
 }
 
+/* ==== MOBİL: minimal & kısa sayfa yardımcıları (masaüstü etkilenmez) ==== */
+@media (max-width: 767px) {
+  /* Izgarayı yatay kaydırmalı şeride çevirir */
+  .m-rail {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+    scroll-padding-inline: 1.25rem;
+    padding-bottom: 4px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .m-rail::-webkit-scrollbar {
+    display: none;
+  }
+  .m-rail > * {
+    flex: 0 0 84%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  .m-rail.m-rail-sm > * {
+    flex-basis: 62%;
+  }
+  /* İkincil içerik mobilde gizlenir */
+  .m-hide {
+    display: none !important;
+  }
+}
+
 /* TICKET 3D STYLES */
 .ticket-3d-wrapper {
   perspective: 1200px;

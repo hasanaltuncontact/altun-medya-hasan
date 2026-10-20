@@ -530,8 +530,19 @@ function HorizontalRail({ children, bg }: { children: ReactNode; bg: string }) {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [distance, setDistance] = useState(0);
+  // Mobilde sabitlenen (scroll-jacking) ray yerine doğal yatay kaydırma kullanılır
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
     const measure = () => {
       if (!trackRef.current) return;
       setDistance(Math.max(0, trackRef.current.scrollWidth - window.innerWidth));
@@ -544,12 +555,23 @@ function HorizontalRail({ children, bg }: { children: ReactNode; bg: string }) {
       ro.disconnect();
       window.removeEventListener('resize', measure);
     };
-  }, []);
+  }, [isMobile]);
 
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] });
   const smooth = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
   const x = useTransform(smooth, [0, 1], [0, -distance]);
   const bar = useTransform(smooth, [0, 1], ['0%', '100%']);
+
+  if (isMobile) {
+    return (
+      <section ref={sectionRef} className="relative py-14 [--rail-h:380px]" style={{ background: bg }}>
+        <div className="flex items-stretch gap-4 overflow-x-auto snap-x snap-mandatory px-5 scroll-px-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [&>*]:snap-start">
+          {children}
+          <div aria-hidden className="shrink-0 w-1" />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section ref={sectionRef} className="relative [--rail-h:min(420px,58vh)]" style={{ background: bg, height: `calc(100vh + ${distance}px)` }}>

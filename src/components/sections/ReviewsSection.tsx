@@ -67,14 +67,14 @@ export const bottomRowReviews = [
 
 export default function ReviewsSection() {
   return (
-    <section id="partners-reviews" className="py-24 px-5 sm:px-10 lg:px-14 bg-[#F7F6F2] text-[#050505]">
+    <section id="partners-reviews" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#F7F6F2] text-[#050505]">
       <div className="max-w-7xl mx-auto">
         
         {/* EDITORIAL REVIEWS HEADER & STATS */}
-        <div className="mb-14 sm:mb-16">
+        <div className="mb-8 sm:mb-16">
           
           {/* Top Meta Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-end gap-3 mb-8 sm:mb-10">
+          <div className="m-hide flex flex-col sm:flex-row sm:items-center justify-end gap-3 mb-8 sm:mb-10">
 
             <div className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em] text-neutral-500 flex items-center gap-2 sm:gap-3 flex-wrap font-mono">
               <span>STRATEJİ</span>
@@ -88,7 +88,7 @@ export default function ReviewsSection() {
           </div>
 
           {/* Main Title & Stat Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 items-center">
             <div className="lg:col-span-8 space-y-4 sm:space-y-5">
               <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-[72px] tracking-[-0.04em] text-black leading-[0.96] font-heading">
                 <span className="font-black">Birlikte</span>{' '}
@@ -97,16 +97,16 @@ export default function ReviewsSection() {
                 <span className="font-black">büyüttük.</span>
               </h2>
 
-              <div className="text-2xl xs:text-3xl sm:text-4xl lg:text-[42px] font-normal text-neutral-800 leading-tight font-heading">
+              <div className="m-hide text-2xl xs:text-3xl sm:text-4xl lg:text-[42px] font-normal text-neutral-800 leading-tight font-heading">
                 Gerçek deneyimler. Gerçek sonuçlar.
               </div>
 
-              <p className="text-sm sm:text-base text-neutral-600 max-w-2xl font-normal leading-relaxed">
+              <p className="m-hide text-sm sm:text-base text-neutral-600 max-w-2xl font-normal leading-relaxed">
                 Farklı sektörlerden markalarla kurduğumuz iş birlikleri, sadece projeler değil; uzun soluklu başarı hikayelerine dönüştü.
               </p>
 
               {/* Avatar Stack */}
-              <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
+              <div className="m-hide pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
                 <div className="flex items-center -space-x-3 sm:-space-x-3.5">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
@@ -146,9 +146,9 @@ export default function ReviewsSection() {
             {/* Right Column Stat */}
             <div className="lg:col-span-4 lg:pl-10 lg:border-l lg:border-black/20 flex flex-col justify-center my-auto">
               <div className="space-y-1">
-                <div className="text-6xl sm:text-7xl lg:text-[88px] font-bold text-black tracking-tight leading-none flex items-baseline font-heading">
+                <div className="text-5xl sm:text-7xl lg:text-[88px] font-bold text-black tracking-tight leading-none flex items-baseline font-heading">
                   <span>216</span>
-                  <span className="text-white bg-[#B33A06] rounded-lg px-2 ml-1.5 font-sans font-light text-5xl sm:text-6xl shadow-md">+</span>
+                  <span className="text-white bg-[#B33A06] rounded-lg px-2 ml-1.5 font-sans font-light text-4xl sm:text-6xl shadow-md">+</span>
                 </div>
                 <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-neutral-800 pt-2 font-mono">
                   MARKA DENEYİMİ
@@ -163,7 +163,7 @@ export default function ReviewsSection() {
         </div>
 
         {/* DOUBLE ROW OPPOSITE DIRECTION SCROLLING REVIEWS MARQUEE */}
-        <div className="mb-16 space-y-6 overflow-hidden -mx-5 px-5 sm:-mx-10 sm:px-10">
+        <div className="mb-10 sm:mb-16 space-y-6 overflow-hidden -mx-5 px-5 sm:-mx-10 sm:px-10">
           
           {/* TOP ROW: RIGHT TO LEFT (MARQUEE LEFT) */}
           <div className="relative w-full overflow-hidden flex">
@@ -193,7 +193,7 @@ export default function ReviewsSection() {
           </div>
 
           {/* BOTTOM ROW: LEFT TO RIGHT (MARQUEE RIGHT) */}
-          <div className="relative w-full overflow-hidden flex">
+          <div className="m-hide relative w-full overflow-hidden flex">
             <div className="animate-marquee-right flex items-stretch gap-4 sm:gap-6 py-2">
               {[...bottomRowReviews, ...bottomRowReviews].map((rev, idx) => (
                 <div
@@ -222,8 +222,8 @@ export default function ReviewsSection() {
         </div>
 
         {/* 15 REAL CLIENT SVG LOGOS GRID */}
-        <div className="pt-12 border-t border-black/15">
-          <div className="text-center mb-10">
+        <div className="pt-8 sm:pt-12 border-t border-black/15">
+          <div className="text-center mb-6 sm:mb-10">
             <span className="text-[11px] font-mono uppercase tracking-widest text-black/55 font-bold block mb-3">
               PORTFÖYÜMÜZDE YER ALAN SEÇKİN MARKALAR
             </span>
@@ -233,7 +233,7 @@ export default function ReviewsSection() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
+          <div className="grid grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-5">
             {clientLogos.map((client, idx) => {
               const href = profileHrefByLogoName(client.name);
               return (
@@ -243,29 +243,29 @@ export default function ReviewsSection() {
                 onContextMenu={(e) => e.preventDefault()}
                 onDragStart={(e) => e.preventDefault()}
                 aria-label={`${client.name} referans sayfası`}
-                className="bg-white p-5 sm:p-6 rounded-2xl border border-black/10 flex flex-col items-center justify-center text-center space-y-3 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group relative select-none"
+                className={`${idx >= 9 ? 'm-hide ' : ''}bg-white p-2.5 sm:p-6 rounded-xl sm:rounded-2xl border border-black/10 flex flex-col items-center justify-center text-center space-y-3 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group relative select-none`}
               >
-                <span className="absolute top-3 right-3 text-[10px] font-mono font-bold text-black/0 group-hover:text-black/50 transition-colors z-10">
+                <span className="m-hide absolute top-3 right-3 text-[10px] font-mono font-bold text-black/0 group-hover:text-black/50 transition-colors z-10">
                   İNCELE ↗
                 </span>
 
-                <div className="h-24 sm:h-28 w-full flex items-center justify-center px-1 relative z-10">
+                <div className="h-14 sm:h-28 w-full flex items-center justify-center px-1 relative z-10">
                   <img
                     src={client.svgPath}
                     alt={client.name}
                     draggable={false}
                     style={{ height: `calc(var(--logo-base) * ${logoScale(client.ratio)})` }}
-                    className="[--logo-base:56px] sm:[--logo-base:66px] w-auto max-w-full object-contain filter brightness-0 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 select-none pointer-events-none"
+                    className="[--logo-base:30px] sm:[--logo-base:66px] w-auto max-w-full object-contain filter brightness-0 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 select-none pointer-events-none"
                   />
                 </div>
-                <span className="text-xs font-extrabold text-black/80 font-heading truncate w-full relative z-10">
+                <span className="m-hide text-xs font-extrabold text-black/80 font-heading truncate w-full relative z-10">
                   {client.name}
                 </span>
               </Link>
               );
             })}
           </div>
-          <div className="mt-10 flex justify-center">
+          <div className="mt-6 sm:mt-10 flex justify-center">
             <Link
               href="/referanslar"
               className="px-7 py-3.5 rounded-full bg-black text-white text-xs font-extrabold uppercase tracking-wider hover:bg-black/85 transition-all active:scale-95"

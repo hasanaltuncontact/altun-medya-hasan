@@ -182,8 +182,8 @@ export default function InfluencerClient() {
         </section>
 
         {/* NICHE CATEGORY FILTER & CREATOR ROSTER */}
-        <section id="creator-roster" className="px-5 sm:px-10 lg:px-14 max-w-7xl mx-auto mb-24">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-white/10">
+        <section id="creator-roster" className="px-5 sm:px-10 lg:px-14 max-w-7xl mx-auto mb-16 sm:mb-24">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-10 pb-5 sm:pb-6 border-b border-white/10">
             <div>
               <span className="text-xs font-mono font-bold text-[#FF6B35] uppercase tracking-widest block mb-2">
                 DOĞRULANMIŞ İÇERİK ÜRETİCİLERİ
@@ -194,12 +194,12 @@ export default function InfluencerClient() {
             </div>
             
             {/* TABS */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex md:flex-wrap gap-2 overflow-x-auto no-scrollbar -mx-5 px-5 md:mx-0 md:px-0">
               {creatorCategories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedNiche(cat.id)}
-                  className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
+                  className={`shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all ${
                     selectedNiche === cat.id
                       ? 'bg-[#B33A06] text-white shadow-lg shadow-[#B33A06]/30'
                       : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10'
@@ -212,15 +212,15 @@ export default function InfluencerClient() {
           </div>
 
           {/* CREATOR CARDS GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {filteredCreators.map((creator) => (
               <div
                 key={creator.id}
-                className="group rounded-3xl bg-[#101015] border border-white/10 hover:border-[#B33A06]/60 transition-all p-5 flex flex-col justify-between space-y-4 shadow-xl hover:-translate-y-1.5 duration-300"
+                className="group rounded-2xl sm:rounded-3xl bg-[#101015] border border-white/10 hover:border-[#B33A06]/60 transition-all p-2.5 sm:p-5 flex flex-col justify-between space-y-3 sm:space-y-4 shadow-xl hover:-translate-y-1.5 duration-300"
               >
                 <div>
                   {/* AVATAR & BADGES */}
-                  <div className="relative h-72 w-full rounded-2xl overflow-hidden mb-4 bg-[radial-gradient(circle_at_50%_45%,rgba(179,58,6,0.45),transparent_65%)]">
+                  <div className="relative h-44 sm:h-72 w-full rounded-xl sm:rounded-2xl overflow-hidden mb-0 sm:mb-4 bg-[radial-gradient(circle_at_50%_45%,rgba(179,58,6,0.45),transparent_65%)]">
                     <img
                       src={creator.avatarImage}
                       alt={`${creator.name} (${creator.handle})`}
@@ -231,7 +231,7 @@ export default function InfluencerClient() {
 
                     {/* TOP BADGE */}
                     {creator.engagementRate && (
-                      <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-xs font-mono text-white font-bold">
+                      <div className="m-hide absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/20 text-xs font-mono text-white font-bold">
                         <Star className="w-3 h-3 text-[#FF6B35] fill-current" />
                         <span>ER: {creator.engagementRate}</span>
                       </div>
@@ -240,7 +240,7 @@ export default function InfluencerClient() {
                     {/* BOTTOM INFO OVERLAY */}
                     <div className="absolute bottom-3 left-3 right-3">
                       <div className="flex items-center gap-1.5">
-                        <h3 className="text-base font-extrabold font-heading text-white">{creator.name}</h3>
+                        <h3 className="text-sm sm:text-base font-extrabold font-heading text-white truncate">{creator.name}</h3>
                         {creator.verified && (
                           <CheckCircle2 className="w-4 h-4 text-[#FF6B35] fill-[#FF6B35] text-black" />
                         )}
@@ -250,7 +250,7 @@ export default function InfluencerClient() {
                   </div>
 
                   {/* STATS ROW */}
-                  <div className={`grid ${creator.reach ? 'grid-cols-2' : 'grid-cols-1'} gap-2 py-2 px-3 rounded-xl bg-white/5 border border-white/10 text-center mb-3`}>
+                  <div className={`m-hide grid ${creator.reach ? 'grid-cols-2' : 'grid-cols-1'} gap-2 py-2 px-3 rounded-xl bg-white/5 border border-white/10 text-center mb-3`}>
                     <div>
                       <div className="text-xs font-mono text-white/50">Takipçi</div>
                       <div className="text-sm font-bold text-white font-heading">{creator.followers}</div>
@@ -265,14 +265,14 @@ export default function InfluencerClient() {
 
                   {/* BIO */}
                   {creator.bio && (
-                    <p className="text-xs text-white/70 font-sans leading-relaxed line-clamp-2">
+                    <p className="m-hide text-xs text-white/70 font-sans leading-relaxed line-clamp-2">
                       {creator.bio}
                     </p>
                   )}
 
                   {/* PAST BRANDS */}
                   {creator.pastBrands && creator.pastBrands.length > 0 && (
-                    <div className="mt-3 pt-3 border-t border-white/10 space-y-1.5">
+                    <div className="m-hide mt-3 pt-3 border-t border-white/10 space-y-1.5">
                       <span className="text-[10px] font-mono text-white/50 uppercase block font-bold">Çalıştığı Markalar:</span>
                       <div className="flex flex-wrap gap-1">
                         {creator.pastBrands.map((b) => (
@@ -291,9 +291,10 @@ export default function InfluencerClient() {
                     setSelectedCreatorForBrief(creator);
                     setIsBriefOpen(true);
                   }}
-                  className="w-full py-3 px-4 rounded-xl bg-white/5 group-hover:bg-[#B33A06] text-white text-xs font-mono font-bold flex items-center justify-center gap-2 transition-all border border-white/10 group-hover:border-transparent active:scale-95"
+                  className="w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl bg-white/5 group-hover:bg-[#B33A06] text-white text-[11px] sm:text-xs font-mono font-bold flex items-center justify-center gap-2 transition-all border border-white/10 group-hover:border-transparent active:scale-95"
                 >
-                  <span>İş Birliği Başlat</span>
+                  <span className="m-hide">İş Birliği Başlat</span>
+                  <span className="md:hidden">İş Birliği</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#FF6B35] group-hover:text-white" />
                 </button>
               </div>

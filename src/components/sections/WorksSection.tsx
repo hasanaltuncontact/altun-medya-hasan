@@ -7,9 +7,9 @@ interface WorksSectionProps {
 
 export default function WorksSection({ onSelectWork }: WorksSectionProps) {
   return (
-    <section id="works" className="py-20 px-5 sm:px-10 lg:px-14 bg-[#F1F0EA] text-[#050505]">
+    <section id="works" className="py-14 md:py-20 px-5 sm:px-10 lg:px-14 bg-[#F1F0EA] text-[#050505]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-black/15 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6 md:mb-12 border-b border-black/15 pb-5 md:pb-6">
           <div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl tracking-tight text-[#050505] leading-tight font-heading">
               <span className="font-black">VERİ DESTEKLİ</span><br />
@@ -17,13 +17,13 @@ export default function WorksSection({ onSelectWork }: WorksSectionProps) {
               <span className="font-black underline decoration-[#B33A06] decoration-4">HİKAYELERİ.</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-[#050505]/80 max-w-md font-medium leading-relaxed">
+          <p className="m-hide text-xs sm:text-sm text-[#050505]/80 max-w-md font-medium leading-relaxed">
             Gastronomi, lüks gayrimenkul, turizm ve e-ticaret sektörlerinde imza attığımız stratejik prodüksiyon ve pazarlama başarıları.
           </p>
         </div>
 
         {/* WORKS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 m-rail">
           {worksList.map((work) => (
             <div
               key={work.id}
@@ -44,7 +44,7 @@ export default function WorksSection({ onSelectWork }: WorksSectionProps) {
                 </div>
               </div>
 
-              <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
+              <div className="p-5 md:p-6 flex-grow flex flex-col justify-between space-y-4">
                 <div>
                   <span className="text-[10px] font-mono text-black/50 uppercase tracking-wider block">
                     Müşteri: {work.client}

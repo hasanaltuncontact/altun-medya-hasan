@@ -51,11 +51,11 @@ export default function ProjectTicketSection({ onOpenBriefWithService }: Project
   };
 
   return (
-    <section id="ticket-section" className="py-24 px-5 sm:px-10 lg:px-14 bg-[#050505] text-white relative overflow-hidden">
+    <section id="ticket-section" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#050505] text-white relative overflow-hidden">
       {/* BACKGROUND NEON GLOW ACCENT */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[650px] h-[350px] sm:h-[650px] bg-[#B33A06]/[0.08] rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto relative z-10 space-y-12">
+      <div className="max-w-5xl mx-auto relative z-10 space-y-6 md:space-y-12">
         
         {/* HEADER SECTION */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
@@ -64,13 +64,13 @@ export default function ProjectTicketSection({ onOpenBriefWithService }: Project
             <span className="font-light text-white/80">BİRLİKTE</span>{' '}
             <span className="font-black text-[#FF6B35]">KESELİM.</span>
           </h2>
-          <p className="text-xs sm:text-sm text-[#8E8E93] font-mono leading-relaxed">
+          <p className="m-hide text-xs sm:text-sm text-[#8E8E93] font-mono leading-relaxed">
             Hizmetinizi seçin, &quot;Bileti Kes&quot; butonuna basarak biletin 2 parça halinde kopma animasyonuyla WhatsApp canlı stüdyo ekibimize anında ulaşın.
           </p>
         </div>
 
         {/* MODERN HYPERS STYLE DUAL-CARD TICKET WITH SEAM NOTCH */}
-        <div className="w-full flex justify-center py-4 relative">
+        <div className="w-full flex justify-center py-0 md:py-4 relative">
           
           {/* APPROVAL STAMP BADGE ON CUT DONE */}
           {isCutDone && (
@@ -84,12 +84,12 @@ export default function ProjectTicketSection({ onOpenBriefWithService }: Project
             
             {/* LEFT TICKET CARD */}
             <div
-              className={`md:w-2/3 bg-[#B33A06] text-white rounded-[28px] sm:rounded-[36px] p-6 sm:p-9 flex flex-col justify-between space-y-6 shadow-[0_25px_60px_rgba(179,58,6,0.25)] border border-black/10 relative transition-all duration-1000 ease-out z-10 ${
+              className={`md:w-2/3 bg-[#B33A06] text-white rounded-[28px] sm:rounded-[36px] p-5 sm:p-9 flex flex-col justify-between space-y-4 md:space-y-6 shadow-[0_25px_60px_rgba(179,58,6,0.25)] border border-black/10 relative transition-all duration-1000 ease-out z-10 ${
                 isCutDone ? 'transform md:-translate-x-28 -translate-y-10 md:translate-y-0 md:-rotate-6 opacity-95' : ''
               }`}
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-0 md:mb-4">
                   <div className="flex items-center">
                     <AltunMedyaLogo className="h-8 sm:h-10 w-auto text-white" showStar={false} />
                   </div>
@@ -99,7 +99,7 @@ export default function ProjectTicketSection({ onOpenBriefWithService }: Project
                 </div>
 
                 {/* HASHTAG BADGES */}
-                <div className="flex flex-wrap gap-2 text-xs font-black text-white/90 pb-4 border-b border-white/20 font-mono">
+                <div className="m-hide flex flex-wrap gap-2 text-xs font-black text-white/90 pb-4 border-b border-white/20 font-mono">
                   <span>#branding</span>
                   <span>#creative</span>
                   <span>#reels</span>
@@ -128,7 +128,7 @@ export default function ProjectTicketSection({ onOpenBriefWithService }: Project
               </div>
 
               {/* HQ & REGIONAL HUB INFO */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono pt-1">
+              <div className="m-hide grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono pt-1">
                 <div>
                   <div className="font-extrabold text-white uppercase text-[11px]">ALTUN HQ &amp; STUDIO</div>
                   <div className="text-white/80 mt-0.5 leading-snug">Didim / Aydın Merkez Stüdyo</div>
@@ -175,11 +175,11 @@ export default function ProjectTicketSection({ onOpenBriefWithService }: Project
 
             {/* RIGHT TICKET CARD */}
             <div
-              className={`md:w-1/3 bg-[#B33A06] text-white rounded-[28px] sm:rounded-[36px] p-6 sm:p-8 flex flex-col justify-between items-center text-center shadow-[0_25px_60px_rgba(179,58,6,0.25)] border border-black/10 relative transition-all duration-1000 ease-out z-10 ${
+              className={`md:w-1/3 bg-[#B33A06] text-white rounded-[28px] sm:rounded-[36px] p-4 sm:p-8 flex flex-col justify-between items-center text-center shadow-[0_25px_60px_rgba(179,58,6,0.25)] border border-black/10 relative transition-all duration-1000 ease-out z-10 ${
                 isCutDone ? 'transform md:translate-x-28 translate-y-10 md:translate-y-0 md:rotate-6 opacity-0 pointer-events-none' : ''
               }`}
             >
-              <div className="my-auto py-4 space-y-4">
+              <div className="m-hide my-auto py-4 space-y-4">
                 <div className="flex items-center justify-center gap-2">
                   <svg
                     className={`w-12 h-12 sm:w-16 sm:h-16 text-white transition-transform duration-700 drop-shadow-md ${
@@ -227,7 +227,7 @@ export default function ProjectTicketSection({ onOpenBriefWithService }: Project
         </div>
 
         {/* TRUST BADGES BELOW TICKET */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-white/80 pt-2">
+        <div className="m-hide flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-white/80 pt-2">
           <span className="flex items-center gap-2">
             <Clock className="w-4 h-4 text-[#FF6B35]" />
             <span>WhatsApp Anında Bağlantı (905443135557)</span>

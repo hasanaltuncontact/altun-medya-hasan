@@ -25,11 +25,11 @@ export default function LocalSeoSection() {
   const featuredBlogArticles = blogPosts.slice(0, 3);
 
   return (
-    <section id="seo-region" className="py-24 px-5 sm:px-10 lg:px-14 bg-[#0B0A12] text-white relative">
-      <div className="max-w-7xl mx-auto space-y-16">
+    <section id="seo-region" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#0B0A12] text-white relative">
+      <div className="max-w-7xl mx-auto space-y-8 md:space-y-16">
         
         {/* SECTION HEADER */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/15 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/15 pb-6 md:pb-8">
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#B33A06]/20 border border-[#B33A06]/40 text-[#FF8A50] text-xs font-mono font-bold">
               <MapPin className="w-3.5 h-3.5 text-[#FF6B35]" />
@@ -45,7 +45,7 @@ export default function LocalSeoSection() {
             </h2>
           </div>
 
-          <div className="max-w-md space-y-3">
+          <div className="max-w-md space-y-3 m-hide">
             <p className="text-xs sm:text-sm text-white/80 font-medium leading-relaxed font-sans">
               Altınkum sahilinden Akbük Koyu&apos;na, Didim D-Marin&apos;den Apollon Tapınağı çevresine kadar bölgenin tüm dinamiklerine hakim yerel SEO, 4K sinematik video prodüksiyonu ve Google Harita optimizasyonu.
             </p>
@@ -57,7 +57,7 @@ export default function LocalSeoSection() {
         </div>
 
         {/* DETAILED REGIONAL SEO CONTENT DEEP DIVE (DİDİM METİNLERİ) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start m-hide">
           
           {/* LEFT 7 COLS: RICH DIDIM LOCAL SEO STRATEGY TEXT */}
           <div className="lg:col-span-7 space-y-6 bg-[#13121C] p-8 sm:p-10 rounded-3xl border border-white/10 shadow-xl">
@@ -173,7 +173,7 @@ export default function LocalSeoSection() {
         </div>
 
         {/* REGIONAL EQUIPMENT & TECHNICAL CAPABILITIES */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-[#13121C] text-white border border-white/10 space-y-6 shadow-2xl">
+        <div className="p-8 sm:p-10 rounded-3xl bg-[#13121C] text-white border border-white/10 space-y-6 shadow-2xl m-hide">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
             <div>
               <span className="text-[10px] font-mono text-[#FF6B35] font-bold uppercase tracking-widest block">
@@ -217,7 +217,7 @@ export default function LocalSeoSection() {
 
         {/* SEO KEYWORD CARDS GRID */}
         <div>
-          <div className="mb-6 flex items-center justify-between">
+          <div className="mb-4 md:mb-6 flex items-center justify-between">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-white/60 block">
                 BÖLGESEL ANAHTAR KELİME DİZİNİ
@@ -228,7 +228,7 @@ export default function LocalSeoSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 m-rail">
             {seoKeywordsDetailed.map((item) => (
               <div
                 key={item.id}
@@ -244,7 +244,7 @@ export default function LocalSeoSection() {
                   <h3 className="text-lg font-extrabold text-white font-heading group-hover:text-[#FF6B35] group-hover:translate-x-1 transition-all">
                     {item.keyword}
                   </h3>
-                  <p className="text-xs text-white/75 mt-2 leading-relaxed font-sans">
+                  <p className="text-xs text-white/75 mt-2 leading-relaxed font-sans line-clamp-3 md:line-clamp-none">
                     {item.description}
                   </p>
                 </div>
@@ -262,13 +262,13 @@ export default function LocalSeoSection() {
         </div>
 
         {/* RELATED REGIONAL ARTICLES & BLOG PREVIEWS */}
-        <div className="pt-10 border-t border-white/15 space-y-8">
+        <div className="pt-6 md:pt-10 border-t border-white/15 space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#FF6B35] block">
                 GÜNCEL YAYINLAR &amp; REHBERLER
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black text-white font-heading">
+              <h3 className="text-lg sm:text-3xl font-black text-white font-heading">
                 Didim &amp; Ege Dijital Pazarlama Blog Rehberleri
               </h3>
             </div>
@@ -282,7 +282,7 @@ export default function LocalSeoSection() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 m-hide">
             {featuredBlogArticles.map((article) => (
               <Link
                 key={article.id}

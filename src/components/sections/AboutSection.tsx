@@ -2,9 +2,9 @@ import { CheckCircle2 } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 px-5 sm:px-10 lg:px-14 bg-[#EDE8DF] text-[#050505]">
+    <section id="about" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#EDE8DF] text-[#050505]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div className="lg:col-span-7 space-y-6">
+        <div className="lg:col-span-7 space-y-4 md:space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/10 text-xs font-mono font-bold uppercase tracking-wider text-black">
             <span className="w-1.5 h-1.5 rounded-full bg-[#B33A06]" />
             <span>KREATİF STÜDYO DİSİPLİNİ</span>
@@ -19,7 +19,7 @@ export default function AboutSection() {
             ALTUN MEDYA, klasik ajans kalıplarının ötesinde; markaların fikir, görsel kimlik, 4K prodüksiyon ve dijital pazarlama ihtiyaçlarını tek çatı altında çözen kreatif bir medya stüdyosudur.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-xs font-mono text-black font-bold">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-4 pt-2 sm:pt-4 text-[11px] sm:text-xs font-mono text-black font-bold">
             <div className="flex items-center gap-2.5 p-4 rounded-xl bg-white border border-black/10 shadow-sm hover:border-[#B33A06] transition-colors">
               <CheckCircle2 className="w-4 h-4 text-[#B33A06] flex-shrink-0" />
               <span>4K Sinematik &amp; Drone Çekimleri</span>
@@ -39,7 +39,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="lg:col-span-5 relative">
+        <div className="lg:col-span-5 relative m-hide">
           <div className="relative aspect-square rounded-3xl overflow-hidden border border-black/10 shadow-2xl">
             <img
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"

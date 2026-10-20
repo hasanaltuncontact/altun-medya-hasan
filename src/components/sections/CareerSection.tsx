@@ -77,11 +77,11 @@ export default function CareerSection({}: CareerSectionProps) {
   };
 
   return (
-    <section id="career" className="py-24 px-5 sm:px-10 lg:px-14 bg-[#131218] text-white relative">
-      <div className="max-w-7xl mx-auto space-y-14">
+    <section id="career" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#131218] text-white relative">
+      <div className="max-w-7xl mx-auto space-y-6 md:space-y-14">
         
         {/* HEADER */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-5 md:pb-8">
           <div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight font-heading">
               <span className="font-black">GELECEĞİ</span>{' '}
@@ -89,7 +89,7 @@ export default function CareerSection({}: CareerSectionProps) {
               <span className="font-black text-[#FF6B35]">EKİBİMİZLE ŞEKİLLENDİRİN.</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-white/70 max-w-md font-mono leading-relaxed">
+          <p className="m-hide text-xs sm:text-sm text-white/70 max-w-md font-mono leading-relaxed">
             ALTUN MEDYA ailesi olarak tutkulu, yenilikçi ve editoryal standartlarda iş üreten yetenekleri ekibimize davet ediyoruz.
           </p>
         </div>
@@ -105,9 +105,9 @@ export default function CareerSection({}: CareerSectionProps) {
             {openPositions.map((pos) => (
               <div
                 key={pos.id}
-                className="group py-6 px-3 sm:px-5 rounded-2xl hover:bg-white/5 transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-4 border border-transparent hover:border-white/10"
+                className="group py-4 md:py-6 px-1 sm:px-5 rounded-2xl hover:bg-white/5 transition-all duration-300 flex flex-row items-center justify-between gap-4 border border-transparent hover:border-white/10"
               >
-                <div className="space-y-2 max-w-2xl">
+                <div className="space-y-1 md:space-y-2 max-w-2xl min-w-0">
                   <div className="flex items-center gap-2 text-xs font-mono">
                     <span className="px-2.5 py-0.5 rounded-md bg-[#B33A06]/10 text-[#B33A06] font-bold">
                       {pos.department}
@@ -115,23 +115,24 @@ export default function CareerSection({}: CareerSectionProps) {
                     <span className="text-white/40">•</span>
                     <span className="text-white/70">{pos.type}</span>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-[#B33A06] transition-colors font-heading">
+                  <h3 className="text-[15px] sm:text-2xl font-extrabold text-white group-hover:text-[#B33A06] transition-colors font-heading leading-snug">
                     {pos.title}
                   </h3>
-                  <p className="text-xs text-white/70 leading-relaxed">
+                  <p className="m-hide text-xs text-white/70 leading-relaxed">
                     {pos.description}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3 self-end md:self-center">
+                <div className="flex items-center gap-3 shrink-0">
                   <span className="text-xs font-mono text-[#8E8E93] hidden lg:inline">
                     {pos.location}
                   </span>
                   <button
                     onClick={() => setSelectedPos(pos)}
-                    className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-[#B33A06] hover:text-white text-white text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 active:scale-95"
+                    className="px-3 py-2 md:px-4 md:py-2.5 rounded-xl bg-white/10 hover:bg-[#B33A06] hover:text-white text-white text-[11px] md:text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 active:scale-95"
                   >
-                    <span>Başvuru Yap</span>
+                    <span className="m-hide">Başvuru Yap</span>
+                    <span className="md:hidden">Başvur</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -141,7 +142,7 @@ export default function CareerSection({}: CareerSectionProps) {
         </div>
 
         {/* GENERAL TALENT POOL BANNER */}
-        <div className="p-8 rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-[#121800] border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-2xl">
+        <div className="m-hide p-8 rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-[#121800] border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-2xl">
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs font-mono text-[#B33A06] font-bold">
               <Building className="w-4 h-4" />

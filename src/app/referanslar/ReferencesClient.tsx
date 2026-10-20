@@ -67,8 +67,8 @@ export default function ReferencesClient() {
           </div>
         </section>
 
-        <section className="px-5 sm:px-10 lg:px-14 pb-28">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <section className="px-5 sm:px-10 lg:px-14 pb-16 sm:pb-28">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-5">
             {list.map((p, i) => {
               const logo = getProfileLogo(p);
               const headline = p.results[0];
@@ -82,7 +82,7 @@ export default function ReferencesClient() {
                 >
                   <Link
                     href={`/${p.slug}`}
-                    className="group relative flex flex-col h-full p-6 rounded-[2rem] bg-[#0B0B0B] border border-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                    className="group relative flex flex-col h-full p-3.5 sm:p-6 rounded-2xl sm:rounded-[2rem] bg-[#0B0B0B] border border-white/10 hover:border-white/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                   >
                     <div aria-hidden className="absolute -top-20 -right-20 w-48 h-48 rounded-full blur-3xl opacity-15 group-hover:opacity-35 transition-opacity" style={{ background: p.accent }} />
                     <div className="relative flex items-center gap-4">
@@ -90,7 +90,7 @@ export default function ReferencesClient() {
                         accent={p.accent}
                         logoSrc={logo?.svgPath}
                         name={p.displayName}
-                        className="w-16 h-16 ring-2 ring-white/10 group-hover:ring-white/40 transition-all"
+                        className="w-12 h-12 sm:w-16 sm:h-16 ring-2 ring-white/10 group-hover:ring-white/40 transition-all"
                       />
                       <div className="min-w-0">
                         <h2 className="text-lg font-bold font-heading truncate">{p.displayName}</h2>
@@ -98,8 +98,8 @@ export default function ReferencesClient() {
                       </div>
                       <ArrowUpRight className="ml-auto w-5 h-5 text-white/30 group-hover:text-white group-hover:rotate-45 transition-all shrink-0" />
                     </div>
-                    <p className="relative mt-5 text-sm text-white/70 leading-relaxed flex-1">{p.tagline}</p>
-                    <div className="relative mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+                    <p className="m-hide relative mt-5 text-sm text-white/70 leading-relaxed flex-1">{p.tagline}</p>
+                    <div className="m-hide relative mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
                       <div>
                         <div className="text-2xl font-black font-heading" style={{ color: p.accent }}>{headline.value}</div>
                         <div className="text-[10px] font-mono uppercase tracking-widest text-white/45">{headline.label}</div>

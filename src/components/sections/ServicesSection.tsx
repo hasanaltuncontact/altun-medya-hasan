@@ -53,7 +53,7 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
     <section
       id="services"
       style={{ backgroundImage: SECTION_GRADIENT }}
-      className="relative overflow-hidden -mt-10 sm:-mt-16 -mb-10 sm:-mb-16 pt-24 sm:pt-36 pb-24 sm:pb-36 px-5 sm:px-10 lg:px-14 text-white"
+      className="relative overflow-hidden -mt-10 sm:-mt-16 -mb-10 sm:-mb-16 pt-20 sm:pt-36 pb-20 sm:pb-36 px-5 sm:px-10 lg:px-14 text-white"
     >
       {/* Işık lekeleri: cam kartların arkasında bulanıklaşarak derinlik verir */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
@@ -66,7 +66,7 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
       <div className="relative max-w-7xl mx-auto">
         
         {/* COMPACT SECTION HEADER */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8 sm:mb-12 border-b border-white/20 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-6 sm:mb-12 border-b border-white/20 pb-5 sm:pb-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-xs font-mono font-bold uppercase tracking-wider text-white mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-white" />
@@ -77,13 +77,13 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
               <span className="font-light text-white/75">DEĞİLİZ.</span>
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-white/80 max-w-md font-medium leading-relaxed">
+          <p className="m-hide text-xs sm:text-sm text-white/80 max-w-md font-medium leading-relaxed">
             Fikir, 4K dikey prodüksiyon, yeni nesil web ve performans pazarlamasını tek stüdyoda birleştiriyoruz. Markanızı dijitalde <strong className="text-white font-extrabold">harekete</strong> geçiriyoruz.
           </p>
         </div>
 
         {/* ORDERED COMPACT CARD BOXES GRID: 3 COLS DESKTOP, 2 COLS TABLET, COMPACT CARDS MOBILE */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 m-rail">
           {servicesDatabase.map((cat) => {
             const summary = serviceSummaries[cat.id] || {
               shortDesc: cat.tagline,
@@ -94,7 +94,7 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
               <div
                 key={cat.id}
                 style={{ backgroundImage: GLASS_SURFACE }}
-                className="group relative overflow-hidden rounded-[28px] p-6 sm:p-7 min-h-[300px] sm:min-h-[320px] text-white flex flex-col justify-between border border-white/20 [backface-visibility:hidden] shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_20px_45px_-20px_rgba(40,4,0,0.55)] hover:border-white/35 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_28px_60px_-18px_rgba(40,4,0,0.7)] hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-500 ease-out"
+                className="group relative overflow-hidden rounded-[28px] p-6 sm:p-7 min-h-[280px] sm:min-h-[320px] text-white flex flex-col justify-between border border-white/20 [backface-visibility:hidden] shadow-[inset_0_1px_0_rgba(255,255,255,0.35),0_20px_45px_-20px_rgba(40,4,0,0.55)] hover:border-white/35 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_28px_60px_-18px_rgba(40,4,0,0.7)] hover:-translate-y-1 transition-[transform,box-shadow,border-color] duration-500 ease-out"
               >
                 {/* Cam parlaması: üst kenar ışığı + hover'da beliren yumuşak ışık */}
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/[0.12] to-transparent" />
@@ -102,7 +102,7 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
 
                 <div className="relative">
                   {/* TOP ROW: NUMBER & DETAIL ARROW */}
-                  <div className="flex items-center justify-between mb-8 sm:mb-10">
+                  <div className="flex items-center justify-between mb-6 sm:mb-10">
                     <span className="font-mono text-xs tracking-[0.2em] text-white/60">
                       {cat.number}
                     </span>
