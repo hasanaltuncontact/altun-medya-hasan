@@ -44,7 +44,7 @@ export default function RevisionModal() {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-xl flex items-center justify-center p-5 animate-fadeIn font-mono text-xs select-none">
-      <div className="w-full max-w-xl p-8 rounded-3xl bg-[#0E0E0E] border border-amber-500/30 shadow-2xl space-y-6 relative">
+      <div className="w-full max-w-xl p-8 rounded-3xl bg-[#262626] border border-amber-500/30 shadow-2xl space-y-6 relative">
         
         <button
           onClick={() => setIsRevisionModalOpen(false)}

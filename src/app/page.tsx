@@ -38,7 +38,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#050505] text-[#F7F6F2]">
+    <div className="relative w-full overflow-hidden bg-[#262626] text-[#F6F6F6]">
       {/* HEADER & MOBILE NAV */}
       <Header
         onOpenBrief={() => handleOpenBrief()}
@@ -59,65 +59,68 @@ export default function HomePage() {
         {/* BRANDS MARQUEE (15 REAL CLIENT SVGS ON SEAMLESS DARK) */}
         <BrandsMarquee />
 
-        {/* C-SWOOP DIVIDER: MARQUEE (#050505) -> SERVICES (#D9D0C1) */}
-        <SectionDivider topBgColor="#050505" gradientSection="below" />
+        {/* DİNAMİK GEÇİŞ: CHARCOAL (#262626) -> DEEP RED (#A40001) */}
+        <SectionDivider topBgColor="#262626" bottomBgColor="#A40001" />
 
-        {/* 6 MAIN CATEGORY SERVICES SECTION (ORDERED COMPACT BOXES) */}
+        {/* 6 MAIN CATEGORY SERVICES SECTION (GÜÇLÜ KIRMIZI BÖLGE) */}
         <ServicesSection onOpenBriefWithService={(slug) => handleOpenBrief(slug)} />
 
-        {/* C-SWOOP DIVIDER: SERVICES (#D9D0C1) -> REELS LAB & CREATOR (#070707) */}
-        <SectionDivider bottomBgColor="#070707" gradientSection="above" />
+        {/* DİNAMİK GEÇİŞ: DEEP RED (#A40001) -> SOFT GREY (#C3C3C3) */}
+        <SectionDivider topBgColor="#A40001" bottomBgColor="#C3C3C3" />
 
-        {/* REELS LAB INLINE VIDEO SLIDER */}
+        {/* REELS LAB INLINE VIDEO SLIDER (SOFT GREY ARŞİTEKTURAL BÖLGE) */}
         <ReelsLabSection />
+
+        {/* DİNAMİK GEÇİŞ: SOFT GREY (#C3C3C3) -> CHARCOAL BLACK (#262626) */}
+        <SectionDivider topBgColor="#C3C3C3" bottomBgColor="#262626" />
 
         {/* CREATOR NETWORK (INTEGRATED INTO UNIFIED VIRAL STUDIO ZONE) */}
         <CreatorNetworkSection />
 
-        {/* C-SWOOP DIVIDER: VIRAL CREATOR STUDIO (#070707) -> WORKS (#F1F0EA) */}
-        <SectionDivider topBgColor="#070707" bottomBgColor="#F1F0EA" />
+        {/* DİNAMİK GEÇİŞ: CHARCOAL BLACK (#262626) -> PURE WHITE (#F6F6F6) */}
+        <SectionDivider topBgColor="#262626" bottomBgColor="#F6F6F6" />
 
-        {/* WORKS & CASE STUDIES */}
+        {/* WORKS & CASE STUDIES (PURE WHITE BÖLGE) */}
         <WorksSection onSelectWork={(work) => setSelectedWork(work)} />
 
-        {/* OVAL C-SWOOP DIVIDER: WORKS (#F1F0EA) -> TICKET (#050505) */}
-        <SectionDivider topBgColor="#F1F0EA" bottomBgColor="#050505" />
+        {/* DİNAMİK GEÇİŞ: PURE WHITE (#F6F6F6) -> DEEP RED (#A40001) */}
+        <SectionDivider topBgColor="#F6F6F6" bottomBgColor="#A40001" />
 
-        {/* INTERACTIVE 3D PROJECT TICKET */}
+        {/* INTERACTIVE 3D PROJECT TICKET (GÜÇLÜ KIRMIZI BÖLGE) */}
         <ProjectTicketSection onOpenBriefWithService={(slug) => handleOpenBrief(slug)} />
 
-        {/* OVAL C-SWOOP DIVIDER: TICKET (#050505) -> REVIEWS (#F7F6F2) */}
-        <SectionDivider topBgColor="#050505" bottomBgColor="#F7F6F2" />
+        {/* DİNAMİK GEÇİŞ: DEEP RED (#A40001) -> SOFT GREY (#C3C3C3) */}
+        <SectionDivider topBgColor="#A40001" bottomBgColor="#C3C3C3" />
 
-        {/* REVIEWS & 15 CLIENT LOGOS GRID */}
+        {/* REVIEWS & 15 CLIENT LOGOS GRID (SOFT GREY BÖLGE) */}
         <ReviewsSection />
 
-        {/* C-SWOOP DIVIDER: REVIEWS (#F7F6F2) -> LOCAL SEO (#0B0A12) */}
-        <SectionDivider topBgColor="#F7F6F2" bottomBgColor="#0B0A12" />
+        {/* DİNAMİK GEÇİŞ: SOFT GREY (#C3C3C3) -> CHARCOAL BLACK (#262626) */}
+        <SectionDivider topBgColor="#C3C3C3" bottomBgColor="#262626" />
 
         {/* DIDIM & REGIONAL SEO CARDS (OBSIDIAN DARK STUDIO) */}
         <LocalSeoSection />
 
-        {/* C-SWOOP DIVIDER: LOCAL SEO (#0B0A12) -> ABOUT STUDIO (#EDE8DF) */}
-        <SectionDivider topBgColor="#0B0A12" bottomBgColor="#EDE8DF" />
+        {/* DİNAMİK GEÇİŞ: CHARCOAL BLACK (#262626) -> PURE WHITE (#F6F6F6) */}
+        <SectionDivider topBgColor="#262626" bottomBgColor="#F6F6F6" />
 
-        {/* ABOUT STUDIO (WARM ARCHITECTURAL LINEN) */}
+        {/* ABOUT STUDIO (PURE WHITE BÖLGE) */}
         <AboutSection />
 
-        {/* C-SWOOP DIVIDER: ABOUT STUDIO (#EDE8DF) -> CAREER (#131218) */}
-        <SectionDivider topBgColor="#EDE8DF" bottomBgColor="#131218" />
+        {/* DİNAMİK GEÇİŞ: PURE WHITE (#F6F6F6) -> CHARCOAL BLACK (#262626) */}
+        <SectionDivider topBgColor="#F6F6F6" bottomBgColor="#262626" />
 
-        {/* CORPORATE CAREER & POSITIONS */}
+        {/* CORPORATE CAREER & POSITIONS (REVİZE EDİLEN KARİYER BÖLÜMÜ) */}
         <CareerSection onOpenBrief={() => handleOpenBrief()} />
 
-        {/* C-SWOOP DIVIDER: CAREER (#131218) -> HIGH-IMPACT CTA (#B33A06) */}
-        <SectionDivider topBgColor="#131218" bottomBgColor="#B33A06" />
+        {/* DİNAMİK GEÇİŞ: CHARCOAL BLACK (#262626) -> DEEP RED (#A40001) */}
+        <SectionDivider topBgColor="#262626" bottomBgColor="#A40001" />
 
-        {/* HIGH-IMPACT TERRACOTTA CTA BAND */}
+        {/* HIGH-IMPACT DEEP RED CTA BAND */}
         <HighImpactCtaSection onOpenBrief={() => handleOpenBrief()} />
 
-        {/* C-SWOOP DIVIDER: HIGH-IMPACT CTA (#B33A06) -> FOOTER (#050505) */}
-        <SectionDivider topBgColor="#B33A06" bottomBgColor="#050505" />
+        {/* DİNAMİK GEÇİŞ: DEEP RED (#A40001) -> CHARCOAL FOOTER (#262626) */}
+        <SectionDivider topBgColor="#A40001" bottomBgColor="#262626" />
       </main>
 
       {/* FOOTER */}

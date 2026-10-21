@@ -54,7 +54,7 @@ function PortalMainContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-[#B33A06] selection:text-white font-sans antialiased flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-[#262626] text-white selection:bg-[#A40001] selection:text-white font-sans antialiased flex flex-col lg:flex-row">
       
       {/* SIDEBAR NAVIGATION (01 - 10) */}
       <PortalSidebar />

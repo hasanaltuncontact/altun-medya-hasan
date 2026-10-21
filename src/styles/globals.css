@@ -117,16 +117,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #262626;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #262626;
+  background: #1E1E1E;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B33A06;
+  background: #A40001;
 }
 
 /* ==================================================
@@ -168,11 +168,11 @@
     height 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
 }
 
-/* Hover: büyüyen, içi BOŞ turuncu halka — buton yazısını kapatmaz */
+/* Hover: büyüyen, içi BOŞ kırmızı halka — buton yazısını kapatmaz */
 .am-cursor-ring.is-hover {
   width: 46px;
   height: 46px;
-  border-color: #ff6b35;
+  border-color: #A40001;
 }
 
 @media (pointer: coarse) {
@@ -250,7 +250,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: #050505;
+  background-color: #262626;
   z-index: 10;
 }
 
@@ -261,7 +261,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background-color: #050505;
+  background-color: #262626;
   z-index: 10;
 }
 

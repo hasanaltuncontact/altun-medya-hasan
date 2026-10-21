@@ -10,11 +10,11 @@ export default function GlobalStylesModal() {
   if (!globalStylesOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4 text-white selection:bg-[#B33A06] selection:text-white">
-      <div className="w-full max-w-md bg-[#090909] border border-white/15 rounded-3xl p-6 shadow-2xl space-y-5">
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4 text-white selection:bg-[#A40001] selection:text-white">
+      <div className="w-full max-w-md bg-[#262626] border border-white/15 rounded-3xl p-6 shadow-2xl space-y-5">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <div className="flex items-center gap-2">
-            <Palette className="w-5 h-5 text-[#B33A06]" />
+            <Palette className="w-5 h-5 text-[#A40001]" />
             <h3 className="text-lg font-bold font-heading text-white">Global Marka Stilleri</h3>
           </div>
           <button onClick={() => setGlobalStylesOpen(false)} className="p-1.5 text-white/50 hover:text-white">
@@ -64,18 +64,18 @@ export default function GlobalStylesModal() {
             <select
               value={globalStyles.headingFont}
               onChange={(e) => setGlobalStyles({ ...globalStyles, headingFont: e.target.value })}
-              className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#B33A06]"
+              className="w-full p-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-[#A40001]"
             >
-              <option value="Outfit, sans-serif" className="bg-[#0A0A0A]">Outfit (Agency Bold)</option>
-              <option value="Inter, sans-serif" className="bg-[#0A0A0A]">Inter</option>
-              <option value="Space Grotesk, sans-serif" className="bg-[#0A0A0A]">Space Grotesk</option>
+              <option value="Outfit, sans-serif" className="bg-[#262626]">Outfit (Agency Bold)</option>
+              <option value="Inter, sans-serif" className="bg-[#262626]">Inter</option>
+              <option value="Space Grotesk, sans-serif" className="bg-[#262626]">Space Grotesk</option>
             </select>
           </div>
         </div>
 
         <button
           onClick={() => setGlobalStylesOpen(false)}
-          className="w-full py-3 rounded-xl bg-[#B33A06] text-white font-extrabold text-xs uppercase tracking-wider hover:bg-[#C84408] transition-all"
+          className="w-full py-3 rounded-xl bg-[#A40001] text-white font-extrabold text-xs uppercase tracking-wider hover:bg-[#A40001] transition-all"
         >
           Değişiklikleri Uygula
         </button>

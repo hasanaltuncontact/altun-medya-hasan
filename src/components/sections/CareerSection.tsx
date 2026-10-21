@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Briefcase, ArrowUpRight, Send, CheckCircle2, Building, Sparkles } from 'lucide-react';
+import { Send, CheckCircle2 } from 'lucide-react';
 
 interface CareerPosition {
   id: string;
@@ -77,106 +77,69 @@ export default function CareerSection({}: CareerSectionProps) {
   };
 
   return (
-    <section id="career" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#131218] text-white relative">
-      <div className="max-w-7xl mx-auto space-y-6 md:space-y-14">
-        
-        {/* HEADER */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-5 md:pb-8">
+    <section id="career" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#262626] text-[#F6F6F6] relative">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-12">
           <div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight font-heading">
-              <span className="font-black">GELECEĞİ</span>{' '}
-              <span className="font-light text-white/80">KREATİF</span><br />
-              <span className="font-black text-[#FF6B35]">EKİBİMİZLE ŞEKİLLENDİRİN.</span>
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#A40001]/20 text-[#A40001] border border-[#A40001]/30 text-xs font-bold tracking-wider mb-4">
+              ALTUN MEDYA KARİYER
+            </span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-tight font-heading">
+              <span className="font-black">EKİBİMİZE</span>{' '}
+              <span className="font-black text-[#A40001]">KATIL.</span>
             </h2>
           </div>
-          <p className="m-hide text-xs sm:text-sm text-white/70 max-w-md font-mono leading-relaxed">
-            ALTUN MEDYA ailesi olarak tutkulu, yenilikçi ve editoryal standartlarda iş üreten yetenekleri ekibimize davet ediyoruz.
+          <p className="text-sm text-[#C3C3C3] max-w-sm leading-relaxed">
+            Didim ve Ege&apos;nin en hızlı büyüyen medya stüdyosunda kreatif vizyonunu sahaya yansıt.
           </p>
         </div>
 
-        {/* OPEN POSITIONS LIST */}
-        <div className="space-y-4">
-          <div className="flex items-center justify-between text-xs font-mono text-[#8E8E93] uppercase tracking-wider pb-2 border-b border-white/10 px-2">
-            <span>AÇIK POZİSYONLAR ({openPositions.length})</span>
-            <span>LOKASYON &amp; DEPARTMAN</span>
-          </div>
-
-          <div className="divide-y divide-white/10">
-            {openPositions.map((pos) => (
-              <div
-                key={pos.id}
-                className="group py-4 md:py-6 px-1 sm:px-5 rounded-2xl hover:bg-white/5 transition-all duration-300 flex flex-row items-center justify-between gap-4 border border-transparent hover:border-white/10"
-              >
-                <div className="space-y-1 md:space-y-2 max-w-2xl min-w-0">
-                  <div className="flex items-center gap-2 text-xs font-mono">
-                    <span className="px-2.5 py-0.5 rounded-md bg-[#B33A06]/10 text-[#B33A06] font-bold">
-                      {pos.department}
-                    </span>
-                    <span className="text-white/40">•</span>
-                    <span className="text-white/70">{pos.type}</span>
-                  </div>
-                  <h3 className="text-[15px] sm:text-2xl font-extrabold text-white group-hover:text-[#B33A06] transition-colors font-heading leading-snug">
-                    {pos.title}
-                  </h3>
-                  <p className="m-hide text-xs text-white/70 leading-relaxed">
-                    {pos.description}
-                  </p>
+        {/* AÇIK POZİSYONLAR — sade satırlar */}
+        <ul className="space-y-3">
+          {openPositions.map((pos) => (
+            <li
+              key={pos.id}
+              className="flex items-center justify-between gap-4 p-5 sm:p-6 rounded-[22px] bg-[#1E1E1E] border border-[#F6F6F6]/10 hover:border-[#A40001]/60 transition-all duration-300"
+            >
+              <div className="min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-bold text-[#A40001]">{pos.department}</span>
+                  <span className="text-[#C3C3C3]/40">•</span>
+                  <span className="text-xs text-[#C3C3C3]">{pos.type}</span>
                 </div>
-
-                <div className="flex items-center gap-3 shrink-0">
-                  <span className="text-xs font-mono text-[#8E8E93] hidden lg:inline">
-                    {pos.location}
-                  </span>
-                  <button
-                    onClick={() => setSelectedPos(pos)}
-                    className="px-3 py-2 md:px-4 md:py-2.5 rounded-xl bg-white/10 hover:bg-[#B33A06] hover:text-white text-white text-[11px] md:text-xs font-mono font-bold uppercase tracking-wider transition-all flex items-center gap-1.5 active:scale-95"
-                  >
-                    <span className="m-hide">Başvuru Yap</span>
-                    <span className="md:hidden">Başvur</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
-                </div>
+                <h3 className="text-base sm:text-xl font-bold font-heading leading-snug text-[#F6F6F6]">{pos.title}</h3>
+                <p className="text-xs sm:text-sm text-[#C3C3C3] mt-1">{pos.location}</p>
               </div>
-            ))}
-          </div>
-        </div>
+              <button
+                onClick={() => setSelectedPos(pos)}
+                className="shrink-0 px-6 py-2.5 rounded-full bg-[#A40001] text-[#F6F6F6] text-sm font-bold hover:bg-[#F6F6F6] hover:text-[#262626] transition-all duration-300 shadow-md active:scale-95"
+              >
+                Başvur
+              </button>
+            </li>
+          ))}
+        </ul>
 
-        {/* GENERAL TALENT POOL BANNER */}
-        <div className="m-hide p-8 rounded-3xl bg-gradient-to-r from-neutral-900 via-neutral-900 to-[#121800] border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-2xl">
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 text-xs font-mono text-[#B33A06] font-bold">
-              <Building className="w-4 h-4" />
-              <span>GENEL BAŞVURU &amp; YETENEK HAVUZU</span>
-            </div>
-            <h4 className="text-xl font-bold text-white font-heading">Aradığınız pozisyonu listede bulamadınız mı?</h4>
-            <p className="text-xs text-white/70 max-w-xl font-mono">
-              Portföyünüzü ve özgeçmişinizi stüdyo ekibimize iletin, yeni projeler başladığında ilk sizinle iletişime geçelim.
-            </p>
-          </div>
-
-          <a
-            href="mailto:ik@altunmedya.com"
-            className="px-6 py-3.5 rounded-xl bg-[#B33A06] text-white font-extrabold text-xs font-mono uppercase tracking-wider hover:bg-[#C84408] transition-all text-center flex-shrink-0 shadow-lg flex items-center justify-center gap-2"
-          >
-            <Sparkles className="w-4 h-4" />
-            <span>ik@altunmedya.com&apos;a Gönder</span>
+        <p className="mt-6 text-sm text-[#C3C3C3]">
+          Aradığın pozisyon yok mu?{' '}
+          <a href="mailto:ik@altunmedya.com" className="text-[#F6F6F6] font-bold underline underline-offset-4 hover:text-[#A40001] transition-colors">
+            ik@altunmedya.com
           </a>
-        </div>
-
+        </p>
       </div>
 
       {/* CAREER APPLICATION MODAL */}
       {selectedPos && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-2xl animate-fadeIn">
-          <div className="bg-[#111111] border border-white/15 rounded-3xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl space-y-5">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#262626]/90 backdrop-blur-2xl animate-fadeIn">
+          <div className="bg-[#262626] border border-[#A40001]/30 rounded-3xl p-6 sm:p-8 max-w-lg w-full relative shadow-2xl space-y-5">
+            <div className="flex items-center justify-between border-b border-[#F6F6F6]/10 pb-4">
               <div>
-                <span className="text-[10px] font-mono uppercase text-[#B33A06] font-bold">KARİYER BAŞVURUSU</span>
-                <h3 className="text-lg font-bold text-white font-heading">{selectedPos.title}</h3>
+                <span className="text-xs font-bold uppercase text-[#A40001] tracking-wider">KARİYER BAŞVURUSU</span>
+                <h3 className="text-lg font-bold text-[#F6F6F6] font-heading">{selectedPos.title}</h3>
               </div>
               <button
                 onClick={() => setSelectedPos(null)}
-                className="text-white/60 hover:text-white text-xs font-mono px-2 py-1 bg-white/5 rounded-lg"
+                className="text-[#C3C3C3] hover:text-[#F6F6F6] text-xs font-medium px-2.5 py-1.5 bg-[#F6F6F6]/5 rounded-lg border border-[#F6F6F6]/10"
               >
                 Kapat
               </button>
@@ -184,74 +147,74 @@ export default function CareerSection({}: CareerSectionProps) {
 
             {isApplied ? (
               <div className="py-8 text-center space-y-3">
-                <CheckCircle2 className="w-12 h-12 text-[#B33A06] mx-auto animate-bounce" />
-                <h4 className="text-lg font-bold text-white">Başvurunuz İletildi!</h4>
-                <p className="text-xs text-white/70">İnsan kaynakları ekibimiz başvurunuzu değerlendirip sizinle iletişime geçecektir.</p>
+                <CheckCircle2 className="w-12 h-12 text-[#A40001] mx-auto animate-bounce" />
+                <h4 className="text-lg font-bold text-[#F6F6F6]">Başvurunuz İletildi!</h4>
+                <p className="text-xs text-[#F6F6F6]/70">İnsan kaynakları ekibimiz başvurunuzu değerlendirip sizinle iletişime geçecektir.</p>
               </div>
             ) : (
-              <form onSubmit={handleApplySubmit} className="space-y-4 text-xs font-mono">
+              <form onSubmit={handleApplySubmit} className="space-y-4 text-xs font-medium">
                 <div>
-                  <label className="block text-white/80 mb-1">AD SOYAD *</label>
+                  <label className="block text-[#F6F6F6]/80 mb-1">AD SOYAD *</label>
                   <input
                     type="text"
                     required
                     value={applicantForm.name}
                     onChange={(e) => setApplicantForm({ ...applicantForm, name: e.target.value })}
                     placeholder="Adınız ve Soyadınız"
-                    className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#B33A06]"
+                    className="w-full bg-[#1E1E1E] border border-[#F6F6F6]/10 rounded-xl px-4 py-3 text-[#F6F6F6] focus:outline-none focus:border-[#A40001]"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-white/80 mb-1">E-POSTA *</label>
+                    <label className="block text-[#F6F6F6]/80 mb-1">E-POSTA *</label>
                     <input
                       type="email"
                       required
                       value={applicantForm.email}
                       onChange={(e) => setApplicantForm({ ...applicantForm, email: e.target.value })}
                       placeholder="eposta@adresiniz.com"
-                      className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#B33A06]"
+                      className="w-full bg-[#1E1E1E] border border-[#F6F6F6]/10 rounded-xl px-4 py-3 text-[#F6F6F6] focus:outline-none focus:border-[#A40001]"
                     />
                   </div>
                   <div>
-                    <label className="block text-white/80 mb-1">TELEFON *</label>
+                    <label className="block text-[#F6F6F6]/80 mb-1">TELEFON *</label>
                     <input
                       type="tel"
                       required
                       value={applicantForm.phone}
                       onChange={(e) => setApplicantForm({ ...applicantForm, phone: e.target.value })}
                       placeholder="05XX XXX XX XX"
-                      className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#B33A06]"
+                      className="w-full bg-[#1E1E1E] border border-[#F6F6F6]/10 rounded-xl px-4 py-3 text-[#F6F6F6] focus:outline-none focus:border-[#A40001]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-white/80 mb-1">PORTFÖY / BEHANCE / GITHUB LINKİ</label>
+                  <label className="block text-[#F6F6F6]/80 mb-1">PORTFÖY / BEHANCE / GITHUB LINKİ</label>
                   <input
                     type="url"
                     value={applicantForm.portfolio}
                     onChange={(e) => setApplicantForm({ ...applicantForm, portfolio: e.target.value })}
                     placeholder="https://behance.net/kullanici veya portfoy linki"
-                    className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#B33A06]"
+                    className="w-full bg-[#1E1E1E] border border-[#F6F6F6]/10 rounded-xl px-4 py-3 text-[#F6F6F6] focus:outline-none focus:border-[#A40001]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-white/80 mb-1">KISA KENDİNİZİ TANITIM NOTU</label>
+                  <label className="block text-[#F6F6F6]/80 mb-1">KISA KENDİNİZİ TANITIM NOTU</label>
                   <textarea
                     rows={3}
                     value={applicantForm.note}
                     onChange={(e) => setApplicantForm({ ...applicantForm, note: e.target.value })}
                     placeholder="Deneyimlerinizden bahsedebilirsiniz..."
-                    className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#B33A06] resize-none"
+                    className="w-full bg-[#1E1E1E] border border-[#F6F6F6]/10 rounded-xl px-4 py-3 text-[#F6F6F6] focus:outline-none focus:border-[#A40001] resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-all flex items-center justify-center gap-2 shadow-lg"
+                  className="w-full py-4 text-xs font-extrabold bg-[#A40001] text-[#F6F6F6] rounded-xl hover:bg-[#A40001] transition-all flex items-center justify-center gap-2 shadow-lg"
                 >
                   <Send className="w-4 h-4" />
                   <span>BAŞVURUYU GÖNDER</span>

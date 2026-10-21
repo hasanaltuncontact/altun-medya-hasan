@@ -29,7 +29,7 @@ export default function AnalyticsView() {
               key={p}
               onClick={() => setSelectedPeriod(p)}
               className={`px-3 py-1.5 rounded-lg transition-colors ${
-                selectedPeriod === p ? 'bg-[#B33A06] text-white font-bold' : 'text-white/60 hover:text-white'
+                selectedPeriod === p ? 'bg-[#A40001] text-white font-bold' : 'text-white/60 hover:text-white'
               }`}
             >
               {p}
@@ -40,43 +40,43 @@ export default function AnalyticsView() {
 
       {/* 5 KPI METRICS */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-        <div className="p-5 rounded-2xl bg-[#0D0D0D] border border-white/10 space-y-2">
+        <div className="p-5 rounded-2xl bg-[#262626] border border-white/10 space-y-2">
           <div className="text-[10px] text-white/50 font-bold uppercase">ERİŞİM</div>
           <div className="text-2xl font-black text-white font-heading">{performanceKPI.reach.value}</div>
-          <div className="text-[10px] text-[#B33A06] font-bold">{performanceKPI.reach.growth} bu dönem</div>
+          <div className="text-[10px] text-[#A40001] font-bold">{performanceKPI.reach.growth} bu dönem</div>
         </div>
 
-        <div className="p-5 rounded-2xl bg-[#0D0D0D] border border-white/10 space-y-2">
+        <div className="p-5 rounded-2xl bg-[#262626] border border-white/10 space-y-2">
           <div className="text-[10px] text-white/50 font-bold uppercase">GÖSTERİM</div>
           <div className="text-2xl font-black text-white font-heading">{performanceKPI.impressions.value}</div>
-          <div className="text-[10px] text-[#B33A06] font-bold">{performanceKPI.impressions.growth} bu dönem</div>
+          <div className="text-[10px] text-[#A40001] font-bold">{performanceKPI.impressions.growth} bu dönem</div>
         </div>
 
-        <div className="p-5 rounded-2xl bg-[#0D0D0D] border border-white/10 space-y-2">
+        <div className="p-5 rounded-2xl bg-[#262626] border border-white/10 space-y-2">
           <div className="text-[10px] text-white/50 font-bold uppercase">ETKİLEŞİM</div>
           <div className="text-2xl font-black text-white font-heading">{performanceKPI.engagement.value}</div>
-          <div className="text-[10px] text-[#B33A06] font-bold">{performanceKPI.engagement.growth} bu dönem</div>
+          <div className="text-[10px] text-[#A40001] font-bold">{performanceKPI.engagement.growth} bu dönem</div>
         </div>
 
-        <div className="p-5 rounded-2xl bg-[#0D0D0D] border border-white/10 space-y-2">
+        <div className="p-5 rounded-2xl bg-[#262626] border border-white/10 space-y-2">
           <div className="text-[10px] text-white/50 font-bold uppercase">TAKİPÇİ</div>
           <div className="text-2xl font-black text-white font-heading">{performanceKPI.followers.value}</div>
-          <div className="text-[10px] text-[#B33A06] font-bold">{performanceKPI.followers.growth} bu dönem</div>
+          <div className="text-[10px] text-[#A40001] font-bold">{performanceKPI.followers.growth} bu dönem</div>
         </div>
 
-        <div className="p-5 rounded-2xl bg-[#0D0D0D] border border-white/10 space-y-2">
+        <div className="p-5 rounded-2xl bg-[#262626] border border-white/10 space-y-2">
           <div className="text-[10px] text-white/50 font-bold uppercase">PROFİL ZİYARETİ</div>
           <div className="text-2xl font-black text-white font-heading">{performanceKPI.profileVisits.value}</div>
-          <div className="text-[10px] text-[#B33A06] font-bold">{performanceKPI.profileVisits.growth} bu dönem</div>
+          <div className="text-[10px] text-[#A40001] font-bold">{performanceKPI.profileVisits.growth} bu dönem</div>
         </div>
       </div>
 
       {/* CHART CONTAINER */}
-      <div className="p-8 rounded-3xl bg-[#0D0D0D] border border-white/10 space-y-6">
+      <div className="p-8 rounded-3xl bg-[#262626] border border-white/10 space-y-6">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <h2 className="text-lg font-bold text-white font-heading">Haftalık Organik Büyüme &amp; Etkileşim Trendi</h2>
           <div className="flex items-center gap-4 text-[10px]">
-            <span className="flex items-center gap-1.5 text-white/70"><span className="w-2.5 h-2.5 rounded-full bg-[#B33A06]" /> Organik Erişim</span>
+            <span className="flex items-center gap-1.5 text-white/70"><span className="w-2.5 h-2.5 rounded-full bg-[#A40001]" /> Organik Erişim</span>
             <span className="flex items-center gap-1.5 text-white/70"><span className="w-2.5 h-2.5 rounded-full bg-white/40" /> Etkileşim</span>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function AnalyticsView() {
             <div key={i} className="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
               <div className="w-full flex items-end justify-center gap-2 h-full">
                 <div
-                  className="w-1/2 bg-[#B33A06] rounded-t-xl transition-all duration-500 group-hover:bg-[#C84408]"
+                  className="w-1/2 bg-[#A40001] rounded-t-xl transition-all duration-500 group-hover:bg-[#A40001]"
                   style={{ height: `${(d.reach / 15000) * 100}%` }}
                 />
                 <div

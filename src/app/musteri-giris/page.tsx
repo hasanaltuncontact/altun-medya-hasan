@@ -42,7 +42,7 @@ export default function ClientLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-[#B33A06] selection:text-white font-sans antialiased flex flex-col justify-between">
+    <div className="min-h-screen bg-[#262626] text-white selection:bg-[#A40001] selection:text-white font-sans antialiased flex flex-col justify-between">
       
       <Header
         onOpenBrief={() => {}}
@@ -52,12 +52,12 @@ export default function ClientLoginPage() {
 
       <main className="pt-32 pb-20 px-5 sm:px-10 flex-grow flex items-center justify-center relative overflow-hidden">
         {/* NEON AMBIENCE */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#B33A06]/[0.05] rounded-full blur-[160px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#A40001]/[0.05] rounded-full blur-[160px] pointer-events-none" />
 
         <div className="w-full max-w-md mx-auto relative z-10">
-          <div className="p-8 sm:p-10 rounded-3xl bg-[#090909]/95 backdrop-blur-2xl border border-white/15 shadow-2xl space-y-6">
+          <div className="p-8 sm:p-10 rounded-3xl bg-[#262626]/95 backdrop-blur-2xl border border-white/15 shadow-2xl space-y-6">
             <div className="text-center space-y-2">
-              <div className="w-12 h-12 rounded-2xl bg-[#B33A06]/10 border border-[#B33A06]/30 flex items-center justify-center mx-auto mb-3 text-[#B33A06]">
+              <div className="w-12 h-12 rounded-2xl bg-[#A40001]/10 border border-[#A40001]/30 flex items-center justify-center mx-auto mb-3 text-[#A40001]">
                 <UserCheck className="w-6 h-6" />
               </div>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
@@ -87,7 +87,7 @@ export default function ClientLoginPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="ornek@markaniz.com"
-                    className="w-full pl-10 pr-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#B33A06] transition-colors"
+                    className="w-full pl-10 pr-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#A40001] transition-colors"
                   />
                 </div>
               </div>
@@ -104,7 +104,7 @@ export default function ClientLoginPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
-                    className="w-full pl-10 pr-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#B33A06] transition-colors"
+                    className="w-full pl-10 pr-4 py-3 text-xs rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-[#A40001] transition-colors"
                   />
                 </div>
               </div>
@@ -112,7 +112,7 @@ export default function ClientLoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 text-xs font-extrabold uppercase tracking-wider bg-[#B33A06] text-white rounded-xl hover:bg-[#C84408] transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50"
+                className="w-full py-3.5 text-xs font-extrabold uppercase tracking-wider bg-[#A40001] text-white rounded-xl hover:bg-[#A40001] transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 disabled:opacity-50"
               >
                 <span>{loading ? 'Giriş Yapılıyor...' : 'Panele Giriş Yap'}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -126,21 +126,21 @@ export default function ClientLoginPage() {
                 <button
                   onClick={fillDemoCredentials}
                   type="button"
-                  className="text-[#B33A06] hover:underline font-bold flex items-center gap-1"
+                  className="text-[#A40001] hover:underline font-bold flex items-center gap-1"
                 >
                   <Key className="w-3 h-3" />
                   <span>Otomatik Doldur</span>
                 </button>
               </div>
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-[11px] font-mono space-y-1 text-white/80">
-                <div>E-Posta: <span className="text-[#B33A06]">musteri@altunmedya.com</span></div>
-                <div>Şifre: <span className="text-[#B33A06]">123456</span></div>
+                <div>E-Posta: <span className="text-[#A40001]">musteri@altunmedya.com</span></div>
+                <div>Şifre: <span className="text-[#A40001]">123456</span></div>
               </div>
             </div>
 
             <div className="text-center pt-2 text-xs font-mono text-white/40">
               Ajans Yöneticisi misiniz?{' '}
-              <Link href="/admingiris" className="text-white hover:text-[#B33A06] underline font-bold">
+              <Link href="/admingiris" className="text-white hover:text-[#A40001] underline font-bold">
                 Admin Girişi
               </Link>
             </div>

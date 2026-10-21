@@ -168,17 +168,17 @@ export default function ReelsLabSection() {
   };
 
   return (
-    <section id="reels-section" className="py-14 md:py-20 bg-[#070707] text-white overflow-hidden">
+    <section id="reels-section" className="py-14 md:py-20 bg-[#C3C3C3] text-[#262626] overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-14">
         {/* HEADER */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-6 sm:mb-10">
           <div>
-            <h2 className="text-3xl sm:text-5xl tracking-tight text-white leading-tight font-heading">
+            <h2 className="text-3xl sm:text-5xl tracking-tight text-[#262626] leading-tight font-heading">
               <span className="font-black">YÜKSEK ETKİLEŞİMLİ</span><br />
-              <span className="font-light text-white/80">VİRAL</span>{' '}
-              <span className="font-black text-[#FF6B35]">PRODÜKSİYONLAR.</span>
+              <span className="font-light text-[#262626]/80">VİRAL</span>{' '}
+              <span className="font-black text-[#A40001]">PRODÜKSİYONLAR.</span>
             </h2>
-            <p className="m-hide text-xs sm:text-sm text-[#8E8E93] mt-2.5 max-w-xl font-mono leading-relaxed">
+            <p className="m-hide text-xs sm:text-sm text-[#262626]/70 mt-2.5 max-w-xl font-medium leading-relaxed">
               Instagram Reels, TikTok ve YouTube Shorts mecralarında izleyiciyi ilk saniyede yakalayan, dönüşüm odaklı dikey video kurguları. Sesi açmak için videoya dokunun.
             </p>
           </div>
@@ -187,7 +187,7 @@ export default function ReelsLabSection() {
             <button
               id="reels-prev-btn"
               onClick={() => scroll('left')}
-              className="w-11 h-11 rounded-full bg-white/5 border border-white/15 flex items-center justify-center hover:bg-[#B33A06] hover:text-white transition-all active:scale-90"
+              className="w-11 h-11 rounded-full bg-[#262626] text-[#F6F6F6] flex items-center justify-center hover:bg-[#A40001] transition-all active:scale-90 shadow-md"
               aria-label="Sola Kaydır"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -195,7 +195,7 @@ export default function ReelsLabSection() {
             <button
               id="reels-next-btn"
               onClick={() => scroll('right')}
-              className="w-11 h-11 rounded-full bg-white/5 border border-white/15 flex items-center justify-center hover:bg-[#B33A06] hover:text-white transition-all active:scale-90"
+              className="w-11 h-11 rounded-full bg-[#262626] text-[#F6F6F6] flex items-center justify-center hover:bg-[#A40001] transition-all active:scale-90 shadow-md"
               aria-label="Sağa Kaydır"
             >
               <ChevronRight className="w-5 h-5" />
@@ -218,9 +218,7 @@ export default function ReelsLabSection() {
         onPointerUp={endDrag}
         onPointerCancel={endDrag}
       >
-        {/* Kenarlarda yumuşak kararma */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-24 z-10 bg-gradient-to-r from-[#070707] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-24 z-10 bg-gradient-to-l from-[#070707] to-transparent" />
+
 
         <div ref={trackRef} className="flex w-max will-change-transform py-3">
           {loopItems.map((reel, index) => {
@@ -231,25 +229,19 @@ export default function ReelsLabSection() {
               <div key={`${reel.id}-${index}`} className="flex-shrink-0 pr-5 sm:pr-7">
                 <div
                   onClick={() => handleCardClick(reel.id)}
-                  className={`w-[220px] sm:w-[270px] aspect-[9/16] rounded-2xl sm:rounded-3xl relative overflow-hidden group border transition-all duration-500 shadow-2xl ${
+                  className={`w-[200px] sm:w-[260px] aspect-[9/16] rounded-[22px] relative overflow-hidden group border-2 transition-colors duration-300 bg-[#262626] ${
                     isUnmuted
-                      ? 'border-[#B33A06] ring-2 ring-[#B33A06]/40'
-                      : 'border-white/10 hover:border-white/40'
+                      ? 'border-[#A40001]'
+                      : 'border-[#262626]/20 hover:border-[#262626]'
                   }`}
                 >
                   <ReelVideo reel={reel} muted={!isUnmuted} />
 
-                  {/* OVERLAY */}
-                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.96)_0%,rgba(0,0,0,0.82)_24%,rgba(0,0,0,0.35)_42%,rgba(0,0,0,0)_58%),linear-gradient(to_bottom,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0)_18%)] p-4 sm:p-5 flex flex-col justify-between pointer-events-none">
-                    <div className="flex items-center justify-between text-xs font-mono">
-                      <span className="px-2.5 py-1 rounded-full bg-[#B33A06] text-white font-bold text-[11px] flex items-center gap-1.5 shadow-md">
-                        <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                        <span>{reel.views}</span>
-                      </span>
-
+                  <div className="absolute inset-0 p-3 flex flex-col justify-between pointer-events-none">
+                    <div className="flex justify-end">
                       <span
-                        className={`p-2 rounded-full backdrop-blur-md border border-white/20 transition-colors shadow-lg ${
-                          isUnmuted ? 'bg-[#B33A06] text-white' : 'bg-black/70 text-white group-hover:bg-white/20'
+                        className={`p-2 rounded-full transition-colors ${
+                          isUnmuted ? 'bg-[#A40001] text-[#F6F6F6]' : 'bg-[#262626]/90 text-[#F6F6F6]'
                         }`}
                         title={isUnmuted ? 'Sesi Kapat' : 'Sesi Aç'}
                       >
@@ -257,17 +249,9 @@ export default function ReelsLabSection() {
                       </span>
                     </div>
 
-                    <div>
-                      <span className="text-[10px] font-mono text-[#FF8A50] font-bold uppercase tracking-wider block mb-1">
-                        {reel.category}
-                      </span>
-                      <h3 className="text-base sm:text-lg font-extrabold text-white group-hover:text-[#FF6B35] transition-colors leading-snug font-heading">
-                        {reel.title}
-                      </h3>
-                      <p className="text-[11px] text-white/80 mt-1 line-clamp-2 font-mono font-normal">
-                        {reel.description}
-                      </p>
-                    </div>
+                    <h3 className="self-start max-w-full px-3 py-2 rounded-xl bg-[#262626]/90 text-[#F6F6F6] text-sm font-bold leading-snug font-heading">
+                      {reel.title}
+                    </h3>
                   </div>
                 </div>
               </div>

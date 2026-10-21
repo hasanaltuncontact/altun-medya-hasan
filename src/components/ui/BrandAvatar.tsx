@@ -22,8 +22,8 @@ export function mixHex(a: string, b: string, t: number): string {
 /** Firma accent renginden oluşturulan avatar zemini */
 export function brandSurface(accent: string): string {
   const light = mixHex(accent, '#FFFFFF', 0.18);
-  const deep = mixHex(accent, '#050505', 0.55);
-  const night = mixHex(accent, '#050505', 0.82);
+  const deep = mixHex(accent, '#262626', 0.55);
+  const night = mixHex(accent, '#262626', 0.82);
   return `radial-gradient(circle at 28% 22%, ${light} 0%, ${accent} 32%, ${deep} 70%, ${night} 100%)`;
 }
 
@@ -69,7 +69,7 @@ export default function BrandAvatar({
             'repeating-linear-gradient(135deg, rgba(255,255,255,0.12) 0 1px, transparent 1px 7px)',
         }}
       />
-      <span aria-hidden className="absolute -top-1/3 -left-1/4 w-3/4 h-3/4 rounded-full bg-white/20 blur-2xl" />
+      <span aria-hidden className="absolute -top-1/3 -left-1/4 w-3/4 h-3/4 rounded-full bg-[#F6F6F6]/20 blur-2xl" />
       {logoSrc ? (
         <img
           src={logoSrc}
@@ -79,7 +79,7 @@ export default function BrandAvatar({
           style={{ width: `${logoScale}%`, height: `${logoScale}%` }}
         />
       ) : (
-        <span className="absolute inset-0 flex items-center justify-center text-white font-black font-heading text-[40%]">
+        <span className="absolute inset-0 flex items-center justify-center text-[#F6F6F6] font-black font-heading text-[40%]">
           {name[0]}
         </span>
       )}
@@ -95,9 +95,9 @@ export default function BrandAvatar({
       <span
         aria-hidden
         className="absolute -inset-[6px] rounded-full animate-[spin_9s_linear_infinite]"
-        style={{ background: `conic-gradient(from 0deg, ${accent}, #B33A06, transparent 55%, ${accent})` }}
+        style={{ background: `conic-gradient(from 0deg, ${accent}, #A40001, transparent 55%, ${accent})` }}
       />
-      <span className="absolute -inset-[2px] rounded-full bg-[#050505]" />
+      <span className="absolute -inset-[2px] rounded-full bg-[#262626]" />
       <span className="absolute inset-[4px]">{core}</span>
     </span>
   );

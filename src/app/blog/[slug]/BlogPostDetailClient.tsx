@@ -7,7 +7,7 @@ import Footer from '@/components/layout/Footer';
 import MobileNav from '@/components/layout/MobileNav';
 import BriefModal from '@/components/modals/BriefModal';
 import { BlogPost } from '@/data/blog-database';
-import { Clock, ArrowLeft, CheckCircle2, Sparkles } from 'lucide-react';
+import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 
 interface BlogPostDetailClientProps {
   post: BlogPost;
@@ -19,7 +19,7 @@ export default function BlogPostDetailClient({ post, relatedPosts }: BlogPostDet
   const [isBriefOpen, setIsBriefOpen] = useState(false);
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#070709] text-white min-h-screen">
+    <div className="relative w-full overflow-hidden bg-[#262626] text-[#F6F6F6] min-h-screen">
       <Header
         onOpenBrief={() => setIsBriefOpen(true)}
         onToggleMobileMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -35,50 +35,49 @@ export default function BlogPostDetailClient({ post, relatedPosts }: BlogPostDet
         <article className="max-w-4xl mx-auto px-5 sm:px-10 space-y-10">
           
           {/* BREADCRUMB & BACK LINK */}
-          <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <div className="flex items-center justify-between border-b border-[#F6F6F6]/10 pb-4">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-xs font-mono font-bold text-white/70 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-medium font-bold text-[#F6F6F6]/70 hover:text-[#F6F6F6] transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Tüm Rehberlere Dön</span>
             </Link>
 
-            <span className="text-xs font-mono text-[#FF6B35] font-bold">
+            <span className="text-xs font-medium text-[#A40001] font-bold">
               {post.category}
             </span>
           </div>
 
           {/* ARTICLE HEADER */}
           <div className="space-y-6">
-            <h1 className="text-3xl sm:text-5xl font-heading text-white leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-heading text-[#F6F6F6] leading-tight">
               <span className="font-black">{post.title.split(' ').slice(0, 3).join(' ')}</span>{' '}
-              <span className="font-light text-white/80">{post.title.split(' ').slice(3).join(' ')}</span>
+              <span className="font-light text-[#F6F6F6]/80">{post.title.split(' ').slice(3).join(' ')}</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-white/80 font-sans leading-relaxed">
+            <p className="text-base sm:text-lg text-[#F6F6F6]/80 font-sans leading-relaxed">
               {post.excerpt}
             </p>
 
             {/* AUTHOR & META BAR */}
-            <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+            <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10">
               <div className="flex items-center gap-3">
                 <img
                   src={post.author.avatar}
                   alt={post.author.name}
-                  className="w-10 h-10 rounded-full object-cover border border-[#B33A06]"
+                  className="w-10 h-10 rounded-full object-cover border border-[#A40001]"
                 />
                 <div>
-                  <h4 className="text-xs font-bold text-white font-heading">{post.author.name}</h4>
-                  <p className="text-[10px] text-white/60 font-mono">{post.author.role}</p>
+                  <h4 className="text-xs font-bold text-[#F6F6F6] font-heading">{post.author.name}</h4>
+                  <p className="text-xs text-[#F6F6F6]/60 font-medium">{post.author.role}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-xs font-mono text-white/60">
+              <div className="flex items-center gap-4 text-xs font-medium text-[#F6F6F6]/60">
                 <span>{post.publishedDate}</span>
                 <span>•</span>
                 <span className="flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-[#FF6B35]" />
                   <span>{post.readTime}</span>
                 </span>
               </div>
@@ -86,27 +85,26 @@ export default function BlogPostDetailClient({ post, relatedPosts }: BlogPostDet
           </div>
 
           {/* FEATURED HERO IMAGE */}
-          <div className="relative h-72 sm:h-96 w-full rounded-3xl overflow-hidden border border-white/15 shadow-2xl">
+          <div className="relative h-72 sm:h-96 w-full rounded-3xl overflow-hidden border border-[#F6F6F6]/15 shadow-2xl">
             <img
               src={post.featuredImage}
               alt={post.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-[#262626]/20" />
           </div>
 
           {/* KEY TAKEAWAYS / ÖNEMLİ ÇIKARIMLAR BOX */}
-          <div className="p-6 sm:p-8 rounded-3xl bg-[#121118] border border-[#B33A06]/40 space-y-4 shadow-xl">
+          <div className="p-6 sm:p-8 rounded-3xl bg-[#121118] border border-[#A40001]/40 space-y-4 shadow-xl">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-[#FF6B35]" />
-              <h3 className="text-sm font-mono font-bold uppercase tracking-wider text-white">
+              <h3 className="text-sm font-medium font-bold text-[#F6F6F6]">
                 BU REHBERDEN ÖNEMLİ ÇIKARIMLAR
               </h3>
             </div>
             <ul className="space-y-3">
               {post.keyTakeaways.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-white/85 font-sans leading-relaxed">
-                  <CheckCircle2 className="w-4 h-4 text-[#FF6B35] flex-shrink-0 mt-0.5" />
+                <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-[#F6F6F6]/85 font-sans leading-relaxed">
+                  <CheckCircle2 className="w-4 h-4 text-[#A40001] flex-shrink-0 mt-0.5" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -115,25 +113,25 @@ export default function BlogPostDetailClient({ post, relatedPosts }: BlogPostDet
 
           {/* MAIN ARTICLE BODY */}
           <div
-            className="prose prose-invert max-w-none text-white/80 font-sans leading-relaxed space-y-6 text-sm sm:text-base
-              [&>h2]:text-2xl [&>h2]:sm:text-3xl [&>h2]:font-black [&>h2]:font-heading [&>h2]:text-white [&>h2]:pt-6 [&>h2]:border-t [&>h2]:border-white/10
-              [&>h3]:text-xl [&>h3]:sm:text-2xl [&>h3]:font-bold [&>h3]:font-heading [&>h3]:text-[#FF6B35] [&>h3]:pt-4
-              [&>p]:leading-relaxed [&>p]:text-white/80
-              [&>ul]:space-y-2 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:text-white/80
-              [&>strong]:text-white [&>strong]:font-bold"
+            className="prose prose-invert max-w-none text-[#F6F6F6]/80 font-sans leading-relaxed space-y-6 text-sm sm:text-base
+              [&>h2]:text-2xl [&>h2]:sm:text-3xl [&>h2]:font-black [&>h2]:font-heading [&>h2]:text-[#F6F6F6] [&>h2]:pt-6 [&>h2]:border-t [&>h2]:border-[#F6F6F6]/10
+              [&>h3]:text-xl [&>h3]:sm:text-2xl [&>h3]:font-bold [&>h3]:font-heading [&>h3]:text-[#A40001] [&>h3]:pt-4
+              [&>p]:leading-relaxed [&>p]:text-[#F6F6F6]/80
+              [&>ul]:space-y-2 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:text-[#F6F6F6]/80
+              [&>strong]:text-[#F6F6F6] [&>strong]:font-bold"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
           {/* KEYWORDS / ETİKETLER */}
-          <div className="pt-8 border-t border-white/10">
-            <h4 className="text-xs font-mono uppercase tracking-widest text-white/60 mb-3 font-bold">
+          <div className="pt-8 border-t border-[#F6F6F6]/10">
+            <h4 className="text-xs font-medium text-[#F6F6F6]/60 mb-3 font-bold">
               İlgili Anahtar Kelimeler
             </h4>
             <div className="flex flex-wrap gap-2">
               {post.keywords.map((kw) => (
                 <span
                   key={kw}
-                  className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-mono text-white/80"
+                  className="px-3 py-1 rounded-lg bg-[#F6F6F6]/5 border border-[#F6F6F6]/10 text-xs font-medium text-[#F6F6F6]/80"
                 >
                   #{kw}
                 </span>
@@ -142,18 +140,18 @@ export default function BlogPostDetailClient({ post, relatedPosts }: BlogPostDet
           </div>
 
           {/* IN-ARTICLE CTA BOX */}
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-[#1B1410] to-[#0F0D0C] border border-[#B33A06]/50 space-y-4 text-center sm:text-left sm:flex sm:items-center sm:justify-between sm:space-y-0 gap-6">
+          <div className="p-8 rounded-3xl bg-[#1E1E1E] border border-[#A40001]/50 space-y-4 text-center sm:text-left sm:flex sm:items-center sm:justify-between sm:space-y-0 gap-6">
             <div className="space-y-2 max-w-lg">
-              <h3 className="text-xl font-bold font-heading text-white">
+              <h3 className="text-xl font-bold font-heading text-[#F6F6F6]">
                 Bu Stratejiyi Didim&apos;deki Markanız İçin Hayata Geçirelim
               </h3>
-              <p className="text-xs text-white/70 font-sans">
+              <p className="text-xs text-[#F6F6F6]/70 font-sans">
                 Altun Medya ekibiyle doğrudan görüşün; işletmenize özel video prodüksiyon, yerel SEO ve sosyal medya planını oluşturalım.
               </p>
             </div>
             <button
               onClick={() => setIsBriefOpen(true)}
-              className="px-6 py-3.5 rounded-xl bg-[#B33A06] hover:bg-[#C84408] text-white text-xs font-bold font-mono uppercase tracking-wider whitespace-nowrap transition-all shadow-xl active:scale-95"
+              className="px-6 py-3.5 rounded-xl bg-[#A40001] hover:bg-[#A40001] text-[#F6F6F6] text-xs font-bold font-medium whitespace-nowrap transition-all shadow-xl active:scale-95"
             >
               Hemen Brief Verin
             </button>
@@ -161,22 +159,22 @@ export default function BlogPostDetailClient({ post, relatedPosts }: BlogPostDet
 
           {/* RELATED POSTS */}
           {relatedPosts.length > 0 && (
-            <div className="pt-12 border-t border-white/10 space-y-6">
-              <h3 className="text-xl font-bold font-heading text-white">Diğer Didim Rehberleri</h3>
+            <div className="pt-12 border-t border-[#F6F6F6]/10 space-y-6">
+              <h3 className="text-xl font-bold font-heading text-[#F6F6F6]">Diğer Didim Rehberleri</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {relatedPosts.map((rel) => (
                   <Link
                     key={rel.id}
                     href={`/blog/${rel.slug}`}
-                    className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-[#B33A06]/50 transition-all block group"
+                    className="p-5 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10 hover:border-[#A40001]/50 transition-all block group"
                   >
-                    <span className="text-[10px] font-mono text-[#FF6B35] font-bold uppercase block mb-1">
+                    <span className="text-xs font-medium text-[#A40001] font-bold uppercase block mb-1">
                       {rel.category}
                     </span>
-                    <h4 className="text-sm font-bold font-heading text-white group-hover:text-[#FF6B35] transition-colors leading-snug">
+                    <h4 className="text-sm font-bold font-heading text-[#F6F6F6] group-hover:text-[#A40001] transition-colors leading-snug">
                       {rel.title}
                     </h4>
-                    <p className="text-xs text-white/60 font-sans mt-2 line-clamp-2">
+                    <p className="text-xs text-[#F6F6F6]/60 font-sans mt-2 line-clamp-2">
                       {rel.excerpt}
                     </p>
                   </Link>

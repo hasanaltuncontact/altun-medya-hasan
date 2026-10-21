@@ -37,7 +37,7 @@ export default function StarDivider({ from, to, badge, star }: StarDividerProps)
 }
 
 /** Logomuzun yıldızı — tek başına kullanım için */
-export function BrandStar({ className = 'w-4 h-4', color = '#B33A06' }: { className?: string; color?: string }) {
+export function BrandStar({ className = 'w-4 h-4', color = '#A40001' }: { className?: string; color?: string }) {
   return (
     <svg viewBox="671 24 47 47" className={className} aria-hidden>
       <path

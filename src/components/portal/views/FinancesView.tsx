@@ -28,33 +28,33 @@ export default function FinancesView() {
 
       {/* 4 FINANCIAL KPI CARDS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="p-6 rounded-3xl bg-[#0D0D0D] border border-white/10 space-y-2">
+        <div className="p-6 rounded-3xl bg-[#262626] border border-white/10 space-y-2">
           <div className="text-[10px] font-bold text-white/50 uppercase">TOPLAM SÖZLEŞME</div>
           <div className="text-3xl font-black text-white font-heading">₺{totalContract.toLocaleString('tr-TR')}</div>
           <div className="text-[10px] text-white/40">2026 Dönemi Toplam Hakediş</div>
         </div>
 
-        <div className="p-6 rounded-3xl bg-[#0D0D0D] border border-white/10 space-y-2">
+        <div className="p-6 rounded-3xl bg-[#262626] border border-white/10 space-y-2">
           <div className="text-[10px] font-bold text-emerald-400 uppercase">ÖDENEN TUTAR</div>
           <div className="text-3xl font-black text-emerald-400 font-heading">₺{paidTotal.toLocaleString('tr-TR')}</div>
           <div className="text-[10px] text-emerald-400/80">✓ Tahsilatı Tamamlandı</div>
         </div>
 
-        <div className="p-6 rounded-3xl bg-[#0D0D0D] border border-white/10 space-y-2">
+        <div className="p-6 rounded-3xl bg-[#262626] border border-white/10 space-y-2">
           <div className="text-[10px] font-bold text-amber-400 uppercase">BEKLEYEN TUTAR</div>
           <div className="text-3xl font-black text-amber-400 font-heading">₺{pendingTotal.toLocaleString('tr-TR')}</div>
           <div className="text-[10px] text-amber-400/80">Açık Fatura Bakiye</div>
         </div>
 
-        <div className="p-6 rounded-3xl bg-[#0D0D0D] border border-[#B33A06]/40 space-y-2">
-          <div className="text-[10px] font-bold text-[#B33A06] uppercase">SON ÖDEME TARİHİ</div>
+        <div className="p-6 rounded-3xl bg-[#262626] border border-[#A40001]/40 space-y-2">
+          <div className="text-[10px] font-bold text-[#A40001] uppercase">SON ÖDEME TARİHİ</div>
           <div className="text-2xl font-black text-white font-heading">15 EKİM 2026</div>
-          <div className="text-[10px] text-[#B33A06] font-bold">● Önümüzdeki Vade</div>
+          <div className="text-[10px] text-[#A40001] font-bold">● Önümüzdeki Vade</div>
         </div>
       </div>
 
       {/* INVOICES TABLE */}
-      <div className="p-7 rounded-3xl bg-[#0D0D0D] border border-white/10 space-y-4">
+      <div className="p-7 rounded-3xl bg-[#262626] border border-white/10 space-y-4">
         <h2 className="text-base font-bold text-white font-heading">Fatura Geçmişi &amp; Detaylar</h2>
 
         <div className="overflow-x-auto rounded-2xl border border-white/10">
@@ -73,7 +73,7 @@ export default function FinancesView() {
             <tbody className="divide-y divide-white/10">
               {invoices.map((inv) => (
                 <tr key={inv.id} className="hover:bg-white/5 transition-colors">
-                  <td className="p-4 font-bold text-[#B33A06]">{inv.invoiceNo}</td>
+                  <td className="p-4 font-bold text-[#A40001]">{inv.invoiceNo}</td>
                   <td className="p-4 text-white font-medium max-w-xs">{inv.description}</td>
                   <td className="p-4 text-white/60">{inv.date}</td>
                   <td className="p-4 text-white/60">{inv.dueDate}</td>
@@ -94,7 +94,7 @@ export default function FinancesView() {
                       onClick={() => setActiveInvoiceModal(inv)}
                       className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors inline-flex items-center gap-1 font-bold"
                     >
-                      <Eye className="w-3.5 h-3.5 text-[#B33A06]" />
+                      <Eye className="w-3.5 h-3.5 text-[#A40001]" />
                       <span>İncele</span>
                     </button>
                   </td>
@@ -108,7 +108,7 @@ export default function FinancesView() {
       {/* PDF PREVIEW MODAL */}
       {activeInvoiceModal && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-5 animate-fadeIn">
-          <div className="w-full max-w-lg p-8 rounded-3xl bg-[#0E0E0E] border border-white/15 shadow-2xl space-y-6 relative">
+          <div className="w-full max-w-lg p-8 rounded-3xl bg-[#262626] border border-white/15 shadow-2xl space-y-6 relative">
             <button
               onClick={() => setActiveInvoiceModal(null)}
               className="absolute top-5 right-5 text-white/40 hover:text-white"
@@ -117,7 +117,7 @@ export default function FinancesView() {
             </button>
 
             <div className="border-b border-white/10 pb-4">
-              <div className="text-[#B33A06] font-bold text-sm">{activeInvoiceModal.invoiceNo}</div>
+              <div className="text-[#A40001] font-bold text-sm">{activeInvoiceModal.invoiceNo}</div>
               <h2 className="text-xl font-bold text-white font-heading mt-1">Resmi Fatura Detayı</h2>
             </div>
 
@@ -129,7 +129,7 @@ export default function FinancesView() {
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
                 <div className="flex justify-between"><span>Net Hizmet Tutarı:</span><span>₺{activeInvoiceModal.netAmount.toLocaleString('tr-TR')}</span></div>
                 <div className="flex justify-between text-white/60"><span>KDV (%20):</span><span>₺{activeInvoiceModal.taxAmount.toLocaleString('tr-TR')}</span></div>
-                <div className="flex justify-between text-base font-bold text-[#B33A06] pt-2 border-t border-white/10">
+                <div className="flex justify-between text-base font-bold text-[#A40001] pt-2 border-t border-white/10">
                   <span>Toplam Ödenecek Tutar:</span>
                   <span>₺{activeInvoiceModal.totalAmount.toLocaleString('tr-TR')}</span>
                 </div>
@@ -141,7 +141,7 @@ export default function FinancesView() {
                 alert(`Fatura ${activeInvoiceModal.invoiceNo} PDF dosyası indiriliyor...`);
                 setActiveInvoiceModal(null);
               }}
-              className="w-full py-3 rounded-xl bg-[#B33A06] text-white font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#C84408]"
+              className="w-full py-3 rounded-xl bg-[#A40001] text-white font-extrabold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#A40001]"
             >
               <Download className="w-4 h-4" />
               <span>Resmi Fatura PDF İndir</span>

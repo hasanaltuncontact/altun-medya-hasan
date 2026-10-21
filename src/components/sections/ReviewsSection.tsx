@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { clientLogos, logoScale } from '@/data/clients';
 import { profileHrefByLogoName } from '@/data/client-profiles';
@@ -66,215 +65,84 @@ export const bottomRowReviews = [
 ];
 
 export default function ReviewsSection() {
+  const reviews = [...topRowReviews, ...bottomRowReviews];
   return (
-    <section id="partners-reviews" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#F7F6F2] text-[#050505]">
+    <section id="partners-reviews" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#C3C3C3] text-[#262626]">
       <div className="max-w-7xl mx-auto">
-        
-        {/* EDITORIAL REVIEWS HEADER & STATS */}
-        <div className="mb-8 sm:mb-16">
-          
-          {/* Top Meta Bar */}
-          <div className="m-hide flex flex-col sm:flex-row sm:items-center justify-end gap-3 mb-8 sm:mb-10">
-
-            <div className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.28em] text-neutral-500 flex items-center gap-2 sm:gap-3 flex-wrap font-mono">
-              <span>STRATEJİ</span>
-              <span className="text-neutral-300">|</span>
-              <span>İÇERİK</span>
-              <span className="text-neutral-300">|</span>
-              <span>REKLAM</span>
-              <span className="text-neutral-300">|</span>
-              <span>SONUÇ</span>
+        {/* BAŞLIK + TEK İSTATİSTİK */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8 md:mb-12">
+          <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-[72px] tracking-[-0.04em] leading-[0.96] font-heading">
+            <span className="font-black">Birlikte</span>{' '}
+            <span className="font-light opacity-75">ürettik,</span>
+            <br />
+            <span className="font-light opacity-75">birlikte</span>{' '}
+            <span className="font-black text-[#A40001]">büyüttük.</span>
+          </h2>
+          <div>
+            <div className="text-5xl sm:text-7xl font-black font-heading leading-none">
+              216<span className="text-[#A40001]">+</span>
             </div>
+            <div className="text-sm opacity-60 mt-2">mutlu marka</div>
           </div>
-
-          {/* Main Title & Stat Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 items-center">
-            <div className="lg:col-span-8 space-y-4 sm:space-y-5">
-              <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-[72px] tracking-[-0.04em] text-black leading-[0.96] font-heading">
-                <span className="font-black">Birlikte</span>{' '}
-                <span className="font-light text-black/75">ürettik,</span><br />
-                <span className="font-light text-black/75">birlikte</span>{' '}
-                <span className="font-black">büyüttük.</span>
-              </h2>
-
-              <div className="m-hide text-2xl xs:text-3xl sm:text-4xl lg:text-[42px] font-normal text-neutral-800 leading-tight font-heading">
-                Gerçek deneyimler. Gerçek sonuçlar.
-              </div>
-
-              <p className="m-hide text-sm sm:text-base text-neutral-600 max-w-2xl font-normal leading-relaxed">
-                Farklı sektörlerden markalarla kurduğumuz iş birlikleri, sadece projeler değil; uzun soluklu başarı hikayelerine dönüştü.
-              </p>
-
-              {/* Avatar Stack */}
-              <div className="m-hide pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
-                <div className="flex items-center -space-x-3 sm:-space-x-3.5">
-                  <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
-                    alt="Murat Çelik"
-                    className="avatar-stack-item w-11 h-11 sm:w-13 sm:h-13 rounded-full object-cover border-2 border-[#F7F6F2] shadow-md z-10 cursor-pointer"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop"
-                    alt="Maya Rodriguez"
-                    className="avatar-stack-item w-11 h-11 sm:w-13 sm:h-13 rounded-full object-cover border-2 border-[#F7F6F2] shadow-md z-20 cursor-pointer"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop"
-                    alt="Brad Cooper"
-                    className="avatar-stack-item w-11 h-11 sm:w-13 sm:h-13 rounded-full object-cover border-2 border-[#F7F6F2] shadow-md z-30 cursor-pointer"
-                  />
-                  <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop"
-                    alt="Ebru Güneş"
-                    className="avatar-stack-item w-11 h-11 sm:w-13 sm:h-13 rounded-full object-cover border-2 border-[#F7F6F2] shadow-md z-40 cursor-pointer"
-                  />
-                </div>
-
-                <div className="w-[1px] h-8 bg-black/20 hidden xs:block" />
-
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#E8E1D5] text-neutral-800 flex items-center justify-center font-bold text-lg hover:scale-105 hover:bg-[#B33A06] hover:text-white transition-all cursor-pointer shadow-sm">
-                    +
-                  </div>
-                  <div className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase leading-tight text-neutral-700 font-mono">
-                    MARKA<br />HİKAYESİ<br />DAHA
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column Stat */}
-            <div className="lg:col-span-4 lg:pl-10 lg:border-l lg:border-black/20 flex flex-col justify-center my-auto">
-              <div className="space-y-1">
-                <div className="text-5xl sm:text-7xl lg:text-[88px] font-bold text-black tracking-tight leading-none flex items-baseline font-heading">
-                  <span>216</span>
-                  <span className="text-white bg-[#B33A06] rounded-lg px-2 ml-1.5 font-sans font-light text-4xl sm:text-6xl shadow-md">+</span>
-                </div>
-                <div className="text-xs sm:text-sm font-bold uppercase tracking-[0.24em] text-neutral-800 pt-2 font-mono">
-                  MARKA DENEYİMİ
-                </div>
-                <div className="text-[11px] font-mono text-neutral-500 pt-1">
-                  Ege &amp; Uluslararası Pazarda %98.4 Memnuniyet
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        {/* DOUBLE ROW OPPOSITE DIRECTION SCROLLING REVIEWS MARQUEE */}
-        <div className="mb-10 sm:mb-16 space-y-6 overflow-hidden -mx-5 px-5 sm:-mx-10 sm:px-10">
-          
-          {/* TOP ROW: RIGHT TO LEFT (MARQUEE LEFT) */}
-          <div className="relative w-full overflow-hidden flex">
-            <div className="animate-marquee-left flex items-stretch gap-4 sm:gap-6 py-2">
-              {[...topRowReviews, ...topRowReviews].map((rev, idx) => (
-                <div
-                  key={`${rev.id}-${idx}`}
-                  className="w-[290px] sm:w-[350px] flex-shrink-0 p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border border-black/10 shadow-sm flex flex-col justify-between hover:shadow-xl hover:border-black/30 transition-all"
-                >
-                  <blockquote className="text-xs sm:text-sm font-semibold text-black leading-relaxed font-sans">
-                    &ldquo;{rev.quote}&rdquo;
-                  </blockquote>
-                  <div className="flex items-center gap-3 mt-4 pt-3 border-t border-black/5">
-                    <img
-                      src={rev.avatar}
-                      alt={rev.name}
-                      className="w-10 h-10 rounded-full object-cover border border-black/10"
-                    />
-                    <div>
-                      <div className="text-xs font-bold text-black leading-tight font-heading">{rev.name}</div>
-                      <div className="text-[10px] font-mono text-black/60">{rev.handle}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* YORUMLAR — tek sıra kayan şerit */}
+        <div className="mb-10 sm:mb-16 overflow-hidden -mx-5 sm:-mx-10 lg:-mx-14">
+          <div className="animate-marquee-left flex w-max items-stretch gap-3 sm:gap-4 py-2 px-5">
+            {[...reviews, ...reviews].map((rev, idx) => (
+              <figure
+                key={`${rev.id}-${idx}`}
+                className="w-[280px] sm:w-[340px] flex-shrink-0 p-6 rounded-[22px] bg-[#262626] text-[#F6F6F6] flex flex-col justify-between shadow-lg"
+              >
+                <blockquote className="text-sm sm:text-base leading-relaxed">&ldquo;{rev.quote}&rdquo;</blockquote>
+                <figcaption className="flex items-center gap-3 mt-5">
+                  <img src={rev.avatar} alt={rev.name} className="w-9 h-9 rounded-full object-cover" />
+                  <span className="text-sm font-bold">{rev.name}</span>
+                </figcaption>
+              </figure>
+            ))}
           </div>
-
-          {/* BOTTOM ROW: LEFT TO RIGHT (MARQUEE RIGHT) */}
-          <div className="m-hide relative w-full overflow-hidden flex">
-            <div className="animate-marquee-right flex items-stretch gap-4 sm:gap-6 py-2">
-              {[...bottomRowReviews, ...bottomRowReviews].map((rev, idx) => (
-                <div
-                  key={`${rev.id}-${idx}`}
-                  className="w-[290px] sm:w-[350px] flex-shrink-0 p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border border-black/10 shadow-sm flex flex-col justify-between hover:shadow-xl hover:border-black/30 transition-all"
-                >
-                  <blockquote className="text-xs sm:text-sm font-semibold text-black leading-relaxed font-sans">
-                    &ldquo;{rev.quote}&rdquo;
-                  </blockquote>
-                  <div className="flex items-center gap-3 mt-4 pt-3 border-t border-black/5">
-                    <img
-                      src={rev.avatar}
-                      alt={rev.name}
-                      className="w-10 h-10 rounded-full object-cover border border-black/10"
-                    />
-                    <div>
-                      <div className="text-xs font-bold text-black leading-tight font-heading">{rev.name}</div>
-                      <div className="text-[10px] font-mono text-black/60">{rev.handle}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
         </div>
 
-        {/* 15 REAL CLIENT SVG LOGOS GRID */}
-        <div className="pt-8 sm:pt-12 border-t border-black/15">
-          <div className="text-center mb-6 sm:mb-10">
-            <span className="text-[11px] font-mono uppercase tracking-widest text-black/55 font-bold block mb-3">
-              PORTFÖYÜMÜZDE YER ALAN SEÇKİN MARKALAR
-            </span>
-            <h3 className="text-3xl sm:text-5xl tracking-[-0.03em] text-black leading-none font-heading">
-              <span className="font-black">Referans</span>{' '}
-              <span className="font-light text-black/75">İşlerimiz</span>
-            </h3>
-          </div>
+        {/* REFERANS LOGOLARI */}
+        <div className="pt-8 sm:pt-12 border-t border-[#262626]/15">
+          <h3 className="text-center text-3xl sm:text-5xl tracking-[-0.03em] leading-none font-heading mb-6 sm:mb-10">
+            <span className="font-black">Referans</span>{' '}
+            <span className="font-light opacity-75">İşlerimiz</span>
+          </h3>
 
-          <div className="grid grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-5">
+          <div className="grid grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
             {clientLogos.map((client, idx) => {
               const href = profileHrefByLogoName(client.name);
               return (
-              <Link
-                key={`${client.name}-${idx}`}
-                href={href ?? '/referanslar'}
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
-                aria-label={`${client.name} referans sayfası`}
-                className={`${idx >= 9 ? 'm-hide ' : ''}bg-white p-2.5 sm:p-6 rounded-xl sm:rounded-2xl border border-black/10 flex flex-col items-center justify-center text-center space-y-3 hover:border-black/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group relative select-none`}
-              >
-                <span className="m-hide absolute top-3 right-3 text-[10px] font-mono font-bold text-black/0 group-hover:text-black/50 transition-colors z-10">
-                  İNCELE ↗
-                </span>
-
-                <div className="h-14 sm:h-28 w-full flex items-center justify-center px-1 relative z-10">
+                <Link
+                  key={`${client.name}-${idx}`}
+                  href={href ?? '/referanslar'}
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                  aria-label={`${client.name} referans sayfası`}
+                  className={`${idx >= 9 ? 'm-hide ' : ''}h-20 sm:h-32 p-3 sm:p-6 rounded-[18px] bg-[#F6F6F6]/60 border border-[#262626]/10 hover:bg-[#262626] flex items-center justify-center transition-colors duration-300 group select-none`}
+                >
                   <img
                     src={client.svgPath}
                     alt={client.name}
                     draggable={false}
                     style={{ height: `calc(var(--logo-base) * ${logoScale(client.ratio)})` }}
-                    className="[--logo-base:30px] sm:[--logo-base:66px] w-auto max-w-full object-contain filter brightness-0 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 select-none pointer-events-none"
+                    className="[--logo-base:30px] sm:[--logo-base:60px] w-auto max-w-full object-contain filter brightness-0 group-hover:invert opacity-85 transition-[filter] select-none pointer-events-none"
                   />
-                </div>
-                <span className="m-hide text-xs font-extrabold text-black/80 font-heading truncate w-full relative z-10">
-                  {client.name}
-                </span>
-              </Link>
+                </Link>
               );
             })}
           </div>
           <div className="mt-6 sm:mt-10 flex justify-center">
             <Link
               href="/referanslar"
-              className="px-7 py-3.5 rounded-full bg-black text-white text-xs font-extrabold uppercase tracking-wider hover:bg-black/85 transition-all active:scale-95"
+              className="px-7 py-3.5 rounded-full bg-[#A40001] text-[#F6F6F6] text-sm font-bold hover:bg-[#262626] transition-colors shadow-md"
             >
-              Tüm Vaka Çalışmalarını Gör →
+              Tüm vaka çalışmaları
             </Link>
           </div>
         </div>
-
       </div>
     </section>
   );
