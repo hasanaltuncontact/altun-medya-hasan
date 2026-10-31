@@ -16,7 +16,7 @@ function VisualBuilderContent() {
   const [elementSettingsOpen, setElementSettingsOpen] = useState(false);
 
   return (
-    <div className="h-screen w-screen bg-[#262626] text-white selection:bg-[#A40001] selection:text-white flex flex-col overflow-hidden font-sans antialiased">
+    <div className="h-screen w-screen bg-[#0B0B0B] text-white selection:bg-accent selection:text-white flex flex-col overflow-hidden font-sans antialiased">
 
       {/* TOPBAR */}
       <EditorTopBar 

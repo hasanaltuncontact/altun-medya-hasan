@@ -21,7 +21,7 @@ export default function AltunMedyaLogo({
   className = 'h-7 w-auto',
   altunClassName = 'fill-current',
   medyaClassName = 'fill-current',
-  starClassName = 'fill-[#A40001]',
+  starClassName = 'fill-accent',
   showStar = true,
 }: AltunMedyaLogoProps) {
   if (showStar) {

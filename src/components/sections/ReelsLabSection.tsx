@@ -168,17 +168,17 @@ export default function ReelsLabSection() {
   };
 
   return (
-    <section id="reels-section" className="py-14 md:py-20 bg-[#C3C3C3] text-[#262626] overflow-hidden">
+    <section id="reels-section" className="py-14 md:py-20 bg-[#F8F0DB] text-[#0B0B0B] overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-14">
         {/* HEADER */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-6 sm:mb-10">
           <div>
-            <h2 className="text-3xl sm:text-5xl tracking-tight text-[#262626] leading-tight font-heading">
+            <h2 className="text-3xl sm:text-5xl tracking-tight text-[#0B0B0B] leading-tight font-heading">
               <span className="font-black">YÜKSEK ETKİLEŞİMLİ</span><br />
-              <span className="font-light text-[#262626]/80">VİRAL</span>{' '}
-              <span className="font-black text-[#A40001]">PRODÜKSİYONLAR.</span>
+              <span className="font-light text-[#0B0B0B]/80">VİRAL</span>{' '}
+              <span className="font-black text-accent">PRODÜKSİYONLAR.</span>
             </h2>
-            <p className="m-hide text-xs sm:text-sm text-[#262626]/70 mt-2.5 max-w-xl font-medium leading-relaxed">
+            <p className="m-hide text-xs sm:text-sm text-[#0B0B0B]/70 mt-2.5 max-w-xl font-medium leading-relaxed">
               Instagram Reels, TikTok ve YouTube Shorts mecralarında izleyiciyi ilk saniyede yakalayan, dönüşüm odaklı dikey video kurguları. Sesi açmak için videoya dokunun.
             </p>
           </div>
@@ -187,7 +187,7 @@ export default function ReelsLabSection() {
             <button
               id="reels-prev-btn"
               onClick={() => scroll('left')}
-              className="w-11 h-11 rounded-full bg-[#262626] text-[#F6F6F6] flex items-center justify-center hover:bg-[#A40001] transition-all active:scale-90 shadow-md"
+              className="w-11 h-11 rounded-full bg-[#0B0B0B] text-[#F8F0DB] flex items-center justify-center hover:bg-accent transition-all active:scale-90 shadow-md hover:text-onAccent"
               aria-label="Sola Kaydır"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -195,7 +195,7 @@ export default function ReelsLabSection() {
             <button
               id="reels-next-btn"
               onClick={() => scroll('right')}
-              className="w-11 h-11 rounded-full bg-[#262626] text-[#F6F6F6] flex items-center justify-center hover:bg-[#A40001] transition-all active:scale-90 shadow-md"
+              className="w-11 h-11 rounded-full bg-[#0B0B0B] text-[#F8F0DB] flex items-center justify-center hover:bg-accent transition-all active:scale-90 shadow-md hover:text-onAccent"
               aria-label="Sağa Kaydır"
             >
               <ChevronRight className="w-5 h-5" />
@@ -229,10 +229,10 @@ export default function ReelsLabSection() {
               <div key={`${reel.id}-${index}`} className="flex-shrink-0 pr-5 sm:pr-7">
                 <div
                   onClick={() => handleCardClick(reel.id)}
-                  className={`w-[200px] sm:w-[260px] aspect-[9/16] rounded-[22px] relative overflow-hidden group border-2 transition-colors duration-300 bg-[#262626] ${
+                  className={`w-[200px] sm:w-[260px] aspect-[9/16] rounded-[22px] relative overflow-hidden group border-2 transition-colors duration-300 bg-[#0B0B0B] ${
                     isUnmuted
-                      ? 'border-[#A40001]'
-                      : 'border-[#262626]/20 hover:border-[#262626]'
+                      ? 'border-accent'
+                      : 'border-[#0B0B0B]/20 hover:border-[#0B0B0B]'
                   }`}
                 >
                   <ReelVideo reel={reel} muted={!isUnmuted} />
@@ -241,7 +241,7 @@ export default function ReelsLabSection() {
                     <div className="flex justify-end">
                       <span
                         className={`p-2 rounded-full transition-colors ${
-                          isUnmuted ? 'bg-[#A40001] text-[#F6F6F6]' : 'bg-[#262626]/90 text-[#F6F6F6]'
+                          isUnmuted ? 'bg-accent text-onAccent' : 'bg-[#0B0B0B]/90 text-[#F8F0DB]'
                         }`}
                         title={isUnmuted ? 'Sesi Kapat' : 'Sesi Aç'}
                       >
@@ -249,7 +249,7 @@ export default function ReelsLabSection() {
                       </span>
                     </div>
 
-                    <h3 className="self-start max-w-full px-3 py-2 rounded-xl bg-[#262626]/90 text-[#F6F6F6] text-sm font-bold leading-snug font-heading">
+                    <h3 className="self-start max-w-full px-3 py-2 rounded-xl bg-[#0B0B0B]/90 text-[#F8F0DB] text-sm font-bold leading-snug font-heading">
                       {reel.title}
                     </h3>
                   </div>

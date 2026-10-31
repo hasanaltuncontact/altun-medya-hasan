@@ -4,9 +4,9 @@ const partners = ['Meta Business', 'Google Partner', 'TikTok Ads', 'Shopify Plus
 
 export default function BrandsMarquee() {
   return (
-    <section className="py-8 sm:py-12 bg-[#262626] text-[#F6F6F6] overflow-hidden border-t border-[#F6F6F6]/10">
+    <section className="pt-6 pb-8 sm:pt-10 sm:pb-12 bg-[#F8F0DB] text-[#0B0B0B] overflow-hidden">
       {/* Müşteri logoları kayan şerit */}
-      <div className="pb-6 sm:pb-8 border-b border-[#F6F6F6]/10">
+      <div className="pb-6 sm:pb-8 border-b border-[#0B0B0B]/10">
         {/* Kenarlarda yumuşak kaybolma yalnızca maske; arka plan düz renk */}
         <div
           className="relative max-w-screen-2xl mx-auto overflow-hidden flex"
@@ -25,7 +25,7 @@ export default function BrandsMarquee() {
                   alt={client.name}
                   draggable={false}
                   style={{ height: `calc(var(--logo-base) * ${logoScale(client.ratio)})` }}
-                  className="[--logo-base:38px] sm:[--logo-base:60px] w-auto max-w-full object-contain filter brightness-0 invert opacity-70 select-none pointer-events-none"
+                  className="[--logo-base:38px] sm:[--logo-base:60px] w-auto max-w-full object-contain filter brightness-0 opacity-75 select-none pointer-events-none"
                 />
               </div>
             ))}
@@ -38,7 +38,7 @@ export default function BrandsMarquee() {
         <h3 className="text-base sm:text-lg font-bold font-heading">Resmi reklam partnerlerimiz</h3>
         <ul className="flex flex-wrap gap-2">
           {partners.map((p) => (
-            <li key={p} className="px-4 py-2 rounded-full border border-[#F6F6F6]/20 text-sm">
+            <li key={p} className="px-4 py-2 rounded-full border border-[#0B0B0B]/15 text-sm">
               {p}
             </li>
           ))}

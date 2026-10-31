@@ -122,7 +122,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" className={`scroll-smooth ${plusJakarta.variable} ${manrope.variable}`}>
-      <body className="bg-[#262626] text-[#F6F6F6] font-sans antialiased selection:bg-[#A40001] selection:text-[#F6F6F6] min-h-screen flex flex-col justify-between">
+      <body className="bg-[#0B0B0B] text-[#F8F0DB] font-sans antialiased selection:bg-accent selection:text-[#F8F0DB] min-h-screen flex flex-col justify-between">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

@@ -67,7 +67,7 @@ export const bottomRowReviews = [
 export default function ReviewsSection() {
   const reviews = [...topRowReviews, ...bottomRowReviews];
   return (
-    <section id="partners-reviews" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#C3C3C3] text-[#262626]">
+    <section id="partners-reviews" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#F8F0DB] text-[#0B0B0B]">
       <div className="max-w-7xl mx-auto">
         {/* BAŞLIK + TEK İSTATİSTİK */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8 md:mb-12">
@@ -76,11 +76,11 @@ export default function ReviewsSection() {
             <span className="font-light opacity-75">ürettik,</span>
             <br />
             <span className="font-light opacity-75">birlikte</span>{' '}
-            <span className="font-black text-[#A40001]">büyüttük.</span>
+            <span className="font-black text-accent">büyüttük.</span>
           </h2>
           <div>
             <div className="text-5xl sm:text-7xl font-black font-heading leading-none">
-              216<span className="text-[#A40001]">+</span>
+              216<span className="text-accent">+</span>
             </div>
             <div className="text-sm opacity-60 mt-2">mutlu marka</div>
           </div>
@@ -92,7 +92,7 @@ export default function ReviewsSection() {
             {[...reviews, ...reviews].map((rev, idx) => (
               <figure
                 key={`${rev.id}-${idx}`}
-                className="w-[280px] sm:w-[340px] flex-shrink-0 p-6 rounded-[22px] bg-[#262626] text-[#F6F6F6] flex flex-col justify-between shadow-lg"
+                className="w-[280px] sm:w-[340px] flex-shrink-0 p-6 rounded-[22px] bg-[#0B0B0B] text-[#F8F0DB] flex flex-col justify-between shadow-lg"
               >
                 <blockquote className="text-sm sm:text-base leading-relaxed">&ldquo;{rev.quote}&rdquo;</blockquote>
                 <figcaption className="flex items-center gap-3 mt-5">
@@ -105,7 +105,7 @@ export default function ReviewsSection() {
         </div>
 
         {/* REFERANS LOGOLARI */}
-        <div className="pt-8 sm:pt-12 border-t border-[#262626]/15">
+        <div className="pt-8 sm:pt-12 border-t border-[#0B0B0B]/15">
           <h3 className="text-center text-3xl sm:text-5xl tracking-[-0.03em] leading-none font-heading mb-6 sm:mb-10">
             <span className="font-black">Referans</span>{' '}
             <span className="font-light opacity-75">İşlerimiz</span>
@@ -121,7 +121,7 @@ export default function ReviewsSection() {
                   onContextMenu={(e) => e.preventDefault()}
                   onDragStart={(e) => e.preventDefault()}
                   aria-label={`${client.name} referans sayfası`}
-                  className={`${idx >= 9 ? 'm-hide ' : ''}h-20 sm:h-32 p-3 sm:p-6 rounded-[18px] bg-[#F6F6F6]/60 border border-[#262626]/10 hover:bg-[#262626] flex items-center justify-center transition-colors duration-300 group select-none`}
+                  className={`${idx >= 9 ? 'm-hide ' : ''}h-20 sm:h-32 p-3 sm:p-6 rounded-[18px] bg-[#F8F0DB]/60 border border-[#0B0B0B]/10 hover:bg-[#0B0B0B] flex items-center justify-center transition-colors duration-300 group select-none`}
                 >
                   <img
                     src={client.svgPath}
@@ -137,7 +137,7 @@ export default function ReviewsSection() {
           <div className="mt-6 sm:mt-10 flex justify-center">
             <Link
               href="/referanslar"
-              className="px-7 py-3.5 rounded-full bg-[#A40001] text-[#F6F6F6] text-sm font-bold hover:bg-[#262626] transition-colors shadow-md"
+              className="px-7 py-3.5 rounded-full bg-accent text-onAccent text-sm font-bold hover:bg-[#0B0B0B] transition-colors shadow-md"
             >
               Tüm vaka çalışmaları
             </Link>
