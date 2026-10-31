@@ -116,6 +116,7 @@
 
 [class~="bg-[#0B0B0B]"],
 [class~="bg-[#161616]"],
+[class~="bg-[#141414]"],
 [class~="bg-ink"],
 .tone-dark {
   --accent: 248 240 219;
@@ -241,6 +242,13 @@
   }
   /* İkincil içerik mobilde gizlenir */
   .m-hide {
+    display: none !important;
+  }
+}
+
+/* Yalnızca mobilde görünen öğeler (ör. gizlenen bölümlerin yerine geçen geçişler) */
+@media (min-width: 768px) {
+  .m-only {
     display: none !important;
   }
 }

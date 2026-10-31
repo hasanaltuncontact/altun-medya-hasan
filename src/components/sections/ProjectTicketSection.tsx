@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { servicesDatabase } from '@/data/services-database';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 interface ProjectTicketSectionProps {
   onOpenBriefWithService?: (slug: string) => void;
@@ -27,11 +28,7 @@ export default function ProjectTicketSection({ onOpenBriefWithService }: Project
   return (
     <section id="ticket-section" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#0B0B0B] text-[#F8F0DB]">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-center text-3xl xs:text-4xl sm:text-6xl tracking-tight leading-tight font-heading mb-7 md:mb-12">
-          <span className="font-black">PROJENİ</span>{' '}
-          <span className="font-light opacity-90">BİRLİKTE</span>{' '}
-          <span className="font-black text-[#0B0B0B]">BAŞLATALIM.</span>
-        </h2>
+        <SectionHeading title="Teklif Alın" desc="Hizmeti seçin, 24 saat içinde size dönelim." />
 
         {/* Çerçeveli iki panel */}
         <div className="p-2.5 sm:p-3 rounded-[32px] bg-[#0B0B0B]/20 shadow-2xl">

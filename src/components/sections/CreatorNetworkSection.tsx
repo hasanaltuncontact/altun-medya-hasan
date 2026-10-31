@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { creatorsList } from '@/data/creators';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function CreatorNetworkSection() {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -20,17 +21,7 @@ export default function CreatorNetworkSection() {
         
         {/* HEADER SECTION */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-6 sm:mb-12">
-          <div>
-            <h2 className="text-3xl sm:text-5xl tracking-tight text-[#F8F0DB] leading-tight font-heading">
-              <span className="font-black">DOĞRU İÇERİK</span>{' '}
-              <span className="font-light text-[#F8F0DB]/80">ÜRETİCİSİ,</span><br />
-              <span className="font-light text-[#F8F0DB]/80">ÖLÇÜLEBİLİR</span>{' '}
-              <span className="font-black text-accent">DÖNÜŞÜM.</span>
-            </h2>
-            <p className="m-hide text-xs sm:text-sm text-[#F8F0DB]/55 mt-2 max-w-xl font-normal leading-relaxed font-medium">
-              Ege ve ulusal ölçekte yüksek erişime sahip kreatif içerik üreticilerimiz ve influencer network&apos;ümüzle, markanızı doğru hedef kitleyle buluşturuyor ve yüksek dönüşümlü organik kampanya süreçleri yönetiyoruz.
-            </p>
-          </div>
+          <SectionHeading className="!mb-0" title="Influencer Ağımız" desc="Markanızı tanıtan, birlikte çalıştığımız içerik üreticileri." />
 
           <div className="m-hide flex items-center gap-3">
             <button

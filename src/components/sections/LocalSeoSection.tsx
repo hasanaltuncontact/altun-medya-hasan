@@ -3,22 +3,13 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { seoKeywordsDetailed } from '@/config/seo-keywords';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function LocalSeoSection() {
   return (
     <section id="seo-region" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#0B0B0B] text-[#F8F0DB]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-7 md:mb-12">
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.05] font-heading">
-            <span className="font-black">DİDİM VE EGE&apos;DE</span>
-            <br />
-            <span className="font-light opacity-80">ZİRVEDE </span>
-            <span className="font-black text-accent">KONUMLANIN.</span>
-          </h2>
-          <p className="m-hide text-sm opacity-70 max-w-sm leading-relaxed">
-            Didim, Akbük, Kuşadası ve Bodrum&apos;da yerel SEO, Google Harita ve yerinde çekim.
-          </p>
-        </div>
+        <SectionHeading title="Hizmet Bölgelerimiz" desc="Didim, Akbük, Kuşadası, Söke, Bodrum ve Aydın." />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 m-rail">
           {seoKeywordsDetailed.slice(0, 6).map((item) => (

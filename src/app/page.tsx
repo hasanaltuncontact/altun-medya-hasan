@@ -26,6 +26,7 @@ import { WorkItem } from '@/data/works';
 import { ReelItem, reelsList } from '@/data/reels';
 
 const INK = '#0B0B0B';
+const GRAPH = '#141414';
 const CREAM = '#F8F0DB';
 
 export default function HomePage() {
@@ -56,28 +57,29 @@ export default function HomePage() {
 
       {/* HERO SECTION */}
       <main>
-        {/* Geçişler yalnızca logo renkleri: siyah (#0B0B0B) ve krem (#F8F0DB).
-            "m-hide" ile işaretlenenler mobilde gizlenir — sayfa kısa kalır. */}
+        {/* Zemin sırası: antrasit / siyah dönüşümlü; krem yalnızca referanslarda.
+            m-hide: mobilde gizli · m-only: yalnızca mobilde (gizlenen bölümlerin geçişi) */}
         <HeroSection onOpenBrief={() => handleOpenBrief()} />
         <BrandsMarquee />
 
-        <SectionDivider topBgColor={CREAM} bottomBgColor={INK} star />
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={INK} star />
         <ServicesSection onOpenBriefWithService={(slug) => handleOpenBrief(slug)} />
 
-        <SectionDivider topBgColor={INK} bottomBgColor={CREAM} />
+        <SectionDivider topBgColor={INK} bottomBgColor={GRAPH} />
         <ReelsLabSection />
 
-        <SectionDivider topBgColor={CREAM} bottomBgColor={INK} />
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={INK} />
         <CreatorNetworkSection />
 
-        <SectionDivider topBgColor={INK} bottomBgColor={CREAM} />
+        <SectionDivider topBgColor={INK} bottomBgColor={GRAPH} />
         <WorksSection onSelectWork={(work) => setSelectedWork(work)} />
 
-        <SectionDivider topBgColor={CREAM} bottomBgColor={INK} star className="m-hide" />
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={INK} className="m-hide" />
         <div className="m-hide">
           <ProjectTicketSection onOpenBriefWithService={(slug) => handleOpenBrief(slug)} />
         </div>
-        <SectionDivider topBgColor={INK} bottomBgColor={CREAM} className="m-hide" />
+        <SectionDivider topBgColor={INK} bottomBgColor={CREAM} star className="m-hide" />
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={CREAM} star className="m-only" />
 
         <ReviewsSection />
 
@@ -85,18 +87,19 @@ export default function HomePage() {
         <div className="m-hide">
           <LocalSeoSection />
         </div>
-        <SectionDivider topBgColor={INK} bottomBgColor={CREAM} className="m-hide" />
+        <SectionDivider topBgColor={INK} bottomBgColor={GRAPH} className="m-hide" />
+        <SectionDivider topBgColor={CREAM} bottomBgColor={GRAPH} className="m-only" />
 
         <AboutSection />
 
-        <SectionDivider topBgColor={CREAM} bottomBgColor={INK} className="m-hide" />
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={INK} className="m-hide" />
         <div className="m-hide">
           <CareerSection onOpenBrief={() => handleOpenBrief()} />
         </div>
-        <SectionDivider topBgColor={INK} bottomBgColor={CREAM} className="m-hide" />
+        <SectionDivider topBgColor={INK} bottomBgColor={GRAPH} className="m-hide" />
 
         <HighImpactCtaSection onOpenBrief={() => handleOpenBrief()} />
-        <SectionDivider topBgColor={CREAM} bottomBgColor={INK} />
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={INK} />
       </main>
 
       {/* FOOTER */}

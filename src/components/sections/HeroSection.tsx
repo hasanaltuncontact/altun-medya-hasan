@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
-import { BrandStar } from '@/components/ui/StarDivider';
 
 interface HeroSectionProps {
   onOpenBrief: () => void;
@@ -24,7 +23,7 @@ export default function HeroSection({ onOpenBrief }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative bg-[#F8F0DB] pb-10 sm:pb-14">
+    <section className="relative bg-[#141414] pb-10 sm:pb-14">
       <div className="relative bg-[#0B0B0B] text-[#F8F0DB] rounded-b-[28px] sm:rounded-b-[56px] overflow-hidden">
         {/* Arka plan videosu */}
         <div aria-hidden className="absolute inset-0 z-0 pointer-events-none">
@@ -44,10 +43,6 @@ export default function HeroSection({ onOpenBrief }: HeroSectionProps) {
 
         <div className="relative z-10 min-h-[84svh] sm:min-h-[88vh] max-w-6xl mx-auto px-5 sm:px-10 pt-28 sm:pt-36 pb-20 sm:pb-24 flex flex-col items-center justify-between text-center">
           <div className="flex flex-col items-center gap-5 sm:gap-7">
-            <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#F8F0DB]/70">
-              <BrandStar className="w-3 h-3" color="#F8F0DB" />
-              Branding & Prodüksiyon Stüdyosu
-            </span>
 
             <h1 className="text-[38px] xs:text-5xl sm:text-7xl lg:text-[88px] tracking-[-0.04em] leading-[0.94] font-heading max-w-4xl">
               <span className="block">
@@ -62,7 +57,7 @@ export default function HeroSection({ onOpenBrief }: HeroSectionProps) {
             </h1>
 
             <p className="text-[15px] sm:text-lg text-[#F8F0DB]/70 max-w-md leading-relaxed">
-              Marka, prodüksiyon, web ve reklam — tek stüdyoda.
+              Sosyal medya, video çekimi, web tasarım ve reklam.
             </p>
 
             <div className="flex items-center justify-center gap-2.5 sm:gap-3">

@@ -37,7 +37,10 @@ export default function SectionDivider({
             className="w-11 h-11 sm:w-14 sm:h-14 rounded-full grid place-items-center"
             style={{ background: bottomBgColor, boxShadow: `0 0 0 5px ${topBgColor}` }}
           >
-            <BrandStar className="w-4 h-4 sm:w-5 sm:h-5" color={topBgColor} />
+            <BrandStar
+              className="w-4 h-4 sm:w-5 sm:h-5"
+              color={bottomBgColor.toUpperCase() === '#F8F0DB' ? topBgColor : '#F8F0DB'}
+            />
           </div>
         </div>
       )}

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 interface CareerPosition {
   id: string;
@@ -79,20 +80,7 @@ export default function CareerSection({}: CareerSectionProps) {
   return (
     <section id="career" className="py-14 md:py-24 px-5 sm:px-10 lg:px-14 bg-[#0B0B0B] text-[#F8F0DB] relative">
       <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-12">
-          <div>
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent/20 text-accent border border-accent/30 text-xs font-bold tracking-wider mb-4">
-              ALTUN MEDYA KARİYER
-            </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-tight font-heading">
-              <span className="font-black">EKİBİMİZE</span>{' '}
-              <span className="font-black text-accent">KATIL.</span>
-            </h2>
-          </div>
-          <p className="text-sm text-[#EFE6CF] max-w-sm leading-relaxed">
-            Didim ve Ege&apos;nin en hızlı büyüyen medya stüdyosunda kreatif vizyonunu sahaya yansıt.
-          </p>
-        </div>
+        <SectionHeading title="Kariyer" desc="Açık pozisyonlarımız." />
 
         {/* AÇIK POZİSYONLAR — sade satırlar */}
         <ul className="space-y-3">

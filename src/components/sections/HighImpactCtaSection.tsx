@@ -7,8 +7,8 @@ interface HighImpactCtaSectionProps {
 
 export default function HighImpactCtaSection({ onOpenBrief }: HighImpactCtaSectionProps) {
   return (
-    <section className="pt-4 pb-10 sm:pt-6 sm:pb-16 px-4 sm:px-10 lg:px-14 bg-[#F8F0DB]">
-      <div className="relative max-w-7xl mx-auto rounded-[28px] sm:rounded-[44px] bg-[#0B0B0B] text-[#F8F0DB] overflow-hidden px-6 py-12 sm:px-14 sm:py-20 text-center">
+    <section className="pt-4 pb-10 sm:pt-6 sm:pb-16 px-4 sm:px-10 lg:px-14 bg-[#141414]">
+      <div className="relative max-w-7xl mx-auto rounded-[28px] sm:rounded-[44px] bg-[#0B0B0B] text-[#F8F0DB] border border-[#F8F0DB]/10 overflow-hidden px-6 py-12 sm:px-14 sm:py-20 text-center">
         <video
           aria-hidden
           autoPlay
@@ -23,12 +23,10 @@ export default function HighImpactCtaSection({ onOpenBrief }: HighImpactCtaSecti
         </video>
         <div className="relative flex flex-col items-center gap-6 sm:gap-8">
           <BrandStar className="w-6 h-6 sm:w-8 sm:h-8" color="#F8F0DB" />
-          <h2 className="text-[34px] sm:text-6xl lg:text-7xl tracking-tight leading-[0.95] font-heading">
-            <span className="font-black">MARKANIZI</span>{' '}
-            <span className="font-light">BİRLİKTE</span>
-            <br />
-            <span className="font-black">YÜKSELTELİM.</span>
+          <h2 className="text-[30px] sm:text-5xl lg:text-6xl font-black font-heading tracking-[-0.03em] leading-[1.05]">
+            Projenizi konuşalım
           </h2>
+          <p className="-mt-2 sm:-mt-4 text-sm sm:text-base text-[#F8F0DB]/60">Ücretsiz ön görüşme, 24 saat içinde dönüş.</p>
 
           <div className="flex items-center justify-center gap-2.5 sm:gap-3">
             <button

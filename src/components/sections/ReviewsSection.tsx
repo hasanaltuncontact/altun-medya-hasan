@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { clientLogos, logoScale } from '@/data/clients';
 import { profileHrefByLogoName } from '@/data/client-profiles';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 export const topRowReviews = [
   {
@@ -71,13 +72,7 @@ export default function ReviewsSection() {
       <div className="max-w-7xl mx-auto">
         {/* BAŞLIK + TEK İSTATİSTİK */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8 md:mb-12">
-          <h2 className="text-4xl xs:text-5xl sm:text-6xl lg:text-[72px] tracking-[-0.04em] leading-[0.96] font-heading">
-            <span className="font-black">Birlikte</span>{' '}
-            <span className="font-light opacity-75">ürettik,</span>
-            <br />
-            <span className="font-light opacity-75">birlikte</span>{' '}
-            <span className="font-black text-accent">büyüttük.</span>
-          </h2>
+          <SectionHeading className="!mb-0" title="Müşteri Yorumları" />
           <div>
             <div className="text-5xl sm:text-7xl font-black font-heading leading-none">
               216<span className="text-accent">+</span>
@@ -106,10 +101,7 @@ export default function ReviewsSection() {
 
         {/* REFERANS LOGOLARI */}
         <div className="pt-8 sm:pt-12 border-t border-[#0B0B0B]/15">
-          <h3 className="text-center text-3xl sm:text-5xl tracking-[-0.03em] leading-none font-heading mb-6 sm:mb-10">
-            <span className="font-black">Referans</span>{' '}
-            <span className="font-light opacity-75">İşlerimiz</span>
-          </h3>
+          <SectionHeading title="Referanslarımız" desc="Birlikte çalıştığımız markalar." />
 
           <div className="grid grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
             {clientLogos.map((client, idx) => {
