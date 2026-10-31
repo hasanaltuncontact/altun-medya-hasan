@@ -47,25 +47,25 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#262626] text-[#F6F6F6] pt-10 sm:pt-16 pb-8 sm:pb-12 px-5 sm:px-10 lg:px-14 border-t border-[#F6F6F6]/10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-7 md:gap-10 pb-8 md:pb-12 border-b border-[#F6F6F6]/10">
+    <footer id="contact" className="bg-[#0B0B0B] text-[#F8F0DB] pt-10 sm:pt-16 pb-8 sm:pb-12 px-5 sm:px-10 lg:px-14 border-t border-[#F8F0DB]/10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-7 md:gap-10 pb-8 md:pb-12 border-b border-[#F8F0DB]/10">
         <div className="md:col-span-5 space-y-4">
           <Link href="/" className="group inline-flex items-center select-none" aria-label="Altun Medya">
-            <AltunMedyaLogo className="h-8 sm:h-10 w-auto text-[#F6F6F6] group-hover:opacity-90 transition-opacity" showStar={true} />
+            <AltunMedyaLogo className="h-8 sm:h-10 w-auto text-[#F8F0DB] group-hover:opacity-90 transition-opacity" showStar={true} />
           </Link>
-          <p className="text-xs sm:text-sm text-[#F6F6F6]/60 max-w-sm leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#F8F0DB]/60 max-w-sm leading-relaxed">
             Didim, Kuşadası, Bodrum ve tüm Ege bölgesinde markaları dijitalde harekete geçiren 360° medya, web tasarım ve prodüksiyon stüdyosu.
           </p>
         </div>
 
         <div className="md:col-span-3 space-y-3">
-          <h4 className="text-sm font-bold text-[#A40001]">Hızlı Bağlantılar</h4>
-          <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2.5 text-xs text-[#F6F6F6]/65">
+          <h4 className="text-sm font-bold text-accent">Hızlı Bağlantılar</h4>
+          <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2.5 text-xs text-[#F8F0DB]/65">
             {quickLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`group inline-flex items-center gap-1.5 transition-colors hover:text-[#F6F6F6] ${link.accent ? 'text-[#A40001] font-semibold' : ''}`}
+                  className={`group inline-flex items-center gap-1.5 transition-colors hover:text-[#F8F0DB] ${link.accent ? 'text-accent font-semibold' : ''}`}
                 >
                   <span>{link.label}</span>
                   <span className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">→</span>
@@ -76,10 +76,10 @@ export default function Footer() {
         </div>
 
         <div className="md:col-span-4 space-y-3">
-          <h4 className="text-sm font-bold text-[#A40001]">İletişim &amp; Konum</h4>
-          <p className="text-xs text-[#F6F6F6]/70 font-medium">{siteConfig.address}</p>
-          <p className="text-xs text-[#F6F6F6]/70 font-medium">E-posta: {siteConfig.email}</p>
-          <p className="text-xs text-[#F6F6F6]/70 font-medium">Telefon: {siteConfig.phone}</p>
+          <h4 className="text-sm font-bold text-accent">İletişim &amp; Konum</h4>
+          <p className="text-xs text-[#F8F0DB]/70 font-medium">{siteConfig.address}</p>
+          <p className="text-xs text-[#F8F0DB]/70 font-medium">E-posta: {siteConfig.email}</p>
+          <p className="text-xs text-[#F8F0DB]/70 font-medium">Telefon: {siteConfig.phone}</p>
           <div className="pt-3 flex items-center gap-2.5">
             {socialLinks.map(({ label, href, Icon }) => (
               <a
@@ -89,7 +89,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={label}
                 title={label}
-                className="w-9 h-9 rounded-full border border-[#F6F6F6]/15 text-[#F6F6F6]/60 flex items-center justify-center transition-all duration-300 hover:text-[#F6F6F6] hover:border-[#A40001] hover:bg-[#A40001] hover:-translate-y-0.5"
+                className="w-9 h-9 rounded-full border border-[#F8F0DB]/15 text-[#F8F0DB]/60 flex items-center justify-center transition-all duration-300 hover:text-onAccent hover:border-accent hover:bg-accent hover:-translate-y-0.5"
               >
                 <Icon className="w-4 h-4" />
               </a>
@@ -98,7 +98,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#F6F6F6]/40 font-medium gap-3">
+      <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#F8F0DB]/40 font-medium gap-3">
         <div>© {new Date().getFullYear()} ALTUN MEDYA. Tüm hakları saklıdır.</div>
         <div className="m-hide">Didim Sosyal Medya • Didim Web Tasarım • Didim Video Prodüksiyon</div>
       </div>

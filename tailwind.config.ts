@@ -15,20 +15,14 @@ const config: Config = {
         display: ["'adineue Bold'", "'adineue'", 'sans-serif'],
       },
       colors: {
-        pureWhite: '#F6F6F6',
-        softGrey: '#C3C3C3',
-        charcoalBlack: '#262626',
-        deepRed: '#A40001',
-        obsidian: '#262626',
-        surfaceDark: '#262626',
-        surfaceDarker: '#1E1E1E',
-        offWhite: '#F6F6F6',
-        offWhiteAlt: '#F6F6F6',
-        warmBeige: '#F6F6F6',
-        softBeige: '#C3C3C3',
-        darkBeige: '#C3C3C3',
-        limeAccent: '#A40001',
-        limeGlow: '#A40001',
+        // Logo paleti: siyah + krem
+        ink: '#0B0B0B',
+        inkSurface: '#161616',
+        cream: '#F8F0DB',
+        creamDeep: '#EFE6CF',
+        // Bölüm tonuna göre değişen vurgu (koyu zeminde krem, açık zeminde siyah)
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        onAccent: 'rgb(var(--on-accent) / <alpha-value>)',
       },
       screens: {
         'xs': '420px',

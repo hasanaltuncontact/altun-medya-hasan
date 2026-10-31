@@ -25,6 +25,10 @@ import ReelsPlayerModal from '@/components/modals/ReelsPlayerModal';
 import { WorkItem } from '@/data/works';
 import { ReelItem, reelsList } from '@/data/reels';
 
+const INK = '#0B0B0B';
+const GRAPH = '#141414';
+const CREAM = '#F8F0DB';
+
 export default function HomePage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isBriefOpen, setIsBriefOpen] = useState(false);
@@ -38,7 +42,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#262626] text-[#F6F6F6]">
+    <div className="relative w-full overflow-hidden bg-[#0B0B0B] text-[#F8F0DB]">
       {/* HEADER & MOBILE NAV */}
       <Header
         onOpenBrief={() => handleOpenBrief()}
@@ -53,74 +57,49 @@ export default function HomePage() {
 
       {/* HERO SECTION */}
       <main>
-        {/* HERO SECTION */}
+        {/* Zemin sırası: antrasit / siyah dönüşümlü; krem yalnızca referanslarda.
+            m-hide: mobilde gizli · m-only: yalnızca mobilde (gizlenen bölümlerin geçişi) */}
         <HeroSection onOpenBrief={() => handleOpenBrief()} />
-
-        {/* BRANDS MARQUEE (15 REAL CLIENT SVGS ON SEAMLESS DARK) */}
         <BrandsMarquee />
 
-        {/* DİNAMİK GEÇİŞ: CHARCOAL (#262626) -> DEEP RED (#A40001) */}
-        <SectionDivider topBgColor="#262626" bottomBgColor="#A40001" />
-
-        {/* 6 MAIN CATEGORY SERVICES SECTION (GÜÇLÜ KIRMIZI BÖLGE) */}
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={INK} star />
         <ServicesSection onOpenBriefWithService={(slug) => handleOpenBrief(slug)} />
 
-        {/* DİNAMİK GEÇİŞ: DEEP RED (#A40001) -> SOFT GREY (#C3C3C3) */}
-        <SectionDivider topBgColor="#A40001" bottomBgColor="#C3C3C3" />
-
-        {/* REELS LAB INLINE VIDEO SLIDER (SOFT GREY ARŞİTEKTURAL BÖLGE) */}
+        <SectionDivider topBgColor={INK} bottomBgColor={GRAPH} />
         <ReelsLabSection />
 
-        {/* DİNAMİK GEÇİŞ: SOFT GREY (#C3C3C3) -> CHARCOAL BLACK (#262626) */}
-        <SectionDivider topBgColor="#C3C3C3" bottomBgColor="#262626" />
-
-        {/* CREATOR NETWORK (INTEGRATED INTO UNIFIED VIRAL STUDIO ZONE) */}
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={INK} />
         <CreatorNetworkSection />
 
-        {/* DİNAMİK GEÇİŞ: CHARCOAL BLACK (#262626) -> PURE WHITE (#F6F6F6) */}
-        <SectionDivider topBgColor="#262626" bottomBgColor="#F6F6F6" />
-
-        {/* WORKS & CASE STUDIES (PURE WHITE BÖLGE) */}
+        <SectionDivider topBgColor={INK} bottomBgColor={GRAPH} />
         <WorksSection onSelectWork={(work) => setSelectedWork(work)} />
 
-        {/* DİNAMİK GEÇİŞ: PURE WHITE (#F6F6F6) -> DEEP RED (#A40001) */}
-        <SectionDivider topBgColor="#F6F6F6" bottomBgColor="#A40001" />
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={INK} className="m-hide" />
+        <div className="m-hide">
+          <ProjectTicketSection onOpenBriefWithService={(slug) => handleOpenBrief(slug)} />
+        </div>
+        <SectionDivider topBgColor={INK} bottomBgColor={CREAM} star className="m-hide" />
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={CREAM} star className="m-only" />
 
-        {/* INTERACTIVE 3D PROJECT TICKET (GÜÇLÜ KIRMIZI BÖLGE) */}
-        <ProjectTicketSection onOpenBriefWithService={(slug) => handleOpenBrief(slug)} />
-
-        {/* DİNAMİK GEÇİŞ: DEEP RED (#A40001) -> SOFT GREY (#C3C3C3) */}
-        <SectionDivider topBgColor="#A40001" bottomBgColor="#C3C3C3" />
-
-        {/* REVIEWS & 15 CLIENT LOGOS GRID (SOFT GREY BÖLGE) */}
         <ReviewsSection />
 
-        {/* DİNAMİK GEÇİŞ: SOFT GREY (#C3C3C3) -> CHARCOAL BLACK (#262626) */}
-        <SectionDivider topBgColor="#C3C3C3" bottomBgColor="#262626" />
+        <SectionDivider topBgColor={CREAM} bottomBgColor={INK} className="m-hide" />
+        <div className="m-hide">
+          <LocalSeoSection />
+        </div>
+        <SectionDivider topBgColor={INK} bottomBgColor={GRAPH} className="m-hide" />
+        <SectionDivider topBgColor={CREAM} bottomBgColor={GRAPH} className="m-only" />
 
-        {/* DIDIM & REGIONAL SEO CARDS (OBSIDIAN DARK STUDIO) */}
-        <LocalSeoSection />
-
-        {/* DİNAMİK GEÇİŞ: CHARCOAL BLACK (#262626) -> PURE WHITE (#F6F6F6) */}
-        <SectionDivider topBgColor="#262626" bottomBgColor="#F6F6F6" />
-
-        {/* ABOUT STUDIO (PURE WHITE BÖLGE) */}
         <AboutSection />
 
-        {/* DİNAMİK GEÇİŞ: PURE WHITE (#F6F6F6) -> CHARCOAL BLACK (#262626) */}
-        <SectionDivider topBgColor="#F6F6F6" bottomBgColor="#262626" />
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={INK} className="m-hide" />
+        <div className="m-hide">
+          <CareerSection onOpenBrief={() => handleOpenBrief()} />
+        </div>
+        <SectionDivider topBgColor={INK} bottomBgColor={GRAPH} className="m-hide" />
 
-        {/* CORPORATE CAREER & POSITIONS (REVİZE EDİLEN KARİYER BÖLÜMÜ) */}
-        <CareerSection onOpenBrief={() => handleOpenBrief()} />
-
-        {/* DİNAMİK GEÇİŞ: CHARCOAL BLACK (#262626) -> DEEP RED (#A40001) */}
-        <SectionDivider topBgColor="#262626" bottomBgColor="#A40001" />
-
-        {/* HIGH-IMPACT DEEP RED CTA BAND */}
         <HighImpactCtaSection onOpenBrief={() => handleOpenBrief()} />
-
-        {/* DİNAMİK GEÇİŞ: DEEP RED (#A40001) -> CHARCOAL FOOTER (#262626) */}
-        <SectionDivider topBgColor="#A40001" bottomBgColor="#262626" />
+        <SectionDivider topBgColor={GRAPH} bottomBgColor={INK} />
       </main>
 
       {/* FOOTER */}

@@ -19,7 +19,7 @@ export default function EditorTopBar({ onToggleLeftPanel, leftPanelOpen }: { onT
   } = useEditor();
 
   return (
-    <header className="h-16 bg-[#262626]/95 backdrop-blur-xl border-b border-white/10 px-4 flex items-center justify-between z-50 text-white selection:bg-[#A40001] selection:text-white">
+    <header className="h-16 bg-[#0B0B0B]/95 backdrop-blur-xl border-b border-white/10 px-4 flex items-center justify-between z-50 text-white selection:bg-accent selection:text-white">
       {/* LEFT: BACK TO DASHBOARD & PAGE SELECTOR */}
       <div className="flex items-center gap-3">
         <Link
@@ -34,7 +34,7 @@ export default function EditorTopBar({ onToggleLeftPanel, leftPanelOpen }: { onT
         <button
           onClick={onToggleLeftPanel}
           className={`p-2 rounded-xl border transition-all flex items-center gap-2 text-xs font-semibold font-mono ${
-            leftPanelOpen ? 'bg-[#A40001] text-white border-[#A40001]' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'
+            leftPanelOpen ? 'bg-accent text-onAccent border-accent' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'
           }`}
           title="Element & Katman Paneli"
         >
@@ -47,12 +47,12 @@ export default function EditorTopBar({ onToggleLeftPanel, leftPanelOpen }: { onT
           <select
             value={pageSchema.slug}
             onChange={(e) => updateSeo({ slug: e.target.value })}
-            className="bg-white/5 border border-white/10 text-white text-xs font-bold py-2 px-3 rounded-xl focus:outline-none focus:border-[#A40001] cursor-pointer"
+            className="bg-white/5 border border-white/10 text-white text-xs font-bold py-2 px-3 rounded-xl focus:outline-none focus:border-accent cursor-pointer"
           >
-            <option value="/" className="bg-[#262626] text-white">Ana Sayfa (/)</option>
-            <option value="/hizmetler" className="bg-[#262626] text-white">Hizmetlerimiz (/hizmetler)</option>
-            <option value="/kurumsal/hakkimizda" className="bg-[#262626] text-white">Hakkımızda (/kurumsal/hakkimizda)</option>
-            <option value="/iletisim" className="bg-[#262626] text-white">İletişim (/iletisim)</option>
+            <option value="/" className="bg-[#0B0B0B] text-white">Ana Sayfa (/)</option>
+            <option value="/hizmetler" className="bg-[#0B0B0B] text-white">Hizmetlerimiz (/hizmetler)</option>
+            <option value="/kurumsal/hakkimizda" className="bg-[#0B0B0B] text-white">Hakkımızda (/kurumsal/hakkimizda)</option>
+            <option value="/iletisim" className="bg-[#0B0B0B] text-white">İletişim (/iletisim)</option>
           </select>
         </div>
       </div>
@@ -63,7 +63,7 @@ export default function EditorTopBar({ onToggleLeftPanel, leftPanelOpen }: { onT
           <button
             onClick={() => setViewport('desktop')}
             className={`p-2 rounded-lg text-xs transition-all flex items-center gap-1.5 font-mono ${
-              viewport === 'desktop' ? 'bg-[#A40001] text-white font-extrabold shadow-md' : 'text-white/60 hover:text-white'
+              viewport === 'desktop' ? 'bg-accent text-onAccent font-extrabold shadow-md' : 'text-white/60 hover:text-white'
             }`}
             title="Masaüstü (Desktop)"
           >
@@ -74,7 +74,7 @@ export default function EditorTopBar({ onToggleLeftPanel, leftPanelOpen }: { onT
           <button
             onClick={() => setViewport('tablet')}
             className={`p-2 rounded-lg text-xs transition-all flex items-center gap-1.5 font-mono ${
-              viewport === 'tablet' ? 'bg-[#A40001] text-white font-extrabold shadow-md' : 'text-white/60 hover:text-white'
+              viewport === 'tablet' ? 'bg-accent text-onAccent font-extrabold shadow-md' : 'text-white/60 hover:text-white'
             }`}
             title="Tablet (768px)"
           >
@@ -85,7 +85,7 @@ export default function EditorTopBar({ onToggleLeftPanel, leftPanelOpen }: { onT
           <button
             onClick={() => setViewport('mobile')}
             className={`p-2 rounded-lg text-xs transition-all flex items-center gap-1.5 font-mono ${
-              viewport === 'mobile' ? 'bg-[#A40001] text-white font-extrabold shadow-md' : 'text-white/60 hover:text-white'
+              viewport === 'mobile' ? 'bg-accent text-onAccent font-extrabold shadow-md' : 'text-white/60 hover:text-white'
             }`}
             title="Mobil (375px)"
           >
@@ -140,7 +140,7 @@ export default function EditorTopBar({ onToggleLeftPanel, leftPanelOpen }: { onT
           className="p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white/80 hover:text-white transition-all text-xs font-mono hidden lg:flex items-center gap-1.5"
           title="Global Stiller & Renkler"
         >
-          <Palette className="w-4 h-4 text-[#A40001]" />
+          <Palette className="w-4 h-4 text-accent" />
           <span>Stiller</span>
         </button>
 
@@ -157,7 +157,7 @@ export default function EditorTopBar({ onToggleLeftPanel, leftPanelOpen }: { onT
         <button
           onClick={() => setIsPreviewMode(!isPreviewMode)}
           className={`p-2 rounded-xl border transition-all text-xs font-mono font-semibold flex items-center gap-1.5 ${
-            isPreviewMode ? 'bg-[#A40001] text-white border-[#A40001]' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'
+            isPreviewMode ? 'bg-accent text-onAccent border-accent' : 'bg-white/5 border-white/10 text-white hover:bg-white/10'
           }`}
           title={isPreviewMode ? 'Editöre Dön' : 'Önizleme Modu'}
         >
@@ -171,16 +171,16 @@ export default function EditorTopBar({ onToggleLeftPanel, leftPanelOpen }: { onT
           className="px-3 py-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white text-xs font-mono font-bold flex items-center gap-1.5 transition-all"
         >
           {saveStatus === 'saving' ? (
-            <span className="animate-spin text-[#A40001]">🌀</span>
+            <span className="animate-spin text-accent">🌀</span>
           ) : (
-            <span className="w-2 h-2 rounded-full bg-[#A40001]" />
+            <span className="w-2 h-2 rounded-full bg-accent text-onAccent" />
           )}
           <span className="hidden sm:inline">Taslak</span>
         </button>
 
         <button
           onClick={publishPage}
-          className="px-4 py-2 rounded-xl bg-[#A40001] text-white hover:bg-[#A40001] text-xs font-extrabold tracking-wider uppercase flex items-center gap-2 shadow-[0_0_20px_rgba(179,58,6,0.3)] transition-all active:scale-95"
+          className="px-4 py-2 rounded-xl bg-accent text-onAccent hover:bg-accent text-xs font-extrabold tracking-wider uppercase flex items-center gap-2 shadow-[0_0_20px_rgba(179,58,6,0.3)] transition-all active:scale-95 hover:text-onAccent"
         >
           <Rocket className="w-4 h-4" />
           <span>Yayınla</span>

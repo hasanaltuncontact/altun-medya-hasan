@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { servicesDatabase } from '@/data/services-database';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 interface ServicesSectionProps {
   onOpenBriefWithService: (slug: string) => void;
@@ -18,17 +19,9 @@ const serviceSummaries: Record<string, string> = {
 
 export default function ServicesSection({ onOpenBriefWithService }: ServicesSectionProps) {
   return (
-    <section id="services" className="bg-[#A40001] text-[#F6F6F6] py-14 md:py-24 px-5 sm:px-10 lg:px-14">
+    <section id="services" className="bg-[#0B0B0B] text-[#F8F0DB] py-14 md:py-24 px-5 sm:px-10 lg:px-14">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-7 md:mb-12">
-          <h2 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl tracking-[-0.04em] leading-[0.95] font-heading">
-            <span className="font-black">SADECE AJANS</span>{' '}
-            <span className="font-light opacity-80">DEĞİLİZ.</span>
-          </h2>
-          <p className="m-hide text-sm opacity-80 max-w-sm leading-relaxed">
-            Fikir, prodüksiyon, web ve reklamı tek stüdyoda birleştiriyoruz.
-          </p>
-        </div>
+        <SectionHeading title="Hizmetlerimiz" />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 m-rail">
           {servicesDatabase.map((cat) => {
@@ -38,7 +31,7 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
             return (
               <article
                 key={cat.id}
-                className="group flex flex-col justify-between min-h-[220px] md:min-h-[240px] p-6 rounded-[22px] bg-[#F6F6F6] text-[#262626] hover:bg-[#262626] hover:text-[#F6F6F6] transition-colors duration-300"
+                className="group flex flex-col justify-between min-h-[220px] md:min-h-[240px] p-6 rounded-[22px] bg-[#161616] text-[#F8F0DB] border border-[#F8F0DB]/10 hover:bg-[#F8F0DB] hover:text-[#0B0B0B] transition-colors duration-300"
               >
                 <div>
                   <h3 className="text-2xl md:text-[26px] leading-[1.05] tracking-[-0.03em] font-heading">
@@ -55,14 +48,14 @@ export default function ServicesSection({ onOpenBriefWithService }: ServicesSect
                 <div className="mt-6 flex items-center justify-between">
                   <button
                     onClick={() => onOpenBriefWithService(cat.slug)}
-                    className="px-4 py-2 rounded-full text-sm font-bold bg-[#262626] text-[#F6F6F6] group-hover:bg-[#A40001] transition-colors"
+                    className="px-4 py-2 rounded-full text-sm font-bold bg-[#F8F0DB] text-[#0B0B0B] group-hover:bg-[#0B0B0B] group-hover:text-[#F8F0DB] transition-colors"
                   >
                     Teklif al
                   </button>
                   <Link
                     href={`/hizmetler/${cat.slug}`}
                     aria-label={`${cat.title} detayları`}
-                    className="w-10 h-10 rounded-full border border-[#262626]/15 group-hover:border-[#F6F6F6]/25 flex items-center justify-center hover:bg-[#A40001] hover:text-[#F6F6F6] hover:border-transparent transition-colors"
+                    className="w-10 h-10 rounded-full border border-[#F8F0DB]/20 group-hover:border-[#0B0B0B]/20 flex items-center justify-center hover:bg-accent hover:text-onAccent hover:border-transparent transition-colors"
                   >
                     <ArrowUpRight className="w-4 h-4" />
                   </Link>

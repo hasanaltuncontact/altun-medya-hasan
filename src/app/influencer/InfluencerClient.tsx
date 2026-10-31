@@ -75,7 +75,7 @@ export default function InfluencerClient() {
   );
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#262626] text-[#F6F6F6] min-h-screen">
+    <div className="relative w-full overflow-hidden bg-[#0B0B0B] text-[#F8F0DB] min-h-screen">
       <Header
         onOpenBrief={() => setIsBriefOpen(true)}
         onToggleMobileMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -95,14 +95,14 @@ export default function InfluencerClient() {
 
           <div className="relative z-10 space-y-8 text-center max-w-4xl mx-auto">
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading text-[#F6F6F6] tracking-tight leading-[1.02]">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading text-[#F8F0DB] tracking-tight leading-[1.02]">
               <span className="font-black">MARKANIZI</span>{' '}
-              <span className="font-light text-[#F6F6F6]/80">EGE&apos;NİN EN ETKİLİ</span> <br />
-              <span className="font-black text-[#A40001]">CREATOR AĞIYLA</span>{' '}
-              <span className="font-light text-[#F6F6F6]/80">BÜYÜTÜN.</span>
+              <span className="font-light text-[#F8F0DB]/80">EGE&apos;NİN EN ETKİLİ</span> <br />
+              <span className="font-black text-accent">CREATOR AĞIYLA</span>{' '}
+              <span className="font-light text-[#F8F0DB]/80">BÜYÜTÜN.</span>
             </h1>
 
-            <p className="text-base sm:text-xl text-[#F6F6F6]/80 font-sans leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base sm:text-xl text-[#F8F0DB]/80 font-sans leading-relaxed max-w-2xl mx-auto">
               Didim, Bodrum ve Ege kıyılarında onaylı gastronomi, turizm, mimari ve lifestyle içerik üreticileriyle; kuru reklamlar yerine izleyicide gerçek arzu ve satın alma isteği uyandıran viral iş birlikleri.
             </p>
 
@@ -114,7 +114,7 @@ export default function InfluencerClient() {
                   formEl?.scrollIntoView({ behavior: 'smooth' });
                   setActiveFormTab('brand');
                 }}
-                className="px-8 py-4 rounded-xl bg-[#A40001] hover:bg-[#A40001] text-[#F6F6F6] text-xs sm:text-sm font-bold transition-colors flex items-center gap-2 active:scale-95"
+                className="px-8 py-4 rounded-xl bg-accent hover:bg-accent text-onAccent text-xs sm:text-sm font-bold transition-colors flex items-center gap-2 active:scale-95 hover:text-onAccent"
               >
                 <span>Markam İçin Kampanya Başlat</span>
               </button>
@@ -125,29 +125,29 @@ export default function InfluencerClient() {
                   formEl?.scrollIntoView({ behavior: 'smooth' });
                   setActiveFormTab('creator');
                 }}
-                className="px-7 py-4 rounded-xl bg-[#F6F6F6]/10 hover:bg-[#F6F6F6]/15 text-[#F6F6F6] border border-[#F6F6F6]/20 text-xs sm:text-sm font-bold tracking-wide transition-[background-color,transform] backdrop-blur-md flex items-center gap-2 active:scale-95"
+                className="px-7 py-4 rounded-xl bg-[#F8F0DB]/10 hover:bg-[#F8F0DB]/15 text-[#F8F0DB] border border-[#F8F0DB]/20 text-xs sm:text-sm font-bold tracking-wide transition-[background-color,transform] backdrop-blur-md flex items-center gap-2 active:scale-95"
               >
                 <span>İçerik Üreticisi Olarak Katıl</span>
               </button>
             </div>
 
             {/* KEY METRICS BAR */}
-            <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-[#F6F6F6]/10">
-              <div className="p-4 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10">
-                <div className="text-3xl sm:text-4xl font-black font-heading text-[#F6F6F6]">50<span className="text-[#A40001]">+</span></div>
-                <div className="text-xs font-medium text-[#F6F6F6]/60 mt-1 font-bold">Onaylı Influencer</div>
+            <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-[#F8F0DB]/10">
+              <div className="p-4 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10">
+                <div className="text-3xl sm:text-4xl font-black font-heading text-[#F8F0DB]">50<span className="text-accent">+</span></div>
+                <div className="text-xs font-medium text-[#F8F0DB]/60 mt-1 font-bold">Onaylı Influencer</div>
               </div>
-              <div className="p-4 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10">
-                <div className="text-3xl sm:text-4xl font-black font-heading text-[#F6F6F6]">18.4M<span className="text-[#A40001]">+</span></div>
-                <div className="text-xs font-medium text-[#F6F6F6]/60 mt-1 font-bold">Aylık Organik Erişim</div>
+              <div className="p-4 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10">
+                <div className="text-3xl sm:text-4xl font-black font-heading text-[#F8F0DB]">18.4M<span className="text-accent">+</span></div>
+                <div className="text-xs font-medium text-[#F8F0DB]/60 mt-1 font-bold">Aylık Organik Erişim</div>
               </div>
-              <div className="p-4 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10">
-                <div className="text-3xl sm:text-4xl font-black font-heading text-[#F6F6F6]">%7.8</div>
-                <div className="text-xs font-medium text-[#F6F6F6]/60 mt-1 font-bold">Ortalama Etkileşim (ER)</div>
+              <div className="p-4 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10">
+                <div className="text-3xl sm:text-4xl font-black font-heading text-[#F8F0DB]">%7.8</div>
+                <div className="text-xs font-medium text-[#F8F0DB]/60 mt-1 font-bold">Ortalama Etkileşim (ER)</div>
               </div>
-              <div className="p-4 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10">
-                <div className="text-3xl sm:text-4xl font-black font-heading text-[#F6F6F6]">140<span className="text-[#A40001]">+</span></div>
-                <div className="text-xs font-medium text-[#F6F6F6]/60 mt-1 font-bold">Tamamlanan İş Birliği</div>
+              <div className="p-4 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10">
+                <div className="text-3xl sm:text-4xl font-black font-heading text-[#F8F0DB]">140<span className="text-accent">+</span></div>
+                <div className="text-xs font-medium text-[#F8F0DB]/60 mt-1 font-bold">Tamamlanan İş Birliği</div>
               </div>
             </div>
           </div>
@@ -155,9 +155,9 @@ export default function InfluencerClient() {
 
         {/* NICHE CATEGORY FILTER & CREATOR ROSTER */}
         <section id="creator-roster" className="px-5 sm:px-10 lg:px-14 max-w-7xl mx-auto mb-16 sm:mb-24">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-10 pb-5 sm:pb-6 border-b border-[#F6F6F6]/10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-10 pb-5 sm:pb-6 border-b border-[#F8F0DB]/10">
             <div>
-              <h2 className="text-2xl sm:text-4xl font-black font-heading text-[#F6F6F6]">
+              <h2 className="text-2xl sm:text-4xl font-black font-heading text-[#F8F0DB]">
                 Sektörünüze En Uygun Yüzü Seçin
               </h2>
             </div>
@@ -170,8 +170,8 @@ export default function InfluencerClient() {
                   onClick={() => setSelectedNiche(cat.id)}
                   className={`shrink-0 whitespace-nowrap px-4 py-2 rounded-xl text-xs font-medium font-bold transition-all ${
                     selectedNiche === cat.id
-                      ? 'bg-[#A40001] text-[#F6F6F6] shadow-lg shadow-[#A40001]/30'
-                      : 'bg-white/5 text-[#F6F6F6]/70 hover:bg-[#F6F6F6]/10 hover:text-[#F6F6F6] border border-[#F6F6F6]/10'
+                      ? 'bg-accent text-onAccent shadow-lg shadow-accent/30'
+                      : 'bg-white/5 text-[#F8F0DB]/70 hover:bg-[#F8F0DB]/10 hover:text-[#F8F0DB] border border-[#F8F0DB]/10'
                   }`}
                 >
                   {cat.name}
@@ -185,22 +185,22 @@ export default function InfluencerClient() {
             {filteredCreators.map((creator) => (
               <div
                 key={creator.id}
-                className="group rounded-2xl sm:rounded-3xl bg-[#1E1E1E] border border-[#F6F6F6]/10 hover:border-[#A40001]/60 transition-all p-2.5 sm:p-5 flex flex-col justify-between space-y-3 sm:space-y-4 shadow-xl hover:-translate-y-1.5 duration-300"
+                className="group rounded-2xl sm:rounded-3xl bg-[#161616] border border-[#F8F0DB]/10 hover:border-accent/60 transition-all p-2.5 sm:p-5 flex flex-col justify-between space-y-3 sm:space-y-4 shadow-xl hover:-translate-y-1.5 duration-300"
               >
                 <div>
                   {/* AVATAR & BADGES */}
-                  <div className="relative h-44 sm:h-72 w-full rounded-xl sm:rounded-2xl overflow-hidden mb-0 sm:mb-4 bg-[#A40001]">
+                  <div className="relative h-44 sm:h-72 w-full rounded-xl sm:rounded-2xl overflow-hidden mb-0 sm:mb-4 bg-accent text-onAccent">
                     <img
                       src={creator.avatarImage}
                       alt={`${creator.name} (${creator.handle})`}
                       loading="lazy"
                       className="absolute inset-x-0 top-1 mx-auto h-[82%] w-auto object-contain drop-shadow-[0_10px_25px_rgba(0,0,0,0.55)] group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-[#262626]/40" />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-[#0B0B0B]/40" />
 
                     {/* TOP BADGE */}
                     {creator.engagementRate && (
-                      <div className="m-hide absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#262626]/80 backdrop-blur-md border border-[#F6F6F6]/20 text-xs font-medium text-[#F6F6F6] font-bold">
+                      <div className="m-hide absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#0B0B0B]/80 backdrop-blur-md border border-[#F8F0DB]/20 text-xs font-medium text-[#F8F0DB] font-bold">
                         <span>ER: {creator.engagementRate}</span>
                       </div>
                     )}
@@ -208,40 +208,40 @@ export default function InfluencerClient() {
                     {/* BOTTOM INFO OVERLAY */}
                     <div className="absolute bottom-3 left-3 right-3">
                       <div className="flex items-center gap-1.5">
-                        <h3 className="text-sm sm:text-base font-extrabold font-heading text-[#F6F6F6] truncate">{creator.name}</h3>
+                        <h3 className="text-sm sm:text-base font-extrabold font-heading text-[#F8F0DB] truncate">{creator.name}</h3>
                       </div>
-                      <p className="text-xs font-medium text-[#F6F6F6]/75">{creator.handle}</p>
+                      <p className="text-xs font-medium text-[#F8F0DB]/75">{creator.handle}</p>
                     </div>
                   </div>
 
                   {/* STATS ROW */}
-                  <div className={`m-hide grid ${creator.reach ? 'grid-cols-2' : 'grid-cols-1'} gap-2 py-2 px-3 rounded-xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10 text-center mb-3`}>
+                  <div className={`m-hide grid ${creator.reach ? 'grid-cols-2' : 'grid-cols-1'} gap-2 py-2 px-3 rounded-xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10 text-center mb-3`}>
                     <div>
-                      <div className="text-xs font-medium text-[#F6F6F6]/50">Takipçi</div>
-                      <div className="text-sm font-bold text-[#F6F6F6] font-heading">{creator.followers}</div>
+                      <div className="text-xs font-medium text-[#F8F0DB]/50">Takipçi</div>
+                      <div className="text-sm font-bold text-[#F8F0DB] font-heading">{creator.followers}</div>
                     </div>
                     {creator.reach && (
                       <div>
-                        <div className="text-xs font-medium text-[#F6F6F6]/50">Aylık Erişim</div>
-                        <div className="text-sm font-bold text-[#A40001] font-heading">{creator.reach}</div>
+                        <div className="text-xs font-medium text-[#F8F0DB]/50">Aylık Erişim</div>
+                        <div className="text-sm font-bold text-accent font-heading">{creator.reach}</div>
                       </div>
                     )}
                   </div>
 
                   {/* BIO */}
                   {creator.bio && (
-                    <p className="m-hide text-xs text-[#F6F6F6]/70 font-sans leading-relaxed line-clamp-2">
+                    <p className="m-hide text-xs text-[#F8F0DB]/70 font-sans leading-relaxed line-clamp-2">
                       {creator.bio}
                     </p>
                   )}
 
                   {/* PAST BRANDS */}
                   {creator.pastBrands && creator.pastBrands.length > 0 && (
-                    <div className="m-hide mt-3 pt-3 border-t border-[#F6F6F6]/10 space-y-1.5">
-                      <span className="text-xs font-medium text-[#F6F6F6]/50 uppercase block font-bold">Çalıştığı Markalar:</span>
+                    <div className="m-hide mt-3 pt-3 border-t border-[#F8F0DB]/10 space-y-1.5">
+                      <span className="text-xs font-medium text-[#F8F0DB]/50 uppercase block font-bold">Çalıştığı Markalar:</span>
                       <div className="flex flex-wrap gap-1">
                         {creator.pastBrands.map((b) => (
-                          <span key={b} className="text-xs px-2 py-0.5 rounded-md bg-[#F6F6F6]/5 border border-[#F6F6F6]/10 text-[#F6F6F6]/80 font-medium">
+                          <span key={b} className="text-xs px-2 py-0.5 rounded-md bg-[#F8F0DB]/5 border border-[#F8F0DB]/10 text-[#F8F0DB]/80 font-medium">
                             {b}
                           </span>
                         ))}
@@ -256,7 +256,7 @@ export default function InfluencerClient() {
                     setSelectedCreatorForBrief(creator);
                     setIsBriefOpen(true);
                   }}
-                  className="w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl bg-[#F6F6F6]/5 group-hover:bg-[#A40001] text-[#F6F6F6] text-xs sm:text-xs font-medium font-bold flex items-center justify-center gap-2 transition-all border border-[#F6F6F6]/10 group-hover:border-transparent active:scale-95"
+                  className="w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl bg-[#F8F0DB]/5 group-hover:bg-accent text-[#F8F0DB] text-xs sm:text-xs font-medium font-bold flex items-center justify-center gap-2 transition-all border border-[#F8F0DB]/10 group-hover:border-transparent active:scale-95 group-hover:text-onAccent"
                 >
                   <span className="m-hide">İş Birliği Başlat</span>
                   <span className="md:hidden">İş Birliği</span>
@@ -269,57 +269,57 @@ export default function InfluencerClient() {
         {/* 4 STRATEGIC CAMPAIGN MODELS */}
         <section className="px-5 sm:px-10 lg:px-14 max-w-7xl mx-auto mb-24">
           <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-black font-heading text-[#F6F6F6]">
+            <h2 className="text-3xl sm:text-4xl font-black font-heading text-[#F8F0DB]">
               Her Bütçe ve Hedefe Özel İnfluencer Çözümleri
             </h2>
-            <p className="text-xs sm:text-sm text-[#F6F6F6]/70 font-sans">
+            <p className="text-xs sm:text-sm text-[#F8F0DB]/70 font-sans">
               Standart hikaye paylaşımlarının ötesine geçerek, Altun Medya prodüksiyon kalitesiyle desteklenen profesyonel kampanya modelleri.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-3xl bg-[#1E1E1E] border border-[#F6F6F6]/10 space-y-4 hover:border-[#A40001]/50 transition-all">
-              <h3 className="text-lg font-bold font-heading text-[#F6F6F6]">Mekan &amp; Lansman Davetleri</h3>
-              <p className="text-xs text-[#F6F6F6]/70 font-sans leading-relaxed">
+            <div className="p-6 rounded-3xl bg-[#161616] border border-[#F8F0DB]/10 space-y-4 hover:border-accent/50 transition-all">
+              <h3 className="text-lg font-bold font-heading text-[#F8F0DB]">Mekan &amp; Lansman Davetleri</h3>
+              <p className="text-xs text-[#F8F0DB]/70 font-sans leading-relaxed">
                 Yeni açılan restoran, otel veya sezon gala gecelerinde aynı anda 5-10 doğrulanmış influencer ağırlayarak Didim ve Ege akışını domine edin.
               </p>
-              <ul className="m-hide text-xs font-medium text-[#F6F6F6]/60 space-y-1.5 pt-2 border-t border-[#F6F6F6]/10">
+              <ul className="m-hide text-xs font-medium text-[#F8F0DB]/60 space-y-1.5 pt-2 border-t border-[#F8F0DB]/10">
                 <li>24 Saatte 500K+ Anlık İzlenme</li>
                 <li>Google Haritalar Konum Etiketi</li>
                 <li>Masa &amp; Rezervasyon Patlaması</li>
               </ul>
             </div>
 
-            <div className="p-6 rounded-3xl bg-[#1E1E1E] border border-[#F6F6F6]/10 space-y-4 hover:border-[#A40001]/50 transition-all">
-              <h3 className="text-lg font-bold font-heading text-[#F6F6F6]">Ortak Prodüksiyonlu Reels</h3>
-              <p className="text-xs text-[#F6F6F6]/70 font-sans leading-relaxed">
+            <div className="p-6 rounded-3xl bg-[#161616] border border-[#F8F0DB]/10 space-y-4 hover:border-accent/50 transition-all">
+              <h3 className="text-lg font-bold font-heading text-[#F8F0DB]">Ortak Prodüksiyonlu Reels</h3>
+              <p className="text-xs text-[#F8F0DB]/70 font-sans leading-relaxed">
                 İçerik üreticisi kendi telefonundan değil; Altun Medya ekibinin Sony FX6 ve DJI Inspire 3 kameralarıyla sinematik kalitede çekilir.
               </p>
-              <ul className="m-hide text-xs font-medium text-[#F6F6F6]/60 space-y-1.5 pt-2 border-t border-[#F6F6F6]/10">
+              <ul className="m-hide text-xs font-medium text-[#F8F0DB]/60 space-y-1.5 pt-2 border-t border-[#F8F0DB]/10">
                 <li>4K 120fps Sinematik Doku</li>
                 <li>Profesyonel Ses Tasarımı &amp; ASMR</li>
                 <li>Ortak Gönderi (Collab Post)</li>
               </ul>
             </div>
 
-            <div className="p-6 rounded-3xl bg-[#1E1E1E] border border-[#F6F6F6]/10 space-y-4 hover:border-[#A40001]/50 transition-all">
-              <h3 className="text-lg font-bold font-heading text-[#F6F6F6]">Creator Ads &amp; Whitelisting</h3>
-              <p className="text-xs text-[#F6F6F6]/70 font-sans leading-relaxed">
+            <div className="p-6 rounded-3xl bg-[#161616] border border-[#F8F0DB]/10 space-y-4 hover:border-accent/50 transition-all">
+              <h3 className="text-lg font-bold font-heading text-[#F8F0DB]">Creator Ads &amp; Whitelisting</h3>
+              <p className="text-xs text-[#F8F0DB]/70 font-sans leading-relaxed">
                 İnfluencer’ın videosunu doğrudan onun hesabı üzerinden sponsorlu Meta Ads olarak hedefli kitleye (Didim, İzmir, İstanbul vb.) reklam çıkarak doğrudan satış sağlayın.
               </p>
-              <ul className="m-hide text-xs font-medium text-[#F6F6F6]/60 space-y-1.5 pt-2 border-t border-[#F6F6F6]/10">
+              <ul className="m-hide text-xs font-medium text-[#F8F0DB]/60 space-y-1.5 pt-2 border-t border-[#F8F0DB]/10">
                 <li>4 Kat Daha Yüksek ROAS</li>
                 <li>%45 Daha Düşük Tıklama Maliyeti</li>
                 <li>Doğrudan WhatsApp/Web Trafiği</li>
               </ul>
             </div>
 
-            <div className="p-6 rounded-3xl bg-[#1E1E1E] border border-[#F6F6F6]/10 space-y-4 hover:border-[#A40001]/50 transition-all">
-              <h3 className="text-lg font-bold font-heading text-[#F6F6F6]">Sezonluk Marka Elçiliği</h3>
-              <p className="text-xs text-[#F6F6F6]/70 font-sans leading-relaxed">
+            <div className="p-6 rounded-3xl bg-[#161616] border border-[#F8F0DB]/10 space-y-4 hover:border-accent/50 transition-all">
+              <h3 className="text-lg font-bold font-heading text-[#F8F0DB]">Sezonluk Marka Elçiliği</h3>
+              <p className="text-xs text-[#F8F0DB]/70 font-sans leading-relaxed">
                 Markanızın ruhuna uyan tek bir influencer ile 3 veya 6 aylık sözleşmeyle her ay düzenli içerik akışı sağlayarak güçlü tüketici bağı kurun.
               </p>
-              <ul className="m-hide text-xs font-medium text-[#F6F6F6]/60 space-y-1.5 pt-2 border-t border-[#F6F6F6]/10">
+              <ul className="m-hide text-xs font-medium text-[#F8F0DB]/60 space-y-1.5 pt-2 border-t border-[#F8F0DB]/10">
                 <li>Uzun Vadeli Güven ve Sadakat</li>
                 <li>Aylık 4 Reels + 8 Story Paketi</li>
                 <li>Özel İndirim Kodu &amp; Satış Takibi</li>
@@ -330,42 +330,42 @@ export default function InfluencerClient() {
 
         {/* 4-STEP STREAMLINED WORKFLOW */}
         <section className="px-5 sm:px-10 lg:px-14 max-w-7xl mx-auto mb-24">
-          <div className="p-8 sm:p-12 rounded-3xl bg-[#1E1E1E] border border-[#F6F6F6]/10 space-y-10">
+          <div className="p-8 sm:p-12 rounded-3xl bg-[#161616] border border-[#F8F0DB]/10 space-y-10">
             <div className="text-center max-w-xl mx-auto space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#F6F6F6]">
+              <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#F8F0DB]">
                 İnfluencer Kampanyanız Nasıl Yönetilir?
               </h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-              <div className="space-y-3 p-5 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10">
-                <div className="text-2xl font-black font-heading text-[#A40001]">01</div>
-                <h4 className="text-sm font-bold font-heading text-[#F6F6F6]">Brief &amp; Kitle Hedefleme</h4>
-                <p className="text-xs text-[#F6F6F6]/70 font-sans">
+              <div className="space-y-3 p-5 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10">
+                <div className="text-2xl font-black font-heading text-accent">01</div>
+                <h4 className="text-sm font-bold font-heading text-[#F8F0DB]">Brief &amp; Kitle Hedefleme</h4>
+                <p className="text-xs text-[#F8F0DB]/70 font-sans">
                   Hedef kitleniz, bütçeniz ve kampanyadan beklediğiniz dönüşüm (satış, rezervasyon, takipçi) analiz edilir.
                 </p>
               </div>
 
-              <div className="space-y-3 p-5 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10">
-                <div className="text-2xl font-black font-heading text-[#A40001]">02</div>
-                <h4 className="text-sm font-bold font-heading text-[#F6F6F6]">Creator Eşleşmesi &amp; Sözleşme</h4>
-                <p className="text-xs text-[#F6F6F6]/70 font-sans">
+              <div className="space-y-3 p-5 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10">
+                <div className="text-2xl font-black font-heading text-accent">02</div>
+                <h4 className="text-sm font-bold font-heading text-[#F8F0DB]">Creator Eşleşmesi &amp; Sözleşme</h4>
+                <p className="text-xs text-[#F8F0DB]/70 font-sans">
                   Bot takipçisi olmayan, doğrulanmış ER oranına sahip doğru isimlerle yasal sözleşme imzalanır.
                 </p>
               </div>
 
-              <div className="space-y-3 p-5 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10">
-                <div className="text-2xl font-black font-heading text-[#A40001]">03</div>
-                <h4 className="text-sm font-bold font-heading text-[#F6F6F6]">Senaryo &amp; 4K Çekim</h4>
-                <p className="text-xs text-[#F6F6F6]/70 font-sans">
+              <div className="space-y-3 p-5 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10">
+                <div className="text-2xl font-black font-heading text-accent">03</div>
+                <h4 className="text-sm font-bold font-heading text-[#F8F0DB]">Senaryo &amp; 4K Çekim</h4>
+                <p className="text-xs text-[#F8F0DB]/70 font-sans">
                   Altun Medya kreatif ekibi senaryoyu hazırlar, çekim ekibimiz en yüksek sinematik standartta kayıt alır.
                 </p>
               </div>
 
-              <div className="space-y-3 p-5 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10">
-                <div className="text-2xl font-black font-heading text-[#A40001]">04</div>
-                <h4 className="text-sm font-bold font-heading text-[#F6F6F6]">Yayınlama &amp; Şeffaf Rapor</h4>
-                <p className="text-xs text-[#F6F6F6]/70 font-sans">
+              <div className="space-y-3 p-5 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10">
+                <div className="text-2xl font-black font-heading text-accent">04</div>
+                <h4 className="text-sm font-bold font-heading text-[#F8F0DB]">Yayınlama &amp; Şeffaf Rapor</h4>
+                <p className="text-xs text-[#F8F0DB]/70 font-sans">
                   İçerikler en yüksek etkileşim saatinde yayına alınır; izlenme, tıklanma ve ROI raporu müşteriye sunulur.
                 </p>
               </div>
@@ -375,15 +375,15 @@ export default function InfluencerClient() {
 
         {/* TWO-WAY APPLICATION HUB (BRANDS & CREATORS) */}
         <section id="application-hub" className="px-5 sm:px-10 lg:px-14 max-w-4xl mx-auto mb-24">
-          <div className="p-8 sm:p-12 rounded-3xl bg-[#1E1E1E] border border-[#A40001]/40 shadow-2xl space-y-8">
+          <div className="p-8 sm:p-12 rounded-3xl bg-[#161616] border border-accent/40 shadow-2xl space-y-8">
             
             {/* TABS SELECTOR */}
-            <div className="flex rounded-2xl bg-[#F6F6F6]/5 p-1.5 border border-[#F6F6F6]/10 max-w-md mx-auto">
+            <div className="flex rounded-2xl bg-[#F8F0DB]/5 p-1.5 border border-[#F8F0DB]/10 max-w-md mx-auto">
               <button
                 onClick={() => setActiveFormTab('brand')}
                 className={`flex-1 py-3 text-xs font-medium font-bold rounded-xl transition-all ${
                   activeFormTab === 'brand'
-                    ? 'bg-[#A40001] text-[#F6F6F6] shadow-lg'
+                    ? 'bg-accent text-onAccent shadow-lg'
                     : 'text-white/60 hover:text-white'
                 }`}
               >
@@ -393,7 +393,7 @@ export default function InfluencerClient() {
                 onClick={() => setActiveFormTab('creator')}
                 className={`flex-1 py-3 text-xs font-medium font-bold rounded-xl transition-all ${
                   activeFormTab === 'creator'
-                    ? 'bg-[#A40001] text-[#F6F6F6] shadow-lg'
+                    ? 'bg-accent text-onAccent shadow-lg'
                     : 'text-white/60 hover:text-white'
                 }`}
               >
@@ -405,17 +405,17 @@ export default function InfluencerClient() {
             {activeFormTab === 'brand' && (
               <div className="space-y-6">
                 <div className="text-center space-y-2">
-                  <h3 className="text-2xl font-black font-heading text-[#F6F6F6]">Markanız İçin İnfluencer Kampanyası Başlatın</h3>
-                  <p className="text-xs text-[#F6F6F6]/70 font-sans">
+                  <h3 className="text-2xl font-black font-heading text-[#F8F0DB]">Markanız İçin İnfluencer Kampanyası Başlatın</h3>
+                  <p className="text-xs text-[#F8F0DB]/70 font-sans">
                     Formu doldurun; 2 saat içinde markanıza uygun influencer önerileri ve bütçe planıyla dönüş yapalım.
                   </p>
                 </div>
 
                 {brandFormSuccess ? (
-                  <div className="p-6 rounded-2xl bg-[#A40001] border border-[#A40001] text-center space-y-3">
-                    <CheckCircle2 className="w-10 h-10 text-[#F6F6F6] mx-auto" />
-                    <h4 className="text-base font-bold text-[#F6F6F6]">Talebiniz Alındı!</h4>
-                    <p className="text-xs text-[#F6F6F6]/70 font-sans">
+                  <div className="p-6 rounded-2xl bg-accent border border-accent text-center space-y-3 text-onAccent">
+                    <CheckCircle2 className="w-10 h-10 text-[#F8F0DB] mx-auto" />
+                    <h4 className="text-base font-bold text-[#F8F0DB]">Talebiniz Alındı!</h4>
+                    <p className="text-xs text-[#F8F0DB]/70 font-sans">
                       Medya ekibimiz en geç 2 saat içinde verdiğiniz iletişim kanalı üzerinden sizinle iletişime geçecektir.
                     </p>
                   </div>
@@ -425,13 +425,13 @@ export default function InfluencerClient() {
                     className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans"
                   >
                     <div>
-                      <label className="block text-xs font-medium text-[#F6F6F6]/60 mb-1 font-bold">FİRMA / MARKA ADI *</label>
-                      <input required name="company" type="text" placeholder="Örn: Cennet Koyu Beach Club" className="w-full bg-[#F6F6F6]/5 border border-[#F6F6F6]/15 focus:border-[#A40001] rounded-xl px-4 py-3 text-[#F6F6F6] placeholder-white/30 focus:outline-none" />
+                      <label className="block text-xs font-medium text-[#F8F0DB]/60 mb-1 font-bold">FİRMA / MARKA ADI *</label>
+                      <input required name="company" type="text" placeholder="Örn: Cennet Koyu Beach Club" className="w-full bg-[#F8F0DB]/5 border border-[#F8F0DB]/15 focus:border-accent rounded-xl px-4 py-3 text-[#F8F0DB] placeholder-white/30 focus:outline-none" />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-[#F6F6F6]/60 mb-1 font-bold">SEKTÖRÜNÜZ *</label>
-                      <select required name="sector" className="w-full bg-[#1E1E1E] border border-[#F6F6F6]/15 focus:border-[#A40001] rounded-xl px-4 py-3 text-[#F6F6F6] focus:outline-none">
+                      <label className="block text-xs font-medium text-[#F8F0DB]/60 mb-1 font-bold">SEKTÖRÜNÜZ *</label>
+                      <select required name="sector" className="w-full bg-[#161616] border border-[#F8F0DB]/15 focus:border-accent rounded-xl px-4 py-3 text-[#F8F0DB] focus:outline-none">
                         <option value="Gastronomi">Gastronomi, Restoran &amp; Cafe</option>
                         <option value="Turizm">Otel, Beach Club &amp; Turizm</option>
                         <option value="Gayrimenkul">Gayrimenkul, İnşaat &amp; Villa</option>
@@ -441,22 +441,22 @@ export default function InfluencerClient() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-[#F6F6F6]/60 mb-1 font-bold">YETKİLİ AD SOYAD *</label>
-                      <input required name="name" type="text" placeholder="Örn: Hasan Yılmaz" className="w-full bg-[#F6F6F6]/5 border border-[#F6F6F6]/15 focus:border-[#A40001] rounded-xl px-4 py-3 text-[#F6F6F6] placeholder-white/30 focus:outline-none" />
+                      <label className="block text-xs font-medium text-[#F8F0DB]/60 mb-1 font-bold">YETKİLİ AD SOYAD *</label>
+                      <input required name="name" type="text" placeholder="Örn: Hasan Yılmaz" className="w-full bg-[#F8F0DB]/5 border border-[#F8F0DB]/15 focus:border-accent rounded-xl px-4 py-3 text-[#F8F0DB] placeholder-white/30 focus:outline-none" />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-[#F6F6F6]/60 mb-1 font-bold">TELEFON / WHATSAPP *</label>
-                      <input required name="phone" type="tel" placeholder="0544 313 5557" className="w-full bg-[#F6F6F6]/5 border border-[#F6F6F6]/15 focus:border-[#A40001] rounded-xl px-4 py-3 text-[#F6F6F6] placeholder-white/30 focus:outline-none" />
+                      <label className="block text-xs font-medium text-[#F8F0DB]/60 mb-1 font-bold">TELEFON / WHATSAPP *</label>
+                      <input required name="phone" type="tel" placeholder="0544 313 5557" className="w-full bg-[#F8F0DB]/5 border border-[#F8F0DB]/15 focus:border-accent rounded-xl px-4 py-3 text-[#F8F0DB] placeholder-white/30 focus:outline-none" />
                     </div>
 
                     <div className="sm:col-span-2">
-                      <label className="block text-xs font-medium text-[#F6F6F6]/60 mb-1 font-bold">HEDEFİNİZ &amp; KAMPANYA DETAYLARI</label>
-                      <textarea name="message" rows={3} placeholder="Örn: Didim sahilindeki yeni restoranımızın açılışı için gastronomi influencer'ları ile tadım ve reels kurgusu istiyoruz." className="w-full bg-[#F6F6F6]/5 border border-[#F6F6F6]/15 focus:border-[#A40001] rounded-xl p-4 text-[#F6F6F6] placeholder-white/30 focus:outline-none" />
+                      <label className="block text-xs font-medium text-[#F8F0DB]/60 mb-1 font-bold">HEDEFİNİZ &amp; KAMPANYA DETAYLARI</label>
+                      <textarea name="message" rows={3} placeholder="Örn: Didim sahilindeki yeni restoranımızın açılışı için gastronomi influencer'ları ile tadım ve reels kurgusu istiyoruz." className="w-full bg-[#F8F0DB]/5 border border-[#F8F0DB]/15 focus:border-accent rounded-xl p-4 text-[#F8F0DB] placeholder-white/30 focus:outline-none" />
                     </div>
 
                     <div className="sm:col-span-2 pt-2">
-                      <button type="submit" disabled={isSubmitting} className="w-full py-4 rounded-xl bg-[#A40001] hover:bg-[#A40001] disabled:opacity-50 text-[#F6F6F6] font-medium text-xs font-extrabold transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2">
+                      <button type="submit" disabled={isSubmitting} className="w-full py-4 rounded-xl bg-accent hover:bg-accent disabled:opacity-50 text-onAccent font-medium text-xs font-extrabold transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 hover:text-onAccent">
                         <span>{isSubmitting ? 'GÖNDERİLİYOR...' : 'Kampanya Teklifi ve Creator Listesi İste'}</span>
                         <Send className="w-4 h-4" />
                       </button>
@@ -470,17 +470,17 @@ export default function InfluencerClient() {
             {activeFormTab === 'creator' && (
               <div className="space-y-6">
                 <div className="text-center space-y-2">
-                  <h3 className="text-2xl font-black font-heading text-[#F6F6F6]">Altun Medya Creator Ağına Katılın</h3>
-                  <p className="text-xs text-[#F6F6F6]/70 font-sans">
+                  <h3 className="text-2xl font-black font-heading text-[#F8F0DB]">Altun Medya Creator Ağına Katılın</h3>
+                  <p className="text-xs text-[#F8F0DB]/70 font-sans">
                     Ege ve Türkiye genelindeki seçkin markalarla ücretli iş birlikleri, otel davetleri ve 4K stüdyo desteği için ağımıza kaydolun.
                   </p>
                 </div>
 
                 {creatorFormSuccess ? (
-                  <div className="p-6 rounded-2xl bg-[#A40001] border border-[#A40001] text-center space-y-3">
-                    <CheckCircle2 className="w-10 h-10 text-[#F6F6F6] mx-auto" />
-                    <h4 className="text-base font-bold text-[#F6F6F6]">Başvurunuz Alındı!</h4>
-                    <p className="text-xs text-[#F6F6F6]/70 font-sans">
+                  <div className="p-6 rounded-2xl bg-accent border border-accent text-center space-y-3 text-onAccent">
+                    <CheckCircle2 className="w-10 h-10 text-[#F8F0DB] mx-auto" />
+                    <h4 className="text-base font-bold text-[#F8F0DB]">Başvurunuz Alındı!</h4>
+                    <p className="text-xs text-[#F8F0DB]/70 font-sans">
                       Profiliniz analiz edilip portföyümüze eklendiğinde size WhatsApp veya e-posta yoluyla ulaşacağız.
                     </p>
                   </div>
@@ -490,18 +490,18 @@ export default function InfluencerClient() {
                     className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans"
                   >
                     <div>
-                      <label className="block text-xs font-medium text-[#F6F6F6]/60 mb-1 font-bold">AD SOYAD *</label>
-                      <input required name="name" type="text" placeholder="Örn: Ayşe Demir" className="w-full bg-[#F6F6F6]/5 border border-[#F6F6F6]/15 focus:border-[#A40001] rounded-xl px-4 py-3 text-[#F6F6F6] placeholder-white/30 focus:outline-none" />
+                      <label className="block text-xs font-medium text-[#F8F0DB]/60 mb-1 font-bold">AD SOYAD *</label>
+                      <input required name="name" type="text" placeholder="Örn: Ayşe Demir" className="w-full bg-[#F8F0DB]/5 border border-[#F8F0DB]/15 focus:border-accent rounded-xl px-4 py-3 text-[#F8F0DB] placeholder-white/30 focus:outline-none" />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-[#F6F6F6]/60 mb-1 font-bold">INSTAGRAM KULLANICI ADI *</label>
-                      <input required name="instagram" type="text" placeholder="@kullaniciadi" className="w-full bg-[#F6F6F6]/5 border border-[#F6F6F6]/15 focus:border-[#A40001] rounded-xl px-4 py-3 text-[#F6F6F6] placeholder-white/30 focus:outline-none" />
+                      <label className="block text-xs font-medium text-[#F8F0DB]/60 mb-1 font-bold">INSTAGRAM KULLANICI ADI *</label>
+                      <input required name="instagram" type="text" placeholder="@kullaniciadi" className="w-full bg-[#F8F0DB]/5 border border-[#F8F0DB]/15 focus:border-accent rounded-xl px-4 py-3 text-[#F8F0DB] placeholder-white/30 focus:outline-none" />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-[#F6F6F6]/60 mb-1 font-bold">TAKİPÇİ SAYISI *</label>
-                      <select required name="followers" className="w-full bg-[#1E1E1E] border border-[#F6F6F6]/15 focus:border-[#A40001] rounded-xl px-4 py-3 text-[#F6F6F6] focus:outline-none">
+                      <label className="block text-xs font-medium text-[#F8F0DB]/60 mb-1 font-bold">TAKİPÇİ SAYISI *</label>
+                      <select required name="followers" className="w-full bg-[#161616] border border-[#F8F0DB]/15 focus:border-accent rounded-xl px-4 py-3 text-[#F8F0DB] focus:outline-none">
                         <option value="10K - 50K">10K - 50K (Nano/Micro)</option>
                         <option value="50K - 200K">50K - 200K (Mid-Tier)</option>
                         <option value="200K - 500K">200K - 500K (Macro)</option>
@@ -510,17 +510,17 @@ export default function InfluencerClient() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-[#F6F6F6]/60 mb-1 font-bold">TELEFON / İLETİŞİM *</label>
-                      <input required name="phone" type="tel" placeholder="0544 313 5557" className="w-full bg-[#F6F6F6]/5 border border-[#F6F6F6]/15 focus:border-[#A40001] rounded-xl px-4 py-3 text-[#F6F6F6] placeholder-white/30 focus:outline-none" />
+                      <label className="block text-xs font-medium text-[#F8F0DB]/60 mb-1 font-bold">TELEFON / İLETİŞİM *</label>
+                      <input required name="phone" type="tel" placeholder="0544 313 5557" className="w-full bg-[#F8F0DB]/5 border border-[#F8F0DB]/15 focus:border-accent rounded-xl px-4 py-3 text-[#F8F0DB] placeholder-white/30 focus:outline-none" />
                     </div>
 
                     <div className="sm:col-span-2">
-                      <label className="block text-xs font-medium text-[#F6F6F6]/60 mb-1 font-bold">İÇERİK NİŞİNİZ &amp; ŞEHİR</label>
-                      <input required name="niche" type="text" placeholder="Örn: Seyahat & Otel Keşifleri / Didim - Bodrum - İzmir" className="w-full bg-[#F6F6F6]/5 border border-[#F6F6F6]/15 focus:border-[#A40001] rounded-xl px-4 py-3 text-[#F6F6F6] placeholder-white/30 focus:outline-none" />
+                      <label className="block text-xs font-medium text-[#F8F0DB]/60 mb-1 font-bold">İÇERİK NİŞİNİZ &amp; ŞEHİR</label>
+                      <input required name="niche" type="text" placeholder="Örn: Seyahat & Otel Keşifleri / Didim - Bodrum - İzmir" className="w-full bg-[#F8F0DB]/5 border border-[#F8F0DB]/15 focus:border-accent rounded-xl px-4 py-3 text-[#F8F0DB] placeholder-white/30 focus:outline-none" />
                     </div>
 
                     <div className="sm:col-span-2 pt-2">
-                      <button type="submit" disabled={isSubmitting} className="w-full py-4 rounded-xl bg-[#A40001] hover:bg-[#A40001] disabled:opacity-50 text-[#F6F6F6] font-medium text-xs font-extrabold transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2">
+                      <button type="submit" disabled={isSubmitting} className="w-full py-4 rounded-xl bg-accent hover:bg-accent disabled:opacity-50 text-onAccent font-medium text-xs font-extrabold transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2 hover:text-onAccent">
                         <span>{isSubmitting ? 'GÖNDERİLİYOR...' : 'Creator Ağına Katılma Başvurusu Yap'}</span>
                         <Send className="w-4 h-4" />
                       </button>
@@ -535,29 +535,29 @@ export default function InfluencerClient() {
         {/* FREQUENTLY ASKED QUESTIONS */}
         <section className="px-5 sm:px-10 lg:px-14 max-w-4xl mx-auto">
           <div className="text-center mb-10 space-y-2">
-            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#F6F6F6]">
+            <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#F8F0DB]">
               İnfluencer Pazarlaması Hakkında Sıkça Sorulanlar
             </h3>
           </div>
 
           <div className="space-y-4">
-            <div className="p-6 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10 space-y-2">
-              <h4 className="text-sm font-bold font-heading text-[#F6F6F6]">İnfluencer seçimi nasıl yapılıyor?</h4>
-              <p className="text-xs text-[#F6F6F6]/70 font-sans leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10 space-y-2">
+              <h4 className="text-sm font-bold font-heading text-[#F8F0DB]">İnfluencer seçimi nasıl yapılıyor?</h4>
+              <p className="text-xs text-[#F8F0DB]/70 font-sans leading-relaxed">
                 Her başvuruyu derinlemesine bot kontrolü, kitle coğrafyası (gerçekten Didim ve Türkiye’den mi takip ediliyor?) ve etkileşim oranı analizinden geçiriyoruz. Markanızın prestijine zarar verecek hesaplarla asla çalışmıyoruz.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10 space-y-2">
-              <h4 className="text-sm font-bold font-heading text-[#F6F6F6]">Çekimlerde prodüksiyon desteği veriyor musunuz?</h4>
-              <p className="text-xs text-[#F6F6F6]/70 font-sans leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10 space-y-2">
+              <h4 className="text-sm font-bold font-heading text-[#F8F0DB]">Çekimlerde prodüksiyon desteği veriyor musunuz?</h4>
+              <p className="text-xs text-[#F8F0DB]/70 font-sans leading-relaxed">
                 Evet! Altun Medya prodüksiyon ekibi (Sony FX6 kameralar, DJI drone ve profesyonel ışık) çekim gününde sahada bulunur ve içerik üreticisinin videolarını sinematik kalitede çeker.
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#F6F6F6]/5 border border-[#F6F6F6]/10 space-y-2">
-              <h4 className="text-sm font-bold font-heading text-[#F6F6F6]">Kampanya başarısını (ROI) nasıl ölçüyoruz?</h4>
-              <p className="text-xs text-[#F6F6F6]/70 font-sans leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[#F8F0DB]/5 border border-[#F8F0DB]/10 space-y-2">
+              <h4 className="text-sm font-bold font-heading text-[#F8F0DB]">Kampanya başarısını (ROI) nasıl ölçüyoruz?</h4>
+              <p className="text-xs text-[#F8F0DB]/70 font-sans leading-relaxed">
                 Özel indirim kodları, UTM etiketli bağlantılar ve Meta reklam verileriyle kaç kişinin rezervasyon yaptığını veya satın aldığını net rakamlarla raporluyoruz.
               </p>
             </div>

@@ -24,7 +24,7 @@ export default function BrandDuoHeading({
   splitIndex,
   boldFirst = true,
   accentLast = false,
-  accentClassName = 'text-[#A40001]',
+  accentClassName = 'text-accent',
   boldClassName = 'font-black tracking-tight',
   thinClassName = 'font-light tracking-normal opacity-85',
 }: BrandDuoHeadingProps) {

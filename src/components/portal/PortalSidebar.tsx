@@ -48,7 +48,7 @@ export default function PortalSidebar() {
   return (
     <>
       {/* DESKTOP SIDEBAR (Hidden on mobile/tablet) */}
-      <aside className="hidden lg:flex flex-col justify-between w-72 bg-[#262626] border-r border-white/10 h-screen sticky top-0 z-30 select-none flex-shrink-0">
+      <aside className="hidden lg:flex flex-col justify-between w-72 bg-[#0B0B0B] border-r border-white/10 h-screen sticky top-0 z-30 select-none flex-shrink-0">
         
         {/* TOP BRAND HEADER */}
         <div>
@@ -58,10 +58,10 @@ export default function PortalSidebar() {
                 <AltunMedyaLogo className="h-6 w-auto text-white" showStar={true} />
               </div>
               <div className="flex items-center gap-2 mt-2">
-                <span className="text-[9px] uppercase font-bold tracking-[0.24em] text-[#A40001]">
+                <span className="text-[9px] uppercase font-bold tracking-[0.24em] text-accent">
                   CLIENT PORTAL
                 </span>
-                <span className="px-1.5 py-0.2 rounded bg-[#A40001]/10 border border-[#A40001]/30 text-[8px] font-mono text-[#A40001] font-bold">
+                <span className="px-1.5 py-0.2 rounded bg-accent/10 border border-accent/30 text-[8px] font-mono text-accent font-bold">
                   v2.0 OS
                 </span>
               </div>
@@ -84,7 +84,7 @@ export default function PortalSidebar() {
                   onClick={() => handleSectionClick(item.id)}
                   className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold font-mono transition-all group ${
                     isActive
-                      ? 'bg-[#A40001] text-white font-extrabold shadow-[0_0_20px_rgba(179,58,6,0.25)]'
+                      ? 'bg-accent text-onAccent font-extrabold shadow-[0_0_20px_rgba(179,58,6,0.25)]'
                       : 'text-white/70 hover:text-white hover:bg-white/5'
                   }`}
                 >
@@ -92,7 +92,7 @@ export default function PortalSidebar() {
                     <span className={`text-[10px] font-mono ${isActive ? 'text-black/60 font-bold' : 'text-[#8E8E93]'}`}>
                       {item.id.substring(0, 2)}
                     </span>
-                    <Icon className={`w-4 h-4 ${isActive ? 'text-black' : 'text-white/60 group-hover:text-[#A40001]'} transition-colors`} />
+                    <Icon className={`w-4 h-4 ${isActive ? 'text-black' : 'text-white/60 group-hover:text-accent'} transition-colors`} />
                     <span className="tracking-tight">{item.label}</span>
                   </div>
 
@@ -100,8 +100,8 @@ export default function PortalSidebar() {
                     <span
                       className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
                         isActive
-                          ? 'bg-black text-[#A40001]'
-                          : 'bg-[#A40001] text-white shadow-[0_0_10px_rgba(179,58,6,0.4)]'
+                          ? 'bg-black text-accent'
+                          : 'bg-accent text-onAccent shadow-[0_0_10px_rgba(179,58,6,0.4)]'
                       }`}
                     >
                       {item.badge}
@@ -114,10 +114,10 @@ export default function PortalSidebar() {
         </div>
 
         {/* BOTTOM USER & CONTROL SECTION */}
-        <div className="p-4 border-t border-white/10 space-y-2 bg-[#262626]">
+        <div className="p-4 border-t border-white/10 space-y-2 bg-[#0B0B0B]">
           <div className="px-3 py-1 flex items-center justify-between text-[10px] font-mono text-white/50">
             <span>● GÜVENLİ MÜŞTERİ PORTALI</span>
-            <ShieldCheck className="w-3.5 h-3.5 text-[#A40001]" />
+            <ShieldCheck className="w-3.5 h-3.5 text-accent" />
           </div>
 
           <div className="p-3 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between gap-3">
@@ -125,7 +125,7 @@ export default function PortalSidebar() {
               <img
                 src={client.avatar}
                 alt={client.companyName}
-                className="w-9 h-9 rounded-xl object-cover border border-[#A40001]"
+                className="w-9 h-9 rounded-xl object-cover border border-accent"
               />
               <div className="truncate">
                 <div className="text-xs font-bold text-white font-heading truncate">{client.companyName}</div>
@@ -145,7 +145,7 @@ export default function PortalSidebar() {
       </aside>
 
       {/* MOBILE BOTTOM NAVIGATION BAR */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#262626]/95 backdrop-blur-2xl border-t border-white/15 px-2 py-2 flex items-center justify-around select-none">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#0B0B0B]/95 backdrop-blur-2xl border-t border-white/15 px-2 py-2 flex items-center justify-around select-none">
         {navItems.slice(0, 5).map((item) => {
           const Icon = item.icon;
           const isActive = activeSection === item.id;
@@ -155,13 +155,13 @@ export default function PortalSidebar() {
               key={item.id}
               onClick={() => handleSectionClick(item.id)}
               className={`flex flex-col items-center py-1 px-2.5 rounded-xl transition-all ${
-                isActive ? 'text-[#A40001]' : 'text-white/60 hover:text-white'
+                isActive ? 'text-accent' : 'text-white/60 hover:text-white'
               }`}
             >
               <div className="relative">
                 <Icon className="w-5 h-5" />
                 {item.badge && item.badge > 0 ? (
-                  <span className="absolute -top-1 -right-2 w-4 h-4 rounded-full bg-[#A40001] text-white text-[9px] font-mono font-bold flex items-center justify-center">
+                  <span className="absolute -top-1 -right-2 w-4 h-4 rounded-full bg-accent text-onAccent text-[9px] font-mono font-bold flex items-center justify-center">
                     {item.badge}
                   </span>
                 ) : null}
